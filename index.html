@@ -1,0 +1,1938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exemplary Voyages — Sri Lanka & Maldives</title>
+<meta name="description" content="Exemplary Voyages crafts singular journeys through Sri Lanka and the Maldives for the world's most discerning travellers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ── RESET & BASE ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 300;
+  background: #F5F0E8;
+  color: #2E2E2E;
+  overflow-x: hidden;
+  cursor: none;
+}
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+
+/* ── CUSTOM CURSOR ────────────────────────────────────────── */
+#cursor {
+  position: fixed; top: 0; left: 0; z-index: 9999;
+  pointer-events: none;
+  width: 10px; height: 10px;
+  background: #B8972A;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease;
+}
+#cursor-ring {
+  position: fixed; top: 0; left: 0; z-index: 9998;
+  pointer-events: none;
+  width: 38px; height: 38px;
+  border: 1px solid rgba(184,151,42,0.45);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.4s ease;
+}
+
+/* ── CSS VARIABLES ────────────────────────────────────────── */
+:root {
+  --midnight: #1A1F1C;
+  --ivory: #F5F0E8;
+  --gold: #B8972A;
+  --gold-light: #D4AC3A;
+  --tea: #3D5A45;
+  --ocean: #1B2A4A;
+  --stone: #C4A882;
+  --coral: #D4856A;
+  --slate: #6B6B6B;
+  --mist: #E8E3DB;
+  --charcoal: #2E2E2E;
+}
+
+/* ── NAVIGATION ───────────────────────────────────────────── */
+nav#navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 48px;
+  height: 80px;
+  transition: background 0.5s ease, height 0.4s ease;
+}
+nav#navbar.scrolled {
+  background: rgba(26,31,28,0.97);
+  height: 64px;
+  backdrop-filter: blur(12px);
+}
+.nav-logo {
+  display: flex; align-items: center;
+}
+.nav-logo img {
+  height: 72px; width: auto; display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.35)) brightness(1.1);
+}
+.nav-links {
+  display: flex; align-items: center; gap: 30px;
+  list-style: none;
+}
+.nav-links > li > a {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.85);
+  transition: color 0.3s;
+  position: relative;
+}
+.nav-links > li > a::after {
+  content: '';
+  position: absolute; bottom: -4px; left: 0; right: 0;
+  height: 1px; background: var(--gold);
+  transform: scaleX(0); transform-origin: right;
+  transition: transform 0.35s ease;
+}
+.nav-links > li > a:hover { color: var(--ivory); }
+.nav-links > li > a:hover::after { transform: scaleX(1); transform-origin: left; }
+.nav-cta {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--ivory);
+  border: 1px solid var(--gold);
+  padding: 11px 26px;
+  transition: background 0.35s, color 0.35s;
+  white-space: nowrap;
+}
+.nav-cta:hover { background: var(--gold); color: var(--midnight); }
+
+/* Mega Menu */
+.has-mega { position: relative; }
+.mega-menu {
+  position: absolute; top: 100%; left: 50%;
+  transform: translateX(-50%) translateY(16px);
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: grid; grid-template-columns: 1fr 1fr 190px;
+  background: var(--midnight);
+  min-width: 660px;
+  border: 1px solid rgba(184,151,42,0.2);
+}
+.has-mega:hover .mega-menu {
+  opacity: 1; pointer-events: auto;
+  transform: translateX(-50%) translateY(8px);
+}
+.mega-col { padding: 32px 28px; border-right: 1px solid rgba(255,255,255,0.06); }
+.mega-col:last-child { border-right: none; padding: 0; }
+.mega-col-title {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 9px; font-weight: 500;
+  letter-spacing: 0.35em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 18px;
+}
+.mega-col ul { list-style: none; }
+.mega-col ul li a {
+  display: block;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 13px; font-weight: 300;
+  color: rgba(245,240,232,0.7);
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  transition: color 0.25s, padding-left 0.25s;
+}
+.mega-col ul li a:hover { color: var(--gold); padding-left: 8px; }
+.mega-featured { position: relative; overflow: hidden; min-height: 280px; }
+.mega-featured img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.mega-featured:hover img { transform: scale(1.05); }
+.mega-featured-overlay {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 20px 18px;
+  background: linear-gradient(to top, rgba(26,31,28,0.95) 0%, transparent 100%);
+}
+.mega-featured-overlay p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px; font-style: italic;
+  color: var(--ivory); line-height: 1.5;
+}
+.mega-featured-overlay a {
+  display: inline-block; margin-top: 10px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ── HERO ─────────────────────────────────────────────────── */
+#hero {
+  position: relative;
+  width: 100vw; height: 100vh;
+  overflow: hidden; background: var(--midnight);
+  display: flex; align-items: center; justify-content: flex-start;
+}
+/* ── VIDEO SLIDER ── */
+.hero-video-slider {
+  position: absolute; inset: 0; z-index: 0; overflow: hidden;
+}
+.hero-video-track {
+  display: flex; width: 300%; height: 100%;
+  transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1);
+  will-change: transform;
+}
+.hero-video-track.instant { transition: none !important; }
+.hero-video-slide {
+  flex: 0 0 33.333%; height: 100%; position: relative;
+}
+.hero-video-slide video {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+/* Progress bars */
+.hero-progress {
+  position: absolute; z-index: 3;
+  bottom: 92px; left: 8vw;
+  display: flex; gap: 10px; align-items: center;
+}
+.prog-bar {
+  width: 64px; height: 2px;
+  background: rgba(255,255,255,0.2); overflow: hidden; cursor: pointer;
+}
+.prog-fill {
+  height: 100%; width: 0%; background: var(--gold);
+}
+.hero-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(
+    110deg,
+    rgba(26,31,28,0.82) 0%,
+    rgba(26,31,28,0.48) 52%,
+    rgba(26,31,28,0.18) 100%
+  );
+}
+.hero-content {
+  position: relative; z-index: 2;
+  padding: 0 8vw; max-width: 860px;
+}
+.hero-h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: clamp(56px, 7.8vw, 112px);
+  line-height: 1.0;
+  color: var(--ivory);
+  letter-spacing: -0.02em;
+  margin-bottom: 28px;
+  opacity: 0; transform: translateY(40px);
+  animation: heroReveal 1.2s cubic-bezier(0.22,1,0.36,1) 0.2s forwards;
+}
+.hero-h1 em { font-style: italic; color: var(--stone); }
+.hero-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300; font-style: italic;
+  font-size: clamp(18px, 2.2vw, 28px);
+  color: rgba(245,240,232,0.68);
+  margin-bottom: 52px;
+  letter-spacing: 0.02em;
+  max-width: 580px;
+  line-height: 1.5;
+  opacity: 0;
+  animation: heroReveal 1.2s cubic-bezier(0.22,1,0.36,1) 0.5s forwards;
+}
+.hero-actions {
+  display: flex; align-items: center; gap: 32px;
+  opacity: 0;
+  animation: heroReveal 1.2s cubic-bezier(0.22,1,0.36,1) 0.8s forwards;
+}
+@keyframes heroReveal {
+  to { opacity: 1; transform: translateY(0); }
+}
+.btn-primary {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--midnight); background: var(--gold);
+  padding: 18px 40px; display: inline-block;
+  transition: background 0.35s, transform 0.25s;
+}
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+.btn-ghost {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--ivory);
+  display: flex; align-items: center; gap: 12px;
+  transition: gap 0.3s, color 0.3s;
+}
+.btn-ghost:hover { gap: 20px; color: var(--gold); }
+.btn-ghost .arrow { transition: transform 0.3s; }
+.btn-ghost:hover .arrow { transform: translateX(4px); }
+
+.hero-counter {
+  position: absolute; z-index: 2;
+  right: 6vw; bottom: 10vh;
+  text-align: right;
+}
+.hero-counter span {
+  font-family: 'Playfair Display', serif;
+  font-size: 80px; font-weight: 300;
+  color: rgba(245,240,232,0.06);
+  line-height: 1; letter-spacing: -0.05em; display: block;
+}
+.hero-counter small {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 10px; font-weight: 400;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: rgba(245,240,232,0.35);
+}
+.hero-scroll {
+  position: absolute; z-index: 2;
+  bottom: 36px; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  opacity: 0; animation: heroReveal 1s ease 1.4s forwards;
+}
+.hero-scroll span {
+  font-family: 'Inter', Arial, sans-serif; font-size: 9px;
+  font-weight: 400; letter-spacing: 0.35em; text-transform: uppercase;
+  color: rgba(245,240,232,0.45);
+}
+.scroll-line {
+  width: 1px; height: 56px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+/* ── NUMBERS STRIP ────────────────────────────────────────── */
+.numbers-strip {
+  background: var(--midnight);
+  padding: 64px 8vw;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid rgba(184,151,42,0.12);
+}
+.number-item { padding: 0 36px; border-right: 1px solid rgba(255,255,255,0.07); text-align: center; }
+.number-item:last-child { border-right: none; }
+.number-item .num {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400; font-size: 52px;
+  color: var(--gold); display: block; line-height: 1; margin-bottom: 10px;
+}
+.number-item .label {
+  font-family: 'Inter', Arial, sans-serif; font-size: 10px; font-weight: 400;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  color: rgba(245,240,232,0.45);
+}
+
+/* ── SECTION TAGS (no decorative line) ───────────────────── */
+.section-tag {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 0.4em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 28px;
+}
+
+/* ── INTRO ────────────────────────────────────────────────── */
+.intro {
+  padding: 140px 8vw;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: start;
+  background: var(--ivory); position: relative;
+}
+.intro-section-num {
+  position: absolute; top: 60px; left: 8vw;
+  font-family: 'Playfair Display', serif; font-size: 120px; font-weight: 400;
+  color: rgba(61,90,69,0.06); line-height: 1; pointer-events: none; user-select: none;
+}
+.intro-left { position: sticky; top: 120px; }
+.intro-left h2 {
+  font-family: 'Playfair Display', serif; font-weight: 400;
+  font-size: clamp(34px, 3.2vw, 50px); line-height: 1.15;
+  color: var(--midnight); margin-bottom: 40px; letter-spacing: -0.01em;
+}
+.intro-left h2 em { font-style: italic; color: var(--tea); }
+.intro-right p {
+  font-family: 'Inter', Arial, sans-serif; font-weight: 300;
+  font-size: 17px; line-height: 1.9; color: var(--charcoal); margin-bottom: 28px;
+}
+.pull-quote {
+  border-left: 2px solid var(--gold); padding: 24px 28px; margin: 40px 0;
+  background: rgba(184,151,42,0.05);
+}
+.pull-quote p {
+  font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic;
+  font-size: 22px; line-height: 1.65; color: var(--midnight); margin: 0;
+}
+.intro-link {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-family: 'Inter', Arial, sans-serif; font-size: 11px; font-weight: 500;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--midnight); border-bottom: 1px solid var(--gold);
+  padding-bottom: 4px; transition: color 0.3s, gap 0.3s;
+}
+.intro-link:hover { color: var(--gold); gap: 20px; }
+.intro-link .arrow { transition: transform 0.3s; }
+.intro-link:hover .arrow { transform: translateX(4px); }
+
+/* ── SRI LANKA ────────────────────────────────────────────── */
+.destination-sl {
+  background: var(--midnight); position: relative; overflow: hidden; padding: 120px 0 0;
+}
+.destination-header {
+  padding: 0 8vw 72px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: end;
+}
+.destination-header h2 {
+  font-family: 'Playfair Display', serif; font-weight: 400;
+  font-size: clamp(44px, 5vw, 74px);
+  color: var(--ivory); line-height: 1; letter-spacing: -0.02em;
+}
+.destination-header h2 em { font-style: italic; color: var(--stone); }
+.destination-header p {
+  font-family: 'Inter', Arial, sans-serif; font-weight: 300;
+  font-size: 15px; line-height: 1.85; color: rgba(245,240,232,0.62); max-width: 440px; margin-left: auto;
+}
+.header-cta {
+  display: inline-flex; align-items: center; gap: 12px; margin-top: 28px;
+  font-family: 'Inter', Arial, sans-serif; font-size: 11px; font-weight: 500;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold); border-bottom: 1px solid rgba(184,151,42,0.35);
+  padding-bottom: 4px; transition: gap 0.3s;
+}
+.header-cta:hover { gap: 20px; }
+.header-cta .arrow { transition: transform 0.3s; }
+.header-cta:hover .arrow { transform: translateX(4px); }
+
+/* Experience Grid — 3 cols, 3 rows */
+.exp-bento {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 400px 320px 500px;
+  gap: 2px; padding: 0 0 120px;
+}
+.exp-card {
+  position: relative; overflow: hidden; cursor: pointer; background: #111;
+}
+.exp-card img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94);
+  filter: brightness(0.72);
+}
+.exp-card:hover img { transform: scale(1.08); filter: brightness(0.58); }
+/* Row 3: wellness spans full width */
+.exp-card:nth-child(7) { grid-column: 1 / -1; }
+.exp-card-content {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 40px 36px 36px;
+  background: linear-gradient(to top, rgba(26,31,28,0.92) 0%, transparent 100%);
+  transition: padding-bottom 0.4s ease;
+}
+.exp-card:hover .exp-card-content { padding-bottom: 50px; }
+.exp-num {
+  font-family: 'Inter', Arial, sans-serif; font-size: 10px; font-weight: 500;
+  letter-spacing: 0.3em; color: var(--gold); margin-bottom: 8px;
+}
+.exp-card-content h3 {
+  font-family: 'Playfair Display', serif; font-weight: 400;
+  font-size: 26px; color: var(--ivory); line-height: 1.2; margin-bottom: 8px;
+}
+.exp-card-content p {
+  font-family: 'Inter', Arial, sans-serif; font-size: 13px; font-weight: 300;
+  color: rgba(245,240,232,0.62); line-height: 1.65;
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease; opacity: 0;
+}
+.exp-card:hover .exp-card-content p { max-height: 60px; opacity: 1; }
+.exp-card-arrow {
+  position: absolute; top: 24px; right: 24px;
+  width: 38px; height: 38px;
+  border: 1px solid rgba(184,151,42,0.5);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold); font-size: 15px;
+  opacity: 0; transform: translateY(8px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+.exp-card:hover .exp-card-arrow { opacity: 1; transform: translateY(0); }
+
+/* ── FEATURED JOURNEYS — 3 equal horizontal cards ─────────── */
+.journeys {
+  background: var(--ivory); padding: 140px 8vw;
+}
+.journeys > .section-tag { margin-bottom: 56px; }
+.journeys-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 2px; margin-bottom: 56px;
+}
+.journey-card {
+  display: flex; flex-direction: column;
+  background: var(--ivory); overflow: hidden;
+}
+.journey-img-wrap {
+  position: relative; height: 460px; overflow: hidden; background: var(--midnight);
+}
+.journey-img-wrap img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.75s ease; opacity: 0.85;
+}
+.journey-card:hover .journey-img-wrap img { transform: scale(1.06); opacity: 0.68; }
+.journey-card-body {
+  padding: 26px 36px 36px;
+  background: var(--ivory);
+  border-top: 1px solid var(--mist);
+}
+.journey-card-body h3 {
+  font-family: 'Playfair Display', serif; font-weight: 400;
+  font-size: 26px; color: var(--midnight); line-height: 1.2; margin-bottom: 12px;
+}
+.journey-region {
+  font-family: 'Inter', Arial, sans-serif; font-size: 10px; font-weight: 500;
+  letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
+}
+.journey-card-body p {
+  font-family: 'Inter', Arial, sans-serif; font-weight: 300; font-size: 13px;
+  color: var(--slate); line-height: 1.75; margin-bottom: 20px;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.journey-meta {
+  font-family: 'Inter', Arial, sans-serif; font-size: 11px; font-weight: 400;
+  color: #aaa; letter-spacing: 0.08em;
+  display: flex; gap: 10px; align-items: center;
+}
+.journeys-bottom {
+  display: flex; justify-content: space-between; align-items: center;
+}
+.journeys-bottom p {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 20px; color: var(--slate); max-width: 480px; line-height: 1.6;
+}
+
+/* ── MALDIVES ─────────────────────────────────────────────── */
+.destination-mv {
+  background: var(--ocean); padding: 140px 0;
+  position: relative; overflow: hidden;
+}
+.mv-bg-text {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Playfair Display', serif; font-size: 22vw; font-weight: 500;
+  color: rgba(255,255,255,0.025); white-space: nowrap;
+  pointer-events: none; user-select: none; letter-spacing: -0.05em;
+}
+.mv-header {
+  padding: 0 8vw 72px; text-align: center;
+}
+.mv-header .section-tag { justify-content: center; margin-bottom: 28px; display: flex; }
+.mv-header h2 {
+  font-family: 'Playfair Display', serif; font-weight: 400;
+  font-size: clamp(44px, 5vw, 74px);
+  color: var(--ivory); line-height: 1; letter-spacing: -0.02em; margin-bottom: 24px;
+}
+.mv-header h2 em { font-style: italic; color: rgba(196,168,130,0.9); }
+.mv-header p {
+  font-family: 'Inter', Arial, sans-serif; font-weight: 300; font-size: 15px;
+  color: rgba(245,240,232,0.58); max-width: 540px; margin: 0 auto 44px; line-height: 1.85;
+}
+.mv-categories {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px;
+}
+.mv-cat {
+  position: relative; overflow: hidden; height: 440px;
+  background: #000; cursor: pointer;
+}
+.mv-cat img {
+  width: 100%; height: 100%; object-fit: cover;
+  opacity: 1; transition: transform 0.7s ease, opacity 0.5s ease;
+  filter: saturate(1);
+}
+.mv-cat:hover img { transform: scale(1.06); opacity: 0.92; filter: saturate(1.05); }
+.mv-cat-content {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  justify-content: flex-end; padding: 32px 26px;
+  background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.1) 45%, transparent 70%);
+}
+.mv-cat-icon {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 11px; letter-spacing: 0.2em; color: var(--stone); margin-bottom: 8px; text-transform: uppercase;
+}
+.mv-cat-content h3 {
+  font-family: 'Playfair Display', serif; font-weight: 400;
+  font-size: 20px; color: var(--ivory); line-height: 1.25;
+}
+.mv-cat-content p {
+  font-family: 'Inter', Arial, sans-serif; font-size: 12px; font-weight: 300;
+  color: rgba(245,240,232,0.52); margin-top: 7px; line-height: 1.55;
+  max-height: 0; overflow: hidden; transition: max-height 0.4s, opacity 0.4s; opacity: 0;
+}
+.mv-cat:hover .mv-cat-content p { max-height: 50px; opacity: 1; }
+
+/* ── SUSTAINABILITY ───────────────────────────────────────── */
+.sustainability {
+  background: var(--tea); padding: 120px 8vw;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+}
+.sus-left h2 {
+  font-family: 'Playfair Display', serif; font-weight: 400;
+  font-size: clamp(34px, 3.2vw, 52px); color: var(--ivory); line-height: 1.1; margin-bottom: 28px;
+}
+.sus-left h2 em { font-style: italic; }
+.sus-left p {
+  font-family: 'Inter', Arial, sans-serif; font-weight: 300; font-size: 15px;
+  line-height: 1.9; color: rgba(245,240,232,0.8); margin-bottom: 20px;
+}
+.sus-left a {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-family: 'Inter', Arial, sans-serif; font-size: 11px; font-weight: 500;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--ivory); border-bottom: 1px solid rgba(245,240,232,0.35);
+  padding-bottom: 4px; margin-top: 16px; transition: gap 0.3s, border-color 0.3s;
+}
+.sus-left a:hover { gap: 20px; border-color: var(--ivory); }
+.sus-pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+.sus-pillar {
+  background: rgba(26,31,28,0.28); padding: 34px 26px;
+  transition: background 0.3s;
+}
+.sus-pillar:hover { background: rgba(26,31,28,0.48); }
+.sus-pillar-line {
+  width: 28px; height: 1px; background: rgba(245,240,232,0.35); margin-bottom: 18px;
+}
+.sus-pillar h4 {
+  font-family: 'Playfair Display', serif; font-weight: 400;
+  font-size: 17px; color: var(--ivory); margin-bottom: 10px;
+}
+.sus-pillar p {
+  font-family: 'Inter', Arial, sans-serif; font-size: 13px; font-weight: 300;
+  line-height: 1.75; color: rgba(245,240,232,0.62); margin: 0;
+}
+
+/* ── JOURNAL CAROUSEL ─────────────────────────────────────── */
+.journal {
+  background: var(--ivory); padding: 140px 0 140px 8vw; overflow: hidden;
+}
+.journal-header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-right: 8vw; margin-bottom: 52px;
+}
+.journal-scroll-track {
+  display: flex; gap: 3px; overflow: visible;
+  transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
+  will-change: transform;
+}
+.journal-card {
+  flex: 0 0 380px; position: relative; overflow: hidden;
+  background: var(--mist); cursor: pointer; height: 500px;
+}
+.journal-card img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.6s ease; opacity: 0.88;
+}
+.journal-card:hover img { transform: scale(1.06); opacity: 0.72; }
+.journal-card-content {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 36px 32px;
+  background: linear-gradient(to top, rgba(26,31,28,0.9) 0%, transparent 100%);
+}
+.journal-date {
+  font-family: 'Inter', Arial, sans-serif; font-size: 10px; font-weight: 400;
+  letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
+}
+.journal-card-content h3 {
+  font-family: 'Playfair Display', serif; font-weight: 400;
+  font-size: 21px; color: var(--ivory); line-height: 1.3;
+}
+.journal-nav {
+  display: flex; gap: 10px; align-items: center; padding-right: 8vw; margin-top: 36px;
+}
+.journal-btn {
+  width: 44px; height: 44px; border: 1px solid rgba(26,31,28,0.2);
+  background: transparent; display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: border-color 0.3s, background 0.3s; font-size: 16px;
+  color: var(--midnight);
+}
+.journal-btn:hover { border-color: var(--gold); color: var(--gold); background: rgba(184,151,42,0.05); }
+
+/* ── TESTIMONIALS ─────────────────────────────────────────── */
+.testimonials {
+  background: var(--charcoal); padding: 120px 8vw;
+  position: relative; overflow: hidden;
+}
+.testimonials-quotemark {
+  position: absolute; top: -20px; left: 5vw;
+  font-family: 'Playfair Display', serif; font-size: 280px;
+  color: rgba(184,151,42,0.07); line-height: 1; pointer-events: none;
+}
+.testimonial-wrap { max-width: 780px; margin: 0 auto; text-align: center; }
+.testimonial-text {
+  font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic;
+  font-size: clamp(22px, 2.5vw, 32px);
+  color: var(--ivory); line-height: 1.65; margin-bottom: 44px;
+  transition: opacity 0.45s ease;
+}
+.testimonial-author {
+  font-family: 'Inter', Arial, sans-serif; font-size: 11px; font-weight: 500;
+  letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px;
+}
+.testimonial-origin {
+  font-family: 'Inter', Arial, sans-serif; font-size: 11px;
+  color: rgba(245,240,232,0.38); letter-spacing: 0.15em;
+}
+.testi-dots {
+  display: flex; justify-content: center; gap: 12px; margin-top: 52px;
+}
+.testi-dot {
+  width: 22px; height: 1px; background: rgba(255,255,255,0.2);
+  cursor: pointer; transition: background 0.3s, width 0.3s;
+}
+.testi-dot.active { background: var(--gold); width: 40px; }
+
+/* ── FINAL CTA ────────────────────────────────────────────── */
+.final-cta {
+  background: var(--midnight); padding: 160px 8vw;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+  position: relative; overflow: hidden;
+}
+.final-cta::after {
+  content: '';
+  position: absolute; bottom: -80px; right: -80px;
+  width: 360px; height: 360px;
+  border: 1px solid rgba(184,151,42,0.08); border-radius: 50%; pointer-events: none;
+}
+.final-cta-left h2 {
+  font-family: 'Playfair Display', serif; font-weight: 400;
+  font-size: clamp(38px, 3.8vw, 58px); color: var(--ivory); line-height: 1.1; margin-bottom: 26px;
+}
+.final-cta-left h2 em { font-style: italic; color: var(--stone); }
+.final-cta-left p {
+  font-family: 'Inter', Arial, sans-serif; font-weight: 300; font-size: 15px;
+  color: rgba(245,240,232,0.6); line-height: 1.85; max-width: 400px;
+}
+.final-cta-right { display: flex; flex-direction: column; gap: 2px; }
+.cta-option {
+  display: flex; align-items: center; gap: 20px; padding: 30px 34px;
+  border: 1px solid rgba(184,151,42,0.2); margin-bottom: 2px;
+  transition: border-color 0.3s, background 0.3s; text-decoration: none;
+}
+.cta-option:hover { border-color: var(--gold); background: rgba(184,151,42,0.06); }
+.cta-icon {
+  width: 46px; height: 46px; flex-shrink: 0;
+  border: 1px solid rgba(184,151,42,0.28);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold); font-size: 18px;
+}
+.cta-option h4 {
+  font-family: 'Playfair Display', serif; font-weight: 400;
+  font-size: 17px; color: var(--ivory); margin-bottom: 3px;
+}
+.cta-option p {
+  font-family: 'Inter', Arial, sans-serif; font-size: 13px; font-weight: 300;
+  color: rgba(245,240,232,0.48); margin: 0;
+}
+
+/* ── FOOTER ───────────────────────────────────────────────── */
+footer { background: #111512; padding: 80px 8vw 48px; }
+.footer-top {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 56px; padding-bottom: 60px;
+  border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 40px;
+}
+.footer-brand .brand-name {
+  font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 300;
+  letter-spacing: 0.2em; color: var(--ivory); text-transform: uppercase; margin-bottom: 4px;
+}
+.footer-brand .brand-tagline {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 13px; color: var(--stone); letter-spacing: 0.05em; margin-bottom: 22px;
+}
+.footer-brand p {
+  font-family: 'Inter', Arial, sans-serif; font-size: 13px; font-weight: 300;
+  color: rgba(245,240,232,0.42); line-height: 1.8; max-width: 280px; margin-bottom: 26px;
+}
+.social-links { display: flex; gap: 14px; }
+.social-link {
+  width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(245,240,232,0.45);
+  transition: border-color 0.3s, color 0.3s, background 0.3s;
+}
+.social-link:hover { border-color: var(--gold); color: var(--gold); background: rgba(184,151,42,0.07); }
+.social-link svg { width: 15px; height: 15px; fill: currentColor; }
+.footer-col h5 {
+  font-family: 'Inter', Arial, sans-serif; font-size: 10px; font-weight: 500;
+  letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 22px;
+}
+.footer-col ul { list-style: none; }
+.footer-col ul li a {
+  display: block; font-family: 'Inter', Arial, sans-serif; font-size: 13px; font-weight: 300;
+  color: rgba(245,240,232,0.4); padding: 5px 0;
+  transition: color 0.25s, padding-left 0.25s;
+}
+.footer-col ul li a:hover { color: var(--ivory); padding-left: 6px; }
+.footer-contact p {
+  font-family: 'Inter', Arial, sans-serif; font-size: 13px; font-weight: 300;
+  color: rgba(245,240,232,0.42); line-height: 1.85; margin-bottom: 6px;
+}
+.footer-contact a { color: var(--stone); transition: color 0.25s; }
+.footer-contact a:hover { color: var(--gold); }
+.footer-bottom {
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+}
+.footer-bottom p {
+  font-family: 'Inter', Arial, sans-serif; font-size: 11px; font-weight: 300;
+  color: rgba(245,240,232,0.22); letter-spacing: 0.05em;
+}
+.footer-bottom-links { display: flex; gap: 24px; flex-wrap: wrap; }
+.footer-bottom-links a {
+  font-family: 'Inter', Arial, sans-serif; font-size: 11px; font-weight: 300;
+  color: rgba(245,240,232,0.22); transition: color 0.3s; letter-spacing: 0.05em; cursor: pointer;
+}
+.footer-bottom-links a:hover { color: var(--gold); }
+
+/* ── WHATSAPP FLOAT ───────────────────────────────────────── */
+.wa-float {
+  position: fixed; bottom: 32px; right: 32px; z-index: 900;
+  width: 54px; height: 54px; background: #25D366; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.32);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.48); }
+.wa-float svg { width: 26px; height: 26px; fill: white; }
+
+/* ── FADE-IN ANIMATIONS ───────────────────────────────────── */
+.reveal {
+  opacity: 0; transform: translateY(32px);
+  transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ── COOKIE CONSENT BANNER ────────────────────────────────── */
+#cookie-banner {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 10000;
+  background: rgba(26,31,28,0.98); backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(184,151,42,0.25);
+  padding: 32px 48px;
+  transform: translateY(100%); opacity: 0;
+  transition: transform 0.6s cubic-bezier(0.22,1,0.36,1), opacity 0.6s ease;
+}
+#cookie-banner.show { transform: translateY(0); opacity: 1; }
+.cookie-inner {
+  max-width: 1400px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap;
+}
+.cookie-text h3 {
+  font-family: 'Playfair Display', serif; font-weight: 400; font-size: 18px;
+  color: var(--ivory); margin-bottom: 8px;
+}
+.cookie-text p {
+  font-family: 'Inter', Arial, sans-serif; font-size: 13px; font-weight: 300;
+  color: rgba(245,240,232,0.62); line-height: 1.7; max-width: 640px;
+}
+.cookie-text a { color: var(--stone); text-decoration: underline; transition: color 0.25s; cursor: pointer; }
+.cookie-text a:hover { color: var(--gold); }
+.cookie-actions { display: flex; gap: 12px; flex-shrink: 0; flex-wrap: wrap; }
+.cookie-btn {
+  font-family: 'Inter', Arial, sans-serif; font-size: 11px; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; border: none;
+  padding: 13px 24px; transition: background 0.3s, color 0.3s;
+}
+.cookie-btn-accept { background: var(--gold); color: var(--midnight); }
+.cookie-btn-accept:hover { background: var(--gold-light); }
+.cookie-btn-essential { background: transparent; color: var(--ivory); border: 1px solid rgba(245,240,232,0.3); }
+.cookie-btn-essential:hover { border-color: var(--ivory); }
+.cookie-btn-manage { background: transparent; color: rgba(245,240,232,0.55); border: 1px solid rgba(245,240,232,0.12); }
+.cookie-btn-manage:hover { color: var(--ivory); border-color: rgba(245,240,232,0.3); }
+
+/* Cookie Preferences Modal */
+#cookie-prefs {
+  position: fixed; inset: 0; z-index: 10001;
+  background: rgba(26,31,28,0.88); backdrop-filter: blur(10px);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none; transition: opacity 0.4s;
+}
+#cookie-prefs.show { opacity: 1; pointer-events: auto; }
+.prefs-modal {
+  background: var(--midnight); border: 1px solid rgba(184,151,42,0.2);
+  max-width: 560px; width: 90%; padding: 48px; max-height: 90vh; overflow-y: auto;
+}
+.prefs-modal h3 {
+  font-family: 'Playfair Display', serif; font-weight: 400; font-size: 24px;
+  color: var(--ivory); margin-bottom: 12px;
+}
+.prefs-modal > p {
+  font-family: 'Inter', Arial, sans-serif; font-size: 13px; font-weight: 300;
+  color: rgba(245,240,232,0.6); line-height: 1.7; margin-bottom: 32px;
+}
+.pref-item {
+  border-top: 1px solid rgba(255,255,255,0.07); padding: 20px 0;
+}
+.pref-header {
+  display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;
+}
+.pref-header h4 {
+  font-family: 'Inter', Arial, sans-serif; font-size: 13px; font-weight: 500;
+  color: var(--ivory); letter-spacing: 0.05em;
+}
+.pref-label {
+  font-family: 'Inter', Arial, sans-serif; font-size: 10px; font-weight: 500;
+  letter-spacing: 0.15em; text-transform: uppercase; padding: 4px 10px;
+}
+.pref-label.required { color: var(--stone); background: rgba(196,168,130,0.12); }
+.toggle {
+  position: relative; width: 40px; height: 22px; flex-shrink: 0;
+}
+.toggle input { opacity: 0; width: 0; height: 0; }
+.toggle-slider {
+  position: absolute; inset: 0; background: rgba(255,255,255,0.15); cursor: pointer;
+  border-radius: 22px; transition: background 0.3s;
+}
+.toggle-slider::before {
+  content: ''; position: absolute; width: 16px; height: 16px;
+  left: 3px; top: 3px; background: white; border-radius: 50%; transition: transform 0.3s;
+}
+.toggle input:checked + .toggle-slider { background: var(--gold); }
+.toggle input:checked + .toggle-slider::before { transform: translateX(18px); }
+.pref-item p {
+  font-family: 'Inter', Arial, sans-serif; font-size: 12px; font-weight: 300;
+  color: rgba(245,240,232,0.5); line-height: 1.65;
+}
+.prefs-save {
+  margin-top: 32px; display: flex; gap: 12px; justify-content: flex-end;
+}
+
+/* Legal Modal */
+#legal-modal {
+  position: fixed; inset: 0; z-index: 10002;
+  background: rgba(26,31,28,0.9); backdrop-filter: blur(10px);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none; transition: opacity 0.4s;
+}
+#legal-modal.show { opacity: 1; pointer-events: auto; }
+.legal-box {
+  background: var(--ivory); max-width: 700px; width: 92%;
+  max-height: 88vh; overflow-y: auto; padding: 56px 52px;
+  position: relative;
+}
+.legal-close {
+  position: absolute; top: 24px; right: 28px; font-size: 22px;
+  background: none; border: none; cursor: pointer; color: var(--slate); transition: color 0.25s;
+}
+.legal-close:hover { color: var(--midnight); }
+.legal-box h2 {
+  font-family: 'Playfair Display', serif; font-weight: 400; font-size: 32px;
+  color: var(--midnight); margin-bottom: 8px;
+}
+.legal-box .legal-date {
+  font-family: 'Inter', Arial, sans-serif; font-size: 11px; font-weight: 400;
+  color: var(--slate); letter-spacing: 0.1em; margin-bottom: 36px;
+}
+.legal-box h3 {
+  font-family: 'Playfair Display', serif; font-weight: 500; font-size: 18px;
+  color: var(--midnight); margin: 28px 0 10px;
+}
+.legal-box p, .legal-box li {
+  font-family: 'Inter', Arial, sans-serif; font-size: 14px; font-weight: 300;
+  color: var(--charcoal); line-height: 1.85; margin-bottom: 12px;
+}
+.legal-box ul { padding-left: 20px; }
+.legal-box hr { border: none; border-top: 1px solid var(--mist); margin: 28px 0; }
+</style>
+</head>
+<body>
+
+<!-- Custom Cursor -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- ── NAVIGATION ── -->
+<nav id="navbar">
+  <a href="/" class="nav-logo">
+    <img src="images/EV-logo.png" alt="Exemplary Voyages">
+  </a>
+  <ul class="nav-links">
+    <li class="has-mega">
+      <a href="/sri-lanka">Sri Lanka ↓</a>
+      <div class="mega-menu">
+        <div class="mega-col">
+          <p class="mega-col-title">Experiences</p>
+          <ul>
+            <li><a href="/sri-lanka/wildlife">Wildlife &amp; Glamping</a></li>
+            <li><a href="/sri-lanka/honeymoon">Honeymoon</a></li>
+            <li><a href="/sri-lanka/photography">Photography Tours</a></li>
+            <li><a href="/sri-lanka/adventure">Adventure</a></li>
+            <li><a href="/sri-lanka/family">Family Getaways</a></li>
+            <li><a href="/sri-lanka/heritage">Colonial Heritage</a></li>
+            <li><a href="/sri-lanka/wellness">Wellness</a></li>
+          </ul>
+        </div>
+        <div class="mega-col">
+          <p class="mega-col-title">Signature Journeys</p>
+          <ul>
+            <li><a href="#">Ancient Kingdom Trail</a></li>
+            <li><a href="#">Highland Tea Route</a></li>
+            <li><a href="#">The Southern Coast</a></li>
+            <li><a href="#">Wilderness Immersion</a></li>
+            <li><a href="#">Cultural Compass</a></li>
+            <li><a href="#">Wedding in Ceylon</a></li>
+          </ul>
+        </div>
+        <div class="mega-col mega-featured">
+          <img src="https://images.unsplash.com/photo-1588416936097-41850ab3d86d?w=400&q=80" alt="Sri Lanka">
+          <div class="mega-featured-overlay">
+            <p>Leopards at dusk. Ancient temples at dawn. Sri Lanka offers its finest to those who arrive unhurried.</p>
+            <a href="/sri-lanka">Discover Sri Lanka &#8594;</a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="has-mega">
+      <a href="/maldives">Maldives ↓</a>
+      <div class="mega-menu">
+        <div class="mega-col">
+          <p class="mega-col-title">By Experience</p>
+          <ul>
+            <li><a href="#">Overwater Villas</a></li>
+            <li><a href="#">Private Reserves</a></li>
+            <li><a href="#">Wellness</a></li>
+            <li><a href="#">Honeymoon</a></li>
+            <li><a href="#">Family</a></li>
+          </ul>
+        </div>
+        <div class="mega-col">
+          <p class="mega-col-title">Featured Resorts</p>
+          <ul>
+            <li><a href="#">Soneva Jani</a></li>
+            <li><a href="#">Waldorf Astoria</a></li>
+            <li><a href="#">Lux South Ari Atoll</a></li>
+            <li><a href="#">Cora Cora Maldives</a></li>
+            <li><a href="#">Six Senses Kanuhura</a></li>
+            <li><a href="#">Fari Islands</a></li>
+          </ul>
+        </div>
+        <div class="mega-col mega-featured">
+          <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=400&q=80" alt="Maldives">
+          <div class="mega-featured-overlay">
+            <p>The world quiets to a turquoise hum. Welcome to the Maldives, curated entirely for you.</p>
+            <a href="/maldives">Explore Maldives &#8594;</a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li><a href="/experiences">Experiences</a></li>
+    <li><a href="/journal">Journal</a></li>
+    <li><a href="/sustainability">Sustainability</a></li>
+    <li><a href="/about">About</a></li>
+  </ul>
+  <a href="mailto:inquiries@exemplaryvoyages.com" class="nav-cta">Begin Planning</a>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <!-- VIDEO SLIDER — replace src="..." with your three MP4 file paths -->
+  <div class="hero-video-slider">
+    <div class="hero-video-track" id="videoTrack">
+
+      <!-- CLIP 1: Sri Lanka landscape / wildlife -->
+      <div class="hero-video-slide">
+        <video id="vid0" muted playsinline preload="auto"
+          poster="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=1920&q=85"
+          src="images/1.mp4">
+        </video>
+      </div>
+
+      <!-- CLIP 2: Maldives / ocean -->
+      <div class="hero-video-slide">
+        <video id="vid1" muted playsinline preload="none"
+          poster="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1920&q=85"
+          src="images/2.mp4">
+        </video>
+      </div>
+
+      <!-- CLIP 3: Culture / people / detail -->
+      <div class="hero-video-slide">
+        <video id="vid2" muted playsinline preload="none"
+          poster="https://images.unsplash.com/photo-1625036573764-43b12a6e5ab4?w=1920&q=85"
+          src="images/3.mp4">
+        </video>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Gold progress bars (one per clip) -->
+  <div class="hero-progress" id="heroProgress">
+    <div class="prog-bar" id="pb0" onclick="jumpToSlide(0)"><div class="prog-fill" id="pf0"></div></div>
+    <div class="prog-bar" id="pb1" onclick="jumpToSlide(1)"><div class="prog-fill" id="pf1"></div></div>
+    <div class="prog-bar" id="pb2" onclick="jumpToSlide(2)"><div class="prog-fill" id="pf2"></div></div>
+  </div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h1 class="hero-h1">
+      Two islands.<br><em>Infinite worlds.</em>
+    </h1>
+    <p class="hero-tagline">Extraordinary journeys through Sri Lanka and the Maldives, designed for those who travel with intention.</p>
+    <div class="hero-actions">
+      <a href="mailto:inquiries@exemplaryvoyages.com" class="btn-primary">Begin Planning</a>
+      <a href="#destinations" class="btn-ghost">Explore Destinations <span class="arrow">&#8594;</span></a>
+    </div>
+  </div>
+
+  <div class="hero-counter">
+    <span>10</span>
+    <small>Years curating<br>rare journeys</small>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ── NUMBERS STRIP ── -->
+<div class="numbers-strip">
+  <div class="number-item reveal">
+    <span class="num">10+</span>
+    <span class="label">Years of Expertise</span>
+  </div>
+  <div class="number-item reveal reveal-delay-1">
+    <span class="num">3,000+</span>
+    <span class="label">Journeys Crafted</span>
+  </div>
+  <div class="number-item reveal reveal-delay-2">
+    <span class="num">42</span>
+    <span class="label">Curated Resorts</span>
+  </div>
+  <div class="number-item reveal reveal-delay-3">
+    <span class="num">98%</span>
+    <span class="label">Return Travellers</span>
+  </div>
+</div>
+
+<!-- ── INTRO ── -->
+<section class="intro" id="about-intro">
+  <span class="intro-section-num">01</span>
+  <div class="intro-left">
+    <div class="section-tag">Our Philosophy</div>
+    <h2>We do not move<br>you from place<br>to place. We <em>move you.</em></h2>
+    <a href="/about" class="intro-link">Read Our Story <span class="arrow">&#8594;</span></a>
+  </div>
+  <div class="intro-right reveal">
+    <p>Exemplary Voyages was founded in 2016 on a single conviction: that Sri Lanka deserves to be experienced with the depth it commands. Not checked off a list, but understood — its light, its rhythm, its silence.</p>
+    <div class="pull-quote">
+      <p>Sri Lanka rewards the unhurried eye. In the quiet before a leopard emerges from the scrub at Yala, in the amber light falling across the Dambulla frescoes at dusk, this is where the island reveals itself.</p>
+    </div>
+    <p>Every journey we design is an act of authorship. We curate fewer options, chosen with exacting care. Every hotel, every guide, every hour earns its place in your story.</p>
+  </div>
+</section>
+
+<!-- ── SRI LANKA ── -->
+<section class="destination-sl" id="destinations">
+  <div class="destination-header">
+    <h2>Sri Lanka,<br><em>Unscripted</em></h2>
+    <div>
+      <p>Seven distinct worlds within a single island. Wildlife. Culture. Highland tea. Coral coastlines. Sri Lanka offers its most extraordinary self to those who arrive without a checklist.</p>
+      <a href="/sri-lanka" class="header-cta">Discover Sri Lanka <span class="arrow">&#8594;</span></a>
+    </div>
+  </div>
+
+  <div class="exp-bento">
+    <div class="exp-card reveal">
+      <img src="images/Wildlife%20%26%20Glamping.jpg" alt="Wildlife">
+      <div class="exp-card-arrow">&#8594;</div>
+      <div class="exp-card-content">
+        <div class="exp-num">01</div>
+        <h3>Wildlife &amp; Glamping</h3>
+        <p>Leopards, elephants and sloth bears in their primordial terrain, with camps that redefine comfort.</p>
+      </div>
+    </div>
+    <div class="exp-card reveal reveal-delay-1">
+      <img src="images/Honeymoon.jpg" alt="Honeymoon">
+      <div class="exp-card-arrow">&#8594;</div>
+      <div class="exp-card-content">
+        <div class="exp-num">02</div>
+        <h3>Honeymoon</h3>
+        <p>Private moments on sun-warmed shores and highland retreats built for two.</p>
+      </div>
+    </div>
+    <div class="exp-card reveal reveal-delay-2">
+      <img src="images/Photography%20Tours.jpg" alt="Photography">
+      <div class="exp-card-arrow">&#8594;</div>
+      <div class="exp-card-content">
+        <div class="exp-num">03</div>
+        <h3>Photography Tours</h3>
+        <p>Golden hour through ancient temples and forgotten coastlines, guided by master photographers.</p>
+      </div>
+    </div>
+    <div class="exp-card reveal">
+      <img src="images/Adventure.jpg" alt="Adventure">
+      <div class="exp-card-arrow">&#8594;</div>
+      <div class="exp-card-content">
+        <div class="exp-num">04</div>
+        <h3>Adventure</h3>
+        <p>White-water rivers, sea kayaking and ridge-top hikes through landscapes that demand your full presence.</p>
+      </div>
+    </div>
+    <div class="exp-card reveal reveal-delay-1">
+      <img src="images/Family%20Getaways.jpg" alt="Family Getaways">
+      <div class="exp-card-arrow">&#8594;</div>
+      <div class="exp-card-content">
+        <div class="exp-num">05</div>
+        <h3>Family Getaways</h3>
+        <p>Journeys that delight every generation, blending discovery with genuine comfort.</p>
+      </div>
+    </div>
+    <div class="exp-card reveal reveal-delay-2">
+      <img src="images/Colonial%20Heritage.jpg" alt="Colonial Heritage">
+      <div class="exp-card-arrow">&#8594;</div>
+      <div class="exp-card-content">
+        <div class="exp-num">06</div>
+        <h3>Colonial Heritage</h3>
+        <p>Fort cities, tea-country bungalows and the graceful remnants of a storied colonial past.</p>
+      </div>
+    </div>
+    <!-- Wellness spans full width -->
+    <div class="exp-card reveal">
+      <img src="images/Wellness.png" alt="Wellness">
+      <div class="exp-card-arrow">&#8594;</div>
+      <div class="exp-card-content">
+        <div class="exp-num">07</div>
+        <h3>Wellness</h3>
+        <p>Ayurvedic sanctuaries, silent retreats and jungle spas grounded in centuries of Sri Lankan healing traditions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FEATURED JOURNEYS — 3 equal horizontal ── -->
+<section class="journeys">
+  <div class="section-tag">Signature Journeys</div>
+  <div class="journeys-grid">
+    <a href="#" class="journey-card reveal">
+      <div class="journey-img-wrap">
+        <img src="images/The%20Ancient%20Kingdom%20Trail.jpg" alt="Ancient Kingdom Trail">
+      </div>
+      <div class="journey-card-body">
+        <div class="journey-region">Sri Lanka · 12 Days</div>
+        <h3>Ancient Kingdom Trail</h3>
+        <p>From Sigiriya's lion rock to the moon-washed temples of Polonnaruwa, a journey into the island's regal soul.</p>
+        <div class="journey-meta">
+          <span>12 days</span>
+          <span>&nbsp;·&nbsp;</span>
+          <span>Cultural immersion</span>
+        </div>
+      </div>
+    </a>
+    <a href="#" class="journey-card reveal reveal-delay-1">
+      <div class="journey-img-wrap">
+        <img src="images/The%20Highland%20Tea%20Route.jpg" alt="Highland Tea Route">
+      </div>
+      <div class="journey-card-body">
+        <div class="journey-region">Sri Lanka · 8 Days</div>
+        <h3>The Highland Tea Route</h3>
+        <p>Through emerald plantations, mist-wrapped train journeys and colonial bungalows above the clouds.</p>
+        <div class="journey-meta">
+          <span>8 days</span>
+          <span>&nbsp;·&nbsp;</span>
+          <span>Scenic rail · Culture</span>
+        </div>
+      </div>
+    </a>
+    <a href="#" class="journey-card reveal reveal-delay-2">
+      <div class="journey-img-wrap">
+        <img src="images/Atoll%20Private%20Retreat.jpg" alt="Atoll Private Retreat">
+      </div>
+      <div class="journey-card-body">
+        <div class="journey-region">Maldives · 7 Nights</div>
+        <h3>Atoll Private Retreat</h3>
+        <p>Your own stretch of Indian Ocean, curated with a private villa, house reef and nothing on the agenda but the sea.</p>
+        <div class="journey-meta">
+          <span>7 nights</span>
+          <span>&nbsp;·&nbsp;</span>
+          <span>Overwater · Romance</span>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="journeys-bottom">
+    <p class="reveal"><em>Every journey we craft begins with a conversation, not a catalogue.</em></p>
+    <a href="/sri-lanka" class="btn-primary reveal">View All Journeys</a>
+  </div>
+</section>
+
+<!-- ── MALDIVES ── -->
+<section class="destination-mv">
+  <div class="mv-bg-text">MALDIVES</div>
+  <div class="mv-header reveal">
+    <div class="section-tag">The Indian Ocean</div>
+    <h2>Maldives,<br><em>Beyond the Obvious</em></h2>
+    <p>We curate the Maldives others cannot access. Private islands, underwater sanctuaries and resorts where the ocean is not a backdrop but a way of life.</p>
+    <a href="/maldives" class="btn-primary">Explore Maldives</a>
+  </div>
+  <div class="mv-categories">
+    <div class="mv-cat reveal">
+      <img src="images/Overwater%20Villas.jpg" alt="Overwater Villas">
+      <div class="mv-cat-content">
+        <div class="mv-cat-icon">Iconic</div>
+        <h3>Overwater Villas</h3>
+        <p>Living above the lagoon, surrounded by silence and sea.</p>
+      </div>
+    </div>
+    <div class="mv-cat reveal reveal-delay-1">
+      <img src="images/Private%20Reserves.jpg" alt="Private Reserves">
+      <div class="mv-cat-content">
+        <div class="mv-cat-icon">Exclusive</div>
+        <h3>Private Reserves</h3>
+        <p>Your own atoll, entirely yours for the duration of your stay.</p>
+      </div>
+    </div>
+    <div class="mv-cat reveal reveal-delay-2">
+      <img src="images/Wellness2.jpg" alt="Wellness">
+      <div class="mv-cat-content">
+        <div class="mv-cat-icon">Restore</div>
+        <h3>Wellness</h3>
+        <p>Ocean air, silence and ancient rituals renewed at sea level.</p>
+      </div>
+    </div>
+    <div class="mv-cat reveal reveal-delay-3">
+      <img src="images/Honeymoon%20copy.jpg" alt="Honeymoon">
+      <div class="mv-cat-content">
+        <div class="mv-cat-icon">Romance</div>
+        <h3>Honeymoon</h3>
+        <p>The Indian Ocean, yours alone at sunset.</p>
+      </div>
+    </div>
+    <div class="mv-cat reveal reveal-delay-4">
+      <img src="images/Family.jpg" alt="Family">
+      <div class="mv-cat-content">
+        <div class="mv-cat-icon">Discovery</div>
+        <h3>Family</h3>
+        <p>Snorkelling, marine biology and memories shared across every generation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SUSTAINABILITY ── -->
+<section class="sustainability">
+  <div class="sus-left reveal">
+    <div class="section-tag" style="color: rgba(245,240,232,0.5);">Responsible Travel</div>
+    <h2>We believe the places<br>we love must <em>outlive our visits</em></h2>
+    <p>Sustainability is not a feature we add to our journeys. It is the foundation from which every journey begins. From the guides we choose to the properties we endorse, every decision reflects our commitment to these islands' futures.</p>
+    <a href="/sustainability">Our Commitment &#8594;</a>
+  </div>
+  <div class="sus-pillars reveal reveal-delay-2">
+    <div class="sus-pillar">
+      <div class="sus-pillar-line"></div>
+      <h4>Local First</h4>
+      <p>We partner with locally-owned properties and community guides to ensure tourism strengthens the communities it visits, not just the destinations.</p>
+    </div>
+    <div class="sus-pillar">
+      <div class="sus-pillar-line"></div>
+      <h4>Low Impact</h4>
+      <p>We design itineraries that minimise environmental impact through smaller groups, slower travel and a deeper connection with each place.</p>
+    </div>
+    <div class="sus-pillar">
+      <div class="sus-pillar-line"></div>
+      <h4>Marine Care</h4>
+      <p>We work with reef conservation projects across the Maldives to protect the underwater world we showcase to every guest who visits.</p>
+    </div>
+    <div class="sus-pillar">
+      <div class="sus-pillar-line"></div>
+      <h4>Cultural Respect</h4>
+      <p>We travel with the permission of the places we visit; honouring customs, traditions and sacred spaces as essential parts of every itinerary.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── JOURNAL CAROUSEL ── -->
+<section class="journal">
+  <div class="journal-header">
+    <div class="section-tag" style="margin-bottom:0;">The Journal</div>
+    <a href="/journal" class="intro-link" style="margin-bottom:0;">Read All Stories <span class="arrow">&#8594;</span></a>
+  </div>
+
+  <div class="journal-scroll-track" id="journalTrack">
+    <a href="#" class="journal-card">
+      <img src="images/Rare%20Windows.jpg" alt="Rare Windows">
+      <div class="journal-card-content">
+        <div class="journal-date">August 2026</div>
+        <h3>Rare Windows</h3>
+      </div>
+    </a>
+    <a href="#" class="journal-card">
+      <img src="images/A%207-Day%20Sri%20Lanka%20Journey%20Done%20Right.jpg" alt="7-Day Sri Lanka Journey">
+      <div class="journal-card-content">
+        <div class="journal-date">July 2026</div>
+        <h3>A 7-Day Sri Lanka Journey Done Right</h3>
+      </div>
+    </a>
+    <a href="#" class="journal-card">
+      <img src="images/Travel%20That%20Gives%20Back.jpg" alt="Travel That Gives Back">
+      <div class="journal-card-content">
+        <div class="journal-date">June 2026</div>
+        <h3>Travel That Gives Back</h3>
+      </div>
+    </a>
+    <a href="#" class="journal-card">
+      <img src="images/Before%20Booking%20a%20Kids%20Club.jpg" alt="Before Booking a Kids Club">
+      <div class="journal-card-content">
+        <div class="journal-date">May 2026</div>
+        <h3>Before Booking a Kids Club</h3>
+      </div>
+    </a>
+    <a href="#" class="journal-card">
+      <img src="images/Quiet%20Luxury%20Stays%20in%20Sri%20Lanka.jpg" alt="Quiet Luxury Stays">
+      <div class="journal-card-content">
+        <div class="journal-date">April 2026</div>
+        <h3>Quiet Luxury Stays in Sri Lanka</h3>
+      </div>
+    </a>
+    <a href="#" class="journal-card">
+      <img src="images/The%20Sri%20Lanka%20You%20Will%20Not%20Find%20on%20a%20Postcard.jpg" alt="Sri Lanka You Will Not Find on a Postcard">
+      <div class="journal-card-content">
+        <div class="journal-date">March 2026</div>
+        <h3>The Sri Lanka You Will Not Find on a Postcard</h3>
+      </div>
+    </a>
+  </div>
+
+  <div class="journal-nav">
+    <button class="journal-btn" id="journalPrev">&#8592;</button>
+    <button class="journal-btn" id="journalNext">&#8594;</button>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section class="testimonials">
+  <div class="testimonials-quotemark">"</div>
+  <div class="testimonial-wrap">
+    <p class="testimonial-text" id="testi-text">
+      "Nothing was ordinary. Milani had curated something entirely personal; we felt like we had discovered Sri Lanka the way its own people experience it."
+    </p>
+    <div class="testimonial-author" id="testi-author">Sarah &amp; James</div>
+    <div class="testimonial-origin" id="testi-origin">London, United Kingdom</div>
+    <div class="testi-dots">
+      <div class="testi-dot active" data-idx="0"></div>
+      <div class="testi-dot" data-idx="1"></div>
+      <div class="testi-dot" data-idx="2"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FINAL CTA ── -->
+<section class="final-cta">
+  <div class="final-cta-left reveal">
+    <h2>Your journey<br>begins with <em>a conversation</em></h2>
+    <p>We do not believe in catalogue travel. Every Exemplary Voyages itinerary begins with your story and ends with one you will tell for years to come.</p>
+  </div>
+  <div class="final-cta-right reveal reveal-delay-2">
+    <a href="mailto:inquiries@exemplaryvoyages.com" class="cta-option">
+      <div class="cta-icon">&#9993;</div>
+      <div>
+        <h4>Write to Us</h4>
+        <p>inquiries@exemplaryvoyages.com</p>
+      </div>
+    </a>
+    <a href="https://wa.me/94774445929" class="cta-option" target="_blank" rel="noopener">
+      <div class="cta-icon">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.546 21l3.93-1.032C7.9 20.64 9.897 21 12 21c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.848 0-3.569-.505-5.038-1.38l-.36-.215-3.732.98.997-3.648-.235-.374A7.96 7.96 0 014 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8z"/></svg>
+      </div>
+      <div>
+        <h4>Speak on WhatsApp</h4>
+        <p>+94 77 444 5929</p>
+      </div>
+    </a>
+    <a href="mailto:inquiries@exemplaryvoyages.com" class="cta-option">
+      <div class="cta-icon">&#9702;</div>
+      <div>
+        <h4>Begin Planning</h4>
+        <p>Share your dates, preferences and vision</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="brand-name">Exemplary Voyages</div>
+      <div class="brand-tagline">Crafted Journeys. Rare Places. Lasting Impressions.</div>
+      <p>A boutique DMC crafting singular journeys through Sri Lanka and the Maldives since 2016.</p>
+      <div class="social-links">
+        <a href="https://instagram.com/exemplary_voyages_sl" class="social-link" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://facebook.com/exemplaryvoyages" class="social-link" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://youtube.com/@ExemplaryVoyagesSriLanka" class="social-link" aria-label="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+        </a>
+        <a href="https://x.com/exemplaryvoyages" class="social-link" aria-label="X">
+          <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Sri Lanka</h5>
+      <ul>
+        <li><a href="#">Wildlife &amp; Glamping</a></li>
+        <li><a href="#">Honeymoon</a></li>
+        <li><a href="#">Photography Tours</a></li>
+        <li><a href="#">Adventure</a></li>
+        <li><a href="#">Family Getaways</a></li>
+        <li><a href="#">Colonial Heritage</a></li>
+        <li><a href="#">Wellness</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Maldives</h5>
+      <ul>
+        <li><a href="#">Overwater Villas</a></li>
+        <li><a href="#">Private Reserves</a></li>
+        <li><a href="#">Wellness</a></li>
+        <li><a href="#">Honeymoon</a></li>
+        <li><a href="#">Family</a></li>
+      </ul>
+    </div>
+    <div class="footer-col footer-contact">
+      <h5>Contact</h5>
+      <p><a href="mailto:inquiries@exemplaryvoyages.com">inquiries@exemplaryvoyages.com</a></p>
+      <p><a href="https://wa.me/94774445929">+94 77 444 5929</a></p>
+      <p style="margin-top: 16px; font-size: 12px; color: rgba(245,240,232,0.3);">No. 47, Flower Road<br>Colombo 07, Sri Lanka</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Exemplary Voyages (Pvt) Ltd. All rights reserved.</p>
+    <div class="footer-bottom-links">
+      <a onclick="openLegal('privacy')">Privacy Policy</a>
+      <a onclick="openLegal('terms')">Terms of Use</a>
+      <a onclick="openLegal('cookies')">Cookie Policy</a>
+      <a href="/sustainability">Sustainability</a>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/94774445929" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.546 21l3.93-1.032C7.9 20.64 9.897 21 12 21c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.848 0-3.569-.505-5.038-1.38l-.36-.215-3.732.98.997-3.648-.235-.374A7.96 7.96 0 014 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8z"/></svg>
+</a>
+
+<!-- ── COOKIE CONSENT BANNER ── -->
+<div id="cookie-banner">
+  <div class="cookie-inner">
+    <div class="cookie-text">
+      <h3>Your Privacy Matters</h3>
+      <p>We use cookies and similar technologies to enhance your browsing experience, understand how you interact with our site, and provide personalised journey recommendations. We do not sell your data. By clicking "Accept All", you consent to our use of all cookies. You may also choose to accept only essential cookies, or customise your preferences. For full details, see our <a onclick="openLegal('cookies')">Cookie Policy</a> and <a onclick="openLegal('privacy')">Privacy Policy</a>.</p>
+    </div>
+    <div class="cookie-actions">
+      <button class="cookie-btn cookie-btn-manage" onclick="openCookiePrefs()">Manage Preferences</button>
+      <button class="cookie-btn cookie-btn-essential" onclick="acceptCookies('essential')">Essential Only</button>
+      <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies('all')">Accept All</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── COOKIE PREFERENCES MODAL ── -->
+<div id="cookie-prefs">
+  <div class="prefs-modal">
+    <h3>Cookie Preferences</h3>
+    <p>Select which cookies you would like to allow. Your choice will be saved and can be updated at any time via our Cookie Policy link in the footer.</p>
+
+    <div class="pref-item">
+      <div class="pref-header">
+        <h4>Essential Cookies</h4>
+        <span class="pref-label required">Always Active</span>
+      </div>
+      <p>Required for the website to function correctly. These include session management, security tokens and consent records. They cannot be disabled.</p>
+    </div>
+
+    <div class="pref-item">
+      <div class="pref-header">
+        <h4>Analytics Cookies</h4>
+        <label class="toggle"><input type="checkbox" id="pref-analytics"><span class="toggle-slider"></span></label>
+      </div>
+      <p>Help us understand how visitors explore our site so we can improve the experience. Data is aggregated and anonymised (Google Analytics 4 with IP anonymisation).</p>
+    </div>
+
+    <div class="pref-item">
+      <div class="pref-header">
+        <h4>Marketing Cookies</h4>
+        <label class="toggle"><input type="checkbox" id="pref-marketing"><span class="toggle-slider"></span></label>
+      </div>
+      <p>Allow us to show relevant content and journey recommendations on partner platforms, including Meta and Google. We do not share your personal data with third-party advertisers.</p>
+    </div>
+
+    <div class="prefs-save">
+      <button class="cookie-btn cookie-btn-essential" onclick="closeCookiePrefs()">Cancel</button>
+      <button class="cookie-btn cookie-btn-accept" onclick="savePrefs()">Save My Preferences</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── LEGAL MODAL ── -->
+<div id="legal-modal">
+  <div class="legal-box">
+    <button class="legal-close" onclick="closeLegal()">&#215;</button>
+    <div id="legal-content"></div>
+  </div>
+</div>
+
+<script>
+/* ══════════════════════════════════════════════════════════
+   VIDEO SLIDER — 3 clips, slide-left on end, gold progress
+   ══════════════════════════════════════════════════════════ */
+(function() {
+  const FALLBACK_MS = 8000;          // duration per clip when no video file is present
+  const vids  = [0,1,2].map(i => document.getElementById('vid' + i));
+  const fills = [0,1,2].map(i => document.getElementById('pf' + i));
+  const track = document.getElementById('videoTrack');
+  let current = 0;
+  let rafId = null;
+  let fallbackTimer = null;
+
+  /* ── Move track to a slide position ── */
+  function slideTo(idx, instant) {
+    if (instant) {
+      track.classList.add('instant');
+      track.style.transform = 'translateX(-' + (idx * 33.333) + '%)';
+      requestAnimationFrame(() => requestAnimationFrame(() => track.classList.remove('instant')));
+    } else {
+      track.style.transform = 'translateX(-' + (idx * 33.333) + '%)';
+    }
+  }
+
+  /* ── Reset all progress fills ── */
+  function resetFills(upToIdx) {
+    fills.forEach((f, i) => {
+      cancelAnimationFrame(rafId);
+      f.style.transition = 'none';
+      f.style.width = i < upToIdx ? '100%' : '0%';
+    });
+  }
+
+  /* ── Animate the active progress bar via rAF ── */
+  function animateFill(idx, durationMs) {
+    const fill = fills[idx];
+    const start = performance.now();
+    fill.style.transition = 'none';
+    fill.style.width = '0%';
+
+    function step(now) {
+      const pct = Math.min((now - start) / durationMs * 100, 100);
+      fill.style.width = pct + '%';
+      if (pct < 100) rafId = requestAnimationFrame(step);
+    }
+    rafId = requestAnimationFrame(step);
+  }
+
+  /* ── Play clip at index ── */
+  function playSlide(idx, instant) {
+    clearTimeout(fallbackTimer);
+    cancelAnimationFrame(rafId);
+
+    // Pause others, reset their fills to done/empty
+    vids.forEach((v, i) => { if (i !== idx) v.pause(); });
+    resetFills(idx);
+
+    current = idx;
+    slideTo(idx, instant);
+
+    const vid = vids[idx];
+    vid.currentTime = 0;
+
+    const tryPlay = vid.play();
+
+    if (tryPlay !== undefined) {
+      tryPlay.then(() => {
+        // Real video playing — sync progress bar to video duration
+        vid.addEventListener('timeupdate', onTimeUpdate);
+      }).catch(() => {
+        // No video file — use fallback timer + animated bar
+        useFallback(idx);
+      });
+    }
+
+    // Safety: if video stalls for 400ms, fall back
+    fallbackTimer = setTimeout(() => {
+      if (vid.paused) useFallback(idx);
+    }, 400);
+  }
+
+  function onTimeUpdate() {
+    const vid = vids[current];
+    if (vid.duration) {
+      fills[current].style.transition = 'none';
+      fills[current].style.width = (vid.currentTime / vid.duration * 100) + '%';
+    }
+  }
+
+  function useFallback(idx) {
+    vids[idx].removeEventListener('timeupdate', onTimeUpdate);
+    animateFill(idx, FALLBACK_MS);
+    fallbackTimer = setTimeout(advance, FALLBACK_MS);
+  }
+
+  /* ── Advance to next clip ── */
+  function advance() {
+    vids[current].removeEventListener('timeupdate', onTimeUpdate);
+    fills[current].style.width = '100%';
+
+    const next = (current + 1) % vids.length;
+
+    if (next === 0) {
+      // Last clip finished: instant-reset track to position 0 so the loop is seamless
+      playSlide(0, true);
+    } else {
+      playSlide(next, false);
+    }
+  }
+
+  /* ── Bind 'ended' on each video ── */
+  vids.forEach((vid, i) => {
+    vid.addEventListener('ended', () => { if (i === current) advance(); });
+  });
+
+  /* ── Public jump for progress bar clicks ── */
+  window.jumpToSlide = function(idx) { playSlide(idx, false); };
+
+  /* ── Kick off ── */
+  playSlide(0, false);
+})();
+
+/* ── CURSOR ── */
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursor-ring');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+(function tick() {
+  rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
+  cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
+  ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+  requestAnimationFrame(tick);
+})();
+
+/* ── NAVBAR ── */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60));
+
+/* ── SCROLL REVEAL ── */
+const reveals = document.querySelectorAll('.reveal');
+new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 }).observe
+reveals.forEach(el => new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 }).observe(el));
+
+/* ── JOURNAL CAROUSEL ── */
+const track = document.getElementById('journalTrack');
+const cardWidth = 383; // 380 + 3 gap
+let journalPos = 0;
+const maxPos = () => (track.children.length - 3) * cardWidth;
+
+document.getElementById('journalNext').addEventListener('click', () => {
+  journalPos = Math.min(journalPos + cardWidth, maxPos());
+  track.style.transform = 'translateX(-' + journalPos + 'px)';
+});
+document.getElementById('journalPrev').addEventListener('click', () => {
+  journalPos = Math.max(journalPos - cardWidth, 0);
+  track.style.transform = 'translateX(-' + journalPos + 'px)';
+});
+
+// Auto-scroll journal
+let journalAuto = setInterval(() => {
+  journalPos = journalPos >= maxPos() ? 0 : journalPos + cardWidth;
+  track.style.transform = 'translateX(-' + journalPos + 'px)';
+}, 4500);
+track.addEventListener('mouseenter', () => clearInterval(journalAuto));
+track.addEventListener('mouseleave', () => {
+  journalAuto = setInterval(() => {
+    journalPos = journalPos >= maxPos() ? 0 : journalPos + cardWidth;
+    track.style.transform = 'translateX(-' + journalPos + 'px)';
+  }, 4500);
+});
+
+/* ── TESTIMONIALS ── */
+const testimonials = [
+  {
+    text: '"Nothing was ordinary. Milani had curated something entirely personal; we felt like we had discovered Sri Lanka the way its own people experience it."',
+    author: 'Sarah & James', origin: 'London, United Kingdom'
+  },
+  {
+    text: '"From the moment we landed, every detail had been considered. The guides, the hotels, the silences. Exemplary Voyages does not just plan trips; they compose them."',
+    author: 'Natalie & Marcus', origin: 'Sydney, Australia'
+  },
+  {
+    text: '"I have travelled with many agencies. Exemplary Voyages is the only one that understood what I actually wanted before I could articulate it myself."',
+    author: 'Hiroshi T.', origin: 'Tokyo, Japan'
+  }
+];
+let currentTesti = 0;
+const testiText = document.getElementById('testi-text');
+const testiAuthor = document.getElementById('testi-author');
+const testiOrigin = document.getElementById('testi-origin');
+const dots = document.querySelectorAll('.testi-dot');
+
+function setTestimonial(idx) {
+  testiText.style.opacity = '0';
+  setTimeout(() => {
+    testiText.textContent = testimonials[idx].text;
+    testiAuthor.textContent = testimonials[idx].author;
+    testiOrigin.textContent = testimonials[idx].origin;
+    testiText.style.opacity = '1';
+  }, 300);
+  dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+  currentTesti = idx;
+}
+dots.forEach(d => d.addEventListener('click', () => setTestimonial(+d.dataset.idx)));
+setInterval(() => setTestimonial((currentTesti + 1) % testimonials.length), 6000);
+
+/* ── COOKIE CONSENT ── */
+function getCookieConsent() {
+  try { return localStorage.getItem('ev_cookie_consent'); } catch(e) { return null; }
+}
+function setCookieConsent(val) {
+  try { localStorage.setItem('ev_cookie_consent', val); } catch(e) {}
+}
+const banner = document.getElementById('cookie-banner');
+if (!getCookieConsent()) {
+  setTimeout(() => banner.classList.add('show'), 1800);
+}
+function acceptCookies(type) {
+  setCookieConsent(type);
+  banner.classList.remove('show');
+  document.getElementById('cookie-prefs').classList.remove('show');
+}
+function openCookiePrefs() {
+  document.getElementById('cookie-prefs').classList.add('show');
+}
+function closeCookiePrefs() {
+  document.getElementById('cookie-prefs').classList.remove('show');
+}
+function savePrefs() {
+  const analytics = document.getElementById('pref-analytics').checked;
+  const marketing = document.getElementById('pref-marketing').checked;
+  setCookieConsent(JSON.stringify({ essential: true, analytics, marketing }));
+  document.getElementById('cookie-prefs').classList.remove('show');
+  banner.classList.remove('show');
+}
+
+/* ── LEGAL MODALS ── */
+const legalContent = {
+  privacy: `
+    <h2>Privacy Policy</h2>
+    <p class="legal-date">Effective date: 1 August 2026 &nbsp;|&nbsp; Exemplary Voyages (Pvt) Ltd</p>
+    <p>Exemplary Voyages ("we", "us", "our") is committed to protecting and respecting your privacy in accordance with the EU General Data Protection Regulation (GDPR) and applicable Sri Lankan data protection law. This policy explains how we collect, use, store and protect your personal data when you visit our website or enquire about our services.</p>
+    <h3>1. Who We Are</h3>
+    <p>Data Controller: Exemplary Voyages (Pvt) Ltd, No. 47 Flower Road, Colombo 07, Sri Lanka. Contact: inquiries@exemplaryvoyages.com</p>
+    <h3>2. What Data We Collect</h3>
+    <p>We may collect the following categories of personal data:</p>
+    <ul>
+      <li>Contact information: name, email address, telephone number and country of residence provided through our enquiry or planning forms.</li>
+      <li>Travel preferences: destination interests, travel dates, group size, dietary requirements and special requests you share with us.</li>
+      <li>Correspondence: emails, WhatsApp messages and other communications with our team.</li>
+      <li>Website usage data: pages visited, time on site and device/browser information collected via cookies (subject to your consent).</li>
+    </ul>
+    <h3>3. Legal Basis for Processing</h3>
+    <p>We process your data on the following legal bases: (a) your consent, given freely and withdrawable at any time; (b) the performance of a contract or pre-contractual steps at your request; (c) our legitimate interests in operating a travel consultancy business; and (d) compliance with legal obligations.</p>
+    <h3>4. How We Use Your Data</h3>
+    <p>Your data is used to: respond to enquiries; design and confirm travel itineraries; send relevant updates about your journey; improve our website and services; and comply with legal and regulatory requirements. We do not use your data for unsolicited direct marketing without your explicit consent.</p>
+    <h3>5. Data Sharing</h3>
+    <p>We share your data only with: hotels, airlines, ground operators and service providers necessary to fulfil your journey; regulatory or government authorities as required by law; and our technology partners (e.g. Google Analytics) under strict data processing agreements. We do not sell your personal data to any third party.</p>
+    <h3>6. International Transfers</h3>
+    <p>As a Sri Lanka-based business serving European clients, some data transfers occur between the EU and Sri Lanka. Where required by GDPR, we rely on Standard Contractual Clauses or equivalent safeguards for such transfers.</p>
+    <h3>7. Data Retention</h3>
+    <p>We retain your personal data for as long as necessary to fulfil the purposes for which it was collected: enquiry data is retained for 12 months; booking and financial records are retained for 7 years to meet statutory requirements; marketing consent records are retained until consent is withdrawn.</p>
+    <h3>8. Your Rights (GDPR)</h3>
+    <p>If you are based in the European Economic Area, you have the right to: access your personal data; correct inaccurate data; request erasure ("right to be forgotten"); restrict or object to processing; data portability; and withdraw consent at any time. To exercise any of these rights, contact us at inquiries@exemplaryvoyages.com. You also have the right to lodge a complaint with your national data protection authority.</p>
+    <h3>9. Security</h3>
+    <p>We implement appropriate technical and organisational measures to protect your personal data against unauthorised access, alteration, disclosure or destruction. Our website uses HTTPS encryption for all data in transit.</p>
+    <h3>10. Changes to This Policy</h3>
+    <p>We may update this policy from time to time. Material changes will be communicated via our website or by email. Continued use of our services after an update constitutes acceptance of the revised policy.</p>
+    <hr>
+    <p>Questions? Contact our privacy team at inquiries@exemplaryvoyages.com.</p>
+  `,
+  terms: `
+    <h2>Terms of Use</h2>
+    <p class="legal-date">Effective date: 1 August 2026 &nbsp;|&nbsp; Exemplary Voyages (Pvt) Ltd</p>
+    <p>By accessing and using the Exemplary Voyages website (exemplaryvoyages.com), you agree to be bound by these Terms of Use. Please read them carefully before using our site.</p>
+    <h3>1. About Us</h3>
+    <p>Exemplary Voyages (Pvt) Ltd is a licensed Destination Management Company (DMC) registered in Sri Lanka, providing bespoke travel planning services for Sri Lanka and the Maldives.</p>
+    <h3>2. Use of This Website</h3>
+    <p>You may use this website for lawful purposes only. You must not use it in any way that breaches applicable local, national or international laws; transmit unsolicited commercial communications; attempt to gain unauthorised access to our systems; or reproduce, redistribute or commercially exploit our content without written permission.</p>
+    <h3>3. Enquiries and Bookings</h3>
+    <p>Submitting an enquiry through this website does not constitute a confirmed booking. All journey proposals are subject to availability and are confirmed only upon receipt of a signed itinerary agreement and deposit payment. Prices quoted are in USD unless stated otherwise and are subject to change until confirmed in writing.</p>
+    <h3>4. Intellectual Property</h3>
+    <p>All content on this website, including text, photography, design, logos and itinerary copy, is the intellectual property of Exemplary Voyages or its licensed contributors. No content may be reproduced, adapted or distributed without our express written consent.</p>
+    <h3>5. Accuracy of Information</h3>
+    <p>We endeavour to keep all information on this website accurate and up to date. However, we do not warrant that all content is error-free or reflects current availability and pricing. Journey information, resort details and visa requirements are subject to change; always confirm current information with our team before booking.</p>
+    <h3>6. Third-Party Links</h3>
+    <p>Our website may link to third-party sites (hotel websites, airline portals). We are not responsible for the content or privacy practices of those sites and encourage you to read their policies independently.</p>
+    <h3>7. Limitation of Liability</h3>
+    <p>To the fullest extent permitted by law, Exemplary Voyages shall not be liable for any indirect, incidental or consequential loss arising from use of this website, including loss of data, revenue or business opportunity. Our total liability for any direct loss shall not exceed the amount paid by you for the specific service giving rise to the claim.</p>
+    <h3>8. Cancellation and Refund</h3>
+    <p>Cancellation and refund terms are set out in your individual booking agreement and vary by service, property and season. Please refer to your confirmed itinerary documentation for full cancellation schedules. We strongly recommend European travellers obtain comprehensive travel insurance including cancellation cover before confirming a booking.</p>
+    <h3>9. Governing Law</h3>
+    <p>These Terms are governed by the laws of Sri Lanka. Any disputes arising from your use of this website or our services shall be subject to the non-exclusive jurisdiction of the courts of Sri Lanka, without prejudice to any statutory rights you may hold in your country of residence as a consumer.</p>
+    <h3>10. Consumer Rights (EU)</h3>
+    <p>If you are a consumer resident in the European Union, you retain all statutory rights afforded to you under EU consumer protection law, including the EU Package Travel Directive (2015/2302), which may apply to bookings that constitute a package holiday. These Terms do not limit or waive any rights you have under applicable EU consumer law.</p>
+    <h3>11. Amendments</h3>
+    <p>We reserve the right to amend these Terms at any time. Continued use of this website after any amendment constitutes acceptance of the updated Terms.</p>
+    <hr>
+    <p>For any questions regarding these Terms, contact us at inquiries@exemplaryvoyages.com.</p>
+  `,
+  cookies: `
+    <h2>Cookie Policy</h2>
+    <p class="legal-date">Effective date: 1 August 2026 &nbsp;|&nbsp; Exemplary Voyages (Pvt) Ltd</p>
+    <p>This Cookie Policy explains what cookies are, how Exemplary Voyages uses them, and how you can control your cookie preferences. It should be read alongside our Privacy Policy.</p>
+    <h3>1. What Are Cookies?</h3>
+    <p>Cookies are small text files placed on your device when you visit a website. They are widely used to make websites work, improve performance, and provide information to website owners.</p>
+    <h3>2. Cookies We Use</h3>
+    <p><strong>Essential Cookies</strong> are always active. They enable core website functions such as page navigation, security and your cookie consent preference. Without these, the website cannot function properly.</p>
+    <p><strong>Analytics Cookies</strong> (with your consent) help us understand how visitors use our website. We use Google Analytics 4 with IP anonymisation enabled. Data is aggregated and does not identify you personally. This helps us improve content and the user experience.</p>
+    <p><strong>Marketing Cookies</strong> (with your consent) allow us to show relevant content on partner platforms such as Meta (Instagram, Facebook) and Google. These cookies track visits across websites to deliver personalised advertising based on your interests. We do not share identifiable personal data with advertisers.</p>
+    <h3>3. Managing Your Preferences</h3>
+    <p>When you first visit our website, a consent banner allows you to accept all cookies, accept essential cookies only, or customise your preferences. You can update your choices at any time by clicking "Cookie Policy" in the footer.</p>
+    <p>You may also control cookies directly through your browser settings. Note that disabling certain cookies may affect website functionality. For more information, visit <strong>www.aboutcookies.org</strong> or your browser's help documentation.</p>
+    <h3>4. Your Rights</h3>
+    <p>Under GDPR, you have the right to withdraw your cookie consent at any time without affecting the lawfulness of processing based on consent before withdrawal. To do so, click "Cookie Policy" in the footer and update your preferences.</p>
+    <h3>5. Contact</h3>
+    <p>For questions about our use of cookies, contact us at inquiries@exemplaryvoyages.com.</p>
+  `
+};
+
+function openLegal(type) {
+  const modal = document.getElementById('legal-modal');
+  document.getElementById('legal-content').innerHTML = legalContent[type] || '';
+  modal.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+function closeLegal() {
+  document.getElementById('legal-modal').classList.remove('show');
+  document.body.style.overflow = '';
+}
+document.getElementById('legal-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeLegal();
+});
+document.getElementById('cookie-prefs').addEventListener('click', function(e) {
+  if (e.target === this) closeCookiePrefs();
+});
+</script>
+</body>
+</html>
