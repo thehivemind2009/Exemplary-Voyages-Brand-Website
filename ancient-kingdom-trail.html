@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ancient Kingdom Trail — Exemplary Voyages</title>
+<meta name="description" content="10 days through Sri Lanka's Cultural Triangle. Ancient capitals, UNESCO rock fortresses, temple processions and wild elephant gatherings.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --midnight:#141916;--ivory:#F5F0E8;--gold:#B8972A;--tea:#8B9E5A;
+  --stone:#7A6E62;--slate:#4A5148;--mist:#E8E3DA;--warm:#2A2F27;
+}
+html{scroll-behavior:smooth}
+body{background:var(--midnight);color:var(--ivory);font-family:'Inter',Arial,sans-serif;overflow-x:hidden}
+
+/* ── NAV ── */
+nav#navbar{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 6vw;height:72px;
+  background:rgba(20,25,22,0.96);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(245,240,232,0.06);
+}
+.nav-logo img{height:38px;width:auto;display:block}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{
+  font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:400;
+  letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;
+  color:rgba(245,240,232,0.65);transition:color 0.25s ease;
+}
+.nav-links a:hover,.nav-links a.active{color:var(--ivory)}
+.nav-cta{
+  font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:500;
+  letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;
+  color:var(--gold);border:1px solid rgba(184,151,42,0.35);
+  padding:9px 22px;transition:all 0.25s ease;
+}
+.nav-cta:hover{background:var(--gold);color:var(--midnight)}
+.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.nav-toggle span{display:block;width:22px;height:1px;background:var(--ivory);transition:all 0.3s ease}
+.nav-mobile-overlay{
+  display:none;position:fixed;inset:0;z-index:99;
+  background:rgba(20,25,22,0.98);padding:100px 8vw 40px;
+  flex-direction:column;gap:0;
+}
+.nav-mobile-overlay.open{display:flex}
+.nav-mobile-overlay a{
+  font-family:'Playfair Display',serif;font-size:28px;font-weight:400;
+  color:rgba(245,240,232,0.8);text-decoration:none;
+  padding:18px 0;border-bottom:1px solid rgba(245,240,232,0.07);
+  transition:color 0.2s ease;
+}
+.nav-mobile-overlay a:hover{color:var(--gold)}
+.nav-mobile-divider{height:1px;background:rgba(245,240,232,0.07);margin:20px 0}
+.nav-mobile-cta-link{
+  font-family:'Inter',Arial,sans-serif !important;font-size:13px !important;
+  letter-spacing:0.15em;text-transform:uppercase;color:var(--gold) !important;
+  border:none !important;padding:20px 0 !important;
+}
+
+/* ── HERO ── */
+.itin-hero{
+  position:relative;height:92vh;min-height:560px;overflow:hidden;
+  display:flex;align-items:flex-end;padding:0 8vw 80px;
+}
+.itin-hero-img{position:absolute;inset:0}
+.itin-hero-img img{width:100%;height:100%;object-fit:cover;opacity:0.55}
+.itin-hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(20,25,22,0.95) 0%, rgba(20,25,22,0.4) 50%, rgba(20,25,22,0.15) 100%);
+}
+.itin-hero-content{position:relative;z-index:2;max-width:760px}
+.itin-breadcrumb{
+  display:flex;align-items:center;gap:10px;margin-bottom:24px;
+  font-family:'Inter',Arial,sans-serif;font-size:10px;font-weight:400;
+  letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,240,232,0.45);
+}
+.itin-breadcrumb a{color:rgba(245,240,232,0.45);text-decoration:none;transition:color 0.2s ease}
+.itin-breadcrumb a:hover{color:var(--gold)}
+.itin-breadcrumb span{color:rgba(245,240,232,0.25)}
+.itin-tag-row{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.itin-tag{
+  font-family:'Inter',Arial,sans-serif;font-size:9px;font-weight:500;
+  letter-spacing:0.3em;text-transform:uppercase;
+  background:var(--gold);color:var(--midnight);padding:5px 14px;
+}
+.itin-type-tag{
+  font-family:'Inter',Arial,sans-serif;font-size:9px;font-weight:400;
+  letter-spacing:0.25em;text-transform:uppercase;
+  color:rgba(245,240,232,0.5);border:1px solid rgba(245,240,232,0.15);
+  padding:5px 14px;
+}
+.itin-hero h1{
+  font-family:'Playfair Display',serif;font-weight:400;
+  font-size:clamp(44px,6vw,80px);line-height:1.0;
+  letter-spacing:-0.02em;color:var(--ivory);margin-bottom:20px;
+}
+.itin-hero h1 em{font-style:italic;color:var(--tea)}
+.itin-hero-sub{
+  font-family:'Inter',Arial,sans-serif;font-size:14px;font-weight:300;
+  color:rgba(245,240,232,0.6);line-height:1.8;max-width:480px;margin-bottom:40px;
+}
+.itin-hero-stats{display:flex;align-items:center;gap:40px}
+.itin-hero-stat .n{
+  font-family:'Playfair Display',serif;font-size:32px;font-weight:400;
+  color:var(--ivory);line-height:1;
+}
+.itin-hero-stat .l{
+  font-family:'Inter',Arial,sans-serif;font-size:10px;font-weight:300;
+  letter-spacing:0.18em;text-transform:uppercase;
+  color:rgba(245,240,232,0.45);margin-top:4px;
+}
+.hero-stat-div{width:1px;height:36px;background:rgba(245,240,232,0.15)}
+
+/* ── ROUTE STRIP ── */
+.route-strip{
+  background:var(--warm);padding:32px 8vw;
+  border-bottom:1px solid rgba(245,240,232,0.06);
+  overflow-x:auto;
+}
+.route-strip::-webkit-scrollbar{display:none}
+.route-inner{
+  display:flex;align-items:center;gap:0;white-space:nowrap;
+  min-width:max-content;
+}
+.route-stop{display:flex;flex-direction:column;align-items:center;gap:6px}
+.route-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--gold);box-shadow:0 0 8px rgba(184,151,42,0.4);flex-shrink:0;
+}
+.route-stop-name{
+  font-family:'Inter',Arial,sans-serif;font-size:9px;font-weight:500;
+  letter-spacing:0.18em;text-transform:uppercase;color:rgba(245,240,232,0.55);
+}
+.route-stop-days{
+  font-family:'Inter',Arial,sans-serif;font-size:8px;font-weight:300;
+  letter-spacing:0.1em;color:rgba(245,240,232,0.3);
+}
+.route-line{
+  flex:1;min-width:40px;height:1px;
+  background:linear-gradient(90deg,var(--gold),rgba(184,151,42,0.2));
+  margin:0 2px;margin-bottom:24px;
+}
+
+/* ── DAYS SECTION ── */
+.days-section{padding:80px 0 40px}
+
+/* ── DAY ENTRY ── */
+.day-entry{
+  padding:0 8vw 80px;
+}
+.day-entry:last-child{padding-bottom:0}
+
+/* Wide image per day */
+.day-image{
+  position:relative;width:100%;
+  height:clamp(300px, 45vw, 560px);
+  overflow:hidden;margin-bottom:0;
+  background:var(--warm);
+}
+.day-image img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform 8s ease;display:block;
+}
+.day-entry:hover .day-image img{transform:scale(1.03)}
+
+/* Placeholder for missing images */
+.day-image-placeholder{
+  position:absolute;inset:0;
+  background:linear-gradient(135deg, var(--warm) 0%, #1e2720 100%);
+  display:flex;align-items:center;justify-content:center;
+}
+.day-image-placeholder span{
+  font-family:'Playfair Display',serif;font-size:11px;font-weight:400;
+  letter-spacing:0.25em;text-transform:uppercase;
+  color:rgba(245,240,232,0.15);
+}
+
+/* Overlay gradient on image */
+.day-image-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(20,25,22,0.1) 0%,
+    rgba(20,25,22,0.05) 40%,
+    rgba(20,25,22,0.75) 85%,
+    rgba(20,25,22,0.95) 100%
+  );
+}
+
+/* Day label + location overlaid on image */
+.day-image-caption{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:28px 40px;
+  display:flex;align-items:flex-end;justify-content:space-between;
+  gap:20px;
+}
+.day-image-left{}
+.day-num-label{
+  font-family:'Inter',Arial,sans-serif;font-size:9px;font-weight:500;
+  letter-spacing:0.3em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:8px;
+}
+.day-image-h2{
+  font-family:'Playfair Display',serif;font-weight:400;
+  font-size:clamp(22px,3vw,38px);color:var(--ivory);
+  line-height:1.1;
+}
+.day-image-h2 em{font-style:italic;color:var(--tea)}
+.day-drive-badge{
+  font-family:'Inter',Arial,sans-serif;font-size:9px;font-weight:400;
+  letter-spacing:0.2em;text-transform:uppercase;
+  color:rgba(245,240,232,0.55);border:1px solid rgba(245,240,232,0.2);
+  padding:6px 14px;white-space:nowrap;flex-shrink:0;align-self:flex-end;
+  background:rgba(20,25,22,0.4);backdrop-filter:blur(4px);
+}
+
+/* Big faint day number in background of image */
+.day-num-ghost{
+  position:absolute;right:32px;top:24px;
+  font-family:'Playfair Display',serif;font-size:clamp(80px,14vw,180px);
+  font-weight:400;color:rgba(245,240,232,0.05);line-height:1;
+  letter-spacing:-0.05em;pointer-events:none;user-select:none;
+}
+
+/* Content below the image */
+.day-content{
+  padding:36px 40px 0;
+  border-left:1px solid rgba(184,151,42,0.15);
+  margin-left:0;
+}
+.day-body{
+  font-family:'Inter',Arial,sans-serif;font-size:14px;font-weight:300;
+  color:rgba(245,240,232,0.7);line-height:1.95;margin-bottom:28px;
+}
+.day-body p{margin-bottom:16px}
+.day-body p:last-child{margin-bottom:0}
+.day-highlight{
+  background:rgba(245,240,232,0.02);border:1px solid rgba(245,240,232,0.07);
+  border-left:2px solid var(--gold);padding:20px 24px;margin-bottom:28px;
+}
+.day-highlight-label{
+  font-family:'Inter',Arial,sans-serif;font-size:9px;font-weight:500;
+  letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;
+}
+.day-highlight p{
+  font-family:'Inter',Arial,sans-serif;font-size:13px;font-weight:300;
+  color:rgba(245,240,232,0.65);line-height:1.75;font-style:italic;
+}
+.day-sleep{
+  display:flex;align-items:center;gap:16px;
+  padding:18px 22px;background:rgba(184,151,42,0.06);
+  border:1px solid rgba(184,151,42,0.15);
+}
+.sleep-icon{font-size:14px;opacity:0.6;flex-shrink:0}
+.sleep-label{
+  font-family:'Inter',Arial,sans-serif;font-size:9px;font-weight:500;
+  letter-spacing:0.22em;text-transform:uppercase;color:rgba(184,151,42,0.7);
+  margin-bottom:3px;
+}
+.sleep-name{
+  font-family:'Playfair Display',serif;font-size:15px;font-weight:400;color:var(--ivory);
+}
+.sleep-location{
+  font-family:'Inter',Arial,sans-serif;font-size:10px;font-weight:300;
+  letter-spacing:0.1em;color:rgba(245,240,232,0.4);margin-top:2px;
+}
+
+/* Day separator */
+.day-sep{
+  margin:0 8vw 80px;
+  border-bottom:1px solid rgba(245,240,232,0.05);
+}
+
+/* ── DEPARTURE BAND ── */
+.departure-band{
+  background:var(--warm);margin:0 8vw 0;padding:40px 48px;
+  border:1px solid rgba(245,240,232,0.07);
+  display:flex;align-items:center;gap:40px;
+}
+.dep-num{
+  font-family:'Playfair Display',serif;font-size:56px;font-weight:400;
+  color:rgba(184,151,42,0.2);line-height:1;flex-shrink:0;
+}
+.dep-content h3{
+  font-family:'Playfair Display',serif;font-weight:400;font-size:22px;
+  color:var(--ivory);margin-bottom:8px;
+}
+.dep-content p{
+  font-family:'Inter',Arial,sans-serif;font-size:13px;font-weight:300;
+  color:rgba(245,240,232,0.55);line-height:1.8;
+}
+
+/* ── PROPERTY SUMMARY ── */
+.prop-summary{
+  padding:80px 8vw;background:rgba(245,240,232,0.02);
+  border-top:1px solid rgba(245,240,232,0.06);
+  border-bottom:1px solid rgba(245,240,232,0.06);
+  margin-top:80px;
+}
+.prop-summary-label{
+  font-family:'Inter',Arial,sans-serif;font-size:9px;font-weight:500;
+  letter-spacing:0.25em;text-transform:uppercase;color:rgba(245,240,232,0.3);
+  margin-bottom:40px;
+}
+.prop-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:rgba(245,240,232,0.06)}
+.prop-card{background:var(--midnight);padding:28px 24px}
+.prop-nights{
+  font-family:'Inter',Arial,sans-serif;font-size:8px;font-weight:500;
+  letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;
+}
+.prop-name{
+  font-family:'Playfair Display',serif;font-weight:400;font-size:15px;
+  color:var(--ivory);line-height:1.3;margin-bottom:6px;
+}
+.prop-loc{
+  font-family:'Inter',Arial,sans-serif;font-size:10px;font-weight:300;
+  letter-spacing:0.1em;color:rgba(245,240,232,0.35);
+}
+
+/* ── CTA ── */
+.itin-cta{
+  padding:100px 8vw;
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
+}
+.itin-cta-left h2{
+  font-family:'Playfair Display',serif;font-weight:400;
+  font-size:clamp(32px,4vw,52px);color:var(--ivory);
+  line-height:1.1;margin-bottom:20px;
+}
+.itin-cta-left h2 em{font-style:italic;color:var(--tea)}
+.itin-cta-left p{
+  font-family:'Inter',Arial,sans-serif;font-size:14px;font-weight:300;
+  color:rgba(245,240,232,0.55);line-height:1.85;
+}
+.itin-cta-right{display:flex;flex-direction:column;gap:16px}
+.cta-btn{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:22px 28px;border:1px solid rgba(245,240,232,0.12);
+  text-decoration:none;transition:all 0.3s ease;
+  background:rgba(245,240,232,0.02);
+}
+.cta-btn:hover{border-color:rgba(184,151,42,0.4);background:rgba(184,151,42,0.05)}
+.cta-btn-label{
+  font-family:'Inter',Arial,sans-serif;font-size:9px;font-weight:500;
+  letter-spacing:0.25em;text-transform:uppercase;color:rgba(245,240,232,0.45);
+  margin-bottom:4px;
+}
+.cta-btn-name{
+  font-family:'Playfair Display',serif;font-size:17px;font-weight:400;color:var(--ivory);
+}
+.cta-btn-arrow{color:rgba(184,151,42,0.6);font-size:18px}
+.cta-primary{
+  display:inline-flex;align-items:center;gap:12px;margin-top:8px;
+  background:var(--gold);color:var(--midnight);
+  font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:500;
+  letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;
+  padding:16px 32px;transition:all 0.3s ease;
+}
+.cta-primary:hover{background:#C9A84C}
+
+/* ── FOOTER ── */
+footer{padding:72px 8vw 40px;border-top:1px solid rgba(245,240,232,0.07)}
+.footer-top{
+  display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;
+  gap:48px;padding-bottom:56px;
+  border-bottom:1px solid rgba(245,240,232,0.06);
+}
+.footer-brand img{height:32px;margin-bottom:20px}
+.footer-brand p{
+  font-family:'Inter',Arial,sans-serif;font-size:12px;font-weight:300;
+  color:rgba(245,240,232,0.4);line-height:1.8;max-width:260px;
+}
+.footer-col h5{
+  font-family:'Inter',Arial,sans-serif;font-size:9px;font-weight:500;
+  letter-spacing:0.25em;text-transform:uppercase;
+  color:rgba(245,240,232,0.3);margin-bottom:20px;
+}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{
+  font-family:'Inter',Arial,sans-serif;font-size:12px;font-weight:300;
+  color:rgba(245,240,232,0.5);text-decoration:none;transition:color 0.2s ease;
+}
+.footer-col ul li a:hover{color:var(--gold)}
+.footer-bottom{
+  display:flex;align-items:center;justify-content:space-between;
+  padding-top:28px;
+  font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:300;
+  color:rgba(245,240,232,0.25);
+}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.8s ease,transform 0.8s ease}
+.reveal.visible{opacity:1;transform:none}
+.reveal-img{opacity:0;transition:opacity 1.1s ease}
+.reveal-img.visible{opacity:1}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .prop-grid{grid-template-columns:repeat(3,1fr)}
+  .itin-cta{grid-template-columns:1fr;gap:48px}
+  .day-image-caption{padding:20px 28px}
+  .day-content{padding:28px 28px 0}
+}
+@media(max-width:768px){
+  nav#navbar{padding:0 5vw}
+  .nav-links,.nav-cta{display:none}
+  .nav-toggle{display:flex}
+  .itin-hero{padding:0 6vw 60px;height:85vh}
+  .days-section{padding:60px 0 40px}
+  .day-entry{padding:0 0 60px}
+  .day-image{height:clamp(240px,56vw,400px)}
+  .day-image-caption{padding:16px 20px}
+  .day-num-ghost{font-size:80px;right:16px}
+  .day-content{padding:22px 20px 0;border-left:none;border-top:1px solid rgba(184,151,42,0.15)}
+  .day-sep{margin:0 0 60px}
+  .departure-band{margin:0 5vw;flex-direction:column;gap:16px;padding:28px 24px}
+  .prop-summary{padding:56px 6vw;margin-top:60px}
+  .prop-grid{grid-template-columns:repeat(2,1fr)}
+  .itin-cta{padding:60px 6vw}
+  .footer-top{grid-template-columns:1fr;gap:32px;padding-bottom:36px}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:12px}
+}
+@media(max-width:480px){
+  .prop-grid{grid-template-columns:1fr}
+  .itin-hero-stats{gap:24px}
+  .itin-hero-stat .n{font-size:24px}
+  .day-image{height:220px}
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <img src="images/EV-logo-white.png" alt="Exemplary Voyages">
+  </a>
+  <ul class="nav-links">
+    <li><a href="sri-lanka.html" class="active">Sri Lanka</a></li>
+    <li><a href="maldives.html">Maldives</a></li>
+    <li><a href="#">Experiences</a></li>
+    <li><a href="#">Journal</a></li>
+    <li><a href="#">Sustainability</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+  <a href="mailto:inquiries@exemplaryvoyages.com" class="nav-cta">Begin Planning</a>
+  <div class="nav-toggle" onclick="toggleMobileNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="nav-mobile-overlay" id="mobileNav">
+  <a href="sri-lanka.html" onclick="closeMobileNav()">Sri Lanka</a>
+  <a href="maldives.html" onclick="closeMobileNav()">Maldives</a>
+  <a href="#" onclick="closeMobileNav()">Experiences</a>
+  <a href="#" onclick="closeMobileNav()">Journal</a>
+  <a href="#" onclick="closeMobileNav()">Sustainability</a>
+  <a href="#" onclick="closeMobileNav()">About</a>
+  <div class="nav-mobile-divider"></div>
+  <a href="mailto:inquiries@exemplaryvoyages.com" class="nav-mobile-cta-link" onclick="closeMobileNav()">Begin Planning</a>
+</div>
+
+<!-- ── HERO ── -->
+<section class="itin-hero">
+  <div class="itin-hero-img">
+    <img src="images/The%20Ancient%20Kingdom%20Trail.jpg" alt="Ancient Kingdom Trail" fetchpriority="high">
+  </div>
+  <div class="itin-hero-overlay"></div>
+  <div class="itin-hero-content">
+    <div class="itin-breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <a href="sri-lanka.html">Sri Lanka</a>
+      <span>›</span>
+      <span style="color:rgba(245,240,232,0.55)">Ancient Kingdom Trail</span>
+    </div>
+    <div class="itin-tag-row">
+      <div class="itin-tag">10 Days · 9 Nights</div>
+      <div class="itin-type-tag">Culture &amp; Heritage</div>
+    </div>
+    <h1>Ancient<br><em>Kingdom Trail</em></h1>
+    <p class="itin-hero-sub">From the sacred plains of Anuradhapura to the misty southern coast, this journey traces three millennia of civilisation through Sri Lanka's most magnificent landscapes.</p>
+    <div class="itin-hero-stats">
+      <div class="itin-hero-stat">
+        <div class="n">6</div>
+        <div class="l">Destinations</div>
+      </div>
+      <div class="hero-stat-div"></div>
+      <div class="itin-hero-stat">
+        <div class="n">5</div>
+        <div class="l">Properties</div>
+      </div>
+      <div class="hero-stat-div"></div>
+      <div class="itin-hero-stat">
+        <div class="n">3</div>
+        <div class="l">UNESCO Sites</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ROUTE STRIP ── -->
+<div class="route-strip">
+  <div class="route-inner">
+    <div class="route-stop">
+      <div class="route-dot"></div>
+      <div class="route-stop-name">Airport</div>
+      <div class="route-stop-days">Day 1</div>
+    </div>
+    <div class="route-line"></div>
+    <div class="route-stop">
+      <div class="route-dot"></div>
+      <div class="route-stop-name">Negombo</div>
+      <div class="route-stop-days">Night 1</div>
+    </div>
+    <div class="route-line"></div>
+    <div class="route-stop">
+      <div class="route-dot"></div>
+      <div class="route-stop-name">Anuradhapura</div>
+      <div class="route-stop-days">Night 2</div>
+    </div>
+    <div class="route-line"></div>
+    <div class="route-stop">
+      <div class="route-dot"></div>
+      <div class="route-stop-name">Polonnaruwa</div>
+      <div class="route-stop-days">Day 3</div>
+    </div>
+    <div class="route-line"></div>
+    <div class="route-stop">
+      <div class="route-dot"></div>
+      <div class="route-stop-name">Sigiriya</div>
+      <div class="route-stop-days">Nights 3 &amp; 4</div>
+    </div>
+    <div class="route-line"></div>
+    <div class="route-stop">
+      <div class="route-dot"></div>
+      <div class="route-stop-name">Kandy</div>
+      <div class="route-stop-days">Nights 5 &amp; 6</div>
+    </div>
+    <div class="route-line"></div>
+    <div class="route-stop">
+      <div class="route-dot"></div>
+      <div class="route-stop-name">Nuwara Eliya</div>
+      <div class="route-stop-days">Nights 7 &amp; 8</div>
+    </div>
+    <div class="route-line"></div>
+    <div class="route-stop">
+      <div class="route-dot"></div>
+      <div class="route-stop-name">Weligama</div>
+      <div class="route-stop-days">Night 9</div>
+    </div>
+    <div class="route-line"></div>
+    <div class="route-stop">
+      <div class="route-dot" style="background:transparent;border:1px solid rgba(184,151,42,0.4)"></div>
+      <div class="route-stop-name">Airport</div>
+      <div class="route-stop-days">Day 10</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── DAY BY DAY ── -->
+<section class="days-section">
+
+  <!-- DAY 1 -->
+  <div class="day-entry reveal">
+    <div class="day-image reveal-img">
+      <img src="images/Arrival%20%26%20Negombo.jpg" alt="Negombo" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="day-image-placeholder" style="display:none">
+        <span>Negombo</span>
+      </div>
+      <div class="day-image-overlay"></div>
+      <div class="day-num-ghost">01</div>
+      <div class="day-image-caption">
+        <div class="day-image-left">
+          <div class="day-num-label">Day One</div>
+          <h2 class="day-image-h2">Arrival &amp; <em>Negombo</em></h2>
+        </div>
+        <div class="day-drive-badge">30 min from Airport</div>
+      </div>
+    </div>
+    <div class="day-content">
+      <div class="day-body">
+        <p>Your journey begins the moment you land. A private transfer from Bandaranaike International Airport carries you the short distance to Negombo, a coastal town of fishing villages, Dutch canals and unhurried warmth. This first evening asks nothing of you but rest.</p>
+        <p>Let the sea air and the sound of the Indian Ocean set the tone for what lies ahead.</p>
+      </div>
+      <div class="day-sleep">
+        <div class="sleep-icon">◈</div>
+        <div>
+          <div class="sleep-label">Tonight you sleep at</div>
+          <div class="sleep-name">Jetwing Blue</div>
+          <div class="sleep-location">Negombo, Western Coast</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="day-sep"></div>
+
+  <!-- DAY 2 -->
+  <div class="day-entry reveal">
+    <div class="day-image reveal-img">
+      <img src="images/Anuradhapura%20%26%20Mihintale.jpg" alt="Anuradhapura" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="day-image-placeholder" style="display:none">
+        <span>Anuradhapura</span>
+      </div>
+      <div class="day-image-overlay"></div>
+      <div class="day-num-ghost">02</div>
+      <div class="day-image-caption">
+        <div class="day-image-left">
+          <div class="day-num-label">Day Two</div>
+          <h2 class="day-image-h2">Anuradhapura &amp; <em>Mihintale</em></h2>
+        </div>
+        <div class="day-drive-badge">4 hours' drive</div>
+      </div>
+    </div>
+    <div class="day-content">
+      <div class="day-body">
+        <p>The drive north carries you into another era entirely. Anuradhapura, Sri Lanka's first and greatest ancient capital, is a sacred landscape of monumental stupas, serene reservoirs and centuries-old ruins; where the island's history still feels profoundly alive. Explore at your own pace through the early afternoon, guided by your private historian.</p>
+        <p>As the day softens, continue to Mihintale; the birthplace of Buddhism in Sri Lanka. Climb through ancient shrines and forested pathways to sweeping views filled with spirituality and stillness. This is the hill where, in the third century BC, a prince delivered the teachings that would shape the nation.</p>
+      </div>
+      <div class="day-sleep">
+        <div class="sleep-icon">◈</div>
+        <div>
+          <div class="sleep-label">Tonight you sleep at</div>
+          <div class="sleep-name">Uga Ulagalla</div>
+          <div class="sleep-location">Anuradhapura, North Central Province</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="day-sep"></div>
+
+  <!-- DAY 3 -->
+  <div class="day-entry reveal">
+    <div class="day-image reveal-img">
+      <img src="images/Polonnaruwa%20%26%20Sigiriya.jpg" alt="Polonnaruwa" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="day-image-placeholder" style="display:none">
+        <span>Polonnaruwa</span>
+      </div>
+      <div class="day-image-overlay"></div>
+      <div class="day-num-ghost">03</div>
+      <div class="day-image-caption">
+        <div class="day-image-left">
+          <div class="day-num-label">Day Three</div>
+          <h2 class="day-image-h2">Polonnaruwa &amp; <em>Sigiriya</em></h2>
+        </div>
+        <div class="day-drive-badge">3 hours' drive</div>
+      </div>
+    </div>
+    <div class="day-content">
+      <div class="day-body">
+        <p>After breakfast, proceed to Polonnaruwa; Sri Lanka's second ancient kingdom, which reveals a remarkable era of royal ambition, spiritual devotion and sophisticated engineering. Explore the remains of grand palaces, sacred temples and beautifully carved stone statues, set beside the vast Parakrama Samudraya. This timeless landscape, where the splendour of a medieval capital still endures, is best discovered by bicycle: a slower pace that lets the grandeur settle.</p>
+        <p>By late afternoon, arrive at Sigiriya, where the extraordinary rock fortress rises above the surrounding forest and sets the scene for tomorrow.</p>
+      </div>
+      <div class="day-sleep">
+        <div class="sleep-icon">◈</div>
+        <div>
+          <div class="sleep-label">Tonight you sleep at</div>
+          <div class="sleep-name">Vil Uyana</div>
+          <div class="sleep-location">Sigiriya, Cultural Triangle</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="day-sep"></div>
+
+  <!-- DAY 4 -->
+  <div class="day-entry reveal">
+    <div class="day-image reveal-img">
+      <img src="images/Minneriya%20Elephant%20Gathering%20IMG_4944.jpg" alt="Sigiriya" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="day-image-placeholder" style="display:none">
+        <span>Sigiriya</span>
+      </div>
+      <div class="day-image-overlay"></div>
+      <div class="day-num-ghost">04</div>
+      <div class="day-image-caption">
+        <div class="day-image-left">
+          <div class="day-num-label">Day Four</div>
+          <h2 class="day-image-h2">Sigiriya &amp; <em>Minneriya</em></h2>
+        </div>
+      </div>
+    </div>
+    <div class="day-content">
+      <div class="day-body">
+        <p>Rising dramatically above Sri Lanka's Cultural Triangle, Sigiriya is an extraordinary fifth century royal citadel and UNESCO World Heritage Site. Begin the ascent early, before the sun reaches its full strength. Pass the ancient water gardens, marvel at the vivid frescoes, and push through the monumental Lion's Gate to reach palace ruins and sweeping views from the summit; a remarkable testament to the island's artistry, engineering and royal ambition.</p>
+        <p>As the afternoon heat softens, venture into Minneriya National Park for a game drive across open grasslands, forest and the shores of its ancient reservoir. Watch for elephants emerging in the golden evening light, alongside deer, monkeys and abundant birdlife. During the dry season, large herds may gather near the water; creating one of Sri Lanka's most memorable wildlife spectacles.</p>
+      </div>
+      <div class="day-sleep">
+        <div class="sleep-icon">◈</div>
+        <div>
+          <div class="sleep-label">Tonight you sleep at</div>
+          <div class="sleep-name">Vil Uyana</div>
+          <div class="sleep-location">Sigiriya, Cultural Triangle</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="day-sep"></div>
+
+  <!-- DAY 5 -->
+  <div class="day-entry reveal">
+    <div class="day-image reveal-img">
+      <img src="images/Kandy.jpg" alt="Kandy" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="day-image-placeholder" style="display:none">
+        <span>Kandy</span>
+      </div>
+      <div class="day-image-overlay"></div>
+      <div class="day-num-ghost">05</div>
+      <div class="day-image-caption">
+        <div class="day-image-left">
+          <div class="day-num-label">Day Five</div>
+          <h2 class="day-image-h2"><em>Kandy</em></h2>
+        </div>
+        <div class="day-drive-badge">2.5 hours' drive</div>
+      </div>
+    </div>
+    <div class="day-content">
+      <div class="day-body">
+        <p>Descend from the Cultural Triangle into the hill country. Kandy, the last kingdom of Sri Lanka, is the island's cultural and spiritual heart. Surrounded by forested hills and centred around its tranquil lake, this former royal capital carries its history with quiet dignity. The revered Temple of the Sacred Tooth Relic stands at its centre; home to the tooth relic of the Buddha and a place of continuous devotion for over fifteen centuries.</p>
+        <p>Visit the temple in the late afternoon, when the air is cooler and the rituals feel most intimate. The evening is entirely your own.</p>
+      </div>
+      <div class="day-sleep">
+        <div class="sleep-icon">◈</div>
+        <div>
+          <div class="sleep-label">Tonight you sleep at</div>
+          <div class="sleep-name">Jetwing Kandy Gallery</div>
+          <div class="sleep-location">Kandy, Central Province</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="day-sep"></div>
+
+  <!-- DAY 6 -->
+  <div class="day-entry reveal">
+    <div class="day-image reveal-img">
+      <img src="images/Kandy%20The%20Three%20Temple%20Loop.jpg" alt="Kandy Temples" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="day-image-placeholder" style="display:none">
+        <span>Kandy</span>
+      </div>
+      <div class="day-image-overlay"></div>
+      <div class="day-num-ghost">06</div>
+      <div class="day-image-caption">
+        <div class="day-image-left">
+          <div class="day-num-label">Day Six</div>
+          <h2 class="day-image-h2">Kandy: <em>The Three Temple Loop</em></h2>
+        </div>
+      </div>
+    </div>
+    <div class="day-content">
+      <div class="day-body">
+        <p>Today belongs to the villages, temples and traditions that exist just beyond the city. Begin at Gadaladeniya and step into the twelfth century; a temple where Buddhism and Hinduism have quietly influenced one another for generations. Notice the grandeur of the architecture, the presence of the Buddha statue and the remarkable artistry of every carved surface.</p>
+        <p>A tuk tuk carries you through paddy fields to Lankatilaka, where your guide traces the foundations of Buddhism in Sri Lanka and the role it continues to play for three quarters of the population. Before the third temple, pause at a working plantation; coffee, tea and pepper growing side by side in the same red earth. Finally, Embekka, with its Hindu shrine unlike any other, and a view of the surrounding hills that seems to extend without end.</p>
+      </div>
+      <div class="day-sleep">
+        <div class="sleep-icon">◈</div>
+        <div>
+          <div class="sleep-label">Tonight you sleep at</div>
+          <div class="sleep-name">Jetwing Kandy Gallery</div>
+          <div class="sleep-location">Kandy, Central Province</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="day-sep"></div>
+
+  <!-- DAY 7 -->
+  <div class="day-entry reveal">
+    <div class="day-image reveal-img">
+      <img src="images/Nuwara%20Eliya%20estates.jpg" alt="Nuwara Eliya" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="day-image-placeholder" style="display:none">
+        <span>Nuwara Eliya</span>
+      </div>
+      <div class="day-image-overlay"></div>
+      <div class="day-num-ghost">07</div>
+      <div class="day-image-caption">
+        <div class="day-image-left">
+          <div class="day-num-label">Day Seven</div>
+          <h2 class="day-image-h2"><em>Nuwara Eliya</em></h2>
+        </div>
+        <div class="day-drive-badge">2.5 hours' drive</div>
+      </div>
+    </div>
+    <div class="day-content">
+      <div class="day-body">
+        <p>The road climbs into cooler air and a different world. Set high in Sri Lanka's mist-covered central hills, Nuwara Eliya is a graceful retreat of emerald tea estates, cascading waterfalls and mountain calm. Its colonial architecture, manicured gardens and serene lakes lend the town a timeless character; while the surrounding plantations reveal the heritage and craft behind world-renowned Ceylon tea.</p>
+        <p>Visit a tea estate in the afternoon; walking the rows, watching the sorting and drying process, and tasting the leaves at their finest. A waterfall or two on the way, then the evening at leisure in the cool highland air.</p>
+      </div>
+      <div class="day-sleep">
+        <div class="sleep-icon">◈</div>
+        <div>
+          <div class="sleep-label">Tonight you sleep at</div>
+          <div class="sleep-name">Grand Hotel</div>
+          <div class="sleep-location">Nuwara Eliya, Hill Country</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="day-sep"></div>
+
+  <!-- DAY 8 -->
+  <div class="day-entry reveal">
+    <div class="day-image reveal-img">
+      <img src="images/Nuwara%20Eliya%20The%20High%20Plains.jpg" alt="Moon Plains, Nuwara Eliya" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="day-image-placeholder" style="display:none">
+        <span>Nuwara Eliya</span>
+      </div>
+      <div class="day-image-overlay"></div>
+      <div class="day-num-ghost">08</div>
+      <div class="day-image-caption">
+        <div class="day-image-left">
+          <div class="day-num-label">Day Eight</div>
+          <h2 class="day-image-h2">Nuwara Eliya: <em>The High Plains</em></h2>
+        </div>
+      </div>
+    </div>
+    <div class="day-content">
+      <div class="day-body">
+        <p>Begin the morning at Moon Plains; a peaceful highland landscape of rolling grasslands, vegetable farms and distant mountain ranges. A short scenic drive leads to the viewpoint known as Mini World's End, where clear weather reveals sweeping views across Sri Lanka's central hills. It is a place to simply stand and take in the scale of the country you have been travelling through.</p>
+      </div>
+      <div class="day-highlight">
+        <div class="day-highlight-label">Alternative Experience</div>
+        <p>Horton Plains National Park, a UNESCO listed wilderness of cloud forest, open grassland and endemic wildlife. Follow the scenic walking trail to World's End and Baker's Falls, ideally beginning early before the morning mist settles over the plateau.</p>
+      </div>
+      <div class="day-sleep">
+        <div class="sleep-icon">◈</div>
+        <div>
+          <div class="sleep-label">Tonight you sleep at</div>
+          <div class="sleep-name">Grand Hotel</div>
+          <div class="sleep-location">Nuwara Eliya, Hill Country</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="day-sep"></div>
+
+  <!-- DAY 9 -->
+  <div class="day-entry reveal">
+    <div class="day-image reveal-img">
+      <img src="images/Weligama%20Stilt%20Fisherman.jpg" alt="Weligama" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="day-image-placeholder" style="display:none">
+        <span>Weligama</span>
+      </div>
+      <div class="day-image-overlay"></div>
+      <div class="day-num-ghost">09</div>
+      <div class="day-image-caption">
+        <div class="day-image-left">
+          <div class="day-num-label">Day Nine</div>
+          <h2 class="day-image-h2"><em>Weligama</em></h2>
+        </div>
+        <div class="day-drive-badge">5.5 hours' drive</div>
+      </div>
+    </div>
+    <div class="day-content">
+      <div class="day-body">
+        <p>The longest drive of the journey, but a beautiful one. The road descends through the hill country and eventually reaches the southern coast, where a very different Sri Lanka awaits. Weligama curves around a broad, sheltered bay of golden sand and gentle surf. Its unhurried rhythm and celebrated coastal restaurants invite slow evenings beside the Indian Ocean.</p>
+        <p>Tonight is not for sightseeing. It is for the sound of waves, a long dinner, and the knowledge that this extraordinary journey is nearly complete.</p>
+      </div>
+      <div class="day-sleep">
+        <div class="sleep-icon">◈</div>
+        <div>
+          <div class="sleep-label">Tonight you sleep at</div>
+          <div class="sleep-name">Cape Weligama</div>
+          <div class="sleep-location">Weligama, Southern Coast</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ── DAY 10 DEPARTURE ── -->
+<div class="departure-band reveal">
+  <div class="dep-num">10</div>
+  <div class="dep-content">
+    <h3>Weligama to Airport: A Final Morning</h3>
+    <p>After a final leisurely breakfast beside the southern coast, your private transfer departs for Bandaranaike International Airport along the coastal expressway; timed precisely to your flight. Assistance with luggage on arrival, a quiet farewell, and then Sri Lanka recedes in the rear window; taking with you the memories, stories and quiet moments that made this journey entirely your own.</p>
+  </div>
+</div>
+
+<!-- ── PROPERTY SUMMARY ── -->
+<div class="prop-summary reveal">
+  <div class="prop-summary-label">Where you will sleep</div>
+  <div class="prop-grid">
+    <div class="prop-card">
+      <div class="prop-nights">Night 1</div>
+      <div class="prop-name">Jetwing Blue</div>
+      <div class="prop-loc">Negombo</div>
+    </div>
+    <div class="prop-card">
+      <div class="prop-nights">Night 2</div>
+      <div class="prop-name">Uga Ulagalla</div>
+      <div class="prop-loc">Anuradhapura</div>
+    </div>
+    <div class="prop-card">
+      <div class="prop-nights">Nights 3 &amp; 4</div>
+      <div class="prop-name">Vil Uyana</div>
+      <div class="prop-loc">Sigiriya</div>
+    </div>
+    <div class="prop-card">
+      <div class="prop-nights">Nights 5 &amp; 6</div>
+      <div class="prop-name">Jetwing Kandy Gallery</div>
+      <div class="prop-loc">Kandy</div>
+    </div>
+    <div class="prop-card">
+      <div class="prop-nights">Nights 7 &amp; 8</div>
+      <div class="prop-name">Grand Hotel</div>
+      <div class="prop-loc">Nuwara Eliya</div>
+    </div>
+    <div class="prop-card">
+      <div class="prop-nights">Night 9</div>
+      <div class="prop-name">Cape Weligama</div>
+      <div class="prop-loc">Weligama, Southern Coast</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CTA ── -->
+<section class="itin-cta">
+  <div class="itin-cta-left reveal">
+    <h2>This journey is a<br><em>starting point.</em></h2>
+    <p>Every Exemplary Voyages itinerary is tailored before departure. Different properties, different pacing, additional days or a completely new direction; we design around you, not around a catalogue. Tell us who you are and how you travel, and we will build something that belongs only to you.</p>
+  </div>
+  <div class="itin-cta-right reveal">
+    <a href="mailto:inquiries@exemplaryvoyages.com" class="cta-btn">
+      <div>
+        <div class="cta-btn-label">Send an Enquiry</div>
+        <div class="cta-btn-name">inquiries@exemplaryvoyages.com</div>
+      </div>
+      <div class="cta-btn-arrow">→</div>
+    </a>
+    <a href="https://wa.me/94XXXXXXXXX" class="cta-btn">
+      <div>
+        <div class="cta-btn-label">WhatsApp</div>
+        <div class="cta-btn-name">Message us directly</div>
+      </div>
+      <div class="cta-btn-arrow">→</div>
+    </a>
+    <a href="sri-lanka.html" class="cta-primary">
+      Explore All Sri Lanka Itineraries →
+    </a>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="images/EV-logo-white.png" alt="Exemplary Voyages">
+      <p>Bespoke journeys through Sri Lanka and the Maldives, crafted for those who travel with intention.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Sri Lanka</h5>
+      <ul>
+        <li><a href="ancient-kingdom-trail.html">Ancient Kingdom Trail</a></li>
+        <li><a href="highland-tea-route.html">Highland Tea Route</a></li>
+        <li><a href="southern-coast.html">The Southern Coast</a></li>
+        <li><a href="wilderness-immersion.html">Wilderness Immersion</a></li>
+        <li><a href="cultural-compass.html">Cultural Compass</a></li>
+        <li><a href="wedding-in-ceylon.html">Wedding in Ceylon</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Maldives</h5>
+      <ul>
+        <li><a href="#">Atoll Private Retreat</a></li>
+        <li><a href="#">Overwater Villas</a></li>
+        <li><a href="#">Private Reserves</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Sustainability</a></li>
+        <li><a href="#">Journal</a></li>
+        <li><a href="mailto:inquiries@exemplaryvoyages.com">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Exemplary Voyages. All rights reserved.</span>
+    <span>Boutique DMC · Sri Lanka &amp; Maldives</span>
+  </div>
+</footer>
+
+<script>
+function toggleMobileNav(){
+  document.getElementById('mobileNav').classList.toggle('open');
+}
+function closeMobileNav(){
+  document.getElementById('mobileNav').classList.remove('open');
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape') closeMobileNav();
+});
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}
+  });
+},{threshold:0.08});
+document.querySelectorAll('.reveal,.reveal-img').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>

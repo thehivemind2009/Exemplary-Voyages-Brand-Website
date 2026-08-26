@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Highland Tea Route — Exemplary Voyages</title>
+<meta name="description" content="8 days through Sri Lanka's tea country. Kandy's ancient arts, Ella's organic farms, the southern coast and Colombo's legendary auction rooms.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --midnight:#141916;--ivory:#F5F0E8;--gold:#B8972A;--tea:#8B9E5A;
+  --stone:#7A6E62;--slate:#4A5148;--mist:#E8E3DA;--warm:#2A2F27;
+}
+html{scroll-behavior:smooth}
+body{background:var(--midnight);color:var(--ivory);font-family:'Inter',Arial,sans-serif;overflow-x:hidden}
+
+/* ── NAV ── */
+nav#navbar{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 6vw;height:72px;
+  background:rgba(20,25,22,0.96);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(245,240,232,0.06);
+}
+.nav-logo img{height:38px;width:auto;display:block}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{
+  font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:400;
+  letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;
+  color:rgba(245,240,232,0.65);transition:color 0.25s ease;
+}
+.nav-links a:hover,.nav-links a.active{color:var(--ivory)}
+.nav-cta{
+  font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:500;
+  letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;
+  color:var(--gold);border:1px solid rgba(184,151,42,0.35);
+  padding:9px 22px;transition:all 0.25s ease;
+}
+.nav-cta:hover{background:var(--gold);color:var(--midnight)}
+.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.nav-toggle span{display:block;width:22px;height:1px;background:var(--ivory);transition:all 0.3s ease}
+.nav-mobile-overlay{
+  display:none;position:fixed;inset:0;z-index:99;
+  background:rgba(20,25,22,0.98);padding:100px 8vw 40px;
+  flex-direction:column;gap:0;
+}
+.nav-mobile-overlay.open{display:flex}
+.nav-mobile-overlay a{
+  font-family:'Playfair Display',serif;font-size:28px;font-weight:400;
+  color:rgba(245,240,232,0.8);text-decoration:none;
+  padding:18px 0;border-bottom:1px solid rgba(245,240,232,0.07);
+  transition:color 0.2s ease;
+}
+.nav-mobile-overlay a:hover{color:var(--gold)}
+.nav-mobile-divider{height:1px;background:rgba(245,240,232,0.07);margin:20px 0}
+.nav-mobile-cta-link{
+  font-family:'Inter',Arial,sans-serif !important;font-size:13px !important;
+  letter-spacing:0.15em;text-transform:uppercase;color:var(--gold) !important;
+  border:none !important;padding:20px 0 !important;
+}
+
+/* ── HERO ── */
+.itin-hero{
+  position:relative;height:92vh;min-height:560px;overflow:hidden;
+  display:flex;align-items:flex-end;padding:0 8vw 80px;
+}
+.itin-hero-img{position:absolute;inset:0}
+.itin-hero-img img{width:100%;height:100%;object-fit:cover;opacity:0.55}
+.itin-hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(20,25,22,0.95) 0%, rgba(20,25,22,0.4) 50%, rgba(20,25,22,0.15) 100%);
+}
+.itin-hero-content{position:relative;z-index:2;max-width:760px}
+.itin-breadcrumb{
+  display:flex;align-items:center;gap:10px;margin-bottom:24px;
+  font-family:'Inter',Arial,sans-serif;font-size:10px;font-weight:400;
+  letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,240,232,0.45);
+}
+.itin-breadcrumb a{color:rgba(245,240,232,0.45);text-decoration:none;transition:color 0.2s ease}
+.itin-breadcrumb a:hover{color:var(--gold)}
+.itin-breadcrumb span{color:rgba(245,240,232,0.25)}
+.itin-tag-row{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.itin-tag{
+  font-family:'Inter',Arial,sans-serif;font-size:9px;font-weight:500;
+  letter-spacing:0.3em;text-transform:uppercase;
+  background:var(--gold);color:var(--midnight);padding:5px 14px;
+}
+.itin-type-tag{
+  font-family:'Inter',Arial,sans-serif;font-size:9px;font-weight:400;
+  letter-spacing:0.25em;text-transform:uppercase;
+  color:rgba(245,240,232,0.5);border:1px solid rgba(245,240,232,0.15);
+  padding:5px 14px;
+}
+.itin-hero h1{
+  font-family:'Playfair Display',serif;font-weight:400;
+  font-size:clamp(44px,6vw,80px);line-height:1.0;
+  letter-spacing:-0.02em;color:var(--ivory);margin-bottom:20px;
+}
+.itin-hero h1 em{font-style:italic;color:var(--tea)}
+.itin-hero-sub{
+  font-family:'Inter',Arial,sans-serif;font-size:14px;font-weight:300;
+  color:rgba(245,240,232,0.6);line-height:1.8;max-width:480px;margin-bottom:40px;
+}
+.itin-hero-stats{display:flex;align-items:center;gap:40px}
+.itin-hero-stat .n{
+  font-family:'Playfair Display',serif;font-size:32px;font-weight:400;
+  color:var(--ivory);line-height:1;
+}
+.itin-hero-stat .l{
+  font-family:'Inter',Arial,sans-serif;font-size:10px;font-weight:300;
+  letter-spacing:0.18em;text-transform:uppercase;
+  color:rgba(245,240,232,0.45);margin-top:4px;
+}
+.hero-stat-div{width:1px;height:36px;background:rgba(245,240,232,0.15)}
+
+/* ── ROUTE STRIP ── */
+.route-strip{
+  background:var(--warm);padding:32px 8vw;
+  border-bottom:1px solid rgba(245,240,232,0.06);
+  overflow-x:auto;
+}
+.route-strip::-webkit-scrollbar{display:none}
+.route-inner{
+  display:flex;align-items:center;gap:0;white-space:nowrap;
+  min-width:max-content;
+}
+.route-stop{display:flex;flex-direction:column;align-items:center;gap:6px}
+.route-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--gold);box-shadow:0 0 8px rgba(184,151,42,0.4);flex-shrink:0;
+}
+.route-stop-name{
+  font-family:'Inter',Arial,sans-serif;font-size:9px;font-weight:500;
+  letter-spacing:0.18em;text-transform:uppercase;color:rgba(245,240,232,0.55);
+}
+.route-stop-days{
+  font-family:'Inter',Arial,sans-serif;font-size:8px;font-weight:300;
+  letter-spacing:0.1em;color:rgba(245,240,232,0.3);
+}
+.route-line{
+  flex:1;min-width:40px;height:1px;
+  background:linear-gradient(90deg,var(--gold),rgba(184,151,42,0.2));
+  margin:0 2px;margin-bottom:24px;
+}
+
+/* ── DAYS SECTION ── */
+.days-section{padding:80px 0 40px}
+
+/* ── DAY ENTRY ── */
+.day-entry{padding:0 8vw 80px}
+.day-entry:last-child{padding-bottom:0}
+
+.day-image{
+  position:relative;width:100%;
+  height:clamp(300px, 45vw, 560px);
+  overflow:hidden;background:var(--warm);
+}
+.day-image img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform 8s ease;display:block;
+}
+.day-entry:hover .day-image img{transform:scale(1.03)}
+.day-image-placeholder{
+  position:absolute;inset:0;
+  background:linear-gradient(135deg, var(--warm) 0%, #1e2720 100%);
+  display:flex;align-items:center;justify-content:center;
+}
+.day-image-placeholder span{
+  font-family:'Playfair Display',serif;font-size:11px;font-weight:400;
+  letter-spacing:0.25em;text-transform:uppercase;
+  color:rgba(245,240,232,0.15);
+}
+.day-image-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(20,25,22,0.1) 0%,
+    rgba(20,25,22,0.05) 40%,
+    rgba(20,25,22,0.75) 85%,
+    rgba(20,25,22,0.95) 100%
+  );
+}
+.day-image-caption{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:28px 40px;
+  display:flex;align-items:flex-end;justify-content:space-between;gap:20px;
+}
+.day-num-label{
+  font-family:'Inter',Arial,sans-serif;font-size:9px;font-weight:500;
+  letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;
+}
+.day-image-h2{
+  font-family:'Playfair Display',serif;font-weight:400;
+  font-size:clamp(22px,3vw,38px);color:var(--ivory);line-height:1.1;
+}
+.day-image-h2 em{font-style:italic;color:var(--tea)}
+.day-drive-badge{
+  font-family:'Inter',Arial,sans-serif;font-size:9px;font-weight:400;
+  letter-spacing:0.2em;text-transform:uppercase;
+  color:rgba(245,240,232,0.55);border:1px solid rgba(245,240,232,0.2);
+  padding:6px 14px;white-space:nowrap;flex-shrink:0;align-self:flex-end;
+  background:rgba(20,25,22,0.4);backdrop-filter:blur(4px);
+}
+.day-num-ghost{
+  position:absolute;right:32px;top:24px;
+  font-family:'Playfair Display',serif;font-size:clamp(80px,14vw,180px);
+  font-weight:400;color:rgba(245,240,232,0.05);line-height:1;
+  letter-spacing:-0.05em;pointer-events:none;user-select:none;
+}
+
+.day-content{
+  padding:36px 40px 0;
+  border-left:1px solid rgba(184,151,42,0.15);
+}
+.day-body{
+  font-family:'Inter',Arial,sans-serif;font-size:14px;font-weight:300;
+  color:rgba(245,240,232,0.7);line-height:1.95;margin-bottom:28px;
+}
+.day-body p{margin-bottom:16px}
+.day-body p:last-child{margin-bottom:0}
+.day-highlight{
+  background:rgba(245,240,232,0.02);border:1px solid rgba(245,240,232,0.07);
+  border-left:2px solid var(--gold);padding:20px 24px;margin-bottom:28px;
+}
+.day-highlight-label{
+  font-family:'Inter',Arial,sans-serif;font-size:9px;font-weight:500;
+  letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;
+}
+.day-highlight p{
+  font-family:'Inter',Arial,sans-serif;font-size:13px;font-weight:300;
+  color:rgba(245,240,232,0.65);line-height:1.75;font-style:italic;
+}
+.day-sleep{
+  display:flex;align-items:center;gap:16px;
+  padding:18px 22px;background:rgba(184,151,42,0.06);
+  border:1px solid rgba(184,151,42,0.15);
+}
+.sleep-icon{font-size:14px;opacity:0.6;flex-shrink:0}
+.sleep-label{
+  font-family:'Inter',Arial,sans-serif;font-size:9px;font-weight:500;
+  letter-spacing:0.22em;text-transform:uppercase;color:rgba(184,151,42,0.7);margin-bottom:3px;
+}
+.sleep-name{
+  font-family:'Playfair Display',serif;font-size:15px;font-weight:400;color:var(--ivory);
+}
+.sleep-location{
+  font-family:'Inter',Arial,sans-serif;font-size:10px;font-weight:300;
+  letter-spacing:0.1em;color:rgba(245,240,232,0.4);margin-top:2px;
+}
+.day-sep{margin:0 8vw 80px;border-bottom:1px solid rgba(245,240,232,0.05)}
+
+/* ── DEPARTURE BAND ── */
+.departure-band{
+  background:var(--warm);margin:0 8vw;padding:40px 48px;
+  border:1px solid rgba(245,240,232,0.07);
+  display:flex;align-items:center;gap:40px;
+}
+.dep-num{
+  font-family:'Playfair Display',serif;font-size:56px;font-weight:400;
+  color:rgba(184,151,42,0.2);line-height:1;flex-shrink:0;
+}
+.dep-content h3{
+  font-family:'Playfair Display',serif;font-weight:400;font-size:22px;
+  color:var(--ivory);margin-bottom:8px;
+}
+.dep-content p{
+  font-family:'Inter',Arial,sans-serif;font-size:13px;font-weight:300;
+  color:rgba(245,240,232,0.55);line-height:1.8;
+}
+
+/* ── PROPERTY SUMMARY ── */
+.prop-summary{
+  padding:80px 8vw;background:rgba(245,240,232,0.02);
+  border-top:1px solid rgba(245,240,232,0.06);
+  border-bottom:1px solid rgba(245,240,232,0.06);
+  margin-top:80px;
+}
+.prop-summary-label{
+  font-family:'Inter',Arial,sans-serif;font-size:9px;font-weight:500;
+  letter-spacing:0.25em;text-transform:uppercase;color:rgba(245,240,232,0.3);
+  margin-bottom:40px;
+}
+.prop-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(245,240,232,0.06)}
+.prop-card{background:var(--midnight);padding:28px 24px}
+.prop-nights{
+  font-family:'Inter',Arial,sans-serif;font-size:8px;font-weight:500;
+  letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;
+}
+.prop-name{
+  font-family:'Playfair Display',serif;font-weight:400;font-size:15px;
+  color:var(--ivory);line-height:1.3;margin-bottom:6px;
+}
+.prop-loc{
+  font-family:'Inter',Arial,sans-serif;font-size:10px;font-weight:300;
+  letter-spacing:0.1em;color:rgba(245,240,232,0.35);
+}
+
+/* ── CTA ── */
+.itin-cta{
+  padding:100px 8vw;
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
+}
+.itin-cta-left h2{
+  font-family:'Playfair Display',serif;font-weight:400;
+  font-size:clamp(32px,4vw,52px);color:var(--ivory);
+  line-height:1.1;margin-bottom:20px;
+}
+.itin-cta-left h2 em{font-style:italic;color:var(--tea)}
+.itin-cta-left p{
+  font-family:'Inter',Arial,sans-serif;font-size:14px;font-weight:300;
+  color:rgba(245,240,232,0.55);line-height:1.85;
+}
+.itin-cta-right{display:flex;flex-direction:column;gap:16px}
+.cta-btn{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:22px 28px;border:1px solid rgba(245,240,232,0.12);
+  text-decoration:none;transition:all 0.3s ease;background:rgba(245,240,232,0.02);
+}
+.cta-btn:hover{border-color:rgba(184,151,42,0.4);background:rgba(184,151,42,0.05)}
+.cta-btn-label{
+  font-family:'Inter',Arial,sans-serif;font-size:9px;font-weight:500;
+  letter-spacing:0.25em;text-transform:uppercase;color:rgba(245,240,232,0.45);margin-bottom:4px;
+}
+.cta-btn-name{
+  font-family:'Playfair Display',serif;font-size:17px;font-weight:400;color:var(--ivory);
+}
+.cta-btn-arrow{color:rgba(184,151,42,0.6);font-size:18px}
+.cta-primary{
+  display:inline-flex;align-items:center;gap:12px;margin-top:8px;
+  background:var(--gold);color:var(--midnight);
+  font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:500;
+  letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;
+  padding:16px 32px;transition:all 0.3s ease;
+}
+.cta-primary:hover{background:#C9A84C}
+
+/* ── FOOTER ── */
+footer{padding:72px 8vw 40px;border-top:1px solid rgba(245,240,232,0.07)}
+.footer-top{
+  display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;
+  gap:48px;padding-bottom:56px;
+  border-bottom:1px solid rgba(245,240,232,0.06);
+}
+.footer-brand img{height:32px;margin-bottom:20px}
+.footer-brand p{
+  font-family:'Inter',Arial,sans-serif;font-size:12px;font-weight:300;
+  color:rgba(245,240,232,0.4);line-height:1.8;max-width:260px;
+}
+.footer-col h5{
+  font-family:'Inter',Arial,sans-serif;font-size:9px;font-weight:500;
+  letter-spacing:0.25em;text-transform:uppercase;
+  color:rgba(245,240,232,0.3);margin-bottom:20px;
+}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{
+  font-family:'Inter',Arial,sans-serif;font-size:12px;font-weight:300;
+  color:rgba(245,240,232,0.5);text-decoration:none;transition:color 0.2s ease;
+}
+.footer-col ul li a:hover{color:var(--gold)}
+.footer-bottom{
+  display:flex;align-items:center;justify-content:space-between;
+  padding-top:28px;
+  font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:300;
+  color:rgba(245,240,232,0.25);
+}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.8s ease,transform 0.8s ease}
+.reveal.visible{opacity:1;transform:none}
+.reveal-img{opacity:0;transition:opacity 1.1s ease}
+.reveal-img.visible{opacity:1}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .prop-grid{grid-template-columns:repeat(2,1fr)}
+  .itin-cta{grid-template-columns:1fr;gap:48px}
+  .day-image-caption{padding:20px 28px}
+  .day-content{padding:28px 28px 0}
+}
+@media(max-width:768px){
+  nav#navbar{padding:0 5vw}
+  .nav-links,.nav-cta{display:none}
+  .nav-toggle{display:flex}
+  .itin-hero{padding:0 6vw 60px;height:85vh}
+  .days-section{padding:60px 0 40px}
+  .day-entry{padding:0 0 60px}
+  .day-image{height:clamp(240px,56vw,400px)}
+  .day-image-caption{padding:16px 20px}
+  .day-num-ghost{font-size:80px;right:16px}
+  .day-content{padding:22px 20px 0;border-left:none;border-top:1px solid rgba(184,151,42,0.15)}
+  .day-sep{margin:0 0 60px}
+  .departure-band{margin:0 5vw;flex-direction:column;gap:16px;padding:28px 24px}
+  .prop-summary{padding:56px 6vw;margin-top:60px}
+  .prop-grid{grid-template-columns:repeat(2,1fr)}
+  .itin-cta{padding:60px 6vw}
+  .footer-top{grid-template-columns:1fr;gap:32px;padding-bottom:36px}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:12px}
+}
+@media(max-width:480px){
+  .prop-grid{grid-template-columns:1fr}
+  .itin-hero-stats{gap:24px}
+  .itin-hero-stat .n{font-size:24px}
+  .day-image{height:220px}
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <img src="images/EV-logo-white.png" alt="Exemplary Voyages">
+  </a>
+  <ul class="nav-links">
+    <li><a href="sri-lanka.html" class="active">Sri Lanka</a></li>
+    <li><a href="maldives.html">Maldives</a></li>
+    <li><a href="#">Experiences</a></li>
+    <li><a href="#">Journal</a></li>
+    <li><a href="#">Sustainability</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+  <a href="mailto:inquiries@exemplaryvoyages.com" class="nav-cta">Begin Planning</a>
+  <div class="nav-toggle" onclick="toggleMobileNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="nav-mobile-overlay" id="mobileNav">
+  <a href="sri-lanka.html" onclick="closeMobileNav()">Sri Lanka</a>
+  <a href="maldives.html" onclick="closeMobileNav()">Maldives</a>
+  <a href="#" onclick="closeMobileNav()">Experiences</a>
+  <a href="#" onclick="closeMobileNav()">Journal</a>
+  <a href="#" onclick="closeMobileNav()">Sustainability</a>
+  <a href="#" onclick="closeMobileNav()">About</a>
+  <div class="nav-mobile-divider"></div>
+  <a href="mailto:inquiries@exemplaryvoyages.com" class="nav-mobile-cta-link" onclick="closeMobileNav()">Begin Planning</a>
+</div>
+
+<!-- ── HERO ── -->
+<section class="itin-hero">
+  <div class="itin-hero-img">
+    <img src="images/98%20Acres%20Resort%20%26%20Spa.jpg" alt="The Highland Tea Route" fetchpriority="high">
+  </div>
+  <div class="itin-hero-overlay"></div>
+  <div class="itin-hero-content">
+    <div class="itin-breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <a href="sri-lanka.html">Sri Lanka</a>
+      <span>›</span>
+      <span style="color:rgba(245,240,232,0.55)">The Highland Tea Route</span>
+    </div>
+    <div class="itin-tag-row">
+      <div class="itin-tag">8 Days · 7 Nights</div>
+      <div class="itin-type-tag">Tea &amp; Culture</div>
+    </div>
+    <h1>The Highland<br><em>Tea Route</em></h1>
+    <p class="itin-hero-sub">From Kandy's ancient arts to Ella's misty organic farms, the southern coast's spice islands and Colombo's legendary tea auction rooms; a journey through the flavours and traditions that define Ceylon.</p>
+    <div class="itin-hero-stats">
+      <div class="itin-hero-stat">
+        <div class="n">6</div>
+        <div class="l">Destinations</div>
+      </div>
+      <div class="hero-stat-div"></div>
+      <div class="itin-hero-stat">
+        <div class="n">4</div>
+        <div class="l">Properties</div>
+      </div>
+      <div class="hero-stat-div"></div>
+      <div class="itin-hero-stat">
+        <div class="n">7</div>
+        <div class="l">Nights</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ROUTE STRIP ── -->
+<div class="route-strip">
+  <div class="route-inner">
+    <div class="route-stop">
+      <div class="route-dot"></div>
+      <div class="route-stop-name">Airport</div>
+      <div class="route-stop-days">Day 1</div>
+    </div>
+    <div class="route-line"></div>
+    <div class="route-stop">
+      <div class="route-dot"></div>
+      <div class="route-stop-name">Kandy</div>
+      <div class="route-stop-days">Nights 1 &amp; 2</div>
+    </div>
+    <div class="route-line"></div>
+    <div class="route-stop">
+      <div class="route-dot"></div>
+      <div class="route-stop-name">Ella</div>
+      <div class="route-stop-days">Nights 3 &amp; 4</div>
+    </div>
+    <div class="route-line"></div>
+    <div class="route-stop">
+      <div class="route-dot"></div>
+      <div class="route-stop-name">Handunugoda</div>
+      <div class="route-stop-days">Day 5</div>
+    </div>
+    <div class="route-line"></div>
+    <div class="route-stop">
+      <div class="route-dot"></div>
+      <div class="route-stop-name">Talpe</div>
+      <div class="route-stop-days">Nights 5 &amp; 6</div>
+    </div>
+    <div class="route-line"></div>
+    <div class="route-stop">
+      <div class="route-dot"></div>
+      <div class="route-stop-name">Galle</div>
+      <div class="route-stop-days">Day 6</div>
+    </div>
+    <div class="route-line"></div>
+    <div class="route-stop">
+      <div class="route-dot"></div>
+      <div class="route-stop-name">Colombo</div>
+      <div class="route-stop-days">Night 7</div>
+    </div>
+    <div class="route-line"></div>
+    <div class="route-stop">
+      <div class="route-dot" style="background:transparent;border:1px solid rgba(184,151,42,0.4)"></div>
+      <div class="route-stop-name">Airport</div>
+      <div class="route-stop-days">Day 8</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── DAY BY DAY ── -->
+<section class="days-section">
+
+  <!-- DAY 1 -->
+  <div class="day-entry reveal">
+    <div class="day-image reveal-img">
+      <img src="images/Kandy.jpg" alt="Kandy Arrival" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="day-image-placeholder" style="display:none"><span>Kandy</span></div>
+      <div class="day-image-overlay"></div>
+      <div class="day-num-ghost">01</div>
+      <div class="day-image-caption">
+        <div>
+          <div class="day-num-label">Day One</div>
+          <h2 class="day-image-h2">Arrival &amp; <em>Kandy</em></h2>
+        </div>
+        <div class="day-drive-badge">3.5 hours' drive</div>
+      </div>
+    </div>
+    <div class="day-content">
+      <div class="day-body">
+        <p>A warm welcome awaits at Bandaranaike International Airport. Your private transfer winds through the lowlands and into the hills, arriving at Kandy as the city settles into its evening rhythm. Rest and relax; the journey ahead will ask more of your senses.</p>
+      </div>
+      <div class="day-sleep">
+        <div class="sleep-icon">◈</div>
+        <div>
+          <div class="sleep-label">Tonight you sleep at</div>
+          <div class="sleep-name">Jetwing Kandy Gallery</div>
+          <div class="sleep-location">Kandy, Central Province</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="day-sep"></div>
+
+  <!-- DAY 2 -->
+  <div class="day-entry reveal">
+    <div class="day-image reveal-img">
+      <img src="images/Kandy%20Batik%20%26%20Angampora.jpg" alt="Kandy Arts" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="day-image-placeholder" style="display:none"><span>Kandy</span></div>
+      <div class="day-image-overlay"></div>
+      <div class="day-num-ghost">02</div>
+      <div class="day-image-caption">
+        <div>
+          <div class="day-num-label">Day Two</div>
+          <h2 class="day-image-h2">Kandy: <em>Batik &amp; Angampora</em></h2>
+        </div>
+      </div>
+    </div>
+    <div class="day-content">
+      <div class="day-body">
+        <p>After breakfast, enter one of Sri Lanka's most treasured traditional art forms through a Private Batik Design Session. Guided by a skilled and experienced artist, this hands-on workshop offers a rare opportunity to learn the intricate process of batik-making; from wax-resist techniques to dyeing and final detailing. Each session runs approximately two and a half to three hours, giving you ample time to design and create your own personalised piece to carry home as a souvenir. Suitable for all skill levels, set in a relaxed and inspiring environment.</p>
+        <p>In the late afternoon, enter the world of Angampora; Sri Lanka's ancient martial art. Conducted by a highly experienced and traditionally trained instructor, this immersive session reveals the strength, discipline and grace behind one of the oldest and most revered martial art forms in South Asia. The 15:30 session weaves together history, philosophy and physical training in equal measure.</p>
+      </div>
+      <div class="day-sleep">
+        <div class="sleep-icon">◈</div>
+        <div>
+          <div class="sleep-label">Tonight you sleep at</div>
+          <div class="sleep-name">Jetwing Kandy Gallery</div>
+          <div class="sleep-location">Kandy, Central Province</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="day-sep"></div>
+
+  <!-- DAY 3 -->
+  <div class="day-entry reveal">
+    <div class="day-image reveal-img">
+      <img src="images/Ella%20Gap.jpg" alt="Ella Organic Farm" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="day-image-placeholder" style="display:none"><span>Ella</span></div>
+      <div class="day-image-overlay"></div>
+      <div class="day-num-ghost">03</div>
+      <div class="day-image-caption">
+        <div>
+          <div class="day-num-label">Day Three</div>
+          <h2 class="day-image-h2">Kandy to <em>Ella</em></h2>
+        </div>
+        <div class="day-drive-badge">3.5 hours' drive</div>
+      </div>
+    </div>
+    <div class="day-content">
+      <div class="day-body">
+        <p>After breakfast, explore a working organic farm set in the Uva Highlands; a labour of love for its founders and local village staff. Hidden above Ravana-Ella Falls, with views of Ella Rock and Lipton's Seat, the estate cultivates tea, cinnamon, coffee and lemongrass using entirely manual techniques. Walk the fields with your guide, visit the artisanal production centre and try your hand at plucking and rolling tea leaves. The experience culminates with a tasting of four signature hand-made teas at a scenic point overlooking Ella Gap. A "Teaology" option is available for those who wish to pair each tea with dishes crafted to complement it. This experience is not available on Sundays or public holidays.</p>
+        <p>In the afternoon, discover Ella through its flavours on a curated food trail through handpicked local restaurants and bars; crispy papadam, frozen curd and an authentic rice and curry. The perfect way to taste the heart of the hill country, one bite at a time.</p>
+      </div>
+      <div class="day-sleep">
+        <div class="sleep-icon">◈</div>
+        <div>
+          <div class="sleep-label">Tonight you sleep at</div>
+          <div class="sleep-name">98 Acres Resort &amp; Spa</div>
+          <div class="sleep-location">Ella, Uva Province</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="day-sep"></div>
+
+  <!-- DAY 4 -->
+  <div class="day-entry reveal">
+    <div class="day-image reveal-img">
+      <img src="images/Ella%20Ravana%20Pool%20Club.jpg" alt="Ravana Pool Club" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="day-image-placeholder" style="display:none"><span>Ella</span></div>
+      <div class="day-image-overlay"></div>
+      <div class="day-num-ghost">04</div>
+      <div class="day-image-caption">
+        <div>
+          <div class="day-num-label">Day Four</div>
+          <h2 class="day-image-h2">Ella: <em>Ravana Pool Club</em></h2>
+        </div>
+      </div>
+    </div>
+    <div class="day-content">
+      <div class="day-body">
+        <p>After breakfast at the resort, make your way to Ravana Pool Club from 11am with VIP access to the pool area. Set amid Ella's rolling green hills, the club offers a lively yet scenic place to unwind. Relax beside the infinity pool, ease into the heated Jacuzzi or settle into a day bed with sweeping views towards Ella Rock and Little Adam's Peak. Relaxed dining and a vibrant poolside atmosphere bring a contemporary touch to Sri Lanka's hill country.</p>
+        <p>The great swing and zip liner are also available for those who prefer the hills with a little more speed. The evening is yours entirely.</p>
+      </div>
+      <div class="day-sleep">
+        <div class="sleep-icon">◈</div>
+        <div>
+          <div class="sleep-label">Tonight you sleep at</div>
+          <div class="sleep-name">98 Acres Resort &amp; Spa</div>
+          <div class="sleep-location">Ella, Uva Province</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="day-sep"></div>
+
+  <!-- DAY 5 -->
+  <div class="day-entry reveal">
+    <div class="day-image reveal-img">
+      <img src="images/Handunugoda%20%26%20Talpe.jpg" alt="Handunugoda Tea Estate" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="day-image-placeholder" style="display:none"><span>Handunugoda</span></div>
+      <div class="day-image-overlay"></div>
+      <div class="day-num-ghost">05</div>
+      <div class="day-image-caption">
+        <div>
+          <div class="day-num-label">Day Five</div>
+          <h2 class="day-image-h2">Handunugoda &amp; <em>Talpe</em></h2>
+        </div>
+        <div class="day-drive-badge">4 hours' drive</div>
+      </div>
+    </div>
+    <div class="day-content">
+      <div class="day-body">
+        <p>After breakfast, check out and travel south. Hidden within Sri Lanka's lush southern countryside, Handunugoda is a family-owned low-country estate celebrated for its rare Virgin White Tea. Inspired by an ancient Chinese tradition, the delicate tea buds are harvested and processed without being touched by bare hands, preserving their subtle and distinctive character.</p>
+        <p>Walk through the plantation, explore the working tea factory and discover the craftsmanship behind this singular tea, concluding with a guided tasting. It is a fascinating introduction to a lesser-known expression of Ceylon tea, just a short journey from the southern coast.</p>
+        <p>Check in at Villa Selenya in Talpe, where the evening is yours to settle into the villa at your own pace.</p>
+      </div>
+      <div class="day-sleep">
+        <div class="sleep-icon">◈</div>
+        <div>
+          <div class="sleep-label">Tonight you sleep at</div>
+          <div class="sleep-name">Villa Selenya</div>
+          <div class="sleep-location">Talpe, Southern Coast</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="day-sep"></div>
+
+  <!-- DAY 6 -->
+  <div class="day-entry reveal">
+    <div class="day-image reveal-img">
+      <img src="images/Cinnamon%20Island%20%26%20Galle%20Fort.jpg" alt="Cinnamon Island and Galle Fort" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="day-image-placeholder" style="display:none"><span>Talpe &amp; Galle</span></div>
+      <div class="day-image-overlay"></div>
+      <div class="day-num-ghost">06</div>
+      <div class="day-image-caption">
+        <div>
+          <div class="day-num-label">Day Six</div>
+          <h2 class="day-image-h2">Cinnamon Island &amp; <em>Galle Fort</em></h2>
+        </div>
+      </div>
+    </div>
+    <div class="day-content">
+      <div class="day-body">
+        <p>After breakfast, board a boat for a serene ride to Cinnamon Island; an immersive encounter with the only family that lives there, who have preserved the traditional art of hand-rolling cinnamon sticks for generations. Gliding through tranquil waters and lush greenery, you arrive to be welcomed into their aromatic world. In a mud hut surrounded by bundles of cinnamon bark, witness the meticulous process of hand-rolling each stick with precision and care; a tradition passed down through generations. The family concludes the experience with a delightful local lunch.</p>
+        <p>In the evening, walk the ramparts of the Galle Fort; one of the best-preserved colonial sea fortifications in Asia. Explore its lanes of Dutch colonial architecture, browse local boutiques and watch the sun descend behind the lighthouse. A gentle, unhurried way to end the day.</p>
+      </div>
+      <div class="day-sleep">
+        <div class="sleep-icon">◈</div>
+        <div>
+          <div class="sleep-label">Tonight you sleep at</div>
+          <div class="sleep-name">Villa Selenya</div>
+          <div class="sleep-location">Talpe, Southern Coast</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="day-sep"></div>
+
+  <!-- DAY 7 -->
+  <div class="day-entry reveal">
+    <div class="day-image reveal-img">
+      <img src="images/Weligama%20Stilt%20Fisherman.jpg" alt="Colombo Tea Tasting" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="day-image-placeholder" style="display:none"><span>Colombo</span></div>
+      <div class="day-image-overlay"></div>
+      <div class="day-num-ghost">07</div>
+      <div class="day-image-caption">
+        <div>
+          <div class="day-num-label">Day Seven</div>
+          <h2 class="day-image-h2">Talpe to <em>Colombo</em></h2>
+        </div>
+        <div class="day-drive-badge">2.5 hours' drive</div>
+      </div>
+    </div>
+    <div class="day-content">
+      <div class="day-body">
+        <p>After breakfast, proceed to Colombo and into the inner world of Ceylon tea with a professional tasting session led by experts who regularly attend the Sri Lankan tea auction. Visit one of the country's oldest producers for exclusive access to the full production process; refining, blending, packaging and the unique grading system that has shaped Ceylon tea's global reputation.</p>
+        <p>Learn the subtle differences in grain, texture, colour, strength and flavour across high, mid and low-grown teas, and understand how master blenders craft each batch to meet the distinct preferences of tea markets around the world.</p>
+      </div>
+      <div class="day-highlight">
+        <div class="day-highlight-label">Alternative Evening</div>
+        <p>Explore Colombo's busy streets after dark; a different city entirely when the heat drops and the restaurants fill. End with some last-minute shopping before a final night at the Cinnamon Life.</p>
+      </div>
+      <div class="day-sleep">
+        <div class="sleep-icon">◈</div>
+        <div>
+          <div class="sleep-label">Tonight you sleep at</div>
+          <div class="sleep-name">Cinnamon Life</div>
+          <div class="sleep-location">Colombo, Western Province</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ── DAY 8 DEPARTURE ── -->
+<div class="departure-band reveal">
+  <div class="dep-num">8</div>
+  <div class="dep-content">
+    <h3>Colombo to Airport: A Final Morning</h3>
+    <p>After a final leisurely breakfast in Colombo, check out and begin your private transfer to Bandaranaike International Airport along the coastal expressway, timed precisely to your flight. Assistance with your luggage on arrival, a quiet farewell, and then Sri Lanka recedes behind you; taking with you the memories, stories and quiet moments that made this journey entirely your own.</p>
+  </div>
+</div>
+
+<!-- ── PROPERTY SUMMARY ── -->
+<div class="prop-summary reveal">
+  <div class="prop-summary-label">Where you will sleep</div>
+  <div class="prop-grid">
+    <div class="prop-card">
+      <div class="prop-nights">Nights 1 &amp; 2</div>
+      <div class="prop-name">Jetwing Kandy Gallery</div>
+      <div class="prop-loc">Kandy</div>
+    </div>
+    <div class="prop-card">
+      <div class="prop-nights">Nights 3 &amp; 4</div>
+      <div class="prop-name">98 Acres Resort &amp; Spa</div>
+      <div class="prop-loc">Ella</div>
+    </div>
+    <div class="prop-card">
+      <div class="prop-nights">Nights 5 &amp; 6</div>
+      <div class="prop-name">Villa Selenya</div>
+      <div class="prop-loc">Talpe, Southern Coast</div>
+    </div>
+    <div class="prop-card">
+      <div class="prop-nights">Night 7</div>
+      <div class="prop-name">Cinnamon Life</div>
+      <div class="prop-loc">Colombo</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CTA ── -->
+<section class="itin-cta">
+  <div class="itin-cta-left reveal">
+    <h2>This journey is a<br><em>starting point.</em></h2>
+    <p>Every Exemplary Voyages itinerary is tailored before departure. Different properties, different pacing, additional days or a completely new direction; we design around you, not around a catalogue. Tell us who you are and how you travel, and we will build something that belongs only to you.</p>
+  </div>
+  <div class="itin-cta-right reveal">
+    <a href="mailto:inquiries@exemplaryvoyages.com" class="cta-btn">
+      <div>
+        <div class="cta-btn-label">Send an Enquiry</div>
+        <div class="cta-btn-name">inquiries@exemplaryvoyages.com</div>
+      </div>
+      <div class="cta-btn-arrow">→</div>
+    </a>
+    <a href="https://wa.me/94XXXXXXXXX" class="cta-btn">
+      <div>
+        <div class="cta-btn-label">WhatsApp</div>
+        <div class="cta-btn-name">Message us directly</div>
+      </div>
+      <div class="cta-btn-arrow">→</div>
+    </a>
+    <a href="sri-lanka.html" class="cta-primary">
+      Explore All Sri Lanka Itineraries →
+    </a>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="images/EV-logo-white.png" alt="Exemplary Voyages">
+      <p>Bespoke journeys through Sri Lanka and the Maldives, crafted for those who travel with intention.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Sri Lanka</h5>
+      <ul>
+        <li><a href="ancient-kingdom-trail.html">Ancient Kingdom Trail</a></li>
+        <li><a href="highland-tea-route.html">Highland Tea Route</a></li>
+        <li><a href="southern-coast.html">The Southern Coast</a></li>
+        <li><a href="wilderness-immersion.html">Wilderness Immersion</a></li>
+        <li><a href="cultural-compass.html">Cultural Compass</a></li>
+        <li><a href="wedding-in-ceylon.html">Wedding in Ceylon</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Maldives</h5>
+      <ul>
+        <li><a href="#">Atoll Private Retreat</a></li>
+        <li><a href="#">Overwater Villas</a></li>
+        <li><a href="#">Private Reserves</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Sustainability</a></li>
+        <li><a href="#">Journal</a></li>
+        <li><a href="mailto:inquiries@exemplaryvoyages.com">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Exemplary Voyages. All rights reserved.</span>
+    <span>Boutique DMC · Sri Lanka &amp; Maldives</span>
+  </div>
+</footer>
+
+<script>
+function toggleMobileNav(){
+  document.getElementById('mobileNav').classList.toggle('open');
+}
+function closeMobileNav(){
+  document.getElementById('mobileNav').classList.remove('open');
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape') closeMobileNav();
+});
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}
+  });
+},{threshold:0.08});
+document.querySelectorAll('.reveal,.reveal-img').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
