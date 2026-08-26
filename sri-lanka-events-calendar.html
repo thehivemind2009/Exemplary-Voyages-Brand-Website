@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sri Lanka Through the Year — Exemplary Voyages</title>
+<meta name="description" content="Discover what makes every month in Sri Lanka worth experiencing. Blue whales, elephant gatherings, sacred festivals and surf seasons — the complete seasonal guide.">
+<meta property="og:title" content="Sri Lanka Through the Year — Exemplary Voyages">
+<meta property="og:description" content="Every month holds a different story. The complete guide to Sri Lanka's wildlife, festivals, and experiences by season.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ── RESET ─────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Montserrat', sans-serif; background: #FDFAF6; color: #1A1A2E; line-height: 1.6; overflow-x: hidden; }
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+
+/* ── CSS VARIABLES ─────────────────────────────────────────── */
+:root {
+  --midnight: #1A1F1C;
+  --ivory: #F5F0E8;
+  --gold: #B8972A;
+  --tea: #3D5A45;
+  --stone: #C4A882;
+  --gold-cal: #C9A84C;
+  --gold-light: #E8D5A3;
+  --gold-pale: #FBF6EC;
+  --teal: #1B5E6C;
+  --teal-light: #2A7F91;
+  --teal-pale: #EAF4F7;
+  --saffron: #D4722A;
+  --saffron-pale: #FDF0E8;
+  --green: #2C6B4A;
+  --green-pale: #EBF5EF;
+  --ruby: #9C2030;
+  --ruby-pale: #FCF0F2;
+  --slate: #2D3748;
+  --text: #1A1A2E;
+  --text-muted: #6B7280;
+  --border: #E8E0D5;
+  --white: #FFFFFF;
+  --bg: #FDFAF6;
+}
+
+/* ── EV NAVIGATION ─────────────────────────────────────────── */
+nav#navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 48px; height: 80px;
+  transition: background 0.5s ease, height 0.4s ease;
+}
+nav#navbar.scrolled {
+  background: rgba(26,31,28,0.97); height: 64px;
+  backdrop-filter: blur(12px);
+}
+.nav-logo { display: flex; align-items: center; }
+.nav-logo img { height: 72px; width: auto; display: block; object-fit: contain; filter: brightness(0) invert(1); }
+.nav-links {
+  display: flex; align-items: center; gap: 30px; list-style: none;
+}
+.nav-links > li > a {
+  font-family: 'Inter', Arial, sans-serif; font-size: 11px; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(245,240,232,0.85); transition: color 0.3s; position: relative;
+}
+.nav-links > li > a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+  height: 1px; background: var(--gold);
+  transform: scaleX(0); transform-origin: right; transition: transform 0.35s ease;
+}
+.nav-links > li > a:hover { color: var(--ivory); }
+.nav-links > li > a:hover::after { transform: scaleX(1); transform-origin: left; }
+.nav-links > li > a.active { color: var(--gold); }
+.nav-cta {
+  font-family: 'Inter', Arial, sans-serif; font-size: 11px; font-weight: 500;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--ivory);
+  border: 1px solid var(--gold); padding: 11px 26px;
+  transition: background 0.35s, color 0.35s; white-space: nowrap;
+}
+.nav-cta:hover { background: var(--gold); color: var(--midnight); }
+.nav-toggle {
+  display: none; flex-direction: column; justify-content: center;
+  align-items: center; gap: 5px; width: 44px; height: 44px;
+  background: none; border: none; cursor: pointer; z-index: 1001; flex-shrink: 0;
+}
+.nav-toggle span {
+  display: block; width: 24px; height: 1.5px; background: var(--ivory);
+  transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), opacity 0.25s ease;
+}
+nav#navbar.nav-open .nav-toggle span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+nav#navbar.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+nav#navbar.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+.nav-mobile-overlay {
+  display: none; position: fixed; inset: 0; z-index: 998;
+  background: rgba(26,31,28,0.98); backdrop-filter: blur(20px);
+  flex-direction: column; justify-content: center; align-items: center; gap: 8px;
+  padding: 100px 8vw 60px; opacity: 0; pointer-events: none;
+  transition: opacity 0.4s cubic-bezier(0.22,1,0.36,1);
+}
+.nav-mobile-overlay.show { opacity: 1; pointer-events: auto; }
+.nav-mobile-overlay a {
+  font-family: 'Inter', Arial, sans-serif; font-size: 13px; font-weight: 400;
+  letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,240,232,0.8);
+  padding: 18px 0; width: 100%; text-align: center;
+  border-bottom: 1px solid rgba(245,240,232,0.07); transition: color 0.25s;
+}
+.nav-mobile-overlay a:hover, .nav-mobile-overlay a.active { color: var(--gold); }
+.nav-mobile-cta-link {
+  margin-top: 28px; font-family: 'Inter', Arial, sans-serif; font-size: 11px;
+  font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--ivory) !important; border: 1px solid var(--gold) !important;
+  padding: 16px 40px !important; width: auto !important; border-bottom: 1px solid var(--gold) !important;
+}
+
+/* ── CALENDAR HEADER ───────────────────────────────────────── */
+.cal-hero {
+  background: linear-gradient(135deg, #0F3442 0%, #1B5E6C 40%, #2A7F91 70%, #C9A84C 100%);
+  padding: 140px 40px 60px;
+  text-align: center; position: relative; overflow: hidden;
+}
+.cal-hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.cal-hero-badge {
+  display: inline-block; background: rgba(201,168,76,0.2);
+  border: 1px solid rgba(201,168,76,0.5); color: var(--gold-light);
+  font-size: 10px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
+  padding: 6px 18px; border-radius: 20px; margin-bottom: 24px; position: relative;
+}
+.cal-hero h1 {
+  font-family: 'Cormorant Garamond', serif; font-size: clamp(38px, 6vw, 62px);
+  font-weight: 300; color: #FFFFFF; line-height: 1.1; margin-bottom: 10px; position: relative;
+  letter-spacing: -0.5px;
+}
+.cal-hero h1 span { color: var(--gold-light); font-style: italic; }
+.cal-hero-sub {
+  font-size: 12px; font-weight: 400; color: rgba(255,255,255,0.65);
+  letter-spacing: 3px; text-transform: uppercase; margin-bottom: 24px; position: relative;
+}
+.cal-hero-divider {
+  width: 60px; height: 1px; background: var(--gold-cal); margin: 0 auto 24px; position: relative;
+}
+.cal-hero-tagline {
+  font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 300;
+  font-style: italic; color: rgba(255,255,255,0.88); max-width: 680px;
+  margin: 0 auto 36px; position: relative; line-height: 1.6;
+}
+.cal-hero-stats {
+  display: flex; justify-content: center; gap: 40px;
+  flex-wrap: wrap; position: relative;
+}
+.cal-hero-stat { text-align: center; }
+.cal-hero-stat strong {
+  display: block; color: var(--gold-light); font-size: 14px;
+  font-weight: 600; letter-spacing: 0; margin-bottom: 3px;
+}
+.cal-hero-stat span { font-size: 11px; color: rgba(255,255,255,0.55); letter-spacing: 1px; }
+.cal-back-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'Inter', Arial, sans-serif; font-size: 11px; font-weight: 500;
+  letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.5);
+  position: absolute; top: 96px; left: 48px;
+  transition: color 0.3s;
+}
+.cal-back-link:hover { color: var(--gold-light); }
+.cal-back-link svg { width: 14px; height: 14px; }
+
+/* ── LEGEND BAR ────────────────────────────────────────────── */
+.legend-bar {
+  background: var(--slate); padding: 14px 40px;
+  display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+  justify-content: center; position: sticky; top: 0; z-index: 100;
+}
+.legend-label {
+  font-size: 10px; font-weight: 600; letter-spacing: 2px;
+  color: rgba(255,255,255,0.4); text-transform: uppercase; margin-right: 4px;
+}
+.legend-item {
+  display: flex; align-items: center; gap: 7px;
+  font-size: 11px; color: rgba(255,255,255,0.78); font-weight: 500;
+}
+.legend-dot {
+  width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+}
+
+/* ── CALENDAR WRAPPER ──────────────────────────────────────── */
+.calendar-wrapper { padding: 0 40px 60px; max-width: 1400px; margin: 0 auto; }
+
+.season-section { margin-bottom: 56px; }
+.season-header {
+  display: flex; align-items: center; gap: 16px; margin-bottom: 20px;
+  padding-bottom: 12px; border-bottom: 2px solid var(--border);
+}
+.season-icon { font-size: 28px; }
+.season-title {
+  font-family: 'Cormorant Garamond', serif; font-size: 30px;
+  font-weight: 400; color: var(--text);
+}
+.season-range {
+  font-size: 11px; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--text-muted); margin-left: auto;
+}
+.months-row {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;
+}
+
+/* ── HIGHLIGHT BANNER ──────────────────────────────────────── */
+.highlight-banner {
+  background: linear-gradient(135deg, #1B5E6C 0%, #0F3442 100%);
+  color: white; padding: 24px 30px; border-radius: 12px;
+  margin: 0 0 28px; display: flex; align-items: center; gap: 20px;
+}
+.highlight-banner.green { background: linear-gradient(135deg, #2C6B4A 0%, #1A3D2B 100%); }
+.hl-icon { font-size: 36px; flex-shrink: 0; }
+.hl-title {
+  font-family: 'Cormorant Garamond', serif; font-size: 22px;
+  font-weight: 400; color: var(--gold-light); margin-bottom: 5px;
+}
+.hl-body { font-size: 12px; color: rgba(255,255,255,0.8); line-height: 1.65; }
+
+/* ── MONTH CARD ────────────────────────────────────────────── */
+.month-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 12px; overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  transition: box-shadow 0.2s;
+}
+.month-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.1); }
+.month-header {
+  padding: 18px 22px 14px;
+  display: flex; align-items: flex-start; justify-content: space-between;
+}
+.month-name {
+  font-family: 'Cormorant Garamond', serif; font-size: 28px;
+  font-weight: 600; color: var(--white); line-height: 1;
+}
+.month-number { font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.6); letter-spacing: 1px; margin-top: 4px; }
+.month-weather { text-align: right; font-size: 11px; color: rgba(255,255,255,0.8); line-height: 1.5; }
+.month-hook {
+  padding: 0 22px 16px; font-family: 'Cormorant Garamond', serif;
+  font-size: 16px; font-style: italic; font-weight: 400;
+  color: rgba(255,255,255,0.92); line-height: 1.45;
+}
+.month-body { padding: 18px 22px 22px; }
+
+/* Month colour themes */
+.jan .month-header, .jan .month-hook { background: linear-gradient(135deg, #1B5E6C, #2A7F91); }
+.feb .month-header, .feb .month-hook { background: linear-gradient(135deg, #5C3A7E, #7B54A0); }
+.mar .month-header, .mar .month-hook { background: linear-gradient(135deg, #2C6B4A, #3E8F63); }
+.apr .month-header, .apr .month-hook { background: linear-gradient(135deg, #9C2030, #C0384A); }
+.may .month-header, .may .month-hook { background: linear-gradient(135deg, #C9A84C, #B8922E); }
+.jun .month-header, .jun .month-hook { background: linear-gradient(135deg, #2C6B4A, #4A8F66); }
+.jul .month-header, .jul .month-hook { background: linear-gradient(135deg, #1B5E6C, #0F3442); }
+.aug .month-header, .aug .month-hook { background: linear-gradient(135deg, #1B5E6C, #2A7F91); }
+.sep .month-header, .sep .month-hook { background: linear-gradient(135deg, #D4722A, #B85E1E); }
+.oct .month-header, .oct .month-hook { background: linear-gradient(135deg, #9C2030, #7A1520); }
+.nov .month-header, .nov .month-hook { background: linear-gradient(135deg, #5C3A7E, #4A2B68); }
+.dec .month-header, .dec .month-hook { background: linear-gradient(135deg, #C9A84C, #D4722A); }
+
+/* ── EVENT ITEMS ───────────────────────────────────────────── */
+.events-list { display: flex; flex-direction: column; gap: 10px; }
+.event-item {
+  display: flex; gap: 10px; align-items: flex-start;
+  padding: 10px 12px; border-radius: 8px; border-left: 3px solid transparent;
+}
+.event-item.wildlife   { background: var(--green-pale);   border-left-color: var(--green); }
+.event-item.cultural   { background: var(--gold-pale);    border-left-color: var(--gold-cal); }
+.event-item.beach-surf { background: var(--teal-pale);    border-left-color: var(--teal-light); }
+.event-item.adventure  { background: var(--saffron-pale); border-left-color: var(--saffron); }
+.event-item.special    { background: var(--ruby-pale);    border-left-color: var(--ruby); }
+.event-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+.event-name {
+  font-size: 12px; font-weight: 700; color: var(--text);
+  line-height: 1.3; text-transform: uppercase; letter-spacing: 0.3px;
+}
+.event-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; margin-top: 2px; }
+.event-tag {
+  display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; padding: 2px 7px; border-radius: 10px; margin-top: 4px;
+}
+.event-date {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.5px; color: var(--text-muted);
+  background: rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 4px; padding: 2px 7px; margin-bottom: 4px;
+}
+.event-date::before { content: '📅 '; font-size: 9px; }
+.tag-wildlife   { background: var(--green);      color: white; }
+.tag-cultural   { background: var(--gold-cal);   color: #3A2A00; }
+.tag-surf       { background: var(--teal-light);  color: white; }
+.tag-adventure  { background: var(--saffron);    color: white; }
+.tag-special    { background: var(--ruby);        color: white; }
+.tag-festival   { background: #1B5E6C;            color: white; }
+
+/* ── ANNUAL PLANNER STRIP ──────────────────────────────────── */
+.planner-strip {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 12px; padding: 28px 32px; margin: 30px 0;
+}
+.planner-title { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 400; color: var(--text); margin-bottom: 6px; }
+.planner-sub { font-size: 12px; color: var(--text-muted); margin-bottom: 24px; }
+.planner-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 4px; }
+.planner-month { text-align: center; }
+.planner-m-name { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-bottom: 6px; }
+.planner-bar { height: 60px; border-radius: 4px; display: flex; flex-direction: column; gap: 2px; padding: 3px; }
+.planner-pip { flex: 1; border-radius: 2px; min-height: 6px; }
+.pip-wildlife { background: var(--green); }
+.pip-cultural { background: var(--gold-cal); }
+.pip-surf     { background: var(--teal-light); }
+.pip-special  { background: var(--ruby); }
+.pip-empty    { background: #EEE; }
+
+/* ── EV FOOTER ─────────────────────────────────────────────── */
+footer { background: #111512; padding: 80px 8vw 48px; }
+.footer-top {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 56px; padding-bottom: 60px;
+  border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 40px;
+}
+.footer-brand .brand-name {
+  font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 300;
+  letter-spacing: 0.2em; color: var(--ivory); text-transform: uppercase; margin-bottom: 4px;
+}
+.footer-brand .brand-tagline {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 13px; color: var(--stone); letter-spacing: 0.05em; margin-bottom: 22px;
+}
+.footer-brand p {
+  font-family: 'Inter', Arial, sans-serif; font-size: 13px; font-weight: 300;
+  color: rgba(245,240,232,0.42); line-height: 1.8; max-width: 280px; margin-bottom: 26px;
+}
+.footer-col h4 {
+  font-family: 'Inter', Arial, sans-serif; font-size: 10px; font-weight: 500;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(245,240,232,0.3); margin-bottom: 18px;
+}
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 11px; }
+.footer-col ul li a {
+  font-family: 'Inter', Arial, sans-serif; font-size: 13px; font-weight: 300;
+  color: rgba(245,240,232,0.55); transition: color 0.3s;
+}
+.footer-col ul li a:hover { color: var(--gold); }
+.footer-bottom {
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+}
+.footer-bottom p {
+  font-family: 'Inter', Arial, sans-serif; font-size: 12px; font-weight: 300;
+  color: rgba(245,240,232,0.24);
+}
+.footer-bottom-links { display: flex; gap: 24px; }
+.footer-bottom-links a {
+  font-family: 'Inter', Arial, sans-serif; font-size: 12px; font-weight: 300;
+  color: rgba(245,240,232,0.24); transition: color 0.3s;
+}
+.footer-bottom-links a:hover { color: rgba(245,240,232,0.55); }
+
+/* ── RESPONSIVE ────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .nav-links, .nav-cta { display: none !important; }
+  .nav-toggle { display: flex; }
+  nav#navbar { background: rgba(26,31,28,0.96) !important; height: 72px !important; padding: 0 24px; }
+  .cal-back-link { left: 24px; top: 84px; }
+}
+@media (max-width: 768px) {
+  .nav-mobile-overlay { display: flex; }
+  .cal-hero { padding: 120px 20px 48px; }
+  .cal-back-link { left: 20px; top: 80px; }
+  .legend-bar { padding: 12px 16px; gap: 14px; }
+  .legend-label { display: none; }
+  .legend-item { font-size: 10px; }
+  .calendar-wrapper { padding: 0 16px 40px; }
+  .season-title { font-size: 22px; }
+  .season-range { display: none; }
+  .planner-grid { grid-template-columns: repeat(6, 1fr); }
+  .footer-top { grid-template-columns: 1fr; gap: 32px; padding-bottom: 40px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .months-row { grid-template-columns: 1fr; }
+}
+@media print { .legend-bar { position: static; } .month-card { break-inside: avoid; } }
+</style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav id="navbar">
+  <a href="/" class="nav-logo">
+    <img src="images/EV-logo.png" alt="Exemplary Voyages">
+  </a>
+  <ul class="nav-links">
+    <li><a href="/sri-lanka" class="active">Sri Lanka</a></li>
+    <li><a href="/maldives">Maldives</a></li>
+    <li><a href="/experiences">Experiences</a></li>
+    <li><a href="/journal">Journal</a></li>
+    <li><a href="/sustainability">Sustainability</a></li>
+    <li><a href="/about">About</a></li>
+  </ul>
+  <a href="mailto:inquiries@exemplaryvoyages.com" class="nav-cta">Begin Planning</a>
+  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleMobileNav(this)">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile-overlay" id="mobileNavOverlay">
+  <a href="/sri-lanka" onclick="closeMobileNav()">Sri Lanka</a>
+  <a href="/maldives" onclick="closeMobileNav()">Maldives</a>
+  <a href="/experiences" onclick="closeMobileNav()">Experiences</a>
+  <a href="/journal" onclick="closeMobileNav()">Journal</a>
+  <a href="/sustainability" onclick="closeMobileNav()">Sustainability</a>
+  <a href="/about" onclick="closeMobileNav()">About</a>
+  <a href="mailto:inquiries@exemplaryvoyages.com" class="nav-mobile-cta-link" onclick="closeMobileNav()">Begin Planning</a>
+</div>
+
+<!-- ── HERO ── -->
+<header class="cal-hero">
+  <a href="sri-lanka.html" class="cal-back-link">
+    <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="13" y1="7" x2="1" y2="7" stroke="currentColor" stroke-width="1.2"/><polyline points="6,2 1,7 6,12" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linejoin="round"/></svg>
+    Back to Sri Lanka
+  </a>
+  <div class="cal-hero-badge">The Complete Seasonal Guide</div>
+  <h1>Sri Lanka<br><span>Through the Year</span></h1>
+  <div class="cal-hero-sub">Exemplary Voyages · Wildlife · Festivals · Surf · Adventure</div>
+  <div class="cal-hero-divider"></div>
+  <p class="cal-hero-tagline">"Every month holds a miracle — from torch-lit processions to blue whales breaching at dawn, and elephants gathering at ancient lakes. Sri Lanka never sleeps on wonder."</p>
+  <div class="cal-hero-stats">
+    <div class="cal-hero-stat"><strong>12 Months</strong><span>Fully Covered</span></div>
+    <div class="cal-hero-stat"><strong>5 Categories</strong><span>Wildlife · Culture · Surf · Adventure · Signature</span></div>
+    <div class="cal-hero-stat"><strong>Boutique DMC</strong><span>Sri Lanka Specialists</span></div>
+  </div>
+</header>
+
+<!-- ── LEGEND ── -->
+<div class="legend-bar">
+  <span class="legend-label">Event Types:</span>
+  <div class="legend-item"><div class="legend-dot" style="background:#2C6B4A"></div> Wildlife &amp; Nature</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#C9A84C"></div> Cultural &amp; Festivals</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#2A7F91"></div> Beach &amp; Surf</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#D4722A"></div> Adventure &amp; Pilgrimage</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#9C2030"></div> Signature Experiences</div>
+</div>
+
+<!-- ── CALENDAR ── -->
+<div class="calendar-wrapper">
+
+  <!-- ════ SEASON: PEAK WINTER ════ -->
+  <div class="season-section">
+    <div class="season-header">
+      <span class="season-icon">🌊</span>
+      <h2 class="season-title">Peak Season — The Golden Coast</h2>
+      <span class="season-range">December · January · February</span>
+    </div>
+
+    <div class="highlight-banner">
+      <div class="hl-icon">🐋</div>
+      <div class="hl-text">
+        <div class="hl-title">The Whale Watching Window Opens</div>
+        <div class="hl-body">From November through April, the waters off Mirissa's southern coast become one of the world's most reliable locations for sighting blue whales — the largest animal on Earth. Sperm whales and spinner dolphins are regular companion sightings. The season peaks between January and March.</div>
+      </div>
+    </div>
+
+    <div class="months-row">
+
+      <!-- DECEMBER -->
+      <div class="month-card dec">
+        <div class="month-header">
+          <div>
+            <div class="month-name">December</div>
+            <div class="month-number">Month 12 · Peak Season Begins</div>
+          </div>
+          <div class="month-weather">☀️ Dry &amp; sunny<br>South &amp; west coast: ideal<br>Highest room rates</div>
+        </div>
+        <div class="month-hook">"Where candlelit carols echo through fort walls and blue whales surface at dawn — Sri Lanka's most glamorous month."</div>
+        <div class="month-body">
+          <div class="events-list">
+
+            <div class="event-item cultural">
+              <div class="event-icon">🏔️</div>
+              <div class="event-content">
+                <div class="event-date">Unduvap Poya, ~Dec 5–15</div>
+                <div class="event-name">Adam's Peak Pilgrimage Season Opens</div>
+                <div class="event-desc">Trail lighting and the summit temple switch back on for the night climb to Sri Pada — the pilgrimage season runs through to May. December's early climbs are quieter and highly atmospheric.</div>
+                <span class="event-tag tag-cultural">CULTURAL</span>
+              </div>
+            </div>
+
+            <div class="event-item special">
+              <div class="event-icon">🎄</div>
+              <div class="event-content">
+                <div class="event-date">December 25</div>
+                <div class="event-name">Christmas — Negombo &amp; Nationwide</div>
+                <div class="event-desc">Negombo's "Little Rome" holds candlelit midnight masses and beachfront feasts. Hill-station hotels in Nuwara Eliya embrace colonial Christmas charm with log fires and carol dinners.</div>
+                <span class="event-tag tag-special">SIGNATURE</span>
+              </div>
+            </div>
+
+            <div class="event-item special">
+              <div class="event-icon">🥂</div>
+              <div class="event-content">
+                <div class="event-date">December 31</div>
+                <div class="event-name">New Year's Eve Celebrations</div>
+                <div class="event-desc">South-coast resorts, Galle Fort and Colombo's Galle Face Green sell out for beachfront countdowns and rooftop dinners. The single highest-demand night of the calendar — book early.</div>
+                <span class="event-tag tag-special">SIGNATURE</span>
+              </div>
+            </div>
+
+            <div class="event-item wildlife">
+              <div class="event-icon">🐋</div>
+              <div class="event-content">
+                <div class="event-date">Dec – Apr, building through the month</div>
+                <div class="event-name">Whale Watching Season Builds — Mirissa</div>
+                <div class="event-desc">Boats return to the southern channel and blue whale sightings climb steadily into the January–March peak. Sunrise departures from Mirissa Harbour.</div>
+                <span class="event-tag tag-wildlife">WILDLIFE</span>
+              </div>
+            </div>
+
+            <div class="event-item beach-surf">
+              <div class="event-icon">🪁</div>
+              <div class="event-content">
+                <div class="event-date">Dec – Mar</div>
+                <div class="event-name">Kalpitiya Kitesurfing — Winter Season Opens</div>
+                <div class="event-desc">Calmer lagoon water and consistent north-westerly winds make this the ideal season for kitesurfing, often paired with dolphin- and whale-watching excursions.</div>
+                <span class="event-tag tag-surf">BEACH &amp; SURF</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- JANUARY -->
+      <div class="month-card jan">
+        <div class="month-header">
+          <div>
+            <div class="month-name">January</div>
+            <div class="month-number">Month 01 · Absolute Peak</div>
+          </div>
+          <div class="month-weather">☀️ Dry &amp; sunny<br>South &amp; west: ideal<br>Best conditions of the year</div>
+        </div>
+        <div class="month-hook">"January is Sri Lanka in full bloom — a literary festival in a Dutch fort, sapphires on the trading floor, and the world's largest mammals just offshore."</div>
+        <div class="month-body">
+          <div class="events-list">
+
+            <div class="event-item cultural">
+              <div class="event-icon">🐘</div>
+              <div class="event-content">
+                <div class="event-date">Duruthu Poya, early Jan</div>
+                <div class="event-name">Duruthu Perahera — Kelaniya</div>
+                <div class="event-desc">The island's ceremonial year-opener: a torch-lit procession of decorated elephants, whip-crackers and traditional dancers at Kelaniya Raja Maha Viharaya, marking Buddha's legendary first visit to Sri Lanka.</div>
+                <span class="event-tag tag-festival">FESTIVAL</span>
+              </div>
+            </div>
+
+            <div class="event-item cultural">
+              <div class="event-icon">🌾</div>
+              <div class="event-content">
+                <div class="event-date">Jan 14–15 (fixed)</div>
+                <div class="event-name">Thai Pongal — Tamil Harvest Festival</div>
+                <div class="event-desc">A vibrant Tamil harvest festival across the north and hill-country tea estates — kolam floor art, milk-rice boiled over for abundance, and community feasts.</div>
+                <span class="event-tag tag-cultural">CULTURAL</span>
+              </div>
+            </div>
+
+            <div class="event-item special">
+              <div class="event-icon">📚</div>
+              <div class="event-content">
+                <div class="event-date">Typically late Jan (confirm annually)</div>
+                <div class="event-name">Galle Literary Festival</div>
+                <div class="event-desc">Booker Prize winners, global publishers and design-conscious travellers converge on the UNESCO-listed Galle Fort for a weekend of literature, debate and discovery.</div>
+                <span class="event-tag tag-special">SIGNATURE EVENT</span>
+              </div>
+            </div>
+
+            <div class="event-item special">
+              <div class="event-icon">💎</div>
+              <div class="event-content">
+                <div class="event-date">Mid–late Jan</div>
+                <div class="event-name">FACETS Sri Lanka — Gem &amp; Jewellery Show, Colombo</div>
+                <div class="event-desc">The "Island of Gems" opens its vaults at the BMICH — international buyers arrive for sapphires straight from the Ratnapura mines. A rich hook for gem and culture add-on itineraries.</div>
+                <span class="event-tag tag-special">SHOWCASE</span>
+              </div>
+            </div>
+
+            <div class="event-item wildlife">
+              <div class="event-icon">🐋</div>
+              <div class="event-content">
+                <div class="event-date">Nov – Apr, peaks Jan – Mar</div>
+                <div class="event-name">Peak Blue Whale Watching — Mirissa</div>
+                <div class="event-desc">January is one of the finest months for blue whale sightings, with the southern migration at its most active. Sunrise trips from Mirissa Harbour, typically 6:00–7:00am.</div>
+                <span class="event-tag tag-wildlife">WILDLIFE</span>
+              </div>
+            </div>
+
+            <div class="event-item wildlife">
+              <div class="event-icon">🐆</div>
+              <div class="event-content">
+                <div class="event-date">Best Dec – Aug (Yala closed ~Sep–Oct)</div>
+                <div class="event-name">Leopard Safaris — Yala &amp; Wilpattu</div>
+                <div class="event-desc">Sri Lanka holds one of the highest wild-leopard densities on Earth. January's dry conditions concentrate prey around waterholes for exceptional sighting odds.</div>
+                <span class="event-tag tag-wildlife">WILDLIFE</span>
+              </div>
+            </div>
+
+            <div class="event-item adventure">
+              <div class="event-icon">🏔️</div>
+              <div class="event-content">
+                <div class="event-date">Dec – May, best Jan – Mar</div>
+                <div class="event-name">Adam's Peak — Midnight Ascent</div>
+                <div class="event-desc">Pilgrims and trekkers climb through the night to reach the summit at sunrise, witnessing the mountain's famous triangular shadow cast across the hills — a ritual shared by Buddhists, Hindus, Muslims and Christians alike.</div>
+                <span class="event-tag tag-adventure">PILGRIMAGE</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- FEBRUARY -->
+      <div class="month-card feb">
+        <div class="month-header">
+          <div>
+            <div class="month-name">February</div>
+            <div class="month-number">Month 02 · Peak Continues</div>
+          </div>
+          <div class="month-weather">☀️ Dry &amp; sunny<br>Best conditions island-wide<br>Honeymoon high season</div>
+        </div>
+        <div class="month-hook">"Fifty painted elephants stride through Colombo, a global triathlon fleet takes over the coast road, and blue whales breach at dawn — February is Sri Lanka's most photogenic month."</div>
+        <div class="month-body">
+          <div class="events-list">
+
+            <div class="event-item cultural">
+              <div class="event-icon">🏛️</div>
+              <div class="event-content">
+                <div class="event-date">February 4 (fixed)</div>
+                <div class="event-name">Independence Day</div>
+                <div class="event-desc">Sri Lanka's Independence Day features military parades, cultural performances and flag ceremonies in Colombo — a compelling backdrop for heritage travellers.</div>
+                <span class="event-tag tag-cultural">NATIONAL</span>
+              </div>
+            </div>
+
+            <div class="event-item cultural">
+              <div class="event-icon">🐘</div>
+              <div class="event-content">
+                <div class="event-date">February Poya (full moon)</div>
+                <div class="event-name">Navam Perahera — Gangaramaya Temple, Colombo</div>
+                <div class="event-desc">50+ ornately decorated elephants, costumed dancers, drummers and fire performers circle the Gangaramaya Temple by Beira Lake — a spectacular, highly photogenic event.</div>
+                <span class="event-tag tag-festival">FESTIVAL</span>
+              </div>
+            </div>
+
+            <div class="event-item adventure">
+              <div class="event-icon">🏊</div>
+              <div class="event-content">
+                <div class="event-date">~Feb 22, 2026</div>
+                <div class="event-name">IRONMAN 70.3 Colombo</div>
+                <div class="event-desc">The global triathlon circuit returns to Colombo's coastal roads — swim, bike and run through the capital. A ready-made experience for sports-focused travellers; the city sells out early.</div>
+                <span class="event-tag tag-adventure">SPORT</span>
+              </div>
+            </div>
+
+            <div class="event-item cultural">
+              <div class="event-icon">🔱</div>
+              <div class="event-content">
+                <div class="event-date">Late Feb – early Mar (lunar)</div>
+                <div class="event-name">Maha Shivaratri — Hindu Night Vigil</div>
+                <div class="event-desc">Night-long vigils and ritual bathing ceremonies at major Hindu temples, including the clifftop Koneswaram Temple in Trincomalee — an authentic immersion into Sri Lanka's Hindu heritage.</div>
+                <span class="event-tag tag-cultural">CULTURAL</span>
+              </div>
+            </div>
+
+            <div class="event-item wildlife">
+              <div class="event-icon">🐋</div>
+              <div class="event-content">
+                <div class="event-date">Nov – Apr, Feb–Mar near-peak</div>
+                <div class="event-name">Blue Whale Watching — Mirissa</div>
+                <div class="event-desc">Calm seas and clear skies make this one of the two best months of the entire whale-watching calendar, often paired with dolphin sightings.</div>
+                <span class="event-tag tag-wildlife">WILDLIFE</span>
+              </div>
+            </div>
+
+            <div class="event-item beach-surf">
+              <div class="event-icon">🏄</div>
+              <div class="event-content">
+                <div class="event-date">Nov – Apr, prime Dec – Mar</div>
+                <div class="event-name">South Coast Surf — Midigama &amp; Weligama</div>
+                <div class="event-desc">February delivers consistent south-coast swells. Advanced surfers head to Midigama's reef breaks; beginners thrive in Weligama's sheltered bay.</div>
+                <span class="event-tag tag-surf">SURF</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /months-row -->
+  </div><!-- /season Peak Winter -->
+
+  <!-- ════ SEASON: SPRING TRANSITION ════ -->
+  <div class="season-section">
+    <div class="season-header">
+      <span class="season-icon">🌺</span>
+      <h2 class="season-title">Spring Transition — Last of the Whales, New Year Fire &amp; Lantern Light</h2>
+      <span class="season-range">March · April · May</span>
+    </div>
+
+    <div class="months-row">
+
+      <!-- MARCH -->
+      <div class="month-card mar">
+        <div class="month-header">
+          <div>
+            <div class="month-name">March</div>
+            <div class="month-number">Month 03 · Final Peak, South Coast</div>
+          </div>
+          <div class="month-weather">☀️ Warm &amp; dry<br>Excellent south coast<br>Best-value window opens</div>
+        </div>
+        <div class="month-hook">"The last perfect month before the monsoon turns — blue whales peak and the surf rolls flawlessly on the south coast."</div>
+        <div class="month-body">
+          <div class="events-list">
+
+            <div class="event-item wildlife">
+              <div class="event-icon">🐋</div>
+              <div class="event-content">
+                <div class="event-date">March — season high point</div>
+                <div class="event-name">Blue Whale Peak — Mirissa</div>
+                <div class="event-desc">March is considered the season's absolute peak: calm seas and the highest sighting frequencies of the year. The ideal anchor for a dedicated whale-watching itinerary.</div>
+                <span class="event-tag tag-wildlife">PEAK SEASON</span>
+              </div>
+            </div>
+
+            <div class="event-item cultural">
+              <div class="event-icon">🌙</div>
+              <div class="event-content">
+                <div class="event-date">March Poya (full moon)</div>
+                <div class="event-name">Medin Poya</div>
+                <div class="event-desc">Full-moon Buddhist observance commemorating Buddha's visit to the heavenly realm — temple ceremonies and lotus lanterns create a quieter, more intimate cultural moment.</div>
+                <span class="event-tag tag-cultural">CULTURAL</span>
+              </div>
+            </div>
+
+            <div class="event-item beach-surf">
+              <div class="event-icon">🏄</div>
+              <div class="event-content">
+                <div class="event-date">Nov – Apr, March: last reliable month</div>
+                <div class="event-name">South Coast Surf — Last Prime Month</div>
+                <div class="event-desc">The final reliably excellent month for south-coast surfing before the south-west monsoon arrives — Hiriketiya, Midigama and Kabalana at their best.</div>
+                <span class="event-tag tag-surf">SURF</span>
+              </div>
+            </div>
+
+            <div class="event-item adventure">
+              <div class="event-icon">🏔️</div>
+              <div class="event-content">
+                <div class="event-date">Dec – May, March: popular, milder crowds</div>
+                <div class="event-name">Adam's Peak — Pilgrimage Season</div>
+                <div class="event-desc">One of the most popular months for the night climb, combining pleasant temperatures with smaller crowds. Pre-dawn summit reveals a sea of clouds and the peak's famous shadow stretching across the hills.</div>
+                <span class="event-tag tag-adventure">PILGRIMAGE</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- APRIL -->
+      <div class="month-card apr">
+        <div class="month-header">
+          <div>
+            <div class="month-name">April</div>
+            <div class="month-number">Month 04 · New Year &amp; Transition</div>
+          </div>
+          <div class="month-weather">🌤️ Hot, building humidity<br>Pre-monsoon<br>Island celebrates</div>
+        </div>
+        <div class="month-hook">"Two nations celebrate New Year in the same instant, and Colombo's runways light up just before it — April is Sri Lanka's most joyfully chaotic month."</div>
+        <div class="month-body">
+          <div class="events-list">
+
+            <div class="event-item special">
+              <div class="event-icon">🎊</div>
+              <div class="event-content">
+                <div class="event-date">April 13–14 (fixed)</div>
+                <div class="event-name">Sinhala &amp; Tamil New Year (Aluth Avurudu)</div>
+                <div class="event-desc">At a precise astrologically auspicious moment, the entire island simultaneously lights hearths, cooks milk rice and plays traditional games. Streets empty, kitchens overflow — a rare, unscripted window into authentic Sri Lankan family life.</div>
+                <span class="event-tag tag-special">SIGNATURE FESTIVAL</span>
+              </div>
+            </div>
+
+            <div class="event-item special">
+              <div class="event-icon">👗</div>
+              <div class="event-content">
+                <div class="event-date">Apr 1–4</div>
+                <div class="event-name">Colombo Fashion Week</div>
+                <div class="event-desc">South Asia's runway spotlight — Sri Lankan design houses debut collections to international press and buyers in a city that's rapidly becoming a creative destination in its own right.</div>
+                <span class="event-tag tag-special">SIGNATURE SHOWCASE</span>
+              </div>
+            </div>
+
+            <div class="event-item cultural">
+              <div class="event-icon">🌕</div>
+              <div class="event-content">
+                <div class="event-date">April Poya (full moon)</div>
+                <div class="event-name">Bak Poya</div>
+                <div class="event-desc">Full-moon Buddhist observance with temple ceremonies nationwide — a quiet cultural counterpoint to New Year's celebrations.</div>
+                <span class="event-tag tag-cultural">CULTURAL</span>
+              </div>
+            </div>
+
+            <div class="event-item wildlife">
+              <div class="event-icon">🐋</div>
+              <div class="event-content">
+                <div class="event-date">Through mid-April (season closes)</div>
+                <div class="event-name">Whale Watching — Mirissa (Closing Weeks)</div>
+                <div class="event-desc">Final opportunity for blue whale sightings before the south-west monsoon makes sea conditions unreliable and boats stand down until November.</div>
+                <span class="event-tag tag-wildlife">WILDLIFE</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- MAY -->
+      <div class="month-card may">
+        <div class="month-header">
+          <div>
+            <div class="month-name">May</div>
+            <div class="month-number">Month 05 · Spiritual Peak</div>
+          </div>
+          <div class="month-weather">🌦️ SW monsoon begins<br>East coast opens<br>South coast turns wet</div>
+        </div>
+        <div class="month-hook">"Lanterns fill every street on the island's most sacred night, and the wildlife, surf and kite seasons all flip to the east — May is Sri Lanka's great seasonal hinge."</div>
+        <div class="month-body">
+          <div class="events-list">
+
+            <div class="event-item special">
+              <div class="event-icon">🏮</div>
+              <div class="event-content">
+                <div class="event-date">May Poya (full moon)</div>
+                <div class="event-name">Vesak Poya — Sri Lanka's Most Sacred Night</div>
+                <div class="event-desc">Commemorating Buddha's birth, enlightenment and passing, every street and temple is adorned with hand-crafted paper lanterns and illuminated pandals. Free food stalls feed anyone regardless of faith — one of Asia's most luminous, generous nights.</div>
+                <span class="event-tag tag-special">SIGNATURE FESTIVAL</span>
+              </div>
+            </div>
+
+            <div class="event-item wildlife">
+              <div class="event-icon">🐻</div>
+              <div class="event-content">
+                <div class="event-date">May – Aug, peaks Jun – Jul</div>
+                <div class="event-name">Sloth Bear &amp; Palu Fruit Season — Yala</div>
+                <div class="event-desc">Sri Lanka's shyest predator climbs into daylight to feast on ripening palu fruit — the only weeks sloth bears are reliably visible from a jeep rather than glimpsed after dark. A remarkable and rare encounter.</div>
+                <span class="event-tag tag-wildlife">RARE ENCOUNTER</span>
+              </div>
+            </div>
+
+            <div class="event-item wildlife">
+              <div class="event-icon">🐋</div>
+              <div class="event-content">
+                <div class="event-date">May – Sep</div>
+                <div class="event-name">Whale Watching Opens — Trincomalee</div>
+                <div class="event-desc">As the south coast winds down, the east coast turns on — sperm whales and pods of dolphins in glassy morning water off Trincomalee's harbour.</div>
+                <span class="event-tag tag-wildlife">WILDLIFE</span>
+              </div>
+            </div>
+
+            <div class="event-item beach-surf">
+              <div class="event-icon">🏄</div>
+              <div class="event-content">
+                <div class="event-date">May – Sep</div>
+                <div class="event-name">Arugam Bay Surf Season Opens</div>
+                <div class="event-desc">One of Asia's finest right-hand point breaks turns on for the season, pulling surfers from around the world to the east coast.</div>
+                <span class="event-tag tag-surf">SURF</span>
+              </div>
+            </div>
+
+            <div class="event-item beach-surf">
+              <div class="event-icon">🪁</div>
+              <div class="event-content">
+                <div class="event-date">May – Oct</div>
+                <div class="event-name">Kalpitiya Kitesurfing — Summer Season Opens</div>
+                <div class="event-desc">Strong, consistent south-westerly winds (15–26 knots, all day) make this the serious kitesurfer's window on the north-west coast.</div>
+                <span class="event-tag tag-surf">BEACH &amp; SURF</span>
+              </div>
+            </div>
+
+            <div class="event-item adventure">
+              <div class="event-icon">🏔️</div>
+              <div class="event-content">
+                <div class="event-date">Closes just after Vesak</div>
+                <div class="event-name">Adam's Peak Pilgrimage Season Closes</div>
+                <div class="event-desc">Trail lighting and the summit temple close for the year the night after Vesak's final pilgrimage. The season resumes each December.</div>
+                <span class="event-tag tag-adventure">PILGRIMAGE</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /months-row -->
+  </div><!-- /season Spring -->
+
+  <!-- ════ SEASON: THE GREAT GATHERING ════ -->
+  <div class="season-section">
+    <div class="season-header">
+      <span class="season-icon">🐘</span>
+      <h2 class="season-title">The Great Gathering — Elephants, Surf &amp; Sacred Fire</h2>
+      <span class="season-range">June · July · August</span>
+    </div>
+
+    <div class="highlight-banner green">
+      <div class="hl-icon">🐘</div>
+      <div class="hl-text">
+        <div class="hl-title">The Elephant Gathering — Nature's Greatest Congregation</div>
+        <div class="hl-body">Between June and September, up to 300–400 wild Asian elephants converge around the shrinking waters of Minneriya and Kaudulla in one of the planet's most awe-inspiring wildlife events, peaking in August. Pair it with Gal Oya's swimming elephants (July–September) — the only place on earth to watch wild elephants cross open water between forested islands — for an elephant experience unlike anything else on earth.</div>
+      </div>
+    </div>
+
+    <div class="months-row">
+
+      <!-- JUNE -->
+      <div class="month-card jun">
+        <div class="month-header">
+          <div>
+            <div class="month-name">June</div>
+            <div class="month-number">Month 06 · East Coast Peak Begins</div>
+          </div>
+          <div class="month-weather">🌤️ East coast: dry &amp; sunny<br>South-west: monsoon<br>Hill country: cool &amp; misty</div>
+        </div>
+        <div class="month-hook">"Pilgrims climb by torchlight, and hundreds of elephants begin their ancient gathering — June is Sri Lanka's most elemental month."</div>
+        <div class="month-body">
+          <div class="events-list">
+
+            <div class="event-item cultural">
+              <div class="event-icon">🕯️</div>
+              <div class="event-content">
+                <div class="event-date">June Poya (full moon)</div>
+                <div class="event-name">Poson Poya — The Mihintale Pilgrimage</div>
+                <div class="event-desc">Celebrating Buddhism's arrival in Sri Lanka in 247 BC, white-clad pilgrims ascend 1,840 rock-cut steps to Mihintale by torchlight — one of the most atmospheric night experiences in Asia.</div>
+                <span class="event-tag tag-festival">FESTIVAL</span>
+              </div>
+            </div>
+
+            <div class="event-item special">
+              <div class="event-icon">🏳️‍🌈</div>
+              <div class="event-content">
+                <div class="event-date">~Mid–late June (confirm annually)</div>
+                <div class="event-name">Colombo Pride Week</div>
+                <div class="event-desc">Sri Lanka's LGBTQ+ community and allies take over Galle Face and the city's cultural venues for a week of events, closing with a community celebration on Mount Lavinia Beach.</div>
+                <span class="event-tag tag-special">SIGNATURE</span>
+              </div>
+            </div>
+
+            <div class="event-item wildlife">
+              <div class="event-icon">🐻</div>
+              <div class="event-content">
+                <div class="event-date">Jun – Jul (peak)</div>
+                <div class="event-name">Sloth Bear / Palu Season — Peak Weeks</div>
+                <div class="event-desc">The heaviest fruiting weeks of the palu season deliver the most reliable daylight sloth-bear sightings of the year in Yala.</div>
+                <span class="event-tag tag-wildlife">WILDLIFE</span>
+              </div>
+            </div>
+
+            <div class="event-item wildlife">
+              <div class="event-icon">🐆</div>
+              <div class="event-content">
+                <div class="event-date">Jun – Aug (dry-season peak)</div>
+                <div class="event-name">Leopard Season — Yala &amp; Wilpattu</div>
+                <div class="event-desc">Shrinking waterholes concentrate prey — and predators — for the highest-density leopard-sighting window of the year, before Yala's annual closure.</div>
+                <span class="event-tag tag-wildlife">WILDLIFE</span>
+              </div>
+            </div>
+
+            <div class="event-item wildlife">
+              <div class="event-icon">🐘</div>
+              <div class="event-content">
+                <div class="event-date">Jun – Oct, building toward Aug peak</div>
+                <div class="event-name">Great Elephant Gathering Begins — Minneriya &amp; Kaudulla</div>
+                <div class="event-desc">Herds start converging on the receding lake bed as water levels drop — numbers build steadily toward August's spectacular peak.</div>
+                <span class="event-tag tag-wildlife">WILDLIFE</span>
+              </div>
+            </div>
+
+            <div class="event-item beach-surf">
+              <div class="event-icon">🏄</div>
+              <div class="event-content">
+                <div class="event-date">May – Sep</div>
+                <div class="event-name">Arugam Bay Surf &amp; Trincomalee Whale Watching Continue</div>
+                <div class="event-desc">East coast conditions are consistently excellent through June — warm water, dry skies and a growing beach-village culture at Arugam Bay.</div>
+                <span class="event-tag tag-surf">SURF</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- JULY -->
+      <div class="month-card jul">
+        <div class="month-header">
+          <div>
+            <div class="month-name">July</div>
+            <div class="month-number">Month 07 · Crown of the Calendar</div>
+          </div>
+          <div class="month-weather">🌤️ East coast: perfect<br>Dry zone: excellent safari<br>South-west: wettest month</div>
+        </div>
+        <div class="month-hook">"Jaffna's chariots roll, wild elephants take to open water, and the Cultural Triangle builds toward August's grand finale."</div>
+        <div class="month-body">
+          <div class="events-list">
+
+            <div class="event-item cultural">
+              <div class="event-icon">🛕</div>
+              <div class="event-content">
+                <div class="event-date">~25 days, Jul – Aug</div>
+                <div class="event-name">Nallur Festival — Jaffna</div>
+                <div class="event-desc">The north's grandest event: a 25-day Hindu chariot festival at Nallur Kandaswamy Kovil, with streets lined by fire-walkers and kavadi dancers, closing with a water-cutting ceremony.</div>
+                <span class="event-tag tag-festival">FESTIVAL</span>
+              </div>
+            </div>
+
+            <div class="event-item cultural">
+              <div class="event-icon">🔱</div>
+              <div class="event-content">
+                <div class="event-date">Late July</div>
+                <div class="event-name">Colombo Aadi Vel Festival</div>
+                <div class="event-desc">Lord Murugan's silver vel (spear) is paraded from Bambalapitiya to Sea Street in one of Colombo's most colourful street processions.</div>
+                <span class="event-tag tag-cultural">FESTIVAL</span>
+              </div>
+            </div>
+
+            <div class="event-item wildlife">
+              <div class="event-icon">🏊</div>
+              <div class="event-content">
+                <div class="event-date">Jul – Sep</div>
+                <div class="event-name">Gal Oya Swimming Elephants — Season Opens</div>
+                <div class="event-desc">The only place on earth to watch wild elephants swim between forested reservoir islands, by boat. A well-kept secret next to Minneriya and Yala — a strong reason to explore off the beaten track.</div>
+                <span class="event-tag tag-wildlife">RARE ENCOUNTER</span>
+              </div>
+            </div>
+
+            <div class="event-item wildlife">
+              <div class="event-icon">🐘</div>
+              <div class="event-content">
+                <div class="event-date">Building toward Aug peak</div>
+                <div class="event-name">Elephant Gathering — Numbers Building</div>
+                <div class="event-desc">Herd counts climb toward 200+ elephants at Minneriya as the dry season deepens.</div>
+                <span class="event-tag tag-wildlife">WILDLIFE</span>
+              </div>
+            </div>
+
+            <div class="event-item beach-surf">
+              <div class="event-icon">🏖️</div>
+              <div class="event-content">
+                <div class="event-date">Jun – Sep</div>
+                <div class="event-name">East Coast Beach Season — Arugam Bay &amp; Nilaveli</div>
+                <div class="event-desc">Crystal-clear water at Nilaveli, Pasikuda's shallow lagoon and Arugam Bay's surf culture make the east coast the destination while the south-west is under monsoon.</div>
+                <span class="event-tag tag-surf">BEACH &amp; SURF</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- AUGUST -->
+      <div class="month-card aug">
+        <div class="month-header">
+          <div>
+            <div class="month-name">August</div>
+            <div class="month-number">Month 08 · Cultural Climax</div>
+          </div>
+          <div class="month-weather">🌤️ East coast: excellent<br>Highest domestic demand<br>Book Kandy 6–9 months out</div>
+        </div>
+        <div class="month-hook">"One hundred jewelled elephants, ten nights of fire, and the largest gathering of wild elephants on the planet — August is Sri Lanka's single greatest tourism draw."</div>
+        <div class="month-body">
+          <div class="events-list">
+
+            <div class="event-item special">
+              <div class="event-icon">🔥</div>
+              <div class="event-content">
+                <div class="event-date">Mid – late Aug (2026: ~Aug 18–28)</div>
+                <div class="event-name">Kandy Esala Perahera</div>
+                <div class="event-desc">Sri Lanka's single greatest cultural spectacle: over 100 jewel-draped tuskers, fire-dancers and drummers parade the Sacred Tooth Relic through torch-lit Kandy across ten nights, culminating in the Grand Randoli Perahera. Book Kandy accommodation 6–9 months ahead.</div>
+                <span class="event-tag tag-special">WORLD-CLASS FESTIVAL</span>
+              </div>
+            </div>
+
+            <div class="event-item wildlife">
+              <div class="event-icon">🐘</div>
+              <div class="event-content">
+                <div class="event-date">August — peak (200–400 elephants)</div>
+                <div class="event-name">Great Elephant Gathering — Peak, Minneriya &amp; Kaudulla</div>
+                <div class="event-desc">Up to 300–400 wild elephants converge on one receding lake bed at sunset — the largest gathering of Asian elephants anywhere in the world.</div>
+                <span class="event-tag tag-wildlife">PEAK WILDLIFE</span>
+              </div>
+            </div>
+
+            <div class="event-item cultural">
+              <div class="event-icon">🛕</div>
+              <div class="event-content">
+                <div class="event-date">Jul – Aug</div>
+                <div class="event-name">Kataragama Esala Festival</div>
+                <div class="event-desc">Fire-walking, kavadi and multi-faith devotion collide at Sri Lanka's most sacred, multi-religious pilgrimage town — raw and deeply profound.</div>
+                <span class="event-tag tag-cultural">FESTIVAL</span>
+              </div>
+            </div>
+
+            <div class="event-item wildlife">
+              <div class="event-icon">🏊</div>
+              <div class="event-content">
+                <div class="event-date">August — peak</div>
+                <div class="event-name">Gal Oya Swimming Elephants — Peak Month</div>
+                <div class="event-desc">Best month for the boat safari that puts you eye-level with an elephant mid-swim between reservoir islands.</div>
+                <span class="event-tag tag-wildlife">WILDLIFE</span>
+              </div>
+            </div>
+
+            <div class="event-item beach-surf">
+              <div class="event-icon">🏄</div>
+              <div class="event-content">
+                <div class="event-date">August — peak of Main Point break</div>
+                <div class="event-name">Arugam Bay — Prime Surf</div>
+                <div class="event-desc">Long, hollow, powerful waves at Main Point draw professional surfers from across the globe; beach parties and seafood barbecues keep the village electric.</div>
+                <span class="event-tag tag-surf">SURF</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /months-row -->
+  </div><!-- /season Gathering -->
+
+  <!-- ════ SEASON: SHOULDER SEASON ════ -->
+  <div class="season-section">
+    <div class="season-header">
+      <span class="season-icon">🍂</span>
+      <h2 class="season-title">Shoulder Season — The Discerning Traveller's Window</h2>
+      <span class="season-range">September · October · November</span>
+    </div>
+
+    <div class="months-row">
+
+      <!-- SEPTEMBER -->
+      <div class="month-card sep">
+        <div class="month-header">
+          <div>
+            <div class="month-name">September</div>
+            <div class="month-number">Month 09 · Secret Season</div>
+          </div>
+          <div class="month-weather">🌦️ Inter-monsoon<br>Quieter, best-value month<br>Yala closes for maintenance</div>
+        </div>
+        <div class="month-hook">"The crowds have gone but the elephants remain — September is the secret season for travellers who know Sri Lanka's soul."</div>
+        <div class="month-body">
+          <div class="events-list">
+
+            <div class="event-item wildlife">
+              <div class="event-icon">🐘</div>
+              <div class="event-content">
+                <div class="event-date">September — tail end, still strong</div>
+                <div class="event-name">Great Elephant Gathering — Final Weeks</div>
+                <div class="event-desc">Still excellent viewing (150–300 elephants) before herds start dispersing in October, with fewer jeeps and better golden-hour photography.</div>
+                <span class="event-tag tag-wildlife">WILDLIFE</span>
+              </div>
+            </div>
+
+            <div class="event-item wildlife">
+              <div class="event-icon">🏊</div>
+              <div class="event-content">
+                <div class="event-date">September — final strong month</div>
+                <div class="event-name">Gal Oya Swimming Elephants — Continues</div>
+                <div class="event-desc">The last consistently strong month of the reservoir-crossing season before conditions become less predictable.</div>
+                <span class="event-tag tag-wildlife">WILDLIFE</span>
+              </div>
+            </div>
+
+            <div class="event-item wildlife">
+              <div class="event-icon">⚠️</div>
+              <div class="event-content">
+                <div class="event-date">~4–6 weeks, Sep – Oct</div>
+                <div class="event-name">Yala National Park — Annual Closure</div>
+                <div class="event-desc">Yala closes annually for conservation and maintenance. Wilpattu or Kumana are excellent alternatives for leopard and bear encounters during this window.</div>
+                <span class="event-tag tag-wildlife">PLANNING NOTE</span>
+              </div>
+            </div>
+
+            <div class="event-item cultural">
+              <div class="event-icon">🌕</div>
+              <div class="event-content">
+                <div class="event-date">September Poya (full moon)</div>
+                <div class="event-name">Binara Poya</div>
+                <div class="event-desc">Full-moon Buddhist observance with temple ceremonies nationwide — a quiet, reflective month on the cultural calendar.</div>
+                <span class="event-tag tag-cultural">CULTURAL</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- OCTOBER -->
+      <div class="month-card oct">
+        <div class="month-header">
+          <div>
+            <div class="month-name">October</div>
+            <div class="month-number">Month 10 · Transition &amp; Adventure</div>
+          </div>
+          <div class="month-weather">🌦️ Inter-monsoon rains<br>Cultural Triangle: drying out<br>High season approaches</div>
+        </div>
+        <div class="month-hook">"A three-wheeler adventure race crosses the island, migratory birds start arriving, and the island prepares for its golden season."</div>
+        <div class="month-body">
+          <div class="events-list">
+
+            <div class="event-item adventure">
+              <div class="event-icon">🛺</div>
+              <div class="event-content">
+                <div class="event-date">~Oct 18–30</div>
+                <div class="event-name">TukTuk Tournament</div>
+                <div class="event-desc">Teams tackle 1,000+ challenges across the island in a three-wheeler over 13 days — Colombo to Kandy to the South Coast. A ready-made product for corporate-incentive groups and adventure travellers.</div>
+                <span class="event-tag tag-adventure">ADVENTURE RACE</span>
+              </div>
+            </div>
+
+            <div class="event-item wildlife">
+              <div class="event-icon">🦅</div>
+              <div class="event-content">
+                <div class="event-date">Oct – Mar, peak Dec – Feb</div>
+                <div class="event-name">Migratory Bird Season Begins — Bundala &amp; Kumana</div>
+                <div class="event-desc">Waders and waterbirds begin arriving from Central Asia and the Indian subcontinent to Sri Lanka's coastal wetlands, building toward the December–February peak.</div>
+                <span class="event-tag tag-wildlife">WILDLIFE</span>
+              </div>
+            </div>
+
+            <div class="event-item cultural">
+              <div class="event-icon">🌙</div>
+              <div class="event-content">
+                <div class="event-date">October Poya (full moon)</div>
+                <div class="event-name">Vap Poya — Katina Robe Ceremonies</div>
+                <div class="event-desc">Marks the end of the Vassa monastic retreat; laypeople offer saffron robes and necessities to monks nationwide — an intimate ceremony rarely witnessed by visitors.</div>
+                <span class="event-tag tag-cultural">CULTURAL</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- NOVEMBER -->
+      <div class="month-card nov">
+        <div class="month-header">
+          <div>
+            <div class="month-name">November</div>
+            <div class="month-number">Month 11 · High Season Returns</div>
+          </div>
+          <div class="month-weather">⛅ South coast clearing<br>High season begins<br>Whale watching returns</div>
+        </div>
+        <div class="month-hook">"The whales return to Mirissa, oil lamps light up Tamil neighbourhoods, and the island shakes off the monsoon for another golden season."</div>
+        <div class="month-body">
+          <div class="events-list">
+
+            <div class="event-item wildlife">
+              <div class="event-icon">🐋</div>
+              <div class="event-content">
+                <div class="event-date">Nov – Apr, season reopens</div>
+                <div class="event-name">Whale Watching Season Returns — Mirissa</div>
+                <div class="event-desc">Blue whales return to the waters off Mirissa as the south-west monsoon retreats and seas calm — the opening of one of the world's greatest marine wildlife windows.</div>
+                <span class="event-tag tag-wildlife">WILDLIFE</span>
+              </div>
+            </div>
+
+            <div class="event-item wildlife">
+              <div class="event-icon">🐢</div>
+              <div class="event-content">
+                <div class="event-date">Year-round; most active Nov – Mar</div>
+                <div class="event-name">Sea Turtle Watching &amp; Hatchery Visits — South Coast</div>
+                <div class="event-desc">Five of the world's seven marine turtle species nest on Sri Lankan beaches. Community-led night watches at Rekawa and hatchery visits near Kosgoda run year-round, with high season bringing more frequent guided tours.</div>
+                <span class="event-tag tag-wildlife">WILDLIFE</span>
+              </div>
+            </div>
+
+            <div class="event-item cultural">
+              <div class="event-icon">🪔</div>
+              <div class="event-content">
+                <div class="event-date">~Nov 8, 2026 (lunar)</div>
+                <div class="event-name">Deepavali — Festival of Lights</div>
+                <div class="event-desc">Hindu communities light up homes and temples with oil lamps for the Festival of Lights, with sweets stalls filling market streets across the north, east and Colombo's Tamil neighbourhoods.</div>
+                <span class="event-tag tag-cultural">FESTIVAL</span>
+              </div>
+            </div>
+
+            <div class="event-item beach-surf">
+              <div class="event-icon">🏄</div>
+              <div class="event-content">
+                <div class="event-date">Nov – Apr, season opens</div>
+                <div class="event-name">South Coast Surf Season Reopens</div>
+                <div class="event-desc">First consistent swells return to Weligama, Midigama and Hiriketiya as surf schools fill for the winter season.</div>
+                <span class="event-tag tag-surf">SURF</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /months-row -->
+  </div><!-- /season Shoulder -->
+
+  <!-- ════ ANNUAL PLANNER OVERVIEW ════ -->
+  <div class="planner-strip">
+    <div class="planner-title">At-a-Glance Annual Planner</div>
+    <div class="planner-sub">Seasonal intensity by category — colour indicates active season for each experience type</div>
+    <div class="planner-grid">
+      <div class="planner-month"><div class="planner-m-name">Jan</div><div class="planner-bar"><div class="planner-pip pip-wildlife" title="Blue whale season peak, leopards"></div><div class="planner-pip pip-cultural" title="Duruthu Perahera, Thai Pongal"></div><div class="planner-pip pip-empty"></div><div class="planner-pip pip-empty"></div><div class="planner-pip pip-special" title="Galle Literary Festival, FACETS gem show"></div></div></div>
+      <div class="planner-month"><div class="planner-m-name">Feb</div><div class="planner-bar"><div class="planner-pip pip-wildlife" title="Blue whale near-peak"></div><div class="planner-pip pip-cultural" title="Navam Perahera, Maha Shivaratri, Independence Day"></div><div class="planner-pip pip-surf" title="South coast surf"></div><div class="planner-pip pip-empty"></div><div class="planner-pip pip-empty"></div></div></div>
+      <div class="planner-month"><div class="planner-m-name">Mar</div><div class="planner-bar"><div class="planner-pip pip-wildlife" title="Peak blue whale season"></div><div class="planner-pip pip-cultural" title="Medin Poya"></div><div class="planner-pip pip-surf" title="Last south coast surf"></div><div class="planner-pip pip-empty"></div><div class="planner-pip pip-empty"></div></div></div>
+      <div class="planner-month"><div class="planner-m-name">Apr</div><div class="planner-bar"><div class="planner-pip pip-wildlife" title="Last whales this season"></div><div class="planner-pip pip-cultural" title="Bak Poya"></div><div class="planner-pip pip-empty"></div><div class="planner-pip pip-special" title="Sinhala & Tamil New Year, Colombo Fashion Week"></div><div class="planner-pip pip-empty"></div></div></div>
+      <div class="planner-month"><div class="planner-m-name">May</div><div class="planner-bar"><div class="planner-pip pip-wildlife" title="Sloth bear season opens, Trinco whales start"></div><div class="planner-pip pip-empty"></div><div class="planner-pip pip-surf" title="Arugam Bay & Kalpitiya open"></div><div class="planner-pip pip-empty"></div><div class="planner-pip pip-special" title="Vesak — unmissable"></div></div></div>
+      <div class="planner-month"><div class="planner-m-name">Jun</div><div class="planner-bar"><div class="planner-pip pip-wildlife" title="Sloth bear peak, leopard peak, gathering begins"></div><div class="planner-pip pip-cultural" title="Poson Poya pilgrimage"></div><div class="planner-pip pip-surf" title="Arugam Bay season"></div><div class="planner-pip pip-empty"></div><div class="planner-pip pip-special" title="Colombo Pride"></div></div></div>
+      <div class="planner-month"><div class="planner-m-name">Jul</div><div class="planner-bar"><div class="planner-pip pip-wildlife" title="Gal Oya swimming elephants, gathering builds"></div><div class="planner-pip pip-cultural" title="Nallur Festival, Aadi Vel"></div><div class="planner-pip pip-surf" title="East coast beach season"></div><div class="planner-pip pip-empty"></div><div class="planner-pip pip-empty"></div></div></div>
+      <div class="planner-month"><div class="planner-m-name">Aug</div><div class="planner-bar"><div class="planner-pip pip-wildlife" title="Elephant gathering peak, Gal Oya peak"></div><div class="planner-pip pip-cultural" title="Kataragama Esala"></div><div class="planner-pip pip-surf" title="Arugam Bay prime"></div><div class="planner-pip pip-empty"></div><div class="planner-pip pip-special" title="Kandy Esala Perahera"></div></div></div>
+      <div class="planner-month"><div class="planner-m-name">Sep</div><div class="planner-bar"><div class="planner-pip pip-wildlife" title="Gathering tail, Gal Oya"></div><div class="planner-pip pip-cultural" title="Binara Poya"></div><div class="planner-pip pip-empty"></div><div class="planner-pip pip-empty"></div><div class="planner-pip pip-empty"></div></div></div>
+      <div class="planner-month"><div class="planner-m-name">Oct</div><div class="planner-bar"><div class="planner-pip pip-wildlife" title="Migratory birds arrive"></div><div class="planner-pip pip-cultural" title="Vap Poya"></div><div class="planner-pip pip-empty"></div><div class="planner-pip pip-empty"></div><div class="planner-pip pip-empty"></div></div></div>
+      <div class="planner-month"><div class="planner-m-name">Nov</div><div class="planner-bar"><div class="planner-pip pip-wildlife" title="Whales return, turtles, birds"></div><div class="planner-pip pip-cultural" title="Deepavali"></div><div class="planner-pip pip-surf" title="South coast surf reopens"></div><div class="planner-pip pip-empty"></div><div class="planner-pip pip-empty"></div></div></div>
+      <div class="planner-month"><div class="planner-m-name">Dec</div><div class="planner-bar"><div class="planner-pip pip-wildlife" title="Whale watching builds"></div><div class="planner-pip pip-cultural" title="Adam's Peak season opens"></div><div class="planner-pip pip-surf" title="Kalpitiya kite winter season"></div><div class="planner-pip pip-empty"></div><div class="planner-pip pip-special" title="Christmas & New Year's Eve"></div></div></div>
+    </div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:16px;padding-top:14px;border-top:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text-muted)"><div style="width:10px;height:10px;background:var(--green);border-radius:2px"></div> Wildlife</div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text-muted)"><div style="width:10px;height:10px;background:var(--gold-cal);border-radius:2px"></div> Cultural</div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text-muted)"><div style="width:10px;height:10px;background:var(--teal-light);border-radius:2px"></div> Beach &amp; Surf</div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text-muted)"><div style="width:10px;height:10px;background:var(--ruby);border-radius:2px"></div> Signature</div>
+    </div>
+  </div>
+
+  <!-- ════ CTA ════ -->
+  <div style="background:linear-gradient(135deg,#1A1F1C,#2D3D33);border-radius:12px;padding:48px 40px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;margin-bottom:24px;">
+    <div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:#F5F0E8;margin-bottom:10px;">Ready to plan your journey?</div>
+      <p style="font-family:'Inter',Arial,sans-serif;font-size:13px;font-weight:300;color:rgba(245,240,232,0.6);max-width:480px;line-height:1.75;">Tell us which season calls to you. We will build an itinerary around the moments you want to collect — whether that is a whale at dawn, a midnight procession, or a summit you climb by lantern light.</p>
+    </div>
+    <a href="mailto:inquiries@exemplaryvoyages.com" style="font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#1A1F1C;background:#B8972A;padding:16px 36px;white-space:nowrap;transition:background 0.3s;flex-shrink:0;">Begin Planning</a>
+  </div>
+
+  <p style="font-size:11px;color:var(--text-muted);text-align:center;padding:8px 0 0;">Poya (lunar) and Hindu festival dates shift annually — confirm exact dates each season before finalising travel plans.</p>
+
+</div><!-- /calendar-wrapper -->
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="brand-name">Exemplary Voyages</div>
+      <div class="brand-tagline">Sri Lanka &amp; Maldives, Perfected.</div>
+      <p>A boutique destination management company crafting private journeys for discerning travellers. Every itinerary begins with a conversation.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Destinations</h4>
+      <ul>
+        <li><a href="/sri-lanka">Sri Lanka</a></li>
+        <li><a href="/maldives">Maldives</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/about">About</a></li>
+        <li><a href="/sustainability">Sustainability</a></li>
+        <li><a href="/journal">Journal</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:inquiries@exemplaryvoyages.com">inquiries@exemplaryvoyages.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Exemplary Voyages · All Rights Reserved</p>
+    <div class="footer-bottom-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── NAV ──────────────────────────────────────────────────────
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+function toggleMobileNav(btn) {
+  const nav = document.getElementById('navbar');
+  const overlay = document.getElementById('mobileNavOverlay');
+  const isOpen = nav.classList.toggle('nav-open');
+  overlay.classList.toggle('show', isOpen);
+  btn.setAttribute('aria-expanded', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+}
+function closeMobileNav() {
+  const nav = document.getElementById('navbar');
+  const overlay = document.getElementById('mobileNavOverlay');
+  nav.classList.remove('nav-open');
+  overlay.classList.remove('show');
+  document.body.style.overflow = '';
+  const btn = nav.querySelector('.nav-toggle');
+  if (btn) btn.setAttribute('aria-expanded', 'false');
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeMobileNav();
+});
+</script>
+</body>
+</html>
