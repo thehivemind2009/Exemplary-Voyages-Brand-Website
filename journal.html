@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Journal | Exemplary Voyages</title>
+<meta name="description" content="Perspectives on Sri Lanka — seasonal guides, quiet luxury stays, responsible travel and the stories behind extraordinary journeys.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --midnight:#141916;--ivory:#F5F0E8;--gold:#B8972A;--tea:#8B9E5A;
+  --stone:#7A6E62;--slate:#4A5148;--mist:#E8E3DA;--warm:#2A2F27;
+}
+html{scroll-behavior:smooth}
+body{background:var(--midnight);color:var(--ivory);font-family:'Inter',Arial,sans-serif;overflow-x:hidden}
+
+/* ── NAV ── */
+nav#navbar{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 6vw;height:72px;
+  background:rgba(20,25,22,0.96);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(245,240,232,0.06);
+}
+.nav-logo img{height:38px;width:auto;display:block}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{
+  font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:400;
+  letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;
+  color:rgba(245,240,232,0.65);transition:color 0.25s ease;
+}
+.nav-links a:hover,.nav-links a.active{color:var(--ivory)}
+.nav-cta{
+  font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:500;
+  letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;
+  color:var(--gold);border:1px solid rgba(184,151,42,0.35);
+  padding:9px 22px;transition:all 0.25s ease;
+}
+.nav-cta:hover{background:var(--gold);color:var(--midnight)}
+.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.nav-toggle span{display:block;width:22px;height:1px;background:var(--ivory);transition:all 0.3s ease}
+.nav-mobile-overlay{
+  display:none;position:fixed;inset:0;z-index:99;
+  background:rgba(20,25,22,0.98);padding:100px 8vw 40px;
+  flex-direction:column;gap:0;
+}
+.nav-mobile-overlay.open{display:flex}
+.nav-mobile-overlay a{
+  font-family:'Playfair Display',serif;font-size:28px;font-weight:400;
+  color:rgba(245,240,232,0.8);text-decoration:none;
+  padding:18px 0;border-bottom:1px solid rgba(245,240,232,0.07);
+  transition:color 0.2s ease;
+}
+.nav-mobile-overlay a:hover{color:var(--gold)}
+.nav-mobile-divider{height:1px;background:rgba(245,240,232,0.07);margin:20px 0}
+.nav-mobile-cta-link{
+  font-family:'Inter',Arial,sans-serif !important;font-size:13px !important;
+  letter-spacing:0.15em;text-transform:uppercase;color:var(--gold) !important;
+  border:none !important;padding:20px 0 !important;
+}
+
+/* ── JOURNAL HEADER ── */
+.j-header{
+  padding:140px 8vw 80px;
+  border-bottom:1px solid rgba(245,240,232,0.06);
+}
+.j-header-inner{
+  display:flex;align-items:flex-end;justify-content:space-between;gap:40px;
+}
+.j-header-left{}
+.j-eyebrow{
+  font-family:'Inter',Arial,sans-serif;font-size:9px;font-weight:500;
+  letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);
+  margin-bottom:20px;
+}
+.j-header h1{
+  font-family:'Playfair Display',serif;font-weight:400;
+  font-size:clamp(54px,8vw,110px);line-height:0.92;
+  letter-spacing:-0.03em;color:var(--ivory);
+}
+.j-header h1 em{font-style:italic;color:var(--tea)}
+.j-header-right{
+  max-width:320px;padding-bottom:8px;
+}
+.j-header-right p{
+  font-family:'Inter',Arial,sans-serif;font-size:13px;font-weight:300;
+  color:rgba(245,240,232,0.5);line-height:1.85;text-align:right;
+}
+.j-count{
+  font-family:'Playfair Display',serif;font-size:13px;
+  color:rgba(245,240,232,0.25);margin-bottom:10px;text-align:right;
+}
+
+/* ── FEATURED ARTICLE ── */
+.j-featured{
+  display:grid;grid-template-columns:1fr 1fr;
+  border-bottom:1px solid rgba(245,240,232,0.06);
+}
+.j-feat-img{
+  position:relative;overflow:hidden;
+  aspect-ratio:16/10;
+}
+.j-feat-img img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform 0.8s ease;
+}
+.j-featured:hover .j-feat-img img{transform:scale(1.04)}
+.j-feat-img-placeholder{
+  display:none;position:absolute;inset:0;
+  background:var(--warm);align-items:center;justify-content:center;
+}
+.j-feat-img-placeholder span{
+  font-family:'Inter',Arial,sans-serif;font-size:10px;letter-spacing:0.25em;
+  text-transform:uppercase;color:rgba(245,240,232,0.3);
+}
+.j-feat-num{
+  position:absolute;top:28px;left:28px;
+  font-family:'Playfair Display',serif;font-size:13px;font-weight:400;
+  color:rgba(245,240,232,0.35);letter-spacing:0.1em;
+}
+.j-feat-content{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:60px 8vw 60px 60px;
+}
+.j-cat{
+  font-family:'Inter',Arial,sans-serif;font-size:9px;font-weight:500;
+  letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);
+  margin-bottom:20px;
+}
+.j-feat-content h2{
+  font-family:'Playfair Display',serif;font-weight:400;
+  font-size:clamp(26px,2.8vw,38px);line-height:1.18;
+  color:var(--ivory);margin-bottom:20px;
+}
+.j-feat-content h2 em{font-style:italic;color:var(--tea)}
+.j-feat-excerpt{
+  font-family:'Inter',Arial,sans-serif;font-size:14px;font-weight:300;
+  color:rgba(245,240,232,0.55);line-height:1.85;margin-bottom:32px;
+}
+.j-meta{
+  display:flex;align-items:center;gap:10px;margin-bottom:32px;
+  font-family:'Inter',Arial,sans-serif;font-size:10px;font-weight:300;
+  color:rgba(245,240,232,0.35);letter-spacing:0.08em;
+}
+.j-meta-dot{color:rgba(245,240,232,0.2)}
+.j-read-btn{
+  display:inline-flex;align-items:center;gap:10px;align-self:flex-start;
+  font-family:'Inter',Arial,sans-serif;font-size:10px;font-weight:500;
+  letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;
+  color:var(--midnight);background:var(--gold);padding:12px 24px;
+  transition:all 0.25s ease;
+}
+.j-read-btn:hover{background:var(--ivory)}
+.j-read-btn .rarr{font-size:14px;transition:transform 0.25s ease}
+.j-read-btn:hover .rarr{transform:translateX(4px)}
+
+/* ── SECTION LABEL ── */
+.j-section-label{
+  display:flex;align-items:center;gap:20px;
+  padding:48px 8vw 0;
+}
+.j-section-label span{
+  font-family:'Inter',Arial,sans-serif;font-size:9px;font-weight:500;
+  letter-spacing:0.35em;text-transform:uppercase;color:rgba(245,240,232,0.3);
+}
+.j-section-line{flex:1;height:1px;background:rgba(245,240,232,0.06)}
+
+/* ── 3-COLUMN GRID ── */
+.j-grid-3{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  padding:40px 8vw 0;gap:0;
+  border-bottom:1px solid rgba(245,240,232,0.06);
+}
+.j-card{
+  display:flex;flex-direction:column;
+  padding:40px 32px 48px;
+  border-right:1px solid rgba(245,240,232,0.06);
+  transition:background 0.3s ease;
+}
+.j-card:last-child{border-right:none}
+.j-card:hover{background:rgba(245,240,232,0.02)}
+.j-card-img-wrap{
+  position:relative;overflow:hidden;
+  aspect-ratio:4/3;margin-bottom:28px;background:var(--warm);
+}
+.j-card-img-wrap img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform 0.7s ease;
+}
+.j-card:hover .j-card-img-wrap img{transform:scale(1.05)}
+.j-card-img-placeholder{
+  display:none;position:absolute;inset:0;
+  background:var(--warm);align-items:center;justify-content:center;
+}
+.j-card-img-placeholder span{
+  font-family:'Inter',Arial,sans-serif;font-size:10px;letter-spacing:0.25em;
+  text-transform:uppercase;color:rgba(245,240,232,0.3);
+}
+.j-card-num{
+  font-family:'Playfair Display',serif;font-size:11px;font-weight:400;
+  color:rgba(245,240,232,0.2);letter-spacing:0.1em;margin-bottom:12px;
+}
+.j-card h3{
+  font-family:'Playfair Display',serif;font-weight:400;
+  font-size:clamp(18px,1.6vw,22px);line-height:1.25;
+  color:var(--ivory);margin-bottom:14px;
+}
+.j-card h3 em{font-style:italic;color:var(--tea)}
+.j-card-excerpt{
+  font-family:'Inter',Arial,sans-serif;font-size:12px;font-weight:300;
+  color:rgba(245,240,232,0.5);line-height:1.85;
+  margin-bottom:24px;flex:1;
+}
+.j-card-meta{
+  font-family:'Inter',Arial,sans-serif;font-size:10px;font-weight:300;
+  color:rgba(245,240,232,0.3);letter-spacing:0.06em;
+  margin-bottom:20px;
+}
+.j-read-link{
+  font-family:'Inter',Arial,sans-serif;font-size:10px;font-weight:500;
+  letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;
+  color:var(--gold);display:inline-flex;align-items:center;gap:8px;
+  transition:gap 0.25s ease;
+}
+.j-read-link:hover{gap:14px}
+
+/* ── 2-COLUMN GRID ── */
+.j-grid-2{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  padding:0 8vw 0;gap:0;
+  border-bottom:1px solid rgba(245,240,232,0.06);
+}
+.j-card-wide{
+  display:flex;flex-direction:column;
+  padding:48px 40px;
+  border-right:1px solid rgba(245,240,232,0.06);
+  transition:background 0.3s ease;
+}
+.j-card-wide:last-child{border-right:none}
+.j-card-wide:hover{background:rgba(245,240,232,0.02)}
+.j-card-wide-img{
+  position:relative;overflow:hidden;
+  aspect-ratio:16/9;margin-bottom:28px;background:var(--warm);
+}
+.j-card-wide-img img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform 0.7s ease;
+}
+.j-card-wide:hover .j-card-wide-img img{transform:scale(1.04)}
+.j-card-wide-img-placeholder{
+  display:none;position:absolute;inset:0;
+  background:var(--warm);align-items:center;justify-content:center;
+}
+.j-card-wide-img-placeholder span{
+  font-family:'Inter',Arial,sans-serif;font-size:10px;letter-spacing:0.25em;
+  text-transform:uppercase;color:rgba(245,240,232,0.3);
+}
+.j-card-wide-num{
+  font-family:'Playfair Display',serif;font-size:11px;font-weight:400;
+  color:rgba(245,240,232,0.2);letter-spacing:0.1em;margin-bottom:12px;
+}
+.j-card-wide h3{
+  font-family:'Playfair Display',serif;font-weight:400;
+  font-size:clamp(20px,1.8vw,26px);line-height:1.2;
+  color:var(--ivory);margin-bottom:14px;
+}
+.j-card-wide h3 em{font-style:italic;color:var(--tea)}
+.j-card-wide-excerpt{
+  font-family:'Inter',Arial,sans-serif;font-size:13px;font-weight:300;
+  color:rgba(245,240,232,0.5);line-height:1.9;
+  margin-bottom:28px;flex:1;
+}
+.j-card-wide-meta{
+  font-family:'Inter',Arial,sans-serif;font-size:10px;font-weight:300;
+  color:rgba(245,240,232,0.3);letter-spacing:0.06em;margin-bottom:22px;
+}
+
+/* ── FOOTER ── */
+footer{background:var(--warm);padding:0}
+.footer-top{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;
+  padding:80px 8vw 60px;
+}
+.footer-brand img{height:32px;margin-bottom:20px}
+.footer-brand p{
+  font-family:'Inter',Arial,sans-serif;font-size:12px;font-weight:300;
+  color:rgba(245,240,232,0.4);line-height:1.8;max-width:260px;
+}
+.footer-col h5{
+  font-family:'Inter',Arial,sans-serif;font-size:9px;font-weight:500;
+  letter-spacing:0.3em;text-transform:uppercase;color:rgba(245,240,232,0.35);
+  margin-bottom:20px;
+}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:12px}
+.footer-col ul li a{
+  font-family:'Inter',Arial,sans-serif;font-size:12px;font-weight:300;
+  color:rgba(245,240,232,0.55);text-decoration:none;transition:color 0.2s ease;
+}
+.footer-col ul li a:hover{color:var(--ivory)}
+.footer-bottom{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:24px 8vw;border-top:1px solid rgba(245,240,232,0.06);
+  font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:300;
+  color:rgba(245,240,232,0.3);
+}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal.visible{opacity:1;transform:none}
+.reveal-img{opacity:0;transition:opacity 0.9s ease}
+.reveal-img.visible{opacity:1}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1000px){
+  .j-featured{grid-template-columns:1fr}
+  .j-feat-img{aspect-ratio:16/9}
+  .j-feat-content{padding:40px 6vw}
+  .j-grid-3{grid-template-columns:1fr;padding:0 6vw}
+  .j-card{border-right:none;border-bottom:1px solid rgba(245,240,232,0.06);padding:36px 0}
+  .j-grid-2{grid-template-columns:1fr;padding:0 6vw}
+  .j-card-wide{border-right:none;border-bottom:1px solid rgba(245,240,232,0.06);padding:36px 0}
+  .j-header-inner{flex-direction:column;align-items:flex-start}
+  .j-header-right{text-align:left;max-width:100%}
+  .j-header-right p,.j-count{text-align:left}
+  .footer-top{grid-template-columns:1fr 1fr;gap:40px}
+  .nav-links,.nav-cta{display:none}
+  .nav-toggle{display:flex}
+}
+@media(max-width:600px){
+  .j-header{padding:120px 6vw 60px}
+  .j-section-label{padding:36px 6vw 0}
+  .footer-top{grid-template-columns:1fr;padding:60px 6vw 40px}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center;padding:20px 6vw}
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <img src="images/EV-logo-white.png" alt="Exemplary Voyages">
+  </a>
+  <ul class="nav-links">
+    <li><a href="sri-lanka.html">Sri Lanka</a></li>
+    <li><a href="maldives.html">Maldives</a></li>
+    <li><a href="experiences.html">Experiences</a></li>
+    <li><a href="journal.html" class="active">Journal</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="sustainability.html">Sustainability</a></li>
+  </ul>
+  <a href="mailto:inquiries@exemplaryvoyages.com" class="nav-cta">Plan Your Journey</a>
+  <div class="nav-toggle" onclick="toggleMobileNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="nav-mobile-overlay" id="mobileNav">
+  <a href="sri-lanka.html" onclick="closeMobileNav()">Sri Lanka</a>
+  <a href="maldives.html" onclick="closeMobileNav()">Maldives</a>
+  <a href="experiences.html" onclick="closeMobileNav()">Experiences</a>
+  <a href="journal.html" onclick="closeMobileNav()">Journal</a>
+  <a href="#" onclick="closeMobileNav()">About</a>
+  <a href="sustainability.html">Sustainability</a>
+  <div class="nav-mobile-divider"></div>
+  <a href="mailto:inquiries@exemplaryvoyages.com" class="nav-mobile-cta-link" onclick="closeMobileNav()">Plan Your Journey</a>
+</div>
+
+<!-- ── JOURNAL HEADER ── -->
+<header class="j-header reveal">
+  <div class="j-header-inner">
+    <div class="j-header-left">
+      <div class="j-eyebrow">Exemplary Voyages</div>
+      <h1>The<br><em>Journal</em></h1>
+    </div>
+    <div class="j-header-right">
+      <div class="j-count">Six Perspectives</div>
+      <p>Stories, guides and reflections on travelling through Sri Lanka with depth, intention and a genuine sense of place.</p>
+    </div>
+  </div>
+</header>
+
+<!-- ── FEATURED: 01 RARE WINDOWS ── -->
+<article class="j-featured reveal">
+  <div class="j-feat-img reveal-img">
+    <img src="images/Rare%20Windows%20two.jpg" alt="Rare Windows"
+         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="j-feat-img-placeholder"><span>Rare Windows</span></div>
+    <div class="j-feat-num">01</div>
+  </div>
+  <div class="j-feat-content">
+    <div class="j-cat">Seasonal Journeys</div>
+    <h2>Rare Windows: When Sri Lanka Reveals Something <em>Extraordinary</em></h2>
+    <p class="j-feat-excerpt">There are moments in Sri Lanka that no amount of money can summon on demand. Sloth bears drawn by ripening fruit, hundreds of elephants beside a shrinking reservoir, pilot whales silencing an entire boat. These are brief alignments of season, landscape and instinct that open for only a few weeks each year.</p>
+    <div class="j-meta">
+      <span>By Shakthie Warnapura</span>
+      <span class="j-meta-dot">·</span>
+      <span>7 min read</span>
+    </div>
+    <a href="journal-rare-windows.html" class="j-read-btn">Read Article <span class="rarr">&#8594;</span></a>
+  </div>
+</article>
+
+<!-- ── SECTION LABEL ── -->
+<div class="j-section-label reveal">
+  <span>Further Reading</span>
+  <div class="j-section-line"></div>
+</div>
+
+<!-- ── 3-COLUMN GRID ── -->
+<div class="j-grid-3">
+
+  <!-- 02 -->
+  <div class="j-card reveal">
+    <div class="j-card-img-wrap reveal-img">
+      <img src="images/A%207-Day%20Sri%20Lanka%20Journey%20Done%20Right%20two.jpg" alt="A 7-Day Sri Lanka Journey Done Right" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="j-card-img-placeholder"><span>7 Days</span></div>
+    </div>
+    <div class="j-card-num">02</div>
+    <div class="j-cat">Sri Lanka Guide</div>
+    <h3>A 7-Day Sri Lanka Journey, <em>Done Right</em></h3>
+    <p class="j-card-excerpt">Seven days is not enough to see all of Sri Lanka. It is enough to experience it beautifully, if shaped by restraint rather than ambition.</p>
+    <div class="j-card-meta">By Exemplary Voyages &nbsp;·&nbsp; 6 min read</div>
+    <a href="journal-7-day-sri-lanka.html" class="j-read-link">Read Article &#8594;</a>
+  </div>
+
+  <!-- 03 -->
+  <div class="j-card reveal">
+    <div class="j-card-img-wrap reveal-img">
+      <img src="images/Travel%20That%20Gives%20Back%20two.jpg" alt="Travel That Gives Back" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="j-card-img-placeholder"><span>Travel</span></div>
+    </div>
+    <div class="j-card-num">03</div>
+    <div class="j-cat">Responsible Travel</div>
+    <h3>Travel That <em>Gives Back</em></h3>
+    <p class="j-card-excerpt">The most meaningful journeys leave something behind. Not footprints, but opportunity, protection and renewed value placed upon a living tradition.</p>
+    <div class="j-card-meta">By Exemplary Voyages &nbsp;·&nbsp; 6 min read</div>
+    <a href="journal-travel-gives-back.html" class="j-read-link">Read Article &#8594;</a>
+  </div>
+
+  <!-- 04 -->
+  <div class="j-card reveal">
+    <div class="j-card-img-wrap reveal-img">
+      <img src="images/Before%20Booking%20a%20Kids%20Club%20two.jpg" alt="Before Booking a Kids Club" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="j-card-img-placeholder"><span>Family</span></div>
+    </div>
+    <div class="j-card-num">04</div>
+    <div class="j-cat">Family Travel</div>
+    <h3>Before You Choose a Kids Club, <em>Read This</em></h3>
+    <p class="j-card-excerpt">The true test of a family holiday is not whether the children were entertained. It is whether everyone returned feeling restored.</p>
+    <div class="j-card-meta">By Exemplary Voyages &nbsp;·&nbsp; 6 min read</div>
+    <a href="journal-kids-club.html" class="j-read-link">Read Article &#8594;</a>
+  </div>
+
+</div><!-- /j-grid-3 -->
+
+<!-- ── 2-COLUMN GRID ── -->
+<div class="j-grid-2">
+
+  <!-- 05 -->
+  <div class="j-card-wide reveal">
+    <div class="j-card-wide-img reveal-img">
+      <img src="images/Quiet%20Luxury%20Stays%20in%20Sri%20Lanka%20two.jpg" alt="Quiet Luxury Stays in Sri Lanka" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="j-card-wide-img-placeholder"><span>Quiet Luxury</span></div>
+    </div>
+    <div class="j-card-wide-num">05</div>
+    <div class="j-cat">Quiet Luxury</div>
+    <h3>Quiet Luxury Stays in <em>Sri Lanka</em></h3>
+    <p class="j-card-wide-excerpt">The finest luxury in Sri Lanka is not always found behind the grandest entrance. Sometimes it is a planter's bungalow above the clouds, a private villa surrounded by paddy fields, or a beach retreat where nothing competes with the ocean. Refinement with nothing to prove.</p>
+    <div class="j-card-wide-meta">By Exemplary Voyages &nbsp;·&nbsp; 6 min read</div>
+    <a href="journal-quiet-luxury.html" class="j-read-link">Read Article &#8594;</a>
+  </div>
+
+  <!-- 06 -->
+  <div class="j-card-wide reveal">
+    <div class="j-card-wide-img reveal-img">
+      <img src="images/The%20Sri%20Lanka%20You%20Will%20Not%20Find%20on%20a%20Postcard%20two.jpg" alt="The Sri Lanka You Will Not Find on a Postcard" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="j-card-wide-img-placeholder"><span>Deep Sri Lanka</span></div>
+    </div>
+    <div class="j-card-wide-num">06</div>
+    <div class="j-cat">Deep Experiences</div>
+    <h3>The Sri Lanka You Will Not Find on a <em>Postcard</em></h3>
+    <p class="j-card-wide-excerpt">You can climb Sigiriya at sunrise, visit Kandy's sacred temples and follow the coast beneath endless palms. You will return with beautiful photographs. But you may still leave without truly meeting Sri Lanka. Because the island's most meaningful stories are rarely the most visible.</p>
+    <div class="j-card-wide-meta">By Shakthie Warnapura &nbsp;·&nbsp; 6 min read</div>
+    <a href="journal-sri-lanka-postcard.html" class="j-read-link">Read Article &#8594;</a>
+  </div>
+
+</div><!-- /j-grid-2 -->
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="images/EV-logo-white.png" alt="Exemplary Voyages">
+      <p>Bespoke journeys through Sri Lanka and the Maldives, crafted for those who travel with intention.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Sri Lanka</h5>
+      <ul>
+        <li><a href="ancient-kingdom-trail.html">Ancient Kingdom Trail</a></li>
+        <li><a href="highland-tea-route.html">Highland Tea Route</a></li>
+        <li><a href="southern-coast.html">The Southern Coast</a></li>
+        <li><a href="wilderness-immersion.html">Wilderness Immersion</a></li>
+        <li><a href="cultural-compass.html">Cultural Compass</a></li>
+        <li><a href="wedding-in-ceylon.html">Wedding in Ceylon</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Maldives</h5>
+      <ul>
+        <li><a href="#">Atoll Private Retreat</a></li>
+        <li><a href="#">Overwater Villas</a></li>
+        <li><a href="#">Private Reserves</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Sustainability</a></li>
+        <li><a href="journal.html">Journal</a></li>
+        <li><a href="mailto:inquiries@exemplaryvoyages.com">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&#169; 2025 Exemplary Voyages. All rights reserved.</span>
+    <span>Boutique DMC · Sri Lanka &amp; Maldives</span>
+  </div>
+</footer>
+
+<script>
+function toggleMobileNav(){document.getElementById('mobileNav').classList.toggle('open')}
+function closeMobileNav(){document.getElementById('mobileNav').classList.remove('open')}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMobileNav()});
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}});
+},{threshold:0.08});
+document.querySelectorAll('.reveal,.reveal-img').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>

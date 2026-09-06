@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maldives | Exemplary Voyages</title>
+<meta name="description" content="Exemplary Voyages crafts bespoke journeys to the Maldives — private islands, overwater villas, and rare encounters beneath the surface. Curated for discerning travellers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --midnight:#141916;--ivory:#F5F0E8;--gold:#B8972A;--tea:#8B9E5A;
+  --stone:#7A6E62;--slate:#4A5148;--mist:#E8E3DA;--warm:#2A2F27;
+}
+html{scroll-behavior:smooth}
+body{background:var(--midnight);color:var(--ivory);font-family:'Inter',Arial,sans-serif;overflow-x:hidden}
+
+/* ── NAV ── */
+nav#navbar{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 6vw;height:72px;
+  background:rgba(20,25,22,0.96);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(245,240,232,0.06);
+}
+.nav-logo img{height:38px;width:auto;display:block}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{
+  font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:400;
+  letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;
+  color:rgba(245,240,232,0.65);transition:color 0.25s ease;
+}
+.nav-links a:hover,.nav-links a.active{color:var(--ivory)}
+.nav-cta{
+  font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:500;
+  letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;
+  color:var(--gold);border:1px solid rgba(184,151,42,0.35);
+  padding:9px 22px;transition:all 0.25s ease;
+}
+.nav-cta:hover{background:var(--gold);color:var(--midnight)}
+.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.nav-toggle span{display:block;width:22px;height:1px;background:var(--ivory);transition:all 0.3s ease}
+.nav-mobile-overlay{
+  display:none;position:fixed;inset:0;z-index:99;
+  background:rgba(20,25,22,0.98);padding:100px 8vw 40px;
+  flex-direction:column;gap:0;
+}
+.nav-mobile-overlay.open{display:flex}
+.nav-mobile-overlay a{
+  font-size:13px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;
+  text-decoration:none;color:rgba(245,240,232,0.75);padding:18px 0;
+  border-bottom:1px solid rgba(245,240,232,0.08);transition:color 0.2s ease;
+}
+.nav-mobile-overlay a:hover{color:var(--ivory)}
+.nav-mobile-cta{
+  margin-top:32px;font-size:12px;font-weight:500;letter-spacing:0.18em;
+  text-transform:uppercase;text-decoration:none;color:var(--gold);
+  border:1px solid rgba(184,151,42,0.35);padding:14px 24px;text-align:center;
+}
+@media(max-width:860px){
+  .nav-links,.nav-cta{display:none}
+  .nav-toggle{display:flex}
+}
+
+/* ── HERO ── */
+.hero{
+  position:relative;height:100vh;min-height:620px;
+  display:flex;align-items:flex-end;overflow:hidden;
+}
+.hero-img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  object-position:center 50%;
+}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(20,25,22,0.95) 0%, rgba(20,25,22,0.4) 50%, rgba(20,25,22,0.1) 100%);
+}
+.hero-content{
+  position:relative;z-index:2;padding:0 8vw 100px;
+  max-width:860px;
+}
+.hero-eyebrow{
+  font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:20px;display:block;
+}
+.hero-title{
+  font-family:'Playfair Display',Georgia,serif;font-size:clamp(48px,7vw,92px);
+  font-weight:400;line-height:1.04;color:var(--ivory);
+  margin-bottom:28px;
+}
+.hero-title em{font-style:italic;color:rgba(245,240,232,0.8)}
+.hero-sub{
+  font-size:15px;font-weight:300;line-height:1.8;
+  color:rgba(245,240,232,0.72);max-width:540px;margin-bottom:44px;
+}
+.hero-scroll{
+  display:flex;align-items:center;gap:16px;
+  font-size:10px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;
+  color:rgba(245,240,232,0.4);
+}
+.hero-scroll-line{width:40px;height:1px;background:rgba(245,240,232,0.25)}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.75s ease,transform 0.75s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* ── SECTION LABEL ── */
+.section-label{
+  font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:20px;display:block;
+}
+
+/* ── INTRO ── */
+.intro{
+  display:grid;grid-template-columns:1fr 1fr;
+  min-height:640px;
+}
+.intro-text{
+  background:var(--warm);
+  padding:110px 8vw 110px 8vw;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.intro-text h2{
+  font-family:'Playfair Display',Georgia,serif;font-size:clamp(32px,3.5vw,50px);
+  font-weight:400;line-height:1.18;color:var(--ivory);margin-bottom:28px;
+}
+.intro-text h2 em{font-style:italic}
+.intro-text p{
+  font-size:15px;font-weight:300;line-height:1.85;
+  color:rgba(245,240,232,0.72);margin-bottom:20px;
+}
+.intro-text p:last-child{margin-bottom:0}
+.intro-img{
+  position:relative;overflow:hidden;
+}
+.intro-img img{
+  width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;
+}
+@media(max-width:860px){
+  .intro{grid-template-columns:1fr}
+  .intro-img{height:420px}
+  .intro-text{padding:70px 8vw}
+}
+
+/* ── EXPERIENCES ── */
+.experiences{
+  padding:110px 8vw;
+  background:var(--midnight);
+  border-top:1px solid rgba(245,240,232,0.06);
+}
+.experiences-header{margin-bottom:72px}
+.experiences-header h2{
+  font-family:'Playfair Display',Georgia,serif;font-size:clamp(30px,3vw,46px);
+  font-weight:400;color:var(--ivory);margin-bottom:16px;line-height:1.2;
+}
+.experiences-header h2 em{font-style:italic}
+.experiences-header p{
+  font-size:14px;font-weight:300;line-height:1.8;
+  color:rgba(245,240,232,0.55);max-width:500px;
+}
+.experiences-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:2px;
+}
+.exp-card{
+  background:var(--warm);
+  overflow:hidden;
+  position:relative;
+}
+.exp-card-img{
+  width:100%;aspect-ratio:4/3;overflow:hidden;
+}
+.exp-card-img img{
+  width:100%;height:100%;object-fit:cover;object-position:center;
+  display:block;transition:transform 0.7s ease;
+}
+.exp-card:hover .exp-card-img img{transform:scale(1.04)}
+.exp-card-body{
+  padding:32px 36px 40px;
+}
+.exp-card-body::before{
+  content:'';display:block;width:28px;height:1px;
+  background:var(--gold);margin-bottom:20px;
+}
+.exp-card-num{
+  font-family:'Playfair Display',Georgia,serif;font-size:11px;
+  letter-spacing:0.2em;color:rgba(184,151,42,0.5);margin-bottom:10px;display:block;
+}
+.exp-card-title{
+  font-family:'Playfair Display',Georgia,serif;font-size:22px;font-weight:400;
+  color:var(--ivory);margin-bottom:14px;line-height:1.25;
+}
+.exp-card-desc{
+  font-size:13px;font-weight:300;line-height:1.85;
+  color:rgba(245,240,232,0.6);
+}
+@media(max-width:900px){.experiences-grid{grid-template-columns:1fr}}
+
+/* ── CATEGORIES ── */
+.categories{
+  padding:110px 8vw;
+  background:var(--midnight);
+  border-top:1px solid rgba(245,240,232,0.06);
+}
+.categories-header{margin-bottom:64px}
+.categories-header h2{
+  font-family:'Playfair Display',Georgia,serif;font-size:clamp(30px,3vw,46px);
+  font-weight:400;color:var(--ivory);margin-bottom:16px;line-height:1.2;
+}
+.categories-header h2 em{font-style:italic}
+.categories-header p{
+  font-size:14px;font-weight:300;line-height:1.8;
+  color:rgba(245,240,232,0.55);max-width:440px;
+}
+.cat-row-top{
+  display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:2px;
+}
+.cat-row-bottom{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:2px;
+}
+.cat-card{
+  position:relative;overflow:hidden;cursor:pointer;
+}
+.cat-card-link{position:absolute;inset:0;z-index:3}
+.cat-card-top{aspect-ratio:16/9}
+.cat-card-bottom{aspect-ratio:4/5}
+.cat-card img{
+  width:100%;height:100%;object-fit:cover;object-position:center;
+  display:block;transition:transform 0.8s ease;
+}
+.cat-card:hover img{transform:scale(1.04)}
+.cat-card-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(20,25,22,0.88) 0%,rgba(20,25,22,0.1) 55%,transparent 100%);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:36px 36px;
+  transition:background 0.4s ease;
+}
+.cat-card:hover .cat-card-overlay{
+  background:linear-gradient(to top,rgba(20,25,22,0.92) 0%,rgba(20,25,22,0.2) 60%,rgba(20,25,22,0.05) 100%);
+}
+.cat-card-label{
+  font-size:9px;font-weight:500;letter-spacing:0.26em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:8px;display:block;
+}
+.cat-card-title{
+  font-family:'Playfair Display',Georgia,serif;font-size:clamp(18px,2vw,26px);
+  font-weight:400;color:var(--ivory);line-height:1.2;margin-bottom:10px;
+}
+.cat-card-desc{
+  font-size:12px;font-weight:300;line-height:1.7;
+  color:rgba(245,240,232,0.65);max-width:340px;
+  opacity:0;transform:translateY(8px);
+  transition:opacity 0.4s ease,transform 0.4s ease;
+}
+.cat-card:hover .cat-card-desc{opacity:1;transform:none}
+@media(max-width:900px){
+  .cat-row-top{grid-template-columns:1fr}
+  .cat-row-bottom{grid-template-columns:1fr 1fr}
+  .cat-card-bottom{aspect-ratio:3/2}
+}
+@media(max-width:560px){
+  .cat-row-bottom{grid-template-columns:1fr}
+}
+
+/* ── PULL QUOTE ── */
+.pull-quote-section{
+  padding:100px 8vw;
+  background:var(--midnight);
+  text-align:center;
+  position:relative;overflow:hidden;
+  border-top:1px solid rgba(245,240,232,0.06);
+}
+.pull-quote-section::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(to right,transparent,rgba(184,151,42,0.4),transparent);
+}
+.pull-quote-section::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:1px;
+  background:linear-gradient(to right,transparent,rgba(184,151,42,0.4),transparent);
+}
+.pull-quote-mark{
+  font-family:'Playfair Display',Georgia,serif;font-size:120px;line-height:0.6;
+  color:rgba(184,151,42,0.12);display:block;margin-bottom:32px;
+}
+.pull-quote-section blockquote{
+  font-family:'Playfair Display',Georgia,serif;font-size:clamp(22px,3vw,36px);
+  font-weight:400;font-style:italic;line-height:1.5;
+  color:var(--ivory);max-width:760px;margin:0 auto 28px;
+}
+.pull-quote-attr{
+  font-size:11px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--gold);
+}
+
+/* ── WHY EV ── */
+.apart{
+  padding:110px 8vw;
+  background:var(--warm);
+}
+.apart-inner{
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
+}
+.apart-text h2{
+  font-family:'Playfair Display',Georgia,serif;font-size:clamp(30px,3vw,44px);
+  font-weight:400;color:var(--ivory);margin-bottom:32px;line-height:1.2;
+}
+.apart-text h2 em{font-style:italic}
+.apart-list{list-style:none;display:flex;flex-direction:column;gap:0}
+.apart-list li{
+  padding:20px 0;
+  border-bottom:1px solid rgba(245,240,232,0.08);
+  display:flex;align-items:flex-start;gap:20px;
+}
+.apart-list li:first-child{border-top:1px solid rgba(245,240,232,0.08)}
+.apart-icon{
+  width:6px;height:6px;border-radius:50%;background:var(--gold);
+  margin-top:7px;flex-shrink:0;
+}
+.apart-list-title{
+  font-size:13px;font-weight:500;letter-spacing:0.04em;color:var(--ivory);margin-bottom:4px;
+}
+.apart-list-desc{
+  font-size:13px;font-weight:300;line-height:1.7;color:rgba(245,240,232,0.55);
+}
+.apart-img{
+  position:relative;overflow:hidden;aspect-ratio:3/4;
+}
+.apart-img img{
+  width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;
+}
+.apart-img-frame{
+  position:absolute;inset:16px;border:1px solid rgba(184,151,42,0.2);
+  pointer-events:none;
+}
+@media(max-width:860px){
+  .apart-inner{grid-template-columns:1fr;gap:52px}
+  .apart-img{aspect-ratio:4/3}
+}
+
+/* ── CTA ── */
+.cta-section{
+  padding:120px 8vw;
+  background:var(--midnight);
+  text-align:center;
+  position:relative;overflow:hidden;
+}
+.cta-section::before{
+  content:'';position:absolute;top:50%;left:50%;
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(139,158,90,0.06) 0%,transparent 70%);
+  transform:translate(-50%,-50%);pointer-events:none;
+}
+.cta-section h2{
+  font-family:'Playfair Display',Georgia,serif;font-size:clamp(30px,3.5vw,48px);
+  font-weight:400;color:var(--ivory);margin-bottom:16px;line-height:1.2;
+}
+.cta-section h2 em{font-style:italic}
+.cta-section p{
+  font-size:15px;font-weight:300;line-height:1.8;
+  color:rgba(245,240,232,0.6);max-width:480px;margin:0 auto 44px;
+}
+.btn-gold{
+  display:inline-block;font-size:11px;font-weight:500;letter-spacing:0.18em;
+  text-transform:uppercase;text-decoration:none;color:var(--midnight);
+  background:var(--gold);padding:16px 40px;transition:all 0.25s ease;
+}
+.btn-gold:hover{background:var(--ivory)}
+.btn-outline{
+  display:inline-block;font-size:11px;font-weight:500;letter-spacing:0.18em;
+  text-transform:uppercase;text-decoration:none;color:var(--ivory);
+  border:1px solid rgba(245,240,232,0.3);padding:15px 40px;
+  margin-left:16px;transition:all 0.25s ease;
+}
+.btn-outline:hover{border-color:var(--ivory)}
+@media(max-width:560px){.btn-outline{margin-left:0;margin-top:12px;display:block}}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--warm);
+  border-top:1px solid rgba(245,240,232,0.06);
+  padding:72px 8vw 40px;
+}
+.footer-top{
+  display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;
+  margin-bottom:56px;
+  padding-bottom:56px;
+  border-bottom:1px solid rgba(245,240,232,0.08);
+}
+.footer-brand img{height:34px;width:auto;display:block;margin-bottom:20px}
+.footer-brand p{
+  font-size:12px;font-weight:300;line-height:1.85;
+  color:rgba(245,240,232,0.45);max-width:260px;
+}
+.footer-col h4{
+  font-size:10px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;
+  color:rgba(245,240,232,0.35);margin-bottom:20px;
+}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.footer-col a{
+  font-size:12px;font-weight:300;text-decoration:none;
+  color:rgba(245,240,232,0.55);transition:color 0.2s ease;
+}
+.footer-col a:hover{color:var(--ivory)}
+.footer-bottom{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:11px;color:rgba(245,240,232,0.3);
+}
+@media(max-width:860px){
+  .footer-top{grid-template-columns:1fr 1fr;gap:36px}
+  .footer-brand{grid-column:1/-1}
+}
+@media(max-width:560px){
+  .footer-top{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo"><img src="images/EV-logo-white.png" alt="Exemplary Voyages"></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="sri-lanka.html">Sri Lanka</a></li>
+    <li><a href="maldives.html" class="active">Maldives</a></li>
+    <li><a href="experiences.html">Experiences</a></li>
+    <li><a href="journal.html">Journal</a></li>
+    <li><a href="about.html">About</a>
+  <a href="sustainability.html">Sustainability</a></li>
+    <li><a href="sustainability.html">Sustainability</a></li>
+  </ul>
+  <a href="mailto:inquiries@exemplaryvoyages.com?subject=Maldives%20Enquiry" class="nav-cta">Plan Your Journey</a>
+  <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('mobileNav').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile-overlay" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="sri-lanka.html">Sri Lanka</a>
+  <a href="maldives.html">Maldives</a>
+  <a href="experiences.html">Experiences</a>
+  <a href="journal.html">Journal</a>
+  <a href="about.html">About</a>
+  <a href="mailto:inquiries@exemplaryvoyages.com?subject=Maldives%20Enquiry" class="nav-mobile-cta">Plan Your Journey</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="hero-img" src="images/Maldives%20Hero.jpg" alt="The Maldives"
+    onerror="this.parentElement.style.background='linear-gradient(160deg,#0d1a1f 0%,#1a2f38 100%)'">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow reveal">Exemplary Voyages</span>
+    <h1 class="hero-title reveal">An ocean<br>unlike <em>any other</em></h1>
+    <p class="hero-sub reveal">The Maldives is not simply a destination. It is an encounter with stillness, colour, and rare beauty. We know exactly how to place you inside it.</p>
+    <div class="hero-scroll reveal">
+      <span class="hero-scroll-line"></span>
+      <span>Discover the Maldives</span>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro">
+  <div class="intro-text">
+    <span class="section-label reveal">The Maldives with EV</span>
+    <h2 class="reveal">Beyond the<br><em>brochure</em></h2>
+    <p class="reveal">Every traveller arrives expecting beauty. What separates a good journey from a truly memorable one is knowing exactly where to place you within it.</p>
+    <p class="reveal">We have spent years earning that knowledge. The right atoll. The right resort. The right moments.</p>
+  </div>
+  <div class="intro-img">
+    <img src="images/Maldives%201.jpg" alt="Maldives lagoon"
+      onerror="this.parentElement.style.background='linear-gradient(160deg,#0d1a1f 0%,#141916 100%)'">
+  </div>
+</section>
+
+<!-- EXPERIENCES -->
+<section class="experiences">
+  <div class="experiences-header reveal">
+    <span class="section-label">What to Expect</span>
+    <h2>Moments that<br><em>stay with you</em></h2>
+    <p>The Maldives offers more than overwater villas. We design journeys around the full breadth of what these islands quietly hold.</p>
+  </div>
+  <div class="experiences-grid">
+
+    <div class="exp-card reveal">
+      <div class="exp-card-img">
+        <img src="images/Private%20Island%20Living.jpg" alt="Private island living"
+          onerror="this.parentElement.style.background='linear-gradient(160deg,#1a2018 0%,#2a3028 100%)'">
+      </div>
+      <div class="exp-card-body">
+        <span class="exp-card-num">01</span>
+        <div class="exp-card-title">Private Island Living</div>
+        <p class="exp-card-desc">Overwater villas, beach pool suites, and private residences on the most secluded atolls. Matched to the traveller, never the other way around.</p>
+      </div>
+    </div>
+
+    <div class="exp-card reveal">
+      <div class="exp-card-img">
+        <img src="images/Beneath%20the%20Surface.jpg" alt="Beneath the surface"
+          onerror="this.parentElement.style.background='linear-gradient(160deg,#1a2018 0%,#2a3028 100%)'">
+      </div>
+      <div class="exp-card-body">
+        <span class="exp-card-num">02</span>
+        <div class="exp-card-title">Beneath the Surface</div>
+        <p class="exp-card-desc">Manta rays, whale sharks, thriving coral. Private guided dives, snorkelling at the finest sites, sunset sailing on open water.</p>
+      </div>
+    </div>
+
+    <div class="exp-card reveal">
+      <div class="exp-card-img">
+        <img src="images/Sri%20Lanka%20and%20the%20Maldives%20Combined.jpg" alt="Sri Lanka and the Maldives combined"
+          onerror="this.parentElement.style.background='linear-gradient(160deg,#1a2018 0%,#2a3028 100%)'">
+      </div>
+      <div class="exp-card-body">
+        <span class="exp-card-num">03</span>
+        <div class="exp-card-title">Sri Lanka and the Maldives Combined</div>
+        <p class="exp-card-desc">Begin in Sri Lanka, end in the atolls. We design this pairing with the same care as each destination alone. The transition is seamless.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories">
+  <div class="categories-header reveal">
+    <span class="section-label">How We Place You</span>
+    <h2>Five ways to experience<br><em>the Maldives</em></h2>
+    <p>Every guest has a different vision of paradise. Hover to explore each.</p>
+  </div>
+
+  <div class="cat-row-top">
+    <div class="cat-card cat-card-top reveal">
+      <img src="images/Maldives%202.jpg" alt="Overwater Villas" style="object-position:center 40%"
+        onerror="this.style.display='none';this.parentElement.style.background='#1a2f38'">
+      <div class="cat-card-overlay">
+        <span class="cat-card-label">01</span>
+        <div class="cat-card-title">Overwater Villas</div>
+        <p class="cat-card-desc">A villa built over the lagoon. Glass floor, private plunge pool, reef below. We know which resorts deliver this at its finest.</p>
+      </div>
+      <a href="overwater-villas.html" class="cat-card-link" aria-label="Explore Overwater Villas"></a>
+    </div>
+    <div class="cat-card cat-card-top reveal">
+      <img src="images/Honeymoon%20copy%202.jpg" alt="Honeymoon"
+        onerror="this.style.display='none';this.parentElement.style.background='#1a2f38'">
+      <div class="cat-card-overlay">
+        <span class="cat-card-label">02</span>
+        <div class="cat-card-title">Honeymoon</div>
+        <p class="cat-card-desc">Privacy, beauty, and a setting that asks nothing of you but to be present. Every detail arranged before you arrive.</p>
+      </div>
+      <a href="honeymoon.html" class="cat-card-link" aria-label="Explore Honeymoon"></a>
+    </div>
+  </div>
+
+  <div class="cat-row-bottom">
+    <div class="cat-card cat-card-bottom reveal">
+      <img src="images/Ultra%20Luxury.jpg" alt="Ultra Luxury"
+        onerror="this.style.display='none';this.parentElement.style.background='#1a2f38'">
+      <div class="cat-card-overlay">
+        <span class="cat-card-label">03</span>
+        <div class="cat-card-title">Ultra Luxury</div>
+        <p class="cat-card-desc">A handful of Maldivian resorts sit in a category entirely their own. We know them intimately.</p>
+      </div>
+      <a href="ultra-luxury.html" class="cat-card-link" aria-label="Explore Ultra Luxury"></a>
+    </div>
+    <div class="cat-card cat-card-bottom reveal">
+      <img src="images/Private%20Islands.jpg" alt="Private Islands"
+        onerror="this.style.display='none';this.parentElement.style.background='#1a2f38'">
+      <div class="cat-card-overlay">
+        <span class="cat-card-label">04</span>
+        <div class="cat-card-title">Private Islands</div>
+        <p class="cat-card-desc">Your own island. No other guests. A dedicated team, a private chef, a lagoon that belongs to you alone.</p>
+      </div>
+      <a href="private-islands.html" class="cat-card-link" aria-label="Explore Private Islands"></a>
+    </div>
+    <div class="cat-card cat-card-bottom reveal">
+      <img src="images/Underwater%20Experiences.jpg" alt="Underwater Experiences"
+        onerror="this.style.display='none';this.parentElement.style.background='#1a2f38'">
+      <div class="cat-card-overlay">
+        <span class="cat-card-label">05</span>
+        <div class="cat-card-title">Underwater Experiences</div>
+        <p class="cat-card-desc">Manta rays, whale sharks, thriving coral. We place guests at resorts where the reef is the destination.</p>
+      </div>
+      <a href="underwater-experiences.html" class="cat-card-link" aria-label="Explore Underwater Experiences"></a>
+    </div>
+  </div>
+</section>
+
+<!-- PULL QUOTE -->
+<section class="pull-quote-section">
+  <span class="pull-quote-mark">"</span>
+  <blockquote class="reveal">The Maldives is where travellers arrive expecting perfection and leave having discovered something far quieter and more lasting than they imagined.</blockquote>
+  <span class="pull-quote-attr reveal">Exemplary Voyages, Maldives Team</span>
+</section>
+
+<!-- WHY EV -->
+<section class="apart">
+  <div class="apart-inner">
+    <div class="apart-text reveal">
+      <span class="section-label">Why Exemplary Voyages</span>
+      <h2>The Maldives deserves<br><em>more than a booking</em></h2>
+      <ul class="apart-list">
+        <li>
+          <div class="apart-icon"></div>
+          <div>
+            <div class="apart-list-title">Atoll expertise, not guesswork</div>
+            <div class="apart-list-desc">The Maldives is 1,200 islands across 26 atolls. Choosing the right one matters enormously. We know what each part of the archipelago offers and match it precisely to what you are looking for.</div>
+          </div>
+        </li>
+        <li>
+          <div class="apart-icon"></div>
+          <div>
+            <div class="apart-list-title">Direct relationships with the finest properties</div>
+            <div class="apart-list-desc">Our partnerships with leading resorts and private retreats mean our travellers receive preferential care. The best villas, thoughtful welcome arrangements, and attention that goes beyond the standard.</div>
+          </div>
+        </li>
+        <li>
+          <div class="apart-icon"></div>
+          <div>
+            <div class="apart-list-title">Seamless transfers and logistics</div>
+            <div class="apart-list-desc">Seaplanes, speedboats, and domestic flights require careful timing. We handle every element of the journey so you arrive at your island with nothing to think about except the view.</div>
+          </div>
+        </li>
+        <li>
+          <div class="apart-icon"></div>
+          <div>
+            <div class="apart-list-title">A natural extension of Sri Lanka</div>
+            <div class="apart-list-desc">For guests combining both destinations, we design the entire journey as one fluid experience. The two legs complement each other beautifully when planned together from the start.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="apart-img reveal">
+      <img src="images/Why%20EV%20panel.jpg" alt="Private Maldives experience"
+        onerror="this.parentElement.style.background='linear-gradient(160deg,#0d1a1f 0%,#141916 100%)'">
+      <div class="apart-img-frame"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <span class="section-label reveal">Begin Here</span>
+  <h2 class="reveal">Ready to discover<br><em>your Maldives?</em></h2>
+  <p class="reveal">Tell us what you are dreaming of. We will find the right atoll, the right resort, and the right moments to make it yours.</p>
+  <div class="reveal">
+    <a href="mailto:inquiries@exemplaryvoyages.com?subject=Maldives%20Enquiry&body=Hello%2C%0A%0AI%20would%20love%20to%20discuss%20a%20journey%20to%20the%20Maldives.%0A%0A" class="btn-gold">Start a Conversation</a>
+    <a href="about.html" class="btn-outline">About Exemplary Voyages</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="images/EV-logo-white.png" alt="Exemplary Voyages">
+      <p>A boutique destination management company for Sri Lanka and the Maldives. Crafting rare journeys for discerning travellers since our founding.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Destinations</h4>
+      <ul>
+        <li><a href="sri-lanka.html">Sri Lanka</a></li>
+        <li><a href="maldives.html">Maldives</a></li>
+        <li><a href="experiences.html">Experiences</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="journal.html">Journal</a></li>
+        <li><a href="mailto:inquiries@exemplaryvoyages.com">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:inquiries@exemplaryvoyages.com">inquiries@exemplaryvoyages.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2025 Exemplary Voyages. All rights reserved.</span>
+    <span>Sri Lanka &amp; Maldives</span>
+  </div>
+</footer>
+
+<script>
+// Reveal on scroll
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible') });
+}, { threshold: 0.12 });
+reveals.forEach(el => observer.observe(el));
+
+// Nav scroll
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.style.background = window.scrollY > 60
+    ? 'rgba(20,25,22,0.98)'
+    : 'rgba(20,25,22,0.96)';
+});
+</script>
+</body>
+</html>

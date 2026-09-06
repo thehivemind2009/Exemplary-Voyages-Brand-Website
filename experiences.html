@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sri Lankan Experiences | Exemplary Voyages</title>
+<meta name="description" content="Curated cultural, culinary and adventure experiences across Sri Lanka, from whale watching in Mirissa to ancient city cycling in Polonnaruwa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --midnight:#141916;--ivory:#F5F0E8;--gold:#B8972A;--tea:#8B9E5A;
+  --stone:#7A6E62;--slate:#4A5148;--mist:#E8E3DA;--warm:#2A2F27;
+}
+html{scroll-behavior:smooth}
+body{background:var(--midnight);color:var(--ivory);font-family:'Inter',Arial,sans-serif;overflow-x:hidden}
+
+/* ── NAV ── */
+nav#navbar{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 6vw;height:72px;
+  background:rgba(20,25,22,0.96);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(245,240,232,0.06);
+}
+.nav-logo img{height:38px;width:auto;display:block}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{
+  font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:400;
+  letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;
+  color:rgba(245,240,232,0.65);transition:color 0.25s ease;
+}
+.nav-links a:hover,.nav-links a.active{color:var(--ivory)}
+.nav-cta{
+  font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:500;
+  letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;
+  color:var(--gold);border:1px solid rgba(184,151,42,0.35);
+  padding:9px 22px;transition:all 0.25s ease;
+}
+.nav-cta:hover{background:var(--gold);color:var(--midnight)}
+.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.nav-toggle span{display:block;width:22px;height:1px;background:var(--ivory);transition:all 0.3s ease}
+.nav-mobile-overlay{
+  display:none;position:fixed;inset:0;z-index:99;
+  background:rgba(20,25,22,0.98);padding:100px 8vw 40px;
+  flex-direction:column;gap:0;
+}
+.nav-mobile-overlay.open{display:flex}
+.nav-mobile-overlay a{
+  font-family:'Playfair Display',serif;font-size:28px;font-weight:400;
+  color:rgba(245,240,232,0.8);text-decoration:none;
+  padding:18px 0;border-bottom:1px solid rgba(245,240,232,0.07);
+  transition:color 0.2s ease;
+}
+.nav-mobile-overlay a:hover{color:var(--gold)}
+.nav-mobile-divider{height:1px;background:rgba(245,240,232,0.07);margin:20px 0}
+.nav-mobile-cta-link{
+  font-family:'Inter',Arial,sans-serif !important;font-size:13px !important;
+  letter-spacing:0.15em;text-transform:uppercase;color:var(--gold) !important;
+  border:none !important;padding:20px 0 !important;
+}
+
+/* ── HERO ── */
+.exp-hero{
+  position:relative;height:75vh;min-height:480px;overflow:hidden;
+  display:flex;align-items:flex-end;padding:0 8vw 80px;
+}
+.exp-hero-img{position:absolute;inset:0}
+.exp-hero-img img{width:100%;height:100%;object-fit:cover;opacity:0.5}
+.exp-hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(20,25,22,0.95) 0%, rgba(20,25,22,0.35) 55%, rgba(20,25,22,0.15) 100%);
+}
+.exp-hero-content{position:relative;z-index:2;max-width:720px}
+.exp-breadcrumb{
+  display:flex;align-items:center;gap:10px;margin-bottom:24px;
+  font-family:'Inter',Arial,sans-serif;font-size:10px;font-weight:400;
+  letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,240,232,0.45);
+}
+.exp-breadcrumb a{color:rgba(245,240,232,0.45);text-decoration:none;transition:color 0.2s ease}
+.exp-breadcrumb a:hover{color:var(--gold)}
+.exp-breadcrumb span{color:rgba(245,240,232,0.25)}
+.exp-tag-row{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.exp-tag{
+  font-family:'Inter',Arial,sans-serif;font-size:9px;font-weight:500;
+  letter-spacing:0.3em;text-transform:uppercase;
+  background:var(--gold);color:var(--midnight);padding:5px 14px;
+}
+.exp-hero h1{
+  font-family:'Playfair Display',serif;font-weight:400;
+  font-size:clamp(40px,5.5vw,72px);line-height:1.05;
+  letter-spacing:-0.02em;color:var(--ivory);margin-bottom:20px;
+}
+.exp-hero h1 em{font-style:italic;color:var(--tea)}
+.exp-hero-sub{
+  font-family:'Inter',Arial,sans-serif;font-size:14px;font-weight:300;
+  color:rgba(245,240,232,0.6);line-height:1.8;max-width:520px;
+}
+
+/* ── INTRO ── */
+.exp-intro{
+  padding:80px 8vw 60px;
+  border-bottom:1px solid rgba(245,240,232,0.08);
+}
+.exp-intro-inner{max-width:680px}
+.exp-intro-label{
+  font-family:'Inter',Arial,sans-serif;font-size:9px;font-weight:500;
+  letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);
+  margin-bottom:24px;
+}
+.exp-intro-inner h2{
+  font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(26px,3vw,36px);
+  color:var(--ivory);line-height:1.25;margin-bottom:20px;
+}
+.exp-intro-inner h2 em{font-style:italic;color:var(--tea)}
+.exp-intro-inner p{
+  font-family:'Inter',Arial,sans-serif;font-size:14px;font-weight:300;
+  color:rgba(245,240,232,0.65);line-height:1.9;
+}
+
+/* ── GRID ── */
+.exp-grid-section{padding:80px 8vw 120px}
+.exp-count-row{
+  display:flex;align-items:baseline;gap:16px;margin-bottom:60px;
+}
+.exp-count-row .count{
+  font-family:'Playfair Display',serif;font-size:48px;font-weight:400;color:var(--ivory);
+}
+.exp-count-row .count-label{
+  font-family:'Inter',Arial,sans-serif;font-size:10px;font-weight:300;
+  letter-spacing:0.25em;text-transform:uppercase;color:rgba(245,240,232,0.35);
+}
+.exp-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:60px 48px;
+}
+
+/* ── EXPERIENCE CARD ── */
+.exp-card{display:flex;flex-direction:column}
+.exp-card-img-wrap{
+  position:relative;overflow:hidden;margin-bottom:28px;
+  aspect-ratio:800/530;background:var(--warm);
+}
+.exp-card-img-wrap img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform 0.65s ease;
+}
+.exp-card:hover .exp-card-img-wrap img{transform:scale(1.04)}
+.exp-card-img-placeholder{
+  display:none;position:absolute;inset:0;align-items:center;justify-content:center;
+  background:var(--warm);
+}
+.exp-card-img-placeholder span{
+  font-family:'Inter',Arial,sans-serif;font-size:10px;letter-spacing:0.25em;
+  text-transform:uppercase;color:rgba(245,240,232,0.3);
+}
+.exp-card-img-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(20,25,22,0.7) 0%, transparent 50%);
+}
+.exp-card-location-badge{
+  position:absolute;bottom:16px;left:16px;
+  font-family:'Inter',Arial,sans-serif;font-size:9px;font-weight:500;
+  letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--ivory);
+}
+
+.exp-card-body{flex:1;display:flex;flex-direction:column}
+.exp-card-meta{
+  display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap;
+}
+.exp-meta-pill{
+  font-family:'Inter',Arial,sans-serif;font-size:9px;font-weight:400;
+  letter-spacing:0.22em;text-transform:uppercase;
+  color:rgba(245,240,232,0.45);border:1px solid rgba(245,240,232,0.12);
+  padding:4px 11px;
+}
+.exp-meta-pill.season-limited{color:var(--gold);border-color:rgba(184,151,42,0.3)}
+.exp-card-title{
+  font-family:'Playfair Display',serif;font-weight:400;
+  font-size:clamp(20px,2vw,26px);line-height:1.2;
+  color:var(--ivory);margin-bottom:14px;
+}
+.exp-card-caption{
+  font-family:'Inter',Arial,sans-serif;font-size:13px;font-weight:300;
+  color:rgba(245,240,232,0.6);line-height:1.85;
+  margin-bottom:28px;flex:1;
+}
+.exp-book-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  align-self:flex-start;
+  font-family:'Inter',Arial,sans-serif;font-size:10px;font-weight:500;
+  letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;
+  color:var(--midnight);background:var(--gold);
+  padding:12px 24px;
+  transition:all 0.25s ease;
+}
+.exp-book-btn:hover{background:var(--ivory);color:var(--midnight)}
+.exp-book-btn .btn-arrow{font-size:14px;transition:transform 0.25s ease}
+.exp-book-btn:hover .btn-arrow{transform:translateX(4px)}
+
+/* ── DIVIDER ── */
+.exp-card-sep{
+  grid-column:1/-1;
+  height:1px;background:rgba(245,240,232,0.06);
+  margin:-30px 0;
+}
+
+/* ── CTA SECTION ── */
+.exp-cta{
+  display:grid;grid-template-columns:1fr 1fr;gap:60px;
+  padding:100px 8vw;
+  border-top:1px solid rgba(245,240,232,0.08);
+  align-items:start;
+}
+.exp-cta-left h2{
+  font-family:'Playfair Display',serif;font-weight:400;
+  font-size:clamp(28px,3.5vw,44px);line-height:1.15;
+  color:var(--ivory);margin-bottom:20px;
+}
+.exp-cta-left h2 em{font-style:italic;color:var(--tea)}
+.exp-cta-left p{
+  font-family:'Inter',Arial,sans-serif;font-size:14px;font-weight:300;
+  color:rgba(245,240,232,0.6);line-height:1.9;
+}
+.exp-cta-right{display:flex;flex-direction:column;gap:14px}
+.cta-btn{
+  display:flex;align-items:center;justify-content:space-between;
+  text-decoration:none;
+  padding:22px 28px;
+  border:1px solid rgba(245,240,232,0.1);
+  transition:border-color 0.25s ease,background 0.25s ease;
+}
+.cta-btn:hover{border-color:rgba(245,240,232,0.3);background:rgba(245,240,232,0.03)}
+.cta-btn-label{
+  font-family:'Inter',Arial,sans-serif;font-size:9px;font-weight:400;
+  letter-spacing:0.25em;text-transform:uppercase;color:rgba(245,240,232,0.4);margin-bottom:6px;
+}
+.cta-btn-name{
+  font-family:'Playfair Display',serif;font-size:16px;font-weight:400;color:var(--ivory);
+}
+.cta-btn-arrow{font-size:20px;color:var(--gold)}
+.cta-primary{
+  display:inline-block;text-align:center;
+  font-family:'Inter',Arial,sans-serif;font-size:10px;font-weight:500;
+  letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;
+  color:var(--ivory);border:1px solid rgba(245,240,232,0.25);
+  padding:16px 32px;margin-top:6px;
+  transition:all 0.25s ease;
+}
+.cta-primary:hover{background:var(--ivory);color:var(--midnight)}
+
+/* ── FOOTER ── */
+footer{background:var(--warm);padding:0}
+.footer-top{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;
+  padding:80px 8vw 60px;
+}
+.footer-brand img{height:32px;margin-bottom:20px}
+.footer-brand p{
+  font-family:'Inter',Arial,sans-serif;font-size:12px;font-weight:300;
+  color:rgba(245,240,232,0.4);line-height:1.8;max-width:260px;
+}
+.footer-col h5{
+  font-family:'Inter',Arial,sans-serif;font-size:9px;font-weight:500;
+  letter-spacing:0.3em;text-transform:uppercase;color:rgba(245,240,232,0.35);
+  margin-bottom:20px;
+}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:12px}
+.footer-col ul li a{
+  font-family:'Inter',Arial,sans-serif;font-size:12px;font-weight:300;
+  color:rgba(245,240,232,0.55);text-decoration:none;transition:color 0.2s ease;
+}
+.footer-col ul li a:hover{color:var(--ivory)}
+.footer-bottom{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:24px 8vw;border-top:1px solid rgba(245,240,232,0.06);
+  font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:300;
+  color:rgba(245,240,232,0.3);
+}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal.visible{opacity:1;transform:none}
+.reveal-img{opacity:0;transition:opacity 0.9s ease}
+.reveal-img.visible{opacity:1}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .exp-grid{grid-template-columns:1fr;gap:48px}
+  .exp-card-sep{display:none}
+  .exp-cta{grid-template-columns:1fr;gap:48px}
+  .footer-top{grid-template-columns:1fr 1fr;gap:40px}
+  .nav-links,.nav-cta{display:none}
+  .nav-toggle{display:flex}
+}
+@media(max-width:600px){
+  .exp-hero{padding:0 6vw 60px}
+  .exp-intro,.exp-grid-section{padding-left:6vw;padding-right:6vw}
+  .exp-cta{padding:60px 6vw}
+  .footer-top{grid-template-columns:1fr;padding:60px 6vw 40px}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center;padding:20px 6vw}
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <img src="images/EV-logo-white.png" alt="Exemplary Voyages">
+  </a>
+  <ul class="nav-links">
+    <li><a href="sri-lanka.html">Sri Lanka</a></li>
+    <li><a href="maldives.html">Maldives</a></li>
+    <li><a href="experiences.html" class="active">Experiences</a></li>
+    <li><a href="#">Journal</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="sustainability.html">Sustainability</a></li>
+  </ul>
+  <a href="mailto:inquiries@exemplaryvoyages.com" class="nav-cta">Plan Your Journey</a>
+  <div class="nav-toggle" onclick="toggleMobileNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="nav-mobile-overlay" id="mobileNav">
+  <a href="sri-lanka.html" onclick="closeMobileNav()">Sri Lanka</a>
+  <a href="maldives.html" onclick="closeMobileNav()">Maldives</a>
+  <a href="experiences.html" onclick="closeMobileNav()">Experiences</a>
+  <a href="#" onclick="closeMobileNav()">Journal</a>
+  <a href="#" onclick="closeMobileNav()">About</a>
+  <a href="sustainability.html">Sustainability</a>
+  <div class="nav-mobile-divider"></div>
+  <a href="mailto:inquiries@exemplaryvoyages.com" class="nav-mobile-cta-link" onclick="closeMobileNav()">Plan Your Journey</a>
+</div>
+
+<!-- ── HERO ── -->
+<section class="exp-hero">
+  <div class="exp-hero-img">
+    <img src="images/experiences-hero.jpg" alt="Sri Lankan Experiences"
+         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div style="display:none;position:absolute;inset:0;background:var(--warm)"></div>
+  </div>
+  <div class="exp-hero-overlay"></div>
+  <div class="exp-hero-content">
+    <div class="exp-breadcrumb">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <span>Experiences</span>
+    </div>
+    <div class="exp-tag-row">
+      <div class="exp-tag">Sri Lanka</div>
+    </div>
+    <h1>Curated <em>Experiences</em></h1>
+    <p class="exp-hero-sub">Beyond the itinerary, Sri Lanka reveals itself in the moments between. Fifteen curated encounters with its culture, craft, cuisine and wilderness, added to any journey on request.</p>
+  </div>
+</section>
+
+<!-- ── INTRO ── -->
+<div class="exp-intro reveal">
+  <div class="exp-intro-inner">
+    <div class="exp-intro-label">How It Works</div>
+    <h2>Each experience is designed to deepen your<br><em>connection to the island.</em></h2>
+    <p>Select any experience below and we will weave it seamlessly into your itinerary. Every experience is private, led by a specialist, and arranged around your travel schedule. To enquire about an experience or to add one to a planned journey, simply click Book Now and we will be in touch.</p>
+  </div>
+</div>
+
+<!-- ── EXPERIENCES GRID ── -->
+<section class="exp-grid-section">
+  <div class="exp-count-row reveal">
+    <div class="count">15</div>
+    <div class="count-label">Curated Experiences</div>
+  </div>
+  <div class="exp-grid">
+
+    <!-- 01 WHALE WATCHING -->
+    <div class="exp-card reveal">
+      <div class="exp-card-img-wrap reveal-img">
+        <img src="images/experience-whale-watching.jpg" alt="Private Cruise for Whale and Dolphin Watching" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="exp-card-img-placeholder"><span>Mirissa</span></div>
+        <div class="exp-card-img-overlay"></div>
+        <div class="exp-card-location-badge">Mirissa · South Coast</div>
+      </div>
+      <div class="exp-card-body">
+        <div class="exp-card-meta">
+          <span class="exp-meta-pill season-limited">Nov – Apr</span>
+          <span class="exp-meta-pill">7 Hours</span>
+          <span class="exp-meta-pill">Departs 6:30 am</span>
+        </div>
+        <h3 class="exp-card-title">Private Cruise for Whale &amp; Dolphin Watching</h3>
+        <p class="exp-card-caption">Sail into deep waters beyond Mirissa aboard a private yacht in search of spinner dolphins, bottlenose dolphins, blue whales, sperm whales and pilot whales. The boat may pause in calmer waters for swimming or paddleboarding. Breakfast and lunch are served on board.</p>
+        <a href="mailto:inquiries@exemplaryvoyages.com?subject=Enquiry%3A%20Private%20Cruise%20for%20Whale%20%26%20Dolphin%20Watching&body=Hello%2C%0A%0AI%20am%20interested%20in%20adding%20the%20Private%20Cruise%20for%20Whale%20%26%20Dolphin%20Watching%20experience%20in%20Mirissa%20to%20my%20Sri%20Lanka%20journey.%20Please%20share%20more%20details%2C%20availability%2C%20and%20pricing.%0A%0AThank%20you." class="exp-book-btn">
+          Book Now <span class="btn-arrow">&#8594;</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- 02 ELLA FOOD TRAIL -->
+    <div class="exp-card reveal">
+      <div class="exp-card-img-wrap reveal-img">
+        <img src="images/experience-ella-food-trail.jpg" alt="Ella Food Trail" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="exp-card-img-placeholder"><span>Ella</span></div>
+        <div class="exp-card-img-overlay"></div>
+        <div class="exp-card-location-badge">Ella · Hill Country</div>
+      </div>
+      <div class="exp-card-body">
+        <div class="exp-card-meta">
+          <span class="exp-meta-pill">All Year</span>
+          <span class="exp-meta-pill">3 Hours</span>
+          <span class="exp-meta-pill">Departs 4:00 pm</span>
+        </div>
+        <h3 class="exp-card-title">Ella Food Trail</h3>
+        <p class="exp-card-caption">Explore Ella through its flavors on this curated trail visiting handpicked local restaurants and bars. Journey through crispy papadam, a frozen curd experience, and authentic rice and curry. The perfect way to taste the heart of the hill country, one bite at a time.</p>
+        <a href="mailto:inquiries@exemplaryvoyages.com?subject=Enquiry%3A%20Ella%20Food%20Trail&body=Hello%2C%0A%0AI%20am%20interested%20in%20adding%20the%20Ella%20Food%20Trail%20experience%20to%20my%20Sri%20Lanka%20journey.%20Please%20share%20more%20details%2C%20availability%2C%20and%20pricing.%0A%0AThank%20you." class="exp-book-btn">
+          Book Now <span class="btn-arrow">&#8594;</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="exp-card-sep"></div>
+
+    <!-- 03 ESTATE TOUR & TEA -->
+    <div class="exp-card reveal">
+      <div class="exp-card-img-wrap reveal-img">
+        <img src="images/experience-estate-tea.jpg" alt="Estate Tour and Tea" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="exp-card-img-placeholder"><span>Ella</span></div>
+        <div class="exp-card-img-overlay"></div>
+        <div class="exp-card-location-badge">Ella · Hill Country</div>
+      </div>
+      <div class="exp-card-body">
+        <div class="exp-card-meta">
+          <span class="exp-meta-pill">All Year</span>
+          <span class="exp-meta-pill">3 Hours</span>
+          <span class="exp-meta-pill">Departs 9:00 am</span>
+        </div>
+        <h3 class="exp-card-title">Estate Tour &amp; Tea</h3>
+        <p class="exp-card-caption">Explore a working organic farm in Ella and understand the manual techniques behind producing tea, coffee, cinnamon and preserves. Stroll through fields of tea, cinnamon and lemongrass, try your hand at plucking and rolling tea leaves, then end with a tasting of four signature handmade teas.</p>
+        <a href="mailto:inquiries@exemplaryvoyages.com?subject=Enquiry%3A%20Estate%20Tour%20%26%20Tea&body=Hello%2C%0A%0AI%20am%20interested%20in%20adding%20the%20Estate%20Tour%20%26%20Tea%20experience%20in%20Ella%20to%20my%20Sri%20Lanka%20journey.%20Please%20share%20more%20details%2C%20availability%2C%20and%20pricing.%0A%0AThank%20you." class="exp-book-btn">
+          Book Now <span class="btn-arrow">&#8594;</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- 04 WORLD OF BATIK -->
+    <div class="exp-card reveal">
+      <div class="exp-card-img-wrap reveal-img">
+        <img src="images/experience-batik.jpg" alt="The World of Batik" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="exp-card-img-placeholder"><span>Kandy</span></div>
+        <div class="exp-card-img-overlay"></div>
+        <div class="exp-card-location-badge">Kandy · Central Province</div>
+      </div>
+      <div class="exp-card-body">
+        <div class="exp-card-meta">
+          <span class="exp-meta-pill">All Year</span>
+          <span class="exp-meta-pill">2 Hours</span>
+          <span class="exp-meta-pill">Departs 8:30 am</span>
+        </div>
+        <h3 class="exp-card-title">The World of Batik</h3>
+        <p class="exp-card-caption">Guided by a skilled Batik artist, this immersive workshop takes you through one of Sri Lanka's most treasured art forms: wax resist techniques, dyeing and final detailing. Suitable for all skill levels, the session is as meditative as it is creative.</p>
+        <a href="mailto:inquiries@exemplaryvoyages.com?subject=Enquiry%3A%20The%20World%20of%20Batik&body=Hello%2C%0A%0AI%20am%20interested%20in%20adding%20The%20World%20of%20Batik%20workshop%20in%20Kandy%20to%20my%20Sri%20Lanka%20journey.%20Please%20share%20more%20details%2C%20availability%2C%20and%20pricing.%0A%0AThank%20you." class="exp-book-btn">
+          Book Now <span class="btn-arrow">&#8594;</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="exp-card-sep"></div>
+
+    <!-- 05 THREE TEMPLE LOOP -->
+    <div class="exp-card reveal">
+      <div class="exp-card-img-wrap reveal-img">
+        <img src="images/experience-three-temples.jpg" alt="The Three Temple Loop" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="exp-card-img-placeholder"><span>Kandy</span></div>
+        <div class="exp-card-img-overlay"></div>
+        <div class="exp-card-location-badge">Kandy · Central Province</div>
+      </div>
+      <div class="exp-card-body">
+        <div class="exp-card-meta">
+          <span class="exp-meta-pill">All Year</span>
+          <span class="exp-meta-pill">2 Hours</span>
+          <span class="exp-meta-pill">Departs 11:00 am</span>
+        </div>
+        <h3 class="exp-card-title">The Three Temple Loop</h3>
+        <p class="exp-card-caption">Discover three remarkable temples, each carrying a different story. Begin at Gadaladeniya, step back to the 12th century. A tuk-tuk ride through paddy fields leads to Lankatilaka, then to Embekka, home to a Hindu shrine unlike any other, with views that seem to stretch without end.</p>
+        <a href="mailto:inquiries@exemplaryvoyages.com?subject=Enquiry%3A%20The%20Three%20Temple%20Loop&body=Hello%2C%0A%0AI%20am%20interested%20in%20adding%20The%20Three%20Temple%20Loop%20experience%20in%20Kandy%20to%20my%20Sri%20Lanka%20journey.%20Please%20share%20more%20details%2C%20availability%2C%20and%20pricing.%0A%0AThank%20you." class="exp-book-btn">
+          Book Now <span class="btn-arrow">&#8594;</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- 06 ANGAMPORA MARTIAL ART -->
+    <div class="exp-card reveal">
+      <div class="exp-card-img-wrap reveal-img">
+        <img src="images/experience-angampora.jpg" alt="Angampora: Sri Lankan Martial Art" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="exp-card-img-placeholder"><span>Kandy</span></div>
+        <div class="exp-card-img-overlay"></div>
+        <div class="exp-card-location-badge">Kandy · Central Province</div>
+      </div>
+      <div class="exp-card-body">
+        <div class="exp-card-meta">
+          <span class="exp-meta-pill">All Year</span>
+          <span class="exp-meta-pill">2 Hours</span>
+          <span class="exp-meta-pill">8:30 am or 3:30 pm</span>
+        </div>
+        <h3 class="exp-card-title">Angampora: Sri Lankan Martial Art</h3>
+        <p class="exp-card-caption">Enter the world of Angampora, Sri Lanka's ancient martial art. Conducted by a traditionally trained instructor, this rare experience blends history, philosophy and physical training, offering an intimate understanding of one of South Asia's oldest and most revered art forms.</p>
+        <a href="mailto:inquiries@exemplaryvoyages.com?subject=Enquiry%3A%20Angampora%20%E2%80%93%20Sri%20Lankan%20Martial%20Art&body=Hello%2C%0A%0AI%20am%20interested%20in%20adding%20the%20Angampora%20experience%20in%20Kandy%20to%20my%20Sri%20Lanka%20journey.%20Please%20share%20more%20details%2C%20availability%2C%20and%20pricing.%0A%0AThank%20you." class="exp-book-btn">
+          Book Now <span class="btn-arrow">&#8594;</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="exp-card-sep"></div>
+
+    <!-- 07 LAKSHA LEGACY -->
+    <div class="exp-card reveal">
+      <div class="exp-card-img-wrap reveal-img">
+        <img src="images/experience-laksha-legacy.jpg" alt="Angampora: The Laksha Legacy" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="exp-card-img-placeholder"><span>Kandy</span></div>
+        <div class="exp-card-img-overlay"></div>
+        <div class="exp-card-location-badge">Kandy · Central Province</div>
+      </div>
+      <div class="exp-card-body">
+        <div class="exp-card-meta">
+          <span class="exp-meta-pill">All Year</span>
+          <span class="exp-meta-pill">3 Hours</span>
+          <span class="exp-meta-pill">8:30 am or 4:00 pm</span>
+        </div>
+        <h3 class="exp-card-title">The Laksha Legacy</h3>
+        <p class="exp-card-caption">Immerse yourself in the ancient art of lacquer crafting, where natural resins are applied to wood in vibrant, glossy layers. You will witness the meticulous layering process and engage in crafting your own lacquer piece, a beautiful keepsake from the heart of Kandy.</p>
+        <a href="mailto:inquiries@exemplaryvoyages.com?subject=Enquiry%3A%20Angampora%20%E2%80%93%20The%20Laksha%20Legacy&body=Hello%2C%0A%0AI%20am%20interested%20in%20adding%20the%20Laksha%20Legacy%20experience%20in%20Kandy%20to%20my%20Sri%20Lanka%20journey.%20Please%20share%20more%20details%2C%20availability%2C%20and%20pricing.%0A%0AThank%20you." class="exp-book-btn">
+          Book Now <span class="btn-arrow">&#8594;</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- 08 ART OF POTTERY -->
+    <div class="exp-card reveal">
+      <div class="exp-card-img-wrap reveal-img">
+        <img src="images/experience-pottery.jpg" alt="The Art of Pottery" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="exp-card-img-placeholder"><span>Tangalle</span></div>
+        <div class="exp-card-img-overlay"></div>
+        <div class="exp-card-location-badge">Tangalle · South Coast</div>
+      </div>
+      <div class="exp-card-body">
+        <div class="exp-card-meta">
+          <span class="exp-meta-pill">All Year</span>
+          <span class="exp-meta-pill">2 Hours</span>
+          <span class="exp-meta-pill">8:00 am or 3:00 pm</span>
+        </div>
+        <h3 class="exp-card-title">The Art of Pottery</h3>
+        <p class="exp-card-caption">Discover the timeless art of traditional pottery with a family in Tangalle who have honed this craft for generations. Feel the clay between your fingers, learn the techniques passed down through time, and leave with a beautiful pottery piece of your own making as a keepsake.</p>
+        <a href="mailto:inquiries@exemplaryvoyages.com?subject=Enquiry%3A%20The%20Art%20of%20Pottery&body=Hello%2C%0A%0AI%20am%20interested%20in%20adding%20The%20Art%20of%20Pottery%20experience%20in%20Tangalle%20to%20my%20Sri%20Lanka%20journey.%20Please%20share%20more%20details%2C%20availability%2C%20and%20pricing.%0A%0AThank%20you." class="exp-book-btn">
+          Book Now <span class="btn-arrow">&#8594;</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="exp-card-sep"></div>
+
+    <!-- 09 CEYLON LACE MAKING -->
+    <div class="exp-card reveal">
+      <div class="exp-card-img-wrap reveal-img">
+        <img src="images/experience-lace-making.jpg" alt="Ceylon Lace Making" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="exp-card-img-placeholder"><span>Galle</span></div>
+        <div class="exp-card-img-overlay"></div>
+        <div class="exp-card-location-badge">Galle · South Coast</div>
+      </div>
+      <div class="exp-card-body">
+        <div class="exp-card-meta">
+          <span class="exp-meta-pill">All Year</span>
+          <span class="exp-meta-pill">1 Hour</span>
+          <span class="exp-meta-pill">Departs 9:00 am</span>
+        </div>
+        <h3 class="exp-card-title">Ceylon Lace Making</h3>
+        <p class="exp-card-caption">An intimate beeralu lace making workshop held at the local home of your host in Galle. From drawing patterns on graph paper to winding threads around wooden bobbins and weaving around pins, you will take home a small piece of handmade lace as a souvenir.</p>
+        <a href="mailto:inquiries@exemplaryvoyages.com?subject=Enquiry%3A%20Ceylon%20Lace%20Making&body=Hello%2C%0A%0AI%20am%20interested%20in%20adding%20the%20Ceylon%20Lace%20Making%20experience%20in%20Galle%20to%20my%20Sri%20Lanka%20journey.%20Please%20share%20more%20details%2C%20availability%2C%20and%20pricing.%0A%0AThank%20you." class="exp-book-btn">
+          Book Now <span class="btn-arrow">&#8594;</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- 10 POLONNARUWA BY CYCLE -->
+    <div class="exp-card reveal">
+      <div class="exp-card-img-wrap reveal-img">
+        <img src="images/experience-polonnaruwa-cycle.jpg" alt="Polonnaruwa by Cycle" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="exp-card-img-placeholder"><span>Polonnaruwa</span></div>
+        <div class="exp-card-img-overlay"></div>
+        <div class="exp-card-location-badge">Polonnaruwa · Cultural Triangle</div>
+      </div>
+      <div class="exp-card-body">
+        <div class="exp-card-meta">
+          <span class="exp-meta-pill">All Year</span>
+          <span class="exp-meta-pill">3.5 Hours</span>
+          <span class="exp-meta-pill">Departs 8:30 am</span>
+        </div>
+        <h3 class="exp-card-title">Polonnaruwa by Cycle</h3>
+        <p class="exp-card-caption">Explore the UNESCO World Heritage ancient city of Polonnaruwa by bicycle. An unforgettable journey back to the golden era of Sri Lanka's Sinhalese kingdom. Pedal through some of the most impressive ruins and monuments on the island at your own pace, guided through history.</p>
+        <a href="mailto:inquiries@exemplaryvoyages.com?subject=Enquiry%3A%20Polonnaruwa%20by%20Cycle&body=Hello%2C%0A%0AI%20am%20interested%20in%20adding%20the%20Polonnaruwa%20by%20Cycle%20experience%20to%20my%20Sri%20Lanka%20journey.%20Please%20share%20more%20details%2C%20availability%2C%20and%20pricing.%0A%0AThank%20you." class="exp-book-btn">
+          Book Now <span class="btn-arrow">&#8594;</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="exp-card-sep"></div>
+
+    <!-- 11 DISCOVER RITIGALA -->
+    <div class="exp-card reveal">
+      <div class="exp-card-img-wrap reveal-img">
+        <img src="images/experience-ritigala.jpg" alt="Discover Ritigala" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="exp-card-img-placeholder"><span>Ritigala</span></div>
+        <div class="exp-card-img-overlay"></div>
+        <div class="exp-card-location-badge">Ritigala · Cultural Triangle</div>
+      </div>
+      <div class="exp-card-body">
+        <div class="exp-card-meta">
+          <span class="exp-meta-pill">All Year</span>
+          <span class="exp-meta-pill">2 Hours</span>
+          <span class="exp-meta-pill">Departs 8:30 am</span>
+        </div>
+        <h3 class="exp-card-title">Discover Ritigala</h3>
+        <p class="exp-card-caption">Explore Ritigala's jungle enshrouded paths on a guided walk and hear the secrets of the forest dwelling Buddhist monks who were once its inhabitants. As you ascend through ancient jungle over untouched steps, it is hard not to feel like you are discovering Ritigala for the very first time.</p>
+        <a href="mailto:inquiries@exemplaryvoyages.com?subject=Enquiry%3A%20Discover%20Ritigala&body=Hello%2C%0A%0AI%20am%20interested%20in%20adding%20the%20Discover%20Ritigala%20experience%20to%20my%20Sri%20Lanka%20journey.%20Please%20share%20more%20details%2C%20availability%2C%20and%20pricing.%0A%0AThank%20you." class="exp-book-btn">
+          Book Now <span class="btn-arrow">&#8594;</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- 12 BAWA IN COLOMBO -->
+    <div class="exp-card reveal">
+      <div class="exp-card-img-wrap reveal-img">
+        <img src="images/experience-bawa-colombo.jpg" alt="Bawa in Colombo" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="exp-card-img-placeholder"><span>Colombo</span></div>
+        <div class="exp-card-img-overlay"></div>
+        <div class="exp-card-location-badge">Colombo · Western Province</div>
+      </div>
+      <div class="exp-card-body">
+        <div class="exp-card-meta">
+          <span class="exp-meta-pill">All Year</span>
+          <span class="exp-meta-pill">3 Hours</span>
+          <span class="exp-meta-pill">Departs 9:00 am</span>
+        </div>
+        <h3 class="exp-card-title">Bawa in Colombo</h3>
+        <p class="exp-card-caption">A guided architectural journey through Colombo tracing the legacy of Sri Lanka's great architect Geoffrey Bawa. Begin at Seema Malaka Temple, continue to Number 11, the hub of Geoffrey's city life, and finish at Gallery Café, appreciating another of Bawa's triumphs over a drink.</p>
+        <a href="mailto:inquiries@exemplaryvoyages.com?subject=Enquiry%3A%20Bawa%20in%20Colombo&body=Hello%2C%0A%0AI%20am%20interested%20in%20adding%20the%20Bawa%20in%20Colombo%20experience%20to%20my%20Sri%20Lanka%20journey.%20Please%20share%20more%20details%2C%20availability%2C%20and%20pricing.%0A%0AThank%20you." class="exp-book-btn">
+          Book Now <span class="btn-arrow">&#8594;</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="exp-card-sep"></div>
+
+    <!-- 13 ELEPHANT MASK PAINTING -->
+    <div class="exp-card reveal">
+      <div class="exp-card-img-wrap reveal-img">
+        <img src="images/experience-elephant-mask.jpg" alt="Elephant Mask Painting" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="exp-card-img-placeholder"><span>Galle</span></div>
+        <div class="exp-card-img-overlay"></div>
+        <div class="exp-card-location-badge">Galle · South Coast</div>
+      </div>
+      <div class="exp-card-body">
+        <div class="exp-card-meta">
+          <span class="exp-meta-pill">All Year</span>
+          <span class="exp-meta-pill">2 Hours</span>
+          <span class="exp-meta-pill">Departs 9:00 am</span>
+        </div>
+        <h3 class="exp-card-title">Elephant Mask Painting</h3>
+        <p class="exp-card-caption">A delightful creative activity led by skilled local artists, designed for younger travellers but enjoyed by all ages. Discover the world of elephants through painting, combining art and Sri Lankan culture in an immersive session that ends with vibrant elephant masks to take home.</p>
+        <a href="mailto:inquiries@exemplaryvoyages.com?subject=Enquiry%3A%20Elephant%20Mask%20Painting&body=Hello%2C%0A%0AI%20am%20interested%20in%20adding%20the%20Elephant%20Mask%20Painting%20experience%20in%20Galle%20to%20my%20Sri%20Lanka%20journey.%20Please%20share%20more%20details%2C%20availability%2C%20and%20pricing.%0A%0AThank%20you." class="exp-book-btn">
+          Book Now <span class="btn-arrow">&#8594;</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- 14 LAGOON CRAB -->
+    <div class="exp-card reveal">
+      <div class="exp-card-img-wrap reveal-img">
+        <img src="images/experience-lagoon-crab.jpg" alt="Lagoon Crab Experience" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="exp-card-img-placeholder"><span>Negombo</span></div>
+        <div class="exp-card-img-overlay"></div>
+        <div class="exp-card-location-badge">Negombo · Western Province</div>
+      </div>
+      <div class="exp-card-body">
+        <div class="exp-card-meta">
+          <span class="exp-meta-pill">All Year</span>
+          <span class="exp-meta-pill">4 Hours</span>
+          <span class="exp-meta-pill">Departs 8:00 am</span>
+        </div>
+        <h3 class="exp-card-title">Lagoon Crab Experience</h3>
+        <p class="exp-card-caption">Begin at the dock, board a boat into the Negombo lagoon and observe the traditional crab catching process from the water. The adventure culminates with a generous seafood lunch, fresh, local and entirely memorable. A wonderful introduction to coastal Sri Lankan life.</p>
+        <a href="mailto:inquiries@exemplaryvoyages.com?subject=Enquiry%3A%20Lagoon%20Crab%20Experience&body=Hello%2C%0A%0AI%20am%20interested%20in%20adding%20the%20Lagoon%20Crab%20Experience%20in%20Negombo%20to%20my%20Sri%20Lanka%20journey.%20Please%20share%20more%20details%2C%20availability%2C%20and%20pricing.%0A%0AThank%20you." class="exp-book-btn">
+          Book Now <span class="btn-arrow">&#8594;</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="exp-card-sep"></div>
+
+    <!-- 15 RAFTING & CANOEING -->
+    <div class="exp-card reveal">
+      <div class="exp-card-img-wrap reveal-img">
+        <img src="images/experience-rafting.jpg" alt="Rafting and Canoeing" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="exp-card-img-placeholder"><span>Kitulgala</span></div>
+        <div class="exp-card-img-overlay"></div>
+        <div class="exp-card-location-badge">Kitulgala · Sabaragamuwa</div>
+      </div>
+      <div class="exp-card-body">
+        <div class="exp-card-meta">
+          <span class="exp-meta-pill">All Year</span>
+          <span class="exp-meta-pill">3 Hours</span>
+          <span class="exp-meta-pill">Departs 8:30 am</span>
+        </div>
+        <h3 class="exp-card-title">Rafting &amp; Canoeing</h3>
+        <p class="exp-card-caption">After a safety briefing, jump right into action on a 6.5km stretch of river. A combined rafting and canyoning option takes you down the rapids before heading up the Kelani River tributary for canyoning, including a few natural waterslides along the way.</p>
+        <a href="mailto:inquiries@exemplaryvoyages.com?subject=Enquiry%3A%20Rafting%20%26%20Canoeing&body=Hello%2C%0A%0AI%20am%20interested%20in%20adding%20the%20Rafting%20%26%20Canoeing%20experience%20in%20Kitulgala%20to%20my%20Sri%20Lanka%20journey.%20Please%20share%20more%20details%2C%20availability%2C%20and%20pricing.%0A%0AThank%20you." class="exp-book-btn">
+          Book Now <span class="btn-arrow">&#8594;</span>
+        </a>
+      </div>
+    </div>
+
+  </div><!-- /exp-grid -->
+</section>
+
+<!-- ── CTA ── -->
+<section class="exp-cta">
+  <div class="exp-cta-left reveal">
+    <h2>Each experience is a<br><em>chapter of its own.</em></h2>
+    <p>Any of these experiences can be added to an existing itinerary or built into a bespoke journey from scratch. Tell us what draws you to Sri Lanka and we will weave together the moments that belong only to you.</p>
+  </div>
+  <div class="exp-cta-right reveal">
+    <a href="mailto:inquiries@exemplaryvoyages.com?subject=Experience%20Enquiry&body=Hello%2C%0A%0AI%20am%20interested%20in%20learning%20more%20about%20the%20Sri%20Lankan%20experiences%20offered%20by%20Exemplary%20Voyages.%20Please%20share%20more%20details.%0A%0AThank%20you." class="cta-btn">
+      <div>
+        <div class="cta-btn-label">Send an Enquiry</div>
+        <div class="cta-btn-name">inquiries@exemplaryvoyages.com</div>
+      </div>
+      <div class="cta-btn-arrow">&#8594;</div>
+    </a>
+    <a href="https://wa.me/94XXXXXXXXX" class="cta-btn">
+      <div>
+        <div class="cta-btn-label">WhatsApp</div>
+        <div class="cta-btn-name">Message us directly</div>
+      </div>
+      <div class="cta-btn-arrow">&#8594;</div>
+    </a>
+    <a href="sri-lanka.html" class="cta-primary">
+      Explore Sri Lanka Itineraries &#8594;
+    </a>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="images/EV-logo-white.png" alt="Exemplary Voyages">
+      <p>Bespoke journeys through Sri Lanka and the Maldives, crafted for those who travel with intention.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Sri Lanka</h5>
+      <ul>
+        <li><a href="ancient-kingdom-trail.html">Ancient Kingdom Trail</a></li>
+        <li><a href="highland-tea-route.html">Highland Tea Route</a></li>
+        <li><a href="southern-coast.html">The Southern Coast</a></li>
+        <li><a href="wilderness-immersion.html">Wilderness Immersion</a></li>
+        <li><a href="cultural-compass.html">Cultural Compass</a></li>
+        <li><a href="wedding-in-ceylon.html">Wedding in Ceylon</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Maldives</h5>
+      <ul>
+        <li><a href="#">Atoll Private Retreat</a></li>
+        <li><a href="#">Overwater Villas</a></li>
+        <li><a href="#">Private Reserves</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Sustainability</a></li>
+        <li><a href="#">Journal</a></li>
+        <li><a href="mailto:inquiries@exemplaryvoyages.com">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&#169; 2025 Exemplary Voyages. All rights reserved.</span>
+    <span>Boutique DMC · Sri Lanka &amp; Maldives</span>
+  </div>
+</footer>
+
+<script>
+function toggleMobileNav(){
+  document.getElementById('mobileNav').classList.toggle('open');
+}
+function closeMobileNav(){
+  document.getElementById('mobileNav').classList.remove('open');
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape') closeMobileNav();
+});
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}
+  });
+},{threshold:0.08});
+document.querySelectorAll('.reveal,.reveal-img').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
