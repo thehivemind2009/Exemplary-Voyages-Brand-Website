@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy | Exemplary Voyages</title>
+<meta name="description" content="Privacy Policy for Exemplary Voyages — how we collect, use and protect your personal data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --midnight:#141916;--ivory:#F5F0E8;--gold:#B8972A;
+  --stone:#7A6E62;--mist:#E8E3DA;--charcoal:#2E2E2E;
+}
+html{scroll-behavior:smooth}
+body{background:var(--ivory);color:var(--charcoal);font-family:'Inter',Arial,sans-serif;overflow-x:hidden}
+
+/* NAV */
+nav#navbar{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 6vw;height:72px;
+  background:rgba(20,25,22,0.97);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(245,240,232,0.06);
+}
+.nav-logo img{height:38px;width:auto;display:block}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{
+  font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:400;
+  letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;
+  color:rgba(245,240,232,0.65);transition:color 0.25s ease;
+}
+.nav-links a:hover{color:var(--ivory)}
+.nav-cta{
+  font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:500;
+  letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;
+  color:var(--gold);border:1px solid rgba(184,151,42,0.35);
+  padding:9px 22px;transition:all 0.25s ease;
+}
+.nav-cta:hover{background:var(--gold);color:var(--midnight)}
+.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.nav-toggle span{display:block;width:22px;height:1px;background:var(--ivory);transition:all 0.3s ease}
+.nav-mobile-overlay{
+  display:none;position:fixed;inset:0;z-index:99;
+  background:rgba(20,25,22,0.98);padding:100px 8vw 40px;
+  flex-direction:column;gap:0;
+}
+.nav-mobile-overlay.open{display:flex}
+.nav-mobile-overlay a{
+  font-size:13px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;
+  color:rgba(245,240,232,0.55);text-decoration:none;padding:14px 0;
+  border-bottom:1px solid rgba(245,240,232,0.06);transition:color 0.25s;
+}
+.nav-mobile-overlay a:hover{color:var(--ivory)}
+.nav-mobile-cta{
+  margin-top:32px;font-size:12px;font-weight:500;letter-spacing:0.18em;
+  color:var(--gold) !important;border:none !important;
+}
+@media(max-width:860px){
+  .nav-links,.nav-cta{display:none}
+  .nav-toggle{display:flex}
+}
+
+/* MAIN */
+main{padding:140px 0 100px}
+.legal-wrap{max-width:780px;margin:0 auto;padding:0 6vw}
+
+.legal-eyebrow{
+  font-family:'Inter',Arial,sans-serif;font-size:10px;font-weight:500;
+  letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);
+  margin-bottom:20px;display:block;
+}
+.legal-wrap h1{
+  font-family:'Playfair Display',serif;font-weight:400;font-size:48px;
+  color:var(--midnight);line-height:1.15;margin-bottom:12px;
+}
+.legal-date{
+  font-family:'Inter',Arial,sans-serif;font-size:12px;font-weight:300;
+  color:var(--stone);letter-spacing:0.06em;margin-bottom:52px;display:block;
+  padding-bottom:32px;border-bottom:1px solid var(--mist);
+}
+.legal-wrap h2{
+  font-family:'Playfair Display',serif;font-weight:500;font-size:22px;
+  color:var(--midnight);margin:40px 0 14px;
+}
+.legal-wrap p{
+  font-family:'Inter',Arial,sans-serif;font-size:14px;font-weight:300;
+  color:#3a3a3a;line-height:1.9;margin-bottom:16px;
+}
+.legal-wrap ul{
+  padding-left:22px;margin-bottom:16px;
+}
+.legal-wrap ul li{
+  font-family:'Inter',Arial,sans-serif;font-size:14px;font-weight:300;
+  color:#3a3a3a;line-height:1.9;margin-bottom:8px;
+}
+.legal-divider{border:none;border-top:1px solid var(--mist);margin:40px 0}
+.legal-nav{
+  display:flex;gap:32px;margin-bottom:80px;flex-wrap:wrap;
+  padding-top:32px;border-top:1px solid var(--mist);
+}
+.legal-nav a{
+  font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:400;
+  letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;
+  color:var(--stone);transition:color 0.25s;
+}
+.legal-nav a:hover,.legal-nav a.active{color:var(--gold)}
+
+/* FOOTER */
+footer{background:var(--midnight);padding:60px 6vw 36px}
+.footer-top{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;
+  padding-bottom:40px;border-bottom:1px solid rgba(245,240,232,0.06);margin-bottom:28px;
+}
+.footer-brand img{height:32px;width:auto;display:block;margin-bottom:18px}
+.footer-brand p{font-size:12px;font-weight:300;line-height:1.85;color:rgba(245,240,232,0.38);max-width:260px}
+.footer-col h4{
+  font-size:10px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:18px;
+}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-col a{
+  font-size:12px;font-weight:300;text-decoration:none;
+  color:rgba(245,240,232,0.38);transition:color 0.25s;
+}
+.footer-col a:hover{color:var(--ivory)}
+.footer-bottom{
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
+}
+.footer-bottom span,.footer-bottom a{
+  font-size:11px;font-weight:300;color:rgba(245,240,232,0.22);
+  text-decoration:none;letter-spacing:0.05em;
+}
+.footer-bottom a:hover{color:rgba(245,240,232,0.55)}
+.footer-legal{display:flex;gap:20px;flex-wrap:wrap}
+@media(max-width:860px){
+  .footer-top{grid-template-columns:1fr 1fr;gap:32px}
+  .footer-brand{grid-column:1/-1}
+}
+@media(max-width:540px){
+  .footer-top{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+  .legal-wrap h1{font-size:36px}
+}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo"><img src="images/EV-logo-white.png" alt="Exemplary Voyages"></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="sri-lanka.html">Sri Lanka</a></li>
+    <li><a href="maldives.html">Maldives</a></li>
+    <li><a href="experiences.html">Experiences</a></li>
+    <li><a href="journal.html">Journal</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="sustainability.html">Sustainability</a></li>
+  </ul>
+  <a href="mailto:inquiries@exemplaryvoyages.com?subject=Travel%20Enquiry" class="nav-cta">Plan Your Journey</a>
+  <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('mobileNav').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile-overlay" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="sri-lanka.html">Sri Lanka</a>
+  <a href="maldives.html">Maldives</a>
+  <a href="experiences.html">Experiences</a>
+  <a href="journal.html">Journal</a>
+  <a href="about.html">About</a>
+  <a href="sustainability.html">Sustainability</a>
+  <a href="mailto:inquiries@exemplaryvoyages.com?subject=Travel%20Enquiry" class="nav-mobile-cta">Plan Your Journey</a>
+</div>
+
+<main>
+  <div class="legal-wrap">
+    <span class="legal-eyebrow">Legal</span>
+    <h1>Privacy Policy</h1>
+    <span class="legal-date">Effective date: 1 August 2026 &nbsp;&mdash;&nbsp; Exemplary Voyages (Pvt) Ltd</span>
+
+    <p>Exemplary Voyages ("we", "us", "our") is committed to protecting and respecting your privacy in accordance with the EU General Data Protection Regulation (GDPR) and applicable Sri Lankan data protection law. This policy explains how we collect, use, store and protect your personal data when you visit our website or enquire about our services.</p>
+
+    <h2>1. Who We Are</h2>
+    <p>Data Controller: Exemplary Voyages (Pvt) Ltd, No. 47 Flower Road, Colombo 07, Sri Lanka. Contact: <a href="mailto:inquiries@exemplaryvoyages.com" style="color:var(--gold)">inquiries@exemplaryvoyages.com</a></p>
+
+    <h2>2. What Data We Collect</h2>
+    <p>We may collect the following categories of personal data:</p>
+    <ul>
+      <li>Contact information: name, email address, telephone number and country of residence provided through our enquiry or planning forms.</li>
+      <li>Travel preferences: destination interests, travel dates, group size, dietary requirements and special requests you share with us.</li>
+      <li>Correspondence: emails, WhatsApp messages and other communications with our team.</li>
+      <li>Website usage data: pages visited, time on site and device/browser information collected via cookies (subject to your consent).</li>
+    </ul>
+
+    <h2>3. Legal Basis for Processing</h2>
+    <p>We process your data on the following legal bases: (a) your consent, given freely and withdrawable at any time; (b) the performance of a contract or pre-contractual steps at your request; (c) our legitimate interests in operating a travel consultancy business; and (d) compliance with legal obligations.</p>
+
+    <h2>4. How We Use Your Data</h2>
+    <p>Your data is used to: respond to enquiries; design and confirm travel itineraries; send relevant updates about your journey; improve our website and services; and comply with legal and regulatory requirements. We do not use your data for unsolicited direct marketing without your explicit consent.</p>
+
+    <h2>5. Data Sharing</h2>
+    <p>We share your data only with: hotels, airlines, ground operators and service providers necessary to fulfil your journey; regulatory or government authorities as required by law; and our technology partners (e.g. Google Analytics) under strict data processing agreements. We do not sell your personal data to any third party.</p>
+
+    <h2>6. International Transfers</h2>
+    <p>As a Sri Lanka-based business serving European clients, some data transfers occur between the EU and Sri Lanka. Where required by GDPR, we rely on Standard Contractual Clauses or equivalent safeguards for such transfers.</p>
+
+    <h2>7. Data Retention</h2>
+    <p>We retain your personal data for as long as necessary to fulfil the purposes for which it was collected: enquiry data is retained for 12 months; booking and financial records are retained for 7 years to meet statutory requirements; marketing consent records are retained until consent is withdrawn.</p>
+
+    <h2>8. Your Rights (GDPR)</h2>
+    <p>If you are based in the European Economic Area, you have the right to: access your personal data; correct inaccurate data; request erasure ("right to be forgotten"); restrict or object to processing; data portability; and withdraw consent at any time. To exercise any of these rights, contact us at <a href="mailto:inquiries@exemplaryvoyages.com" style="color:var(--gold)">inquiries@exemplaryvoyages.com</a>. You also have the right to lodge a complaint with your national data protection authority.</p>
+
+    <h2>9. Security</h2>
+    <p>We implement appropriate technical and organisational measures to protect your personal data against unauthorised access, alteration, disclosure or destruction. Our website uses HTTPS encryption for all data in transit.</p>
+
+    <h2>10. Changes to This Policy</h2>
+    <p>We may update this policy from time to time. Material changes will be communicated via our website or by email. Continued use of our services after an update constitutes acceptance of the revised policy.</p>
+
+    <hr class="legal-divider">
+    <p>Questions? Contact our privacy team at <a href="mailto:inquiries@exemplaryvoyages.com" style="color:var(--gold)">inquiries@exemplaryvoyages.com</a>.</p>
+
+    <nav class="legal-nav">
+      <a href="privacy-policy.html" class="active">Privacy Policy</a>
+      <a href="terms-of-use.html">Terms of Use</a>
+      <a href="cookie-policy.html">Cookie Policy</a>
+    </nav>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="images/EV-logo-white.png" alt="Exemplary Voyages">
+      <p>A boutique destination management company for Sri Lanka and the Maldives. Crafting rare journeys for discerning travellers.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Destinations</h4>
+      <ul>
+        <li><a href="sri-lanka.html">Sri Lanka</a></li>
+        <li><a href="maldives.html">Maldives</a></li>
+        <li><a href="experiences.html">Experiences</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="journal.html">Journal</a></li>
+        <li><a href="sustainability.html">Sustainability</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:inquiries@exemplaryvoyages.com">inquiries@exemplaryvoyages.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Exemplary Voyages (Pvt) Ltd. All rights reserved.</span>
+    <div class="footer-legal">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-use.html">Terms of Use</a>
+      <a href="cookie-policy.html">Cookie Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.style.background = window.scrollY > 40
+    ? 'rgba(20,25,22,0.99)'
+    : 'rgba(20,25,22,0.97)';
+});
+</script>
+</body>
+</html>
