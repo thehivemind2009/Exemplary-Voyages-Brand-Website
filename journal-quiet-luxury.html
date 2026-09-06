@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiet Luxury Stays in Sri Lanka | Exemplary Voyages Journal</title>
+<meta name="description" content="The finest luxury in Sri Lanka is not always found behind the grandest entrance. These are the stays guests remember because of how they felt there.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--midnight:#141916;--ivory:#F5F0E8;--gold:#B8972A;--tea:#8B9E5A;--stone:#7A6E62;--slate:#4A5148;--mist:#E8E3DA;--warm:#2A2F27}
+html{scroll-behavior:smooth}
+body{background:var(--midnight);color:var(--ivory);font-family:'Inter',Arial,sans-serif;overflow-x:hidden}
+nav#navbar{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 6vw;height:72px;background:rgba(20,25,22,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(245,240,232,0.06)}
+.nav-logo img{height:38px;width:auto;display:block}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;color:rgba(245,240,232,0.65);transition:color 0.25s ease}
+.nav-links a:hover,.nav-links a.active{color:var(--ivory)}
+.nav-cta{font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;color:var(--gold);border:1px solid rgba(184,151,42,0.35);padding:9px 22px;transition:all 0.25s ease}
+.nav-cta:hover{background:var(--gold);color:var(--midnight)}
+.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.nav-toggle span{display:block;width:22px;height:1px;background:var(--ivory);transition:all 0.3s ease}
+.nav-mobile-overlay{display:none;position:fixed;inset:0;z-index:99;background:rgba(20,25,22,0.98);padding:100px 8vw 40px;flex-direction:column;gap:0}
+.nav-mobile-overlay.open{display:flex}
+.nav-mobile-links{list-style:none;display:flex;flex-direction:column;gap:0}
+.nav-mobile-links li{border-bottom:1px solid rgba(245,240,232,0.08)}
+.nav-mobile-links a{display:block;padding:18px 0;font-size:13px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;color:rgba(245,240,232,0.75);transition:color 0.2s}
+.nav-mobile-links a:hover{color:var(--ivory)}
+.nav-mobile-cta{margin-top:32px;display:inline-block;font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;color:var(--gold);border:1px solid rgba(184,151,42,0.35);padding:12px 28px;text-align:center;width:fit-content}
+.article-hero{position:relative;height:70vh;min-height:480px;display:flex;align-items:flex-end;overflow:hidden;margin-top:72px}
+.article-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.article-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(20,25,22,0.92) 0%,rgba(20,25,22,0.4) 50%,rgba(20,25,22,0.1) 100%)}
+.hero-text{position:relative;z-index:2;padding:0 8vw 56px;max-width:860px}
+.hero-category{font-size:10px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.hero-title{font-family:'Playfair Display',Georgia,serif;font-size:clamp(32px,5vw,58px);font-weight:400;line-height:1.15;color:var(--ivory);margin-bottom:20px}
+.hero-meta{display:flex;align-items:center;gap:24px;font-size:12px;color:rgba(245,240,232,0.55);letter-spacing:0.05em}
+.article-wrap{max-width:760px;margin:0 auto;padding:72px 6vw 0}
+.article-lead{font-family:'Playfair Display',Georgia,serif;font-size:clamp(18px,2.2vw,22px);font-weight:400;line-height:1.65;color:rgba(245,240,232,0.9);margin-bottom:48px;border-left:2px solid var(--gold);padding-left:28px}
+.article-body p{font-size:16px;line-height:1.85;color:rgba(245,240,232,0.75);margin-bottom:24px;font-weight:300}
+.article-body h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(22px,3vw,30px);font-weight:400;color:var(--ivory);margin:56px 0 20px;padding-bottom:12px;border-bottom:1px solid rgba(184,151,42,0.25)}
+.article-body h3{font-family:'Playfair Display',Georgia,serif;font-size:clamp(17px,2vw,21px);font-weight:400;font-style:italic;color:rgba(245,240,232,0.85);margin:36px 0 14px}
+.article-divider{width:40px;height:1px;background:var(--gold);margin:48px 0;opacity:0.5}
+.pull-quote{margin:48px 0;padding:32px 40px;border-left:3px solid var(--gold);background:rgba(184,151,42,0.05)}
+.pull-quote p{font-family:'Playfair Display',Georgia,serif;font-size:clamp(17px,2vw,20px);font-weight:400;font-style:italic;line-height:1.7;color:var(--ivory);margin:0}
+.article-cta{background:var(--warm);margin:80px 0 0;padding:72px 8vw;text-align:center}
+.article-cta h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(24px,3vw,36px);font-weight:400;color:var(--ivory);margin-bottom:16px}
+.article-cta p{font-size:15px;color:rgba(245,240,232,0.65);max-width:560px;margin:0 auto 36px;line-height:1.7}
+.cta-btn{display:inline-block;font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;color:var(--midnight);background:var(--gold);padding:14px 36px;transition:opacity 0.25s}
+.cta-btn:hover{opacity:0.85}
+footer{background:var(--warm);border-top:1px solid rgba(245,240,232,0.06);padding:64px 8vw 32px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;margin-bottom:56px}
+.footer-brand img{height:34px;margin-bottom:20px}
+.footer-brand p{font-size:13px;color:rgba(245,240,232,0.45);line-height:1.7;max-width:240px}
+.footer-col h4{font-size:10px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,240,232,0.35);margin-bottom:18px}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{font-size:13px;color:rgba(245,240,232,0.55);text-decoration:none;transition:color 0.2s}
+.footer-col ul li a:hover{color:var(--ivory)}
+.footer-bottom{border-top:1px solid rgba(245,240,232,0.06);padding-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-bottom p{font-size:11px;color:rgba(245,240,232,0.3);letter-spacing:0.05em}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal.visible{opacity:1;transform:none}
+.article-img{width:100%;height:420px;object-fit:cover;margin:40px 0;display:block}
+.article-img-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:40px 0}
+.article-img-pair img{width:100%;height:300px;object-fit:cover;display:block}
+.img-caption{font-size:12px;color:rgba(245,240,232,0.38);letter-spacing:0.07em;margin-top:-30px;margin-bottom:40px;font-style:italic;text-align:center}
+@media(max-width:768px){.nav-links,.nav-cta{display:none}.nav-toggle{display:flex}.footer-grid{grid-template-columns:1fr 1fr;gap:32px}.article-hero{height:55vh;min-height:360px}.article-wrap{padding:48px 6vw 0}.pull-quote{padding:24px 24px}.article-img{height:280px}.article-img-pair{grid-template-columns:1fr}.article-img-pair img{height:240px}}
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <a class="nav-logo" href="index.html"><img src="images/EV-logo-white.png" alt="Exemplary Voyages" onerror="this.style.display='none'"></a>
+  <ul class="nav-links">
+    <li><a href="sri-lanka.html">Sri Lanka</a></li>
+    <li><a href="maldives.html">Maldives</a></li>
+    <li><a href="experiences.html">Experiences</a></li>
+    <li><a href="journal.html" class="active">Journal</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <a class="nav-cta" href="mailto:inquiries@exemplaryvoyages.com">Plan My Journey</a>
+  <div class="nav-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="nav-mobile-overlay" id="mobileMenu">
+  <ul class="nav-mobile-links">
+    <li><a href="sri-lanka.html" onclick="toggleMenu()">Sri Lanka</a></li>
+    <li><a href="maldives.html" onclick="toggleMenu()">Maldives</a></li>
+    <li><a href="experiences.html" onclick="toggleMenu()">Experiences</a></li>
+    <li><a href="journal.html" onclick="toggleMenu()">Journal</a></li>
+    <li><a href="about.html" onclick="toggleMenu()">About</a></li>
+  </ul>
+  <a class="nav-mobile-cta" href="mailto:inquiries@exemplaryvoyages.com">Plan My Journey</a>
+</div>
+
+<section class="article-hero">
+  <img src="images/Yala%20Day%206.jpg" alt="Yala National Park" style="object-position:center 55%" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a2018 0%,#2a3028 100%)'">
+  <div class="hero-text">
+    <p class="hero-category">Quiet Luxury</p>
+    <h1 class="hero-title">Quiet Luxury Stays <em>in Sri Lanka</em></h1>
+    <div class="hero-meta">
+      <span>By Exemplary Voyages</span>
+      <span>&middot;</span>
+      <span>6 min read</span>
+    </div>
+  </div>
+</section>
+
+<div style="padding:40px 8vw 0;max-width:760px;margin:0 auto;">
+  <a href="journal.html" style="display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;color:var(--gold);">&#8592; Back to Journal</a>
+</div>
+
+<div class="article-wrap">
+
+  <p class="article-lead reveal">The finest luxury in Sri Lanka is not always found behind the grandest entrance. Sometimes, it is a planter's bungalow above the clouds, where your tea was grown on the hillside beyond your window. Sometimes, it is a private villa surrounded by paddy fields, where the only interruption is the sound of birds moving through the garden.</p>
+
+  <div class="article-body">
+    <p class="reveal">There are no unnecessary declarations of luxury here. No spectacle demanding your attention. Only thoughtful service, beautiful surroundings and the rare pleasure of feeling that everything has been considered before you needed to ask.</p>
+    <p class="reveal">This is quiet luxury. Not refinement with less substance, but refinement with nothing to prove.</p>
+
+    <div class="article-divider reveal"></div>
+
+    <h2 class="reveal">Luxury That Knows When to Be Silent</h2>
+    <p class="reveal">Conventional luxury is designed to impress. Quiet luxury is designed to understand.</p>
+    <p class="reveal">It is the team member who notices you left the papaya untouched at breakfast and serves mango the following morning. The guide who realises you are more interested in the stories behind a place than the standard commentary. The perfectly timed pot of tea after a misty afternoon walk.</p>
+    <p class="reveal">The details are small. Their effect is not. In Sri Lanka, this intuitive style of hospitality feels natural. Welcoming a guest is deeply embedded in the culture. The finest properties preserve that warmth while surrounding it with privacy, considered design and an unmistakable sense of place.</p>
+
+    <div class="pull-quote reveal">
+      <p>You do not merely feel served. You feel known.</p>
+    </div>
+
+    <h2 class="reveal">Ceylon Tea Trails: Life Above the Clouds</h2>
+    <p class="reveal">Across the Bogawantalawa Valley, five restored tea planters' bungalows offer one of Sri Lanka's most distinctive stays. Built between the late nineteenth and early twentieth centuries, each bungalow retains its own personality. Fireplaces warm elegant sitting rooms. Gardens overlook hills covered in tea. Meals are prepared around your preferences, while a dedicated bungalow team sets an unhurried rhythm for each day.</p>
+    <p class="reveal">Morning may begin with mist moving across the valley and the distant sound of tea pluckers at work. Later, you might walk through the estate, learn the story behind Ceylon tea or settle into the garden with nowhere else you need to be. By evening, a fire is lit and the clouds descend around the bungalow.</p>
+    <p class="reveal">It is difficult to say precisely what makes the experience so memorable. Perhaps it is the beauty. Perhaps the stillness. More likely, it is the feeling that the world has briefly become smaller, quieter and entirely your own.</p>
+
+    <img class="article-img reveal" src="images/Ceylon%20Tea%20Trails.jpg" alt="Ceylon Tea Trails bungalows" onerror="this.style.display='none'">
+    <p class="img-caption reveal">Ceylon Tea Trails — five restored bungalows across the Bogawantalawa Valley</p>
+
+    <h2 class="reveal">Uga Halloowella: An Intimate Hill-Country Retreat</h2>
+    <p class="reveal">Set within a working tea estate near Hatton, Uga Halloowella offers only six suites. Its scale changes everything. By your second morning, the team understands how you take your tea, when you prefer to walk and whether breakfast is a time for conversation or silence. Nothing feels rehearsed, yet everything feels effortless.</p>
+    <p class="reveal">The bungalow's original character remains central to the experience. Fireplaces, deep bathtubs, writing desks and windows framing the surrounding tea country create an atmosphere that feels more like a private country home than a hotel.</p>
+
+    <div class="pull-quote reveal">
+      <p>This is a place for slow mornings, long baths and afternoons spent watching the mist alter the landscape. The luxury lies not in how much there is to do, but in how quickly you stop feeling the need to do anything at all.</p>
+    </div>
+
+    <h2 class="reveal">Uga Ulagalla: Privacy Among Ancient Landscapes</h2>
+    <p class="reveal">Near Anuradhapura, Uga Ulagalla rests within 58 acres of paddy fields, gardens and waterways. Beyond the estate lies one of Sri Lanka's great ancient capitals. Within it, private pool villas provide a peaceful retreat from the heat and intensity of exploration.</p>
+    <p class="reveal">There is a sense of space here that feels increasingly rare. Cycle through neighbouring villages in the morning. Return for a quiet lunch overlooking the landscape. Spend the afternoon beside your own pool, surrounded by birdsong and greenery. Ulagalla's strength lies in its balance. It connects guests to the cultural depth of the region without making them feel consumed by an itinerary. History is close enough to inspire you. Privacy is close enough to restore you.</p>
+
+    <div class="article-img-pair reveal">
+      <img src="images/Uga%20Ulagalla.jpg" alt="Uga Ulagalla resort" onerror="this.style.display='none'">
+      <img src="images/Cultural%20immersion%20day%202.jpg" alt="Cultural immersion Sri Lanka" style="object-position:center 35%" onerror="this.style.display='none'">
+    </div>
+    <p class="img-caption reveal">Private villas set within ancient landscapes — luxury that understands when to be silent</p>
+
+    <h2 class="reveal">Water Garden Sigiriya: A Different View of an Icon</h2>
+    <p class="reveal">Sigiriya is usually experienced as a destination to be climbed, photographed and left behind. Staying nearby changes that relationship. At Water Garden Sigiriya, the rock fortress becomes part of the landscape rather than a single scheduled visit. It appears beyond waterways and open countryside, changing with the light throughout the day.</p>
+    <p class="reveal">Explore Sigiriya early, before the heat and crowds gather. Return as the afternoon softens. Watch the rock become a dark silhouette against the evening sky. The privilege is not simply proximity. It is having enough time to see one of Sri Lanka's most recognisable landmarks without rushing through it.</p>
+
+    <h2 class="reveal">Uga Prava: The Luxury of the Indian Ocean</h2>
+    <p class="reveal">Near Tangalle, Uga Prava offers a more intimate expression of the southern coast. Here, the ocean dictates the pace. Mornings begin with changing light across the water. Seafood arrives fresh and requires little embellishment. Rooms and terraces are positioned to keep the beach constantly within sight.</p>
+    <p class="reveal">Tangalle remains quieter than many of the south coast's better known destinations. Its beaches feel longer, its coves more secluded and its rhythm noticeably slower. The best coastal retreats understand that the setting is already extraordinary. They do not attempt to overpower it with excessive design or entertainment. They frame the ocean, create comfort around it and allow you the space to enjoy it.</p>
+
+    <img class="article-img reveal" src="images/Kosgoda%20Turtles.jpg" alt="Kosgoda turtle conservation" style="object-position:center 65%" onerror="this.style.display='none'">
+    <p class="img-caption reveal">The southern coast — where the ocean sets the pace and the setting is already extraordinary</p>
+
+    <div class="article-divider reveal"></div>
+
+    <h2 class="reveal">Finding the Right Kind of Luxury</h2>
+    <p class="reveal">Sri Lanka's finest quiet-luxury properties are not always its largest, newest or most photographed. They are the places guests remember because of how they felt there.</p>
+    <p class="reveal">Choosing between them requires more than comparing suites and facilities. It means understanding whether you would prefer the intimacy of a six-room bungalow or the seclusion of a private pool villa. Whether you want complete stillness or thoughtful access to culture, wildlife and local life. Whether your ideal morning begins with tea-covered hills, an ancient city or the Indian Ocean.</p>
+    <p class="reveal">At Exemplary Voyages, we select properties through first-hand knowledge, trusted relationships and a clear understanding of the traveller. Because the right hotel should do more than accommodate your journey. It should become one of the reasons you remember it.</p>
+  </div>
+</div>
+
+<section class="article-cta reveal">
+  <h2>Tell Us What Matters to You</h2>
+  <p>We will design a private Sri Lankan journey around the places that understand it.</p>
+  <a class="cta-btn" href="mailto:inquiries@exemplaryvoyages.com?subject=Enquiry%3A%20Quiet%20Luxury%20Stays%20in%20Sri%20Lanka&body=Hello%2C%0A%0AI%20am%20interested%20in%20planning%20a%20quiet%20luxury%20journey%20in%20Sri%20Lanka.%0A%0APlease%20contact%20me%20to%20discuss%20options.%0A%0AThank%20you.">Begin the Conversation</a>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="images/EV-logo-white.png" alt="Exemplary Voyages" onerror="this.style.display='none'">
+      <p>Private journeys through Sri Lanka and the Maldives, designed around the people who take them.</p>
+    </div>
+    <div class="footer-col"><h4>Destinations</h4><ul><li><a href="sri-lanka.html">Sri Lanka</a></li><li><a href="maldives.html">Maldives</a></li><li><a href="experiences.html">Experiences</a></li></ul></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="journal.html">Journal</a></li><li><a href="mailto:inquiries@exemplaryvoyages.com">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:inquiries@exemplaryvoyages.com">inquiries@exemplaryvoyages.com</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Exemplary Voyages. All rights reserved.</p>
+    <p>Designed for discerning travellers.</p>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible')}})},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sri Lanka You Will Not Find on a Postcard | Exemplary Voyages Journal</title>
+<meta name="description" content="The island's most meaningful stories are rarely the most visible. They live in rituals performed before dawn, reservoirs that have sustained villages for centuries.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--midnight:#141916;--ivory:#F5F0E8;--gold:#B8972A;--tea:#8B9E5A;--stone:#7A6E62;--slate:#4A5148;--mist:#E8E3DA;--warm:#2A2F27}
+html{scroll-behavior:smooth}
+body{background:var(--midnight);color:var(--ivory);font-family:'Inter',Arial,sans-serif;overflow-x:hidden}
+nav#navbar{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 6vw;height:72px;background:rgba(20,25,22,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(245,240,232,0.06)}
+.nav-logo img{height:38px;width:auto;display:block}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;color:rgba(245,240,232,0.65);transition:color 0.25s ease}
+.nav-links a:hover,.nav-links a.active{color:var(--ivory)}
+.nav-cta{font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;color:var(--gold);border:1px solid rgba(184,151,42,0.35);padding:9px 22px;transition:all 0.25s ease}
+.nav-cta:hover{background:var(--gold);color:var(--midnight)}
+.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.nav-toggle span{display:block;width:22px;height:1px;background:var(--ivory);transition:all 0.3s ease}
+.nav-mobile-overlay{display:none;position:fixed;inset:0;z-index:99;background:rgba(20,25,22,0.98);padding:100px 8vw 40px;flex-direction:column;gap:0}
+.nav-mobile-overlay.open{display:flex}
+.nav-mobile-links{list-style:none;display:flex;flex-direction:column;gap:0}
+.nav-mobile-links li{border-bottom:1px solid rgba(245,240,232,0.08)}
+.nav-mobile-links a{display:block;padding:18px 0;font-size:13px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;color:rgba(245,240,232,0.75);transition:color 0.2s}
+.nav-mobile-links a:hover{color:var(--ivory)}
+.nav-mobile-cta{margin-top:32px;display:inline-block;font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;color:var(--gold);border:1px solid rgba(184,151,42,0.35);padding:12px 28px;text-align:center;width:fit-content}
+.article-hero{position:relative;height:70vh;min-height:480px;display:flex;align-items:flex-end;overflow:hidden;margin-top:72px}
+.article-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.article-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(20,25,22,0.92) 0%,rgba(20,25,22,0.4) 50%,rgba(20,25,22,0.1) 100%)}
+.hero-text{position:relative;z-index:2;padding:0 8vw 56px;max-width:860px}
+.hero-category{font-size:10px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.hero-title{font-family:'Playfair Display',Georgia,serif;font-size:clamp(32px,5vw,58px);font-weight:400;line-height:1.15;color:var(--ivory);margin-bottom:20px}
+.hero-meta{display:flex;align-items:center;gap:24px;font-size:12px;color:rgba(245,240,232,0.55);letter-spacing:0.05em}
+.article-wrap{max-width:760px;margin:0 auto;padding:72px 6vw 0}
+.article-lead{font-family:'Playfair Display',Georgia,serif;font-size:clamp(18px,2.2vw,22px);font-weight:400;line-height:1.65;color:rgba(245,240,232,0.9);margin-bottom:48px;border-left:2px solid var(--gold);padding-left:28px}
+.article-body p{font-size:16px;line-height:1.85;color:rgba(245,240,232,0.75);margin-bottom:24px;font-weight:300}
+.article-body h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(22px,3vw,30px);font-weight:400;color:var(--ivory);margin:56px 0 20px;padding-bottom:12px;border-bottom:1px solid rgba(184,151,42,0.25)}
+.article-body h3{font-family:'Playfair Display',Georgia,serif;font-size:clamp(17px,2vw,21px);font-weight:400;font-style:italic;color:rgba(245,240,232,0.85);margin:36px 0 14px}
+.article-divider{width:40px;height:1px;background:var(--gold);margin:48px 0;opacity:0.5}
+.pull-quote{margin:48px 0;padding:32px 40px;border-left:3px solid var(--gold);background:rgba(184,151,42,0.05)}
+.pull-quote p{font-family:'Playfair Display',Georgia,serif;font-size:clamp(17px,2vw,20px);font-weight:400;font-style:italic;line-height:1.7;color:var(--ivory);margin:0}
+.article-cta{background:var(--warm);margin:80px 0 0;padding:72px 8vw;text-align:center}
+.article-cta h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(24px,3vw,36px);font-weight:400;color:var(--ivory);margin-bottom:16px}
+.article-cta p{font-size:15px;color:rgba(245,240,232,0.65);max-width:560px;margin:0 auto 36px;line-height:1.7}
+.cta-btn{display:inline-block;font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;color:var(--midnight);background:var(--gold);padding:14px 36px;transition:opacity 0.25s}
+.cta-btn:hover{opacity:0.85}
+footer{background:var(--warm);border-top:1px solid rgba(245,240,232,0.06);padding:64px 8vw 32px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;margin-bottom:56px}
+.footer-brand img{height:34px;margin-bottom:20px}
+.footer-brand p{font-size:13px;color:rgba(245,240,232,0.45);line-height:1.7;max-width:240px}
+.footer-col h4{font-size:10px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,240,232,0.35);margin-bottom:18px}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{font-size:13px;color:rgba(245,240,232,0.55);text-decoration:none;transition:color 0.2s}
+.footer-col ul li a:hover{color:var(--ivory)}
+.footer-bottom{border-top:1px solid rgba(245,240,232,0.06);padding-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-bottom p{font-size:11px;color:rgba(245,240,232,0.3);letter-spacing:0.05em}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal.visible{opacity:1;transform:none}
+.article-img{width:100%;height:420px;object-fit:cover;margin:40px 0;display:block}
+.article-img-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:40px 0}
+.article-img-pair img{width:100%;height:300px;object-fit:cover;display:block}
+.img-caption{font-size:12px;color:rgba(245,240,232,0.38);letter-spacing:0.07em;margin-top:-30px;margin-bottom:40px;font-style:italic;text-align:center}
+@media(max-width:768px){.nav-links,.nav-cta{display:none}.nav-toggle{display:flex}.footer-grid{grid-template-columns:1fr 1fr;gap:32px}.article-hero{height:55vh;min-height:360px}.article-wrap{padding:48px 6vw 0}.pull-quote{padding:24px 24px}.article-img{height:280px}.article-img-pair{grid-template-columns:1fr}.article-img-pair img{height:240px}}
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <a class="nav-logo" href="index.html"><img src="images/EV-logo-white.png" alt="Exemplary Voyages" onerror="this.style.display='none'"></a>
+  <ul class="nav-links">
+    <li><a href="sri-lanka.html">Sri Lanka</a></li>
+    <li><a href="maldives.html">Maldives</a></li>
+    <li><a href="experiences.html">Experiences</a></li>
+    <li><a href="journal.html" class="active">Journal</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <a class="nav-cta" href="mailto:inquiries@exemplaryvoyages.com">Plan My Journey</a>
+  <div class="nav-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="nav-mobile-overlay" id="mobileMenu">
+  <ul class="nav-mobile-links">
+    <li><a href="sri-lanka.html" onclick="toggleMenu()">Sri Lanka</a></li>
+    <li><a href="maldives.html" onclick="toggleMenu()">Maldives</a></li>
+    <li><a href="experiences.html" onclick="toggleMenu()">Experiences</a></li>
+    <li><a href="journal.html" onclick="toggleMenu()">Journal</a></li>
+    <li><a href="about.html" onclick="toggleMenu()">About</a></li>
+  </ul>
+  <a class="nav-mobile-cta" href="mailto:inquiries@exemplaryvoyages.com">Plan My Journey</a>
+</div>
+
+<section class="article-hero">
+  <img src="images/Photography%20Tours.jpg" alt="Photography Tours in Sri Lanka" style="object-position:center 40%" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a2018 0%,#2a3028 100%)'">
+  <div class="hero-text">
+    <p class="hero-category">Deep Experiences</p>
+    <h1 class="hero-title">The Sri Lanka You Will Not Find <em>on a Postcard</em></h1>
+    <div class="hero-meta">
+      <span>By Shakthie Warnapura, Senior Travel Advisor</span>
+      <span>&middot;</span>
+      <span>6 min read</span>
+    </div>
+  </div>
+</section>
+
+<div style="padding:40px 8vw 0;max-width:760px;margin:0 auto;">
+  <a href="journal.html" style="display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;color:var(--gold);">&#8592; Back to Journal</a>
+</div>
+
+<div class="article-wrap">
+
+  <p class="article-lead reveal">You can climb Sigiriya at sunrise, visit Kandy's sacred temples, take the train through the tea country and follow the coast beneath endless palms. You will return with beautiful photographs. But you may still leave without truly meeting Sri Lanka.</p>
+
+  <div class="article-body">
+    <p class="reveal">Because the island's most meaningful stories are rarely the most visible. They live in rituals performed before dawn, reservoirs that have sustained villages for centuries, forest monasteries hidden beyond unmarked paths and kitchens where recipes are remembered by hand.</p>
+    <p class="reveal">This is the Sri Lanka that rewards curiosity, the island revealed when you slow down, look again and travel with someone who knows not only where to take you, but when to arrive and whom to meet.</p>
+    <p class="reveal">At Exemplary Voyages, we call this the deep side of Sri Lanka. Once you experience it, simply seeing the island is no longer enough.</p>
+
+    <div class="article-divider reveal"></div>
+
+    <h2 class="reveal">Anuradhapura: Where History Is Still Alive</h2>
+    <p class="reveal">Founded in the fourth century BC, Anuradhapura was Sri Lanka's first great capital. Its kings built monasteries, reservoirs and stupas on a scale that remains extraordinary. Yet Anuradhapura is not an abandoned city preserved behind glass. It is still one of Sri Lanka's most sacred places, a living landscape where pilgrims walk barefoot, monks continue ancient rituals and flowers are placed before monuments older than many civilisations.</p>
+    <p class="reveal">Most itineraries allow only a few hurried hours here. That may be enough to see Anuradhapura. It is not enough to feel it.</p>
+
+    <h3 class="reveal">Beneath the Sacred Bodhi Tree</h3>
+    <p class="reveal">At the heart of the city stands the Sri Maha Bodhi, believed to have grown from a cutting of the tree beneath which the Buddha attained enlightenment. Planted in 288 BC and cared for continuously ever since, it is regarded as the world's oldest documented human-planted tree still living.</p>
+    <p class="reveal">Arrive early, before the heat settles over the city. White-clad pilgrims carry lotus flowers through the temple grounds. Prayer flags stir above them. Bells sound as monks begin their rituals beneath branches that have witnessed more than two thousand years of devotion.</p>
+
+    <div class="pull-quote reveal">
+      <p>Nothing feels staged. For a moment, the distance between the ancient world and the present disappears. You are not observing history. You are standing within a tradition that never ended.</p>
+    </div>
+
+    <p class="reveal">Nearby, the great white dome of Ruwanwelisaya rises above the trees. Pilgrims circle it while incense drifts across the terraces. Visit as the afternoon light softens and stay until evening prayers begin. Anuradhapura does not ask to be conquered in a day. It asks only that you give it time.</p>
+
+    <img class="article-img reveal" src="images/Anuradhapura%20%26%20Mihintale.jpg" alt="Anuradhapura and Mihintale ancient ruins" style="object-position:center 30%" onerror="this.style.display='none'">
+    <p class="img-caption reveal">Anuradhapura — a living sacred landscape where pilgrims still walk barefoot among monuments older than many civilisations</p>
+
+    <h2 class="reveal">Polonnaruwa: A Lost Kingdom in the Forest</h2>
+    <p class="reveal">If Anuradhapura feels ceremonial, Polonnaruwa feels intimate. Once Sri Lanka's medieval capital, its palaces, shrines and bathing pools now lie along quiet paths shaded by old trees. Explore by bicycle, pausing whenever a carved doorway, lotus-shaped pond or fragment of an ancient wall catches your attention.</p>
+    <p class="reveal">Then you arrive at Gal Vihara. Four Buddha figures emerge from a single wall of granite. The most striking is a reclining figure stretching fifteen metres across the rock. The craftsmanship is remarkable, but it is the expression that remains with you. The face holds such complete serenity that the surrounding world seems to quieten in response.</p>
+
+    <div class="pull-quote reveal">
+      <p>Some places impress you. Others rearrange something within you. Gal Vihara belongs to the latter.</p>
+    </div>
+
+    <img class="article-img reveal" src="images/Polonnaruwa%20%26%20Sigiriya.jpg" alt="Polonnaruwa ancient capital" onerror="this.style.display='none'">
+    <p class="img-caption reveal">Polonnaruwa — cycling past palace ruins, lotus ponds and the carved figures of Gal Vihara</p>
+
+    <h2 class="reveal">Sigiriya: Beyond the Famous View</h2>
+    <p class="reveal">Sigiriya may be Sri Lanka's most recognisable landmark. It is also one of its most misunderstood. This was never merely a fortress upon a rock. It was an astonishing expression of ambition, a royal city designed around water, landscape, art and the idea of a palace suspended between earth and sky.</p>
+    <p class="reveal">Gardens were arranged with geometric precision. Pools reflected the heavens. Fountains were powered by sophisticated hydraulic systems. Stairways and terraces climbed towards a palace built two hundred metres above the plains. It was created to inspire awe. More than fifteen centuries later, it still does.</p>
+    <p class="reveal">Partway through the ascent, a sheltered gallery holds Sigiriya's surviving frescoes. Their identities remain a mystery, yet the delicacy of their gestures and luminosity of their pigments have endured across centuries of tropical weather.</p>
+    <p class="reveal">Most visitors hurry past the gardens below in their desire to reach the summit. Do not. Begin there early, while the air is cool and the first light moves across the water. Only then does Sigiriya reveal itself, not as a solitary rock, but as a carefully composed vision of paradise.</p>
+
+    <img class="article-img reveal" src="images/Sigiriya.jpg" alt="Sigiriya rock fortress" onerror="this.style.display='none'">
+    <p class="img-caption reveal">Sigiriya — not merely a fortress, but a royal city composed around water, landscape, art and sky</p>
+
+    <h2 class="reveal">Dambulla: A Temple That Never Became a Museum</h2>
+    <p class="reveal">Within Dambulla's towering rock are five cave sanctuaries containing more than 150 Buddha images and painted ceilings dating across many centuries. Yet Dambulla belongs as much to the present as it does to the past. Monks still perform rituals inside the caves. Families arrive carrying jasmine and lotus flowers. Incense mingles with the scent of rain-washed stone.</p>
+    <p class="reveal">Enter early, when the light is low and golden. Let your eyes adjust as painted figures slowly emerge from the darkness. Do not count the statues or rush to interpret every scene. Listen for a whispered prayer. Watch a small flame reflected against an ancient wall. Dambulla is not a relic of belief. It is belief, still being practised.</p>
+
+    <h2 class="reveal">The Civilisation Between the Monuments</h2>
+    <p class="reveal">Sri Lanka's story does not exist only within its ruins. It continues in the villages between them. Here, paddy fields are nourished by reservoirs first engineered under ancient kings. Fishermen cast nets across waters touched by the first morning light. Clay turns beneath a potter's hands, while coconut and spices are prepared in kitchens where knowledge passes quietly between generations.</p>
+    <p class="reveal">These encounters must never feel like performances. The most meaningful are created through established relationships, genuine hospitality and mutual respect.</p>
+    <p class="reveal">Beyond the villages, hidden among forests and rocky outcrops, are monastic communities devoted to meditation and solitude. These are not places one simply visits. Access requires permission, appropriate timing and trust. When an encounter is possible, it may be remarkably simple: a walk beneath the trees, a quiet conversation or a few uninterrupted moments in a landscape shaped by contemplation.</p>
+
+    <div class="pull-quote reveal">
+      <p>Luxury is often defined by abundance. But there is another kind, the privilege of entering what is rarely seen without changing it.</p>
+    </div>
+
+    <div class="article-divider reveal"></div>
+
+    <h2 class="reveal">Travel Deeper</h2>
+    <p class="reveal">The deepest side of Sri Lanka cannot be assembled from a checklist. It requires time, discernment and people who understand the island from within. It means knowing that a temple before dawn is different from the same temple at midday, that a village meal matters because of the relationship behind it, and that some doors should be opened quietly while others should remain closed.</p>
+    <p class="reveal">Meaningful travel is not measured by how much ground you cover. It is measured by what remains with you after you leave.</p>
+    <p class="reveal">At Exemplary Voyages, we create privately guided journeys shaped around thoughtful timing, trusted local relationships and experiences that connect you more deeply with the places you enter. Sri Lanka will give you the photographs. But if you travel slowly enough, it may also change the way you see history, faith, beauty and your own place within a much longer story.</p>
+  </div>
+</div>
+
+<section class="article-cta reveal">
+  <h2>Begin Designing Your Private Journey</h2>
+  <p>Speak with Exemplary Voyages to travel deeper into the heart of Sri Lanka.</p>
+  <a class="cta-btn" href="mailto:inquiries@exemplaryvoyages.com?subject=Enquiry%3A%20Deep%20Experiences%20in%20Sri%20Lanka&body=Hello%2C%0A%0AI%20am%20interested%20in%20exploring%20the%20deeper%20side%20of%20Sri%20Lanka.%0A%0APlease%20contact%20me%20to%20discuss%20options.%0A%0AThank%20you.">Begin the Conversation</a>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="images/EV-logo-white.png" alt="Exemplary Voyages" onerror="this.style.display='none'">
+      <p>Private journeys through Sri Lanka and the Maldives, designed around the people who take them.</p>
+    </div>
+    <div class="footer-col"><h4>Destinations</h4><ul><li><a href="sri-lanka.html">Sri Lanka</a></li><li><a href="maldives.html">Maldives</a></li><li><a href="experiences.html">Experiences</a></li></ul></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="journal.html">Journal</a></li><li><a href="mailto:inquiries@exemplaryvoyages.com">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:inquiries@exemplaryvoyages.com">inquiries@exemplaryvoyages.com</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Exemplary Voyages. All rights reserved.</p>
+    <p>Designed for discerning travellers.</p>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible')}})},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>

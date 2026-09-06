@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A 7-Day Sri Lanka Journey, Done Right | Exemplary Voyages Journal</title>
+<meta name="description" content="Seven days is not enough to see all of Sri Lanka. It is enough to experience it beautifully.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--midnight:#141916;--ivory:#F5F0E8;--gold:#B8972A;--tea:#8B9E5A;--stone:#7A6E62;--slate:#4A5148;--mist:#E8E3DA;--warm:#2A2F27}
+html{scroll-behavior:smooth}
+body{background:var(--midnight);color:var(--ivory);font-family:'Inter',Arial,sans-serif;overflow-x:hidden}
+nav#navbar{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 6vw;height:72px;background:rgba(20,25,22,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(245,240,232,0.06)}
+.nav-logo img{height:38px;width:auto;display:block}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;color:rgba(245,240,232,0.65);transition:color 0.25s ease}
+.nav-links a:hover,.nav-links a.active{color:var(--ivory)}
+.nav-cta{font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;color:var(--gold);border:1px solid rgba(184,151,42,0.35);padding:9px 22px;transition:all 0.25s ease}
+.nav-cta:hover{background:var(--gold);color:var(--midnight)}
+.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.nav-toggle span{display:block;width:22px;height:1px;background:var(--ivory);transition:all 0.3s ease}
+.nav-mobile-overlay{display:none;position:fixed;inset:0;z-index:99;background:rgba(20,25,22,0.98);padding:100px 8vw 40px;flex-direction:column;gap:0}
+.nav-mobile-overlay.open{display:flex}
+.nav-mobile-links{list-style:none;display:flex;flex-direction:column;gap:0}
+.nav-mobile-links li{border-bottom:1px solid rgba(245,240,232,0.08)}
+.nav-mobile-links a{display:block;padding:18px 0;font-size:13px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;color:rgba(245,240,232,0.75);transition:color 0.2s}
+.nav-mobile-links a:hover{color:var(--ivory)}
+.nav-mobile-cta{margin-top:32px;display:inline-block;font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;color:var(--gold);border:1px solid rgba(184,151,42,0.35);padding:12px 28px;text-align:center;width:fit-content}
+.article-hero{position:relative;height:70vh;min-height:480px;display:flex;align-items:flex-end;overflow:hidden;margin-top:72px}
+.article-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.article-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(20,25,22,0.92) 0%,rgba(20,25,22,0.4) 50%,rgba(20,25,22,0.1) 100%)}
+.hero-text{position:relative;z-index:2;padding:0 8vw 56px;max-width:860px}
+.hero-category{font-size:10px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.hero-title{font-family:'Playfair Display',Georgia,serif;font-size:clamp(32px,5vw,58px);font-weight:400;line-height:1.15;color:var(--ivory);margin-bottom:20px}
+.hero-title em{font-style:italic;color:rgba(245,240,232,0.85)}
+.hero-meta{display:flex;align-items:center;gap:24px;font-size:12px;color:rgba(245,240,232,0.55);letter-spacing:0.05em}
+.article-wrap{max-width:760px;margin:0 auto;padding:72px 6vw 0}
+.article-lead{font-family:'Playfair Display',Georgia,serif;font-size:clamp(18px,2.2vw,22px);font-weight:400;line-height:1.65;color:rgba(245,240,232,0.9);margin-bottom:48px;border-left:2px solid var(--gold);padding-left:28px}
+.article-body p{font-size:16px;line-height:1.85;color:rgba(245,240,232,0.75);margin-bottom:24px;font-weight:300}
+.article-body h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(22px,3vw,30px);font-weight:400;color:var(--ivory);margin:56px 0 20px;padding-bottom:12px;border-bottom:1px solid rgba(184,151,42,0.25)}
+.article-body h3{font-family:'Playfair Display',Georgia,serif;font-size:clamp(17px,2vw,21px);font-weight:400;font-style:italic;color:rgba(245,240,232,0.85);margin:36px 0 14px}
+.article-divider{width:40px;height:1px;background:var(--gold);margin:48px 0;opacity:0.5}
+.pull-quote{margin:48px 0;padding:32px 40px;border-left:3px solid var(--gold);background:rgba(184,151,42,0.05)}
+.pull-quote p{font-family:'Playfair Display',Georgia,serif;font-size:clamp(17px,2vw,20px);font-weight:400;font-style:italic;line-height:1.7;color:var(--ivory);margin:0}
+.day-marker{display:inline-block;font-size:10px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);background:rgba(184,151,42,0.1);border:1px solid rgba(184,151,42,0.25);padding:6px 14px;margin-bottom:16px}
+.article-cta{background:var(--warm);margin:80px 0 0;padding:72px 8vw;text-align:center}
+.article-cta h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(24px,3vw,36px);font-weight:400;color:var(--ivory);margin-bottom:16px}
+.article-cta p{font-size:15px;color:rgba(245,240,232,0.65);max-width:560px;margin:0 auto 36px;line-height:1.7}
+.cta-btn{display:inline-block;font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;color:var(--midnight);background:var(--gold);padding:14px 36px;transition:opacity 0.25s}
+.cta-btn:hover{opacity:0.85}
+footer{background:var(--warm);border-top:1px solid rgba(245,240,232,0.06);padding:64px 8vw 32px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;margin-bottom:56px}
+.footer-brand img{height:34px;margin-bottom:20px}
+.footer-brand p{font-size:13px;color:rgba(245,240,232,0.45);line-height:1.7;max-width:240px}
+.footer-col h4{font-size:10px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,240,232,0.35);margin-bottom:18px}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{font-size:13px;color:rgba(245,240,232,0.55);text-decoration:none;transition:color 0.2s}
+.footer-col ul li a:hover{color:var(--ivory)}
+.footer-bottom{border-top:1px solid rgba(245,240,232,0.06);padding-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-bottom p{font-size:11px;color:rgba(245,240,232,0.3);letter-spacing:0.05em}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal.visible{opacity:1;transform:none}
+.article-img{width:100%;height:420px;object-fit:cover;margin:40px 0;display:block}
+.article-img-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:40px 0}
+.article-img-pair img{width:100%;height:300px;object-fit:cover;display:block}
+.img-caption{font-size:12px;color:rgba(245,240,232,0.38);letter-spacing:0.07em;margin-top:-30px;margin-bottom:40px;font-style:italic;text-align:center}
+@media(max-width:768px){.nav-links,.nav-cta{display:none}.nav-toggle{display:flex}.footer-grid{grid-template-columns:1fr 1fr;gap:32px}.article-hero{height:55vh;min-height:360px}.article-wrap{padding:48px 6vw 0}.pull-quote{padding:24px 24px}.article-img{height:280px}.article-img-pair{grid-template-columns:1fr}.article-img-pair img{height:240px}}
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <a class="nav-logo" href="index.html"><img src="images/EV-logo-white.png" alt="Exemplary Voyages" onerror="this.style.display='none'"></a>
+  <ul class="nav-links">
+    <li><a href="sri-lanka.html">Sri Lanka</a></li>
+    <li><a href="maldives.html">Maldives</a></li>
+    <li><a href="experiences.html">Experiences</a></li>
+    <li><a href="journal.html" class="active">Journal</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <a class="nav-cta" href="mailto:inquiries@exemplaryvoyages.com">Plan My Journey</a>
+  <div class="nav-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="nav-mobile-overlay" id="mobileMenu">
+  <ul class="nav-mobile-links">
+    <li><a href="sri-lanka.html" onclick="toggleMenu()">Sri Lanka</a></li>
+    <li><a href="maldives.html" onclick="toggleMenu()">Maldives</a></li>
+    <li><a href="experiences.html" onclick="toggleMenu()">Experiences</a></li>
+    <li><a href="journal.html" onclick="toggleMenu()">Journal</a></li>
+    <li><a href="about.html" onclick="toggleMenu()">About</a></li>
+  </ul>
+  <a class="nav-mobile-cta" href="mailto:inquiries@exemplaryvoyages.com">Plan My Journey</a>
+</div>
+
+<section class="article-hero">
+  <img src="images/Wilderness%20Immersion%20Day%201.jpg" alt="A 7-Day Sri Lanka Journey" style="object-position:center 45%" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a2018 0%,#2a3028 100%)'">
+  <div class="hero-text">
+    <p class="hero-category">Sri Lanka</p>
+    <h1 class="hero-title">A 7-Day Sri Lanka Journey, <em>Done Right</em></h1>
+    <div class="hero-meta">
+      <span>By Exemplary Voyages</span>
+      <span>&middot;</span>
+      <span>6 min read</span>
+    </div>
+  </div>
+</section>
+
+<div style="padding:40px 8vw 0;max-width:760px;margin:0 auto;">
+  <a href="journal.html" style="display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;color:var(--gold);">&#8592; Back to Journal</a>
+</div>
+
+<div class="article-wrap">
+
+  <p class="article-lead reveal">Seven days is not enough to see all of Sri Lanka. It is enough to experience it beautifully. The mistake is trying to fit the entire island into a single week. The result may look impressive on paper, but the journey becomes a succession of roads, check-ins and hurried departures.</p>
+
+  <div class="article-body">
+    <p class="reveal">A rewarding seven-day itinerary is shaped by restraint. Choose three regions. Travel privately. Spend longer in the places that deserve it. Leave enough room for the moments no itinerary can predict.</p>
+    <p class="reveal">This is not a journey designed to show you everything. It is designed to ensure that what you do experience stays with you.</p>
+
+    <div class="article-divider reveal"></div>
+
+    <h2 class="reveal">Days 1 and 2: The Cultural Triangle</h2>
+    <p class="reveal">Begin among the ancient landscapes of Sri Lanka's Cultural Triangle, where forests, reservoirs and rural villages surround the remains of former kingdoms.</p>
+    <p class="reveal">After arriving in Colombo, travel privately to Sigiriya or shorten the journey with an air transfer. Settle into your hotel and resist the temptation to begin sightseeing immediately. A quiet afternoon beside the pool will make the following morning infinitely more rewarding.</p>
+
+    <h3 class="reveal">Sigiriya Before the Crowds</h3>
+    <p class="reveal">Rise early to climb Sigiriya while the air is cool and the landscape is still covered in morning light. Built during the fifth century, the rock fortress rises approximately 200 metres above the surrounding plains. Yet its significance extends far beyond the summit. The water gardens, frescoes, mirror wall and remains of the palace reveal an extraordinary vision of architecture, art and royal power.</p>
+    <p class="reveal">Explore with a knowledgeable private guide who can bring its complex history to life. The finest part of an early visit is not simply avoiding the heat. It is having enough stillness to notice how deliberately Sigiriya was composed: gardens beneath you, mountains on the horizon and ancient reservoirs reflecting the sky.</p>
+
+    <div class="pull-quote reveal">
+      <p>A week in Sri Lanka should feel expansive, not conquered.</p>
+    </div>
+
+    <img class="article-img reveal" src="images/Sigiriya.jpg" alt="Sigiriya rock fortress" onerror="this.style.display='none'">
+    <p class="img-caption reveal">Sigiriya — the fifth-century rock fortress rising 200 metres above the plains</p>
+
+    <h2 class="reveal">Day 3: Kandy and the Island's Spiritual Heart</h2>
+    <p class="reveal">Travel south towards Kandy, passing spice gardens, villages and roads lined with king-coconut stalls. Sri Lanka's final royal capital is arranged around a lake created by its last king. At its centre stands the Temple of the Sacred Tooth Relic, one of Buddhism's most revered places of worship.</p>
+    <p class="reveal">Visit with a private guide who can explain the history, symbolism and etiquette of the temple before you enter. Time the experience to coincide with a daily puja, when drums sound through the complex and devotees arrive carrying lotus and jasmine flowers.</p>
+    <p class="reveal">The ceremony is atmospheric, but it is not a performance. It remains an expression of living faith, and experiencing it respectfully is essential. Later, walk beside Kandy Lake or retreat to a peaceful hotel in the surrounding hills. The city is most compelling when there is time to observe it beyond its landmarks.</p>
+
+    <img class="article-img reveal" src="images/Kandy.jpg" alt="Kandy — Sri Lanka's royal capital" onerror="this.style.display='none'">
+    <p class="img-caption reveal">Kandy — the island's final royal capital, arranged around its lake</p>
+
+    <h2 class="reveal">Days 4 and 5: Into the Tea Country</h2>
+    <p class="reveal">From Kandy, continue into the central highlands. Where schedules align, part of the journey can be made by train. The railway passes through forest, mountain villages and slopes covered in tea, offering a slower perspective on the changing landscape. For greater privacy and flexibility, travel by car with carefully chosen stops along the way.</p>
+    <p class="reveal">Rather than racing between Nuwara Eliya, Hatton and Ella, choose one hill-country base. Hatton and the Bogawantalawa Valley are particularly well suited to a shorter luxury journey. Restored planters' bungalows sit among working tea estates, surrounded by cool air, gardens and deep green hills.</p>
+    <p class="reveal">Walk through the estate with a resident planter or guide. Learn how tea is plucked, processed and graded before tasting it close to where it was grown. The experience reveals how landscape, climate and human skill shaped an industry, and influenced the history of the island.</p>
+
+    <div class="pull-quote reveal">
+      <p>The hill country is not a place to fill with activities. Its greatest luxury is the permission to pause.</p>
+    </div>
+
+    <div class="article-img-pair reveal">
+      <img src="images/Ceylon%20Tea%20Trails.jpg" alt="Ceylon Tea Trails" onerror="this.style.display='none'">
+      <img src="images/Nuwara%20Eliya%20estates.jpg" alt="Tea estates in the highlands" onerror="this.style.display='none'">
+    </div>
+    <p class="img-caption reveal">The central highlands — planters' bungalows set among working tea estates</p>
+
+    <h2 class="reveal">Days 6 and 7: The Southern Coast</h2>
+    <p class="reveal">Travel south by private vehicle or take an air transfer to preserve more of your final two days. The landscape changes quickly. Tea-covered hills descend towards warmer plains, coconut palms and the Indian Ocean.</p>
+    <p class="reveal">Choose a quiet coastal retreat near Tangalle, Weligama or Galle, depending on how you want the journey to end. Tangalle offers long beaches and a slower rhythm. Weligama provides convenient access to the wider southern coast. Galle combines the ocean with the atmosphere of its historic fortified town.</p>
+    <p class="reveal">Spend the final days with very little planned. Walk along the beach in the morning. Enjoy seafood overlooking the water. Arrange a private sailing experience, visit Galle Fort with a specialist guide or simply remain beside the pool until the light begins to soften.</p>
+    <p class="reveal">After six days of discovery, the coast should not feel like another destination to complete. It should feel like an exhale.</p>
+
+    <img class="article-img reveal" src="images/The%20Southern%20Coast.jpg" alt="The southern coast of Sri Lanka" onerror="this.style.display='none'">
+    <p class="img-caption reveal">The southern coast — long beaches and the rhythms of the Indian Ocean</p>
+
+    <div class="article-divider reveal"></div>
+
+    <h2 class="reveal">The Difference Is in the Design</h2>
+    <p class="reveal">A successful seven-day journey depends less on how many places it contains than on how intelligently they are connected. Drive times in Sri Lanka can be longer than the map suggests. Private air transfers can preserve valuable hours, but thoughtful road journeys can also become part of the experience when they include meaningful stops and sufficient flexibility.</p>
+    <p class="reveal">Three principles make the difference. Choose fewer bases: three carefully selected stays create a more satisfying rhythm than changing hotels every night. Travel privately: a dedicated chauffeur-guide allows the journey to respond to your interests, energy and discoveries along the way. Protect the empty spaces: an unscheduled afternoon may become the part of Sri Lanka you remember most.</p>
+    <p class="reveal">Seven days will not reveal the entire island. But it can introduce you to its history, spirituality, landscapes and hospitality without reducing them to a checklist. And when a short journey is designed with discernment, you do not leave feeling that you rushed through Sri Lanka. You leave knowing why you must return.</p>
+  </div>
+</div>
+
+<section class="article-cta reveal">
+  <h2>Tell Us How You Want Your Seven Days to Feel</h2>
+  <p>We will design a private Sri Lankan journey around you.</p>
+  <a class="cta-btn" href="mailto:inquiries@exemplaryvoyages.com?subject=Enquiry%3A%207-Day%20Sri%20Lanka%20Journey&body=Hello%2C%0A%0AI%20am%20interested%20in%20planning%20a%207-day%20journey%20in%20Sri%20Lanka.%0A%0APlease%20contact%20me%20to%20discuss%20options.%0A%0AThank%20you.">Begin the Conversation</a>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="images/EV-logo-white.png" alt="Exemplary Voyages" onerror="this.style.display='none'">
+      <p>Private journeys through Sri Lanka and the Maldives, designed around the people who take them.</p>
+    </div>
+    <div class="footer-col"><h4>Destinations</h4><ul><li><a href="sri-lanka.html">Sri Lanka</a></li><li><a href="maldives.html">Maldives</a></li><li><a href="experiences.html">Experiences</a></li></ul></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="journal.html">Journal</a></li><li><a href="mailto:inquiries@exemplaryvoyages.com">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:inquiries@exemplaryvoyages.com">inquiries@exemplaryvoyages.com</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Exemplary Voyages. All rights reserved.</p>
+    <p>Designed for discerning travellers.</p>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible')}})},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
