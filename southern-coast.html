@@ -910,5 +910,43 @@ const observer = new IntersectionObserver((entries)=>{
 },{threshold:0.08});
 document.querySelectorAll('.reveal,.reveal-img').forEach(el=>observer.observe(el));
 </script>
+
+<!-- Gmail Fallback Toast -->
+<div id="ev-gmail-toast" style="position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(20px);background:#141916;color:#F5F0E8;padding:14px 22px;border-radius:3px;z-index:20000;font-family:Inter,Arial,sans-serif;font-size:12px;letter-spacing:0.04em;box-shadow:0 6px 28px rgba(0,0,0,0.55);display:flex;align-items:center;gap:16px;max-width:92vw;opacity:0;pointer-events:none;transition:opacity 0.35s,transform 0.35s;">
+  <span style="white-space:nowrap">No email app detected &mdash;</span>
+  <a id="ev-gmail-link" href="#" target="_blank" rel="noopener" style="color:#B8972A;font-weight:500;white-space:nowrap;text-decoration:none;">Send via Gmail &rarr;</a>
+  <button onclick="evHideToast()" style="background:none;border:none;color:rgba(245,240,232,0.45);cursor:pointer;font-size:17px;line-height:1;padding:0;margin-left:2px;flex-shrink:0;">&#x2715;</button>
+</div>
+<script>
+(function(){
+  var toast=document.getElementById('ev-gmail-toast');
+  var link=document.getElementById('ev-gmail-link');
+  var autoTimer;
+  window.evHideToast=function(){toast.style.opacity='0';toast.style.pointerEvents='none';toast.style.transform='translateX(-50%) translateY(20px)';};
+  function showToast(){clearTimeout(autoTimer);toast.style.opacity='1';toast.style.pointerEvents='auto';toast.style.transform='translateX(-50%) translateY(0)';autoTimer=setTimeout(evHideToast,7000);}
+  function buildGmailUrl(href){
+    var to=(href.match(/^mailto:([^?&\s]+)/i)||[])[1]||'';
+    var qs=href.indexOf('?')>=0?href.slice(href.indexOf('?')+1):'';
+    var p=new URLSearchParams(qs);
+    var g='https://mail.google.com/mail/?view=cm&to='+encodeURIComponent(decodeURIComponent(to));
+    if(p.get('subject'))g+='&su='+encodeURIComponent(decodeURIComponent(p.get('subject')));
+    if(p.get('body'))g+='&body='+encodeURIComponent(decodeURIComponent(p.get('body')));
+    return g;
+  }
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="mailto:"]');
+    if(!a)return;
+    clearTimeout(autoTimer);
+    link.href=buildGmailUrl(a.href);
+    var blurred=false;
+    function onBlur(){blurred=true;window.removeEventListener('blur',onBlur);}
+    window.addEventListener('blur',onBlur,{once:true});
+    setTimeout(function(){
+      window.removeEventListener('blur',onBlur);
+      if(!blurred)showToast();
+    },800);
+  });
+})();
+</script>
 </body>
 </html>
