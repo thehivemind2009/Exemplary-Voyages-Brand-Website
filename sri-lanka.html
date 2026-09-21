@@ -728,6 +728,31 @@ footer { background: #111512; padding: 80px 8vw 48px; }
   .iy-moments-grid { grid-template-columns: 1fr; }
   .iy-moment-card { padding: 32px 24px; }
 }
+
+  /* ── Category headers within itineraries grid ── */
+  .itin-cat-header {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 40px 0 18px;
+    margin-top: 12px;
+  }
+  .itin-cat-header:first-child { padding-top: 0; margin-top: 0; }
+  .itin-cat-label {
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(184,151,42,0.75);
+    white-space: nowrap;
+  }
+  .itin-cat-rule {
+    flex: 1;
+    height: 1px;
+    background: rgba(184,151,42,0.18);
+  }
 </style>
 </head>
 <body>
@@ -824,14 +849,18 @@ footer { background: #111512; padding: 80px 8vw 48px; }
   <div class="section-header reveal">
     <div>
       <div class="section-tag">Signature Itineraries</div>
-      <h2>Six ways to know<br><em>Sri Lanka deeply.</em></h2>
+      <h2>Ways to know<br><em>Sri Lanka deeply.</em></h2>
     </div>
     <p>Each itinerary is a starting point, a framework shaped by years of ground experience, refined to the journey only we know how to deliver. Every one is tailored to you before departure.</p>
   </div>
 
   <div class="itineraries-grid">
 
-    <!-- ITINERARY 1 -->
+    <!-- ── Culture & Heritage ── -->
+    <div class="itin-cat-header">
+      <span class="itin-cat-label">Culture &amp; Heritage</span>
+      <div class="itin-cat-rule"></div>
+    </div>
     <div class="itin-card reveal">
       <div class="itin-img">
         <img loading="lazy" src="images/The%20Ancient%20Kingdom%20Trail.jpg" alt="Ancient Kingdom Trail">
@@ -853,8 +882,6 @@ footer { background: #111512; padding: 80px 8vw 48px; }
         <a href="ancient-kingdom-trail.html" class="itin-link">View Itinerary &#8594;</a>
       </div>
     </div>
-
-    <!-- ITINERARY 2 -->
     <div class="itin-card reveal reveal-delay-1">
       <div class="itin-img">
         <img loading="lazy" src="images/The%20Highland%20Tea%20Route.jpg" alt="Highland Tea Route">
@@ -876,32 +903,55 @@ footer { background: #111512; padding: 80px 8vw 48px; }
         <a href="highland-tea-route.html" class="itin-link">View Itinerary &#8594;</a>
       </div>
     </div>
-
-    <!-- ITINERARY 3 -->
     <div class="itin-card reveal reveal-delay-2">
       <div class="itin-img">
-        <img loading="lazy" src="images/The%20Southern%20Coast.jpg" alt="Southern Coast">
-        <!-- Replace with a coastal/southern Sri Lanka image -->
-        <div class="itin-badge">7 Days</div>
+        <img loading="lazy" src="images/Cultural%20Compass.jpg" alt="Cultural Compass">
+        <div class="itin-badge">12 Days</div>
       </div>
       <div class="itin-body">
         <div class="itin-meta">
-          <span class="itin-days">7 Days · 6 Nights</span>
-          <span class="itin-type">Coast &amp; Wildlife</span>
+          <span class="itin-days">12 Days · 11 Nights</span>
+          <span class="itin-type">Complete Sri Lanka</span>
         </div>
-        <h3>The Southern Coast</h3>
-        <p class="itin-route">Talpe → Mirissa → Handunugoda → Galle</p>
+        <h3>Cultural Compass</h3>
+        <p class="itin-route">Colombo → Anuradhapura → Sigiriya → Kandy → Ella → Tangalle</p>
         <div class="itin-highlights">
-          <span class="itin-tag">Galle Fort</span>
-          <span class="itin-tag">Blue Whale Watching</span>
-          <span class="itin-tag">Yala Safari</span>
-          <span class="itin-tag">Stilt Fishermen</span>
+          <span class="itin-tag">Full Island</span>
+          <span class="itin-tag">All Climates</span>
+          <span class="itin-tag">Mixed Stays</span>
+          <span class="itin-tag">Signature Access</span>
         </div>
-        <a href="southern-coast.html" class="itin-link">View Itinerary &#8594;</a>
+        <a href="cultural-compass.html" class="itin-link">View Itinerary &#8594;</a>
+      </div>
+    </div>
+    <div class="itin-card reveal">
+      <div class="itin-img">
+        <img loading="lazy" src="images/A%20tour%20through%20Colonial%20Splendour.jpg" alt="A Tour Through Colonial Splendour" onerror="this.style.opacity='0'">
+        <div class="itin-badge">10 Days</div>
+      </div>
+      <div class="itin-body">
+        <div class="itin-meta">
+          <span class="itin-days">10 Days · 9 Nights</span>
+          <span class="itin-type">Culture &amp; Heritage</span>
+        </div>
+        <h3>A Tour Through Colonial Splendour</h3>
+        <p class="itin-route">Negombo → Kandy → Nuwara Eliya → Koslanda → Galle → Colombo</p>
+        <div class="itin-highlights">
+          <span class="itin-tag">Dutch Canals</span>
+          <span class="itin-tag">Lipton's Seat</span>
+          <span class="itin-tag">Galle Fort</span>
+          <span class="itin-tag">Tea Estates</span>
+        </div>
+        <p class="itin-price" style="font-family:'Inter',Arial,sans-serif;font-size:14px;font-weight:500;letter-spacing:0.1em;color:rgba(184,151,42,0.95);margin:10px 0 0;text-transform:uppercase;">starting from US$ 1,960 pp</p>
+        <a href="colonial-splendour.html" class="itin-link">View Itinerary &#8594;</a>
       </div>
     </div>
 
-    <!-- ITINERARY 4 -->
+    <!-- ── Wildlife & Adventure ── -->
+    <div class="itin-cat-header">
+      <span class="itin-cat-label">Wildlife &amp; Adventure</span>
+      <div class="itin-cat-rule"></div>
+    </div>
     <div class="itin-card reveal">
       <div class="itin-img">
         <img loading="lazy" src="images/Wilderness%20Immersion.jpg" alt="Wilderness Immersion">
@@ -923,32 +973,194 @@ footer { background: #111512; padding: 80px 8vw 48px; }
         <a href="wilderness-immersion.html" class="itin-link">View Itinerary &#8594;</a>
       </div>
     </div>
-
-    <!-- ITINERARY 5 -->
     <div class="itin-card reveal reveal-delay-1">
       <div class="itin-img">
-        <img loading="lazy" src="images/Cultural%20Compass.jpg" alt="Cultural Compass">
+        <img loading="lazy" src="images/An%20Odyssey%20of%20Adventure%20and%20Discovery.jpg" alt="An Odyssey of Adventure and Discovery" onerror="this.style.opacity='0'">
         <div class="itin-badge">12 Days</div>
       </div>
       <div class="itin-body">
         <div class="itin-meta">
           <span class="itin-days">12 Days · 11 Nights</span>
-          <span class="itin-type">Complete Sri Lanka</span>
+          <span class="itin-type">Adventure &amp; Discovery</span>
         </div>
-        <h3>Cultural Compass</h3>
-        <p class="itin-route">Colombo → Anuradhapura → Sigiriya → Kandy → Ella → Tangalle</p>
+        <h3>An Odyssey of Adventure and Discovery</h3>
+        <p class="itin-route">Kotugoda → Sigiriya → Polonnaruwa → Kandy → Hatton → Yala → Galle</p>
         <div class="itin-highlights">
-          <span class="itin-tag">Full Island</span>
-          <span class="itin-tag">All Climates</span>
-          <span class="itin-tag">Mixed Stays</span>
-          <span class="itin-tag">Signature Access</span>
+          <span class="itin-tag">Secret Viewpoint</span>
+          <span class="itin-tag">Sigiriya Rock</span>
+          <span class="itin-tag">Yala Safari</span>
+          <span class="itin-tag">Galle Fort</span>
         </div>
-        <a href="cultural-compass.html" class="itin-link">View Itinerary &#8594;</a>
+        <p class="itin-price" style="font-family:'Inter',Arial,sans-serif;font-size:14px;font-weight:500;letter-spacing:0.1em;color:rgba(184,151,42,0.95);margin:10px 0 0;text-transform:uppercase;">starting from US$ 3,990 pp</p>
+        <a href="sri-lanka-odyssey.html" class="itin-link">View Itinerary &#8594;</a>
+      </div>
+    </div>
+    <div class="itin-card reveal reveal-delay-2">
+      <div class="itin-img">
+        <img loading="lazy" src="images/Classic%20Winter%20Escapade.jpg" alt="Classical Winter Escapade" onerror="this.style.opacity='0'">
+        <div class="itin-badge">8 Days</div>
+      </div>
+      <div class="itin-body">
+        <div class="itin-meta">
+          <span class="itin-days">8 Days · 7 Nights</span>
+          <span class="itin-type">Culture &amp; Wildlife</span>
+        </div>
+        <h3>Classical Winter Escapade</h3>
+        <p class="itin-route">Sigiriya → Kandy → Nuwara Eliya → Ella → Yala → Galle</p>
+        <div class="itin-highlights">
+          <span class="itin-tag">Scenic Train</span>
+          <span class="itin-tag">Sigiriya Rock</span>
+          <span class="itin-tag">Yala Leopards</span>
+          <span class="itin-tag">Galle Fort</span>
+        </div>
+        <p class="itin-price" style="font-family:'Inter',Arial,sans-serif;font-size:14px;font-weight:500;letter-spacing:0.1em;color:rgba(184,151,42,0.95);margin:10px 0 0;text-transform:uppercase;">starting from US$ 1,295 pp</p>
+        <a href="classical-winter-escapade.html" class="itin-link">View Itinerary &#8594;</a>
+      </div>
+    </div>
+    <div class="itin-card reveal">
+      <div class="itin-img">
+        <img loading="lazy" src="images/Discover%20Nature%27s%20Aviary.jpg" alt="Discover Nature's Aviary" onerror="this.style.opacity='0'">
+        <div class="itin-badge">15 Days</div>
+      </div>
+      <div class="itin-body">
+        <div class="itin-meta">
+          <span class="itin-days">15 Days · 14 Nights</span>
+          <span class="itin-type">Wildlife &amp; Birding</span>
+        </div>
+        <h3>Discover Nature's Aviary</h3>
+        <p class="itin-route">Negombo → Wilpattu → Sigiriya → Kandy → Horton Plains → Yala → Sinharaja → Colombo</p>
+        <div class="itin-highlights">
+          <span class="itin-tag">Expert Ornithologist</span>
+          <span class="itin-tag">Sinharaja</span>
+          <span class="itin-tag">RAMSAR Wetlands</span>
+          <span class="itin-tag">200+ Species</span>
+        </div>
+        <p class="itin-price" style="font-family:'Inter',Arial,sans-serif;font-size:14px;font-weight:500;letter-spacing:0.1em;color:rgba(184,151,42,0.95);margin:10px 0 0;text-transform:uppercase;">starting from US$ 2,620 pp</p>
+        <a href="discover-natures-aviary.html" class="itin-link">View Itinerary &#8594;</a>
+      </div>
+    </div>
+    <div class="itin-card reveal reveal-delay-1">
+      <div class="itin-img">
+        <img loading="lazy" src="images/Timeless%20Summer%20Escapade.jpg" alt="Timeless Summer Escapade" onerror="this.style.opacity='0'">
+        <div class="itin-badge">10 Days</div>
+      </div>
+      <div class="itin-body">
+        <div class="itin-meta">
+          <span class="itin-days">10 Days · 9 Nights</span>
+          <span class="itin-type">Culture &amp; Wildlife</span>
+        </div>
+        <h3>Timeless Summer Escapade</h3>
+        <p class="itin-route">Sigiriya → Pasikudha → Kandy → Ella → Yala → Galle</p>
+        <div class="itin-highlights">
+          <span class="itin-tag">East Coast Beach</span>
+          <span class="itin-tag">Minneriya Elephants</span>
+          <span class="itin-tag">Scenic Train</span>
+          <span class="itin-tag">Galle Fort</span>
+        </div>
+        <p class="itin-price" style="font-family:'Inter',Arial,sans-serif;font-size:14px;font-weight:500;letter-spacing:0.1em;color:rgba(184,151,42,0.95);margin:10px 0 0;text-transform:uppercase;">starting from US$ 1,595 pp</p>
+        <a href="timeless-summer-escapade.html" class="itin-link">View Itinerary &#8594;</a>
       </div>
     </div>
 
-    <!-- ITINERARY 6 -->
+    <!-- ── Luxury ── -->
+    <div class="itin-cat-header">
+      <span class="itin-cat-label">Luxury</span>
+      <div class="itin-cat-rule"></div>
+    </div>
+    <div class="itin-card reveal">
+      <div class="itin-img">
+        <img loading="lazy" src="images/Barefoot%20Luxury.jpg" alt="Barefoot Luxury" onerror="this.style.opacity='0'">
+        <div class="itin-badge">11 Days</div>
+      </div>
+      <div class="itin-body">
+        <div class="itin-meta">
+          <span class="itin-days">11 Days · 10 Nights</span>
+          <span class="itin-type">Ultra Luxury</span>
+        </div>
+        <h3>Barefoot Luxury</h3>
+        <p class="itin-route">Negombo → Anuradhapura → Wilpattu → Hatton → Tangalle</p>
+        <div class="itin-highlights">
+          <span class="itin-tag">Helicopter Transfers</span>
+          <span class="itin-tag">Uga Properties</span>
+          <span class="itin-tag">Wilpattu Safari</span>
+          <span class="itin-tag">Private Coast</span>
+        </div>
+        <p class="itin-price" style="font-family:'Inter',Arial,sans-serif;font-size:14px;font-weight:500;letter-spacing:0.1em;color:rgba(184,151,42,0.95);margin:10px 0 0;text-transform:uppercase;">starting from US$ 16,134 pp</p>
+        <a href="barefoot-luxury.html" class="itin-link">View Itinerary &#8594;</a>
+      </div>
+    </div>
+    <div class="itin-card reveal reveal-delay-1">
+      <div class="itin-img">
+        <img loading="lazy" src="images/Luxury%20Within%20Reach.jpg" alt="Luxury Within Reach" onerror="this.style.opacity='0'">
+        <div class="itin-badge">11 Days</div>
+      </div>
+      <div class="itin-body">
+        <div class="itin-meta">
+          <span class="itin-days">11 Days · 10 Nights</span>
+          <span class="itin-type">Luxury</span>
+        </div>
+        <h3>Luxury Within Reach</h3>
+        <p class="itin-route">Colombo → Sigiriya → Kandy → Ella → Yala → Ahangama</p>
+        <div class="itin-highlights">
+          <span class="itin-tag">Vintage Land Rover</span>
+          <span class="itin-tag">Scenic Train</span>
+          <span class="itin-tag">Yala Safari</span>
+          <span class="itin-tag">Southern Coast</span>
+        </div>
+        <p class="itin-price" style="font-family:'Inter',Arial,sans-serif;font-size:14px;font-weight:500;letter-spacing:0.1em;color:rgba(184,151,42,0.95);margin:10px 0 0;text-transform:uppercase;">starting from US$ 2,550 pp</p>
+        <a href="luxury-within-reach.html" class="itin-link">View Itinerary &#8594;</a>
+      </div>
+    </div>
     <div class="itin-card reveal reveal-delay-2">
+      <div class="itin-img">
+        <img loading="lazy" src="images/Refined%20Escapes%2C%20Tailored%20Luxury.jpg" alt="Refined Escapes, Tailored Luxury" onerror="this.style.opacity='0'">
+        <div class="itin-badge">19 Days</div>
+      </div>
+      <div class="itin-body">
+        <div class="itin-meta">
+          <span class="itin-days">19 Days · 18 Nights</span>
+          <span class="itin-type">Tailored Luxury</span>
+        </div>
+        <h3>Refined Escapes, Tailored Luxury</h3>
+        <p class="itin-route">Negombo → Sigiriya → Kandy → Nuwara Eliya → Ella → Yala → Galle → Balapitiya</p>
+        <div class="itin-highlights">
+          <span class="itin-tag">The Walawwa</span>
+          <span class="itin-tag">Nine Skies Ella</span>
+          <span class="itin-tag">Chena Huts Yala</span>
+          <span class="itin-tag">Kumu Beach</span>
+        </div>
+        <p class="itin-price" style="font-family:'Inter',Arial,sans-serif;font-size:14px;font-weight:500;letter-spacing:0.1em;color:rgba(184,151,42,0.95);margin:10px 0 0;text-transform:uppercase;">starting from US$ 5,750 pp</p>
+        <a href="refined-escapes.html" class="itin-link">View Itinerary &#8594;</a>
+      </div>
+    </div>
+
+    <!-- ── Beach Stays ── -->
+    <div class="itin-cat-header">
+      <span class="itin-cat-label">Beach Stays</span>
+      <div class="itin-cat-rule"></div>
+    </div>
+    <div class="itin-card reveal">
+      <div class="itin-img">
+        <img loading="lazy" src="images/The%20Southern%20Coast.jpg" alt="The Southern Coast">
+        <div class="itin-badge">8 Days</div>
+      </div>
+      <div class="itin-body">
+        <div class="itin-meta">
+          <span class="itin-days">8 Days · 7 Nights</span>
+          <span class="itin-type">Coast &amp; Wildlife</span>
+        </div>
+        <h3>The Southern Coast</h3>
+        <p class="itin-route">Talpe → Mirissa → Handunugoda → Galle</p>
+        <div class="itin-highlights">
+          <span class="itin-tag">Galle Fort</span>
+          <span class="itin-tag">Blue Whale Watching</span>
+          <span class="itin-tag">Beachfront Villa</span>
+          <span class="itin-tag">Stilt Fishermen</span>
+        </div>
+        <a href="southern-coast.html" class="itin-link">View Itinerary &#8594;</a>
+      </div>
+    </div>
+    <div class="itin-card reveal reveal-delay-1">
       <div class="itin-img">
         <img loading="lazy" src="images/Weddings%20in%20Ceylon.png" alt="Wedding in Ceylon">
         <div class="itin-badge">10 Days</div>
@@ -1129,7 +1341,7 @@ footer { background: #111512; padding: 80px 8vw 48px; }
   <div class="section-header reveal">
     <div>
       <div class="section-tag">Core Experiences</div>
-      <h2>Six ways Sri Lanka<br><em>reveals itself.</em></h2>
+      <h2>Ways Sri Lanka<br><em>reveals itself.</em></h2>
     </div>
     <p>The island has many faces. These are the experiences that define it for those who arrive unhurried, and the ones our guests consistently say changed the way they travel forever.</p>
   </div>

@@ -1210,6 +1210,31 @@ nav#navbar.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px
   .prefs-modal { padding: 28px 20px; }
   .legal-box { padding: 36px 20px; }
 }
+
+  /* ── Category headers within journeys grid ── */
+  .journey-cat-header {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 36px 0 16px;
+    margin-top: 16px;
+  }
+  .journey-cat-header:first-child { padding-top: 0; margin-top: 0; }
+  .journey-cat-label {
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(184,151,42,0.75);
+    white-space: nowrap;
+  }
+  .journey-cat-rule {
+    flex: 1;
+    height: 1px;
+    background: rgba(184,151,42,0.18);
+  }
 </style>
 </head>
 <body>
@@ -1404,97 +1429,23 @@ nav#navbar.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px
     <a href="about.html" class="intro-link">Read Our Story <span class="arrow">&#8594;</span></a>
   </div>
   <div class="intro-right reveal">
-    <p>Exemplary Voyages was founded in 2016 on a single conviction: that Sri Lanka deserves to be experienced with the depth it commands. Not checked off a list, but understood — its light, its rhythm, its silence.</p>
-    <div class="pull-quote">
-      <p>Sri Lanka rewards the unhurried eye. In the quiet before a leopard emerges from the scrub at Yala, in the amber light falling across the Dambulla frescoes at dusk, this is where the island reveals itself.</p>
-    </div>
+    <p>Exemplary Voyages was founded in 2016 on a single conviction: that Sri Lanka deserves to be experienced with the depth it commands. Not checked off a list, but understood its light, its rhythm, its silence.</p>
     <p>Every journey we design is an act of authorship. We curate fewer options, chosen with exacting care. Every hotel, every guide, every hour earns its place in your story.</p>
   </div>
 </section>
 
 <!-- ── SRI LANKA ── -->
-<section class="destination-sl" id="destinations">
-  <div class="destination-header">
-    <h2>Sri Lanka,<br><em>Unscripted</em></h2>
-    <div>
-      <p>Seven distinct worlds within a single island. Wildlife. Culture. Highland tea. Coral coastlines. Sri Lanka offers its most extraordinary self to those who arrive without a checklist.</p>
-      <a href="sri-lanka.html" class="header-cta">Discover Sri Lanka <span class="arrow">&#8594;</span></a>
-    </div>
-  </div>
-
-  <div class="exp-bento">
-    <div class="exp-card reveal">
-      <img loading="lazy" src="images/Wildlife%20%26%20Glamping.jpg" alt="Wildlife">
-      <div class="exp-card-arrow">&#8594;</div>
-      <div class="exp-card-content">
-        <div class="exp-num">01</div>
-        <h3>Wildlife &amp; Glamping</h3>
-        <p>Leopards, elephants and sloth bears in their primordial terrain, with camps that redefine comfort.</p>
-      </div>
-    </div>
-    <div class="exp-card reveal reveal-delay-1">
-      <img loading="lazy" src="images/Honeymoon.jpg" alt="Honeymoon">
-      <div class="exp-card-arrow">&#8594;</div>
-      <div class="exp-card-content">
-        <div class="exp-num">02</div>
-        <h3>Honeymoon</h3>
-        <p>Private moments on sun warmed shores and highland retreats built for two.</p>
-      </div>
-    </div>
-    <div class="exp-card reveal reveal-delay-2">
-      <img loading="lazy" src="images/Photography%20Tours.jpg" alt="Photography">
-      <div class="exp-card-arrow">&#8594;</div>
-      <div class="exp-card-content">
-        <div class="exp-num">03</div>
-        <h3>Photography Tours</h3>
-        <p>Golden hour through ancient temples and forgotten coastlines, guided by master photographers.</p>
-      </div>
-    </div>
-    <div class="exp-card reveal">
-      <img loading="lazy" src="images/Adventure.jpg" alt="Adventure">
-      <div class="exp-card-arrow">&#8594;</div>
-      <div class="exp-card-content">
-        <div class="exp-num">04</div>
-        <h3>Adventure</h3>
-        <p>White water rivers, sea kayaking and ridge top hikes through landscapes that demand your full presence.</p>
-      </div>
-    </div>
-    <div class="exp-card reveal reveal-delay-1">
-      <img loading="lazy" src="images/Family%20Getaways.jpg" alt="Family Getaways">
-      <div class="exp-card-arrow">&#8594;</div>
-      <div class="exp-card-content">
-        <div class="exp-num">05</div>
-        <h3>Family Getaways</h3>
-        <p>Journeys that delight every generation, blending discovery with genuine comfort.</p>
-      </div>
-    </div>
-    <div class="exp-card reveal reveal-delay-2">
-      <img loading="lazy" src="images/Colonial%20Heritage.jpg" alt="Colonial Heritage">
-      <div class="exp-card-arrow">&#8594;</div>
-      <div class="exp-card-content">
-        <div class="exp-num">06</div>
-        <h3>Colonial Heritage</h3>
-        <p>Fort cities, tea country bungalows and the graceful remnants of a storied colonial past.</p>
-      </div>
-    </div>
-    <!-- Wellness spans full width -->
-    <div class="exp-card reveal">
-      <img loading="lazy" src="images/Wellness.png" alt="Wellness">
-      <div class="exp-card-arrow">&#8594;</div>
-      <div class="exp-card-content">
-        <div class="exp-num">07</div>
-        <h3>Wellness</h3>
-        <p>Ayurvedic sanctuaries, silent retreats and jungle spas grounded in centuries of Sri Lankan healing traditions.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ── FEATURED JOURNEYS — 3 equal horizontal ── -->
 <section class="journeys">
   <div class="section-tag">Signature Journeys</div>
   <div class="journeys-grid">
-    <a href="#" class="journey-card reveal">
+
+    <!-- ── Culture & Heritage ── -->
+    <div class="journey-cat-header">
+      <span class="journey-cat-label">Culture &amp; Heritage</span>
+      <div class="journey-cat-rule"></div>
+    </div>
+    <a href="ancient-kingdom-trail.html" class="journey-card reveal">
       <div class="journey-img-wrap">
         <img loading="lazy" src="images/The%20Ancient%20Kingdom%20Trail.jpg" alt="Ancient Kingdom Trail">
       </div>
@@ -1509,7 +1460,7 @@ nav#navbar.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px
         </div>
       </div>
     </a>
-    <a href="#" class="journey-card reveal reveal-delay-1">
+    <a href="highland-tea-route.html" class="journey-card reveal reveal-delay-1">
       <div class="journey-img-wrap">
         <img loading="lazy" src="images/The%20Highland%20Tea%20Route.jpg" alt="Highland Tea Route">
       </div>
@@ -1524,7 +1475,214 @@ nav#navbar.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px
         </div>
       </div>
     </a>
-    <a href="#" class="journey-card reveal reveal-delay-2">
+    <a href="colonial-splendour.html" class="journey-card reveal reveal-delay-2">
+      <div class="journey-img-wrap">
+        <img loading="lazy" src="images/A%20tour%20through%20Colonial%20Splendour.jpg" alt="A Tour Through Colonial Splendour" onerror="this.style.opacity='0'">
+      </div>
+      <div class="journey-card-body">
+        <div class="journey-region">Sri Lanka · 10 Days</div>
+        <h3>A Tour Through Colonial Splendour</h3>
+        <p>Dutch canals, Kandyan kingdoms, Lipton's Seat and the finest fort in Asia. Ceylon's colonial heritage, unhurried.</p>
+        <div class="journey-meta">
+          <span>10 days</span>
+          <span>&nbsp;·&nbsp;</span>
+          <span style="color:rgba(184,151,42,0.95);font-weight:500;font-size:13px;">From US$ 1,960 pp</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="cultural-compass.html" class="journey-card reveal">
+      <div class="journey-img-wrap">
+        <img loading="lazy" src="images/Cultural%20Compass.jpg" alt="Cultural Compass">
+      </div>
+      <div class="journey-card-body">
+        <div class="journey-region">Sri Lanka · 12 Days</div>
+        <h3>Cultural Compass</h3>
+        <p>The complete Sri Lanka — ancient kingdoms, hill country tea, the leopard plains of Yala and the southern coast.</p>
+        <div class="journey-meta">
+          <span>12 days</span>
+          <span>&nbsp;·&nbsp;</span>
+          <span>Complete Sri Lanka</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- ── Wildlife & Adventure ── -->
+    <div class="journey-cat-header">
+      <span class="journey-cat-label">Wildlife &amp; Adventure</span>
+      <div class="journey-cat-rule"></div>
+    </div>
+    <a href="wilderness-immersion.html" class="journey-card reveal">
+      <div class="journey-img-wrap">
+        <img loading="lazy" src="images/Wilderness%20Immersion.jpg" alt="Wilderness Immersion">
+      </div>
+      <div class="journey-card-body">
+        <div class="journey-region">Sri Lanka · 9 Days</div>
+        <h3>Wilderness Immersion</h3>
+        <p>Leopards at dawn in Yala, the Minneriya elephant gathering and glamping camps in the heart of the wild.</p>
+        <div class="journey-meta">
+          <span>9 days</span>
+          <span>&nbsp;·&nbsp;</span>
+          <span>Safari &amp; Wildlife</span>
+        </div>
+      </div>
+    </a>
+    <a href="sri-lanka-odyssey.html" class="journey-card reveal reveal-delay-1">
+      <div class="journey-img-wrap">
+        <img loading="lazy" src="images/An%20Odyssey%20of%20Adventure%20and%20Discovery.jpg" alt="An Odyssey of Adventure and Discovery" onerror="this.style.opacity='0'">
+      </div>
+      <div class="journey-card-body">
+        <div class="journey-region">Sri Lanka · 12 Days</div>
+        <h3>An Odyssey of Adventure and Discovery</h3>
+        <p>UNESCO fortresses, a secret highland viewpoint, leopards at dawn in Yala, and the coral streets of Galle.</p>
+        <div class="journey-meta">
+          <span>12 days</span>
+          <span>&nbsp;·&nbsp;</span>
+          <span style="color:rgba(184,151,42,0.95);font-weight:500;font-size:13px;">From US$ 3,990 pp</span>
+        </div>
+      </div>
+    </a>
+    <a href="classical-winter-escapade.html" class="journey-card reveal reveal-delay-1">
+      <div class="journey-img-wrap">
+        <img loading="lazy" src="images/Classic%20Winter%20Escapade.jpg" alt="Classical Winter Escapade" onerror="this.style.opacity='0'">
+      </div>
+      <div class="journey-card-body">
+        <div class="journey-region">Sri Lanka · 8 Days</div>
+        <h3>Classical Winter Escapade</h3>
+        <p>The essential Sri Lanka in eight days — Sigiriya, the scenic hill country train, Yala leopards and Galle Fort.</p>
+        <div class="journey-meta">
+          <span>8 days</span>
+          <span>&nbsp;·&nbsp;</span>
+          <span style="color:rgba(184,151,42,0.95);font-weight:500;font-size:13px;">From US$ 1,295 pp</span>
+        </div>
+      </div>
+    </a>
+    <a href="discover-natures-aviary.html" class="journey-card reveal reveal-delay-2">
+      <div class="journey-img-wrap">
+        <img loading="lazy" src="images/Discover%20Nature%27s%20Aviary.jpg" alt="Discover Nature's Aviary" onerror="this.style.opacity='0'">
+      </div>
+      <div class="journey-card-body">
+        <div class="journey-region">Sri Lanka · 15 Days</div>
+        <h3>Discover Nature's Aviary</h3>
+        <p>Fifteen days of expert birding across Sri Lanka's wetlands, cloud forests, national parks and the Sinharaja rainforest.</p>
+        <div class="journey-meta">
+          <span>15 days</span>
+          <span>&nbsp;·&nbsp;</span>
+          <span style="color:rgba(184,151,42,0.95);font-weight:500;font-size:13px;">From US$ 2,620 pp</span>
+        </div>
+      </div>
+    </a>
+    <a href="timeless-summer-escapade.html" class="journey-card reveal">
+      <div class="journey-img-wrap">
+        <img loading="lazy" src="images/Timeless%20Summer%20Escapade.jpg" alt="Timeless Summer Escapade" onerror="this.style.opacity='0'">
+      </div>
+      <div class="journey-card-body">
+        <div class="journey-region">Sri Lanka · 10 Days</div>
+        <h3>Timeless Summer Escapade</h3>
+        <p>Sigiriya and the Minneriya elephants, the east coast beaches, the hill country train to Ella, Yala and Galle Fort.</p>
+        <div class="journey-meta">
+          <span>10 days</span>
+          <span>&nbsp;·&nbsp;</span>
+          <span style="color:rgba(184,151,42,0.95);font-weight:500;font-size:13px;">From US$ 1,595 pp</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- ── Luxury ── -->
+    <div class="journey-cat-header">
+      <span class="journey-cat-label">Luxury</span>
+      <div class="journey-cat-rule"></div>
+    </div>
+    <a href="barefoot-luxury.html" class="journey-card reveal">
+      <div class="journey-img-wrap">
+        <img loading="lazy" src="images/Barefoot%20Luxury.jpg" alt="Barefoot Luxury" onerror="this.style.opacity='0'">
+      </div>
+      <div class="journey-card-body">
+        <div class="journey-region">Sri Lanka · 11 Days</div>
+        <h3>Barefoot Luxury</h3>
+        <p>Four helicopter transfers between five Uga properties. Negombo to the southern coast, with no road in between.</p>
+        <div class="journey-meta">
+          <span>11 days</span>
+          <span>&nbsp;·&nbsp;</span>
+          <span style="color:rgba(184,151,42,0.95);font-weight:500;font-size:13px;">From US$ 16,134 pp</span>
+        </div>
+      </div>
+    </a>
+    <a href="luxury-within-reach.html" class="journey-card reveal reveal-delay-1">
+      <div class="journey-img-wrap">
+        <img loading="lazy" src="images/Luxury%20Within%20Reach.jpg" alt="Luxury Within Reach" onerror="this.style.opacity='0'">
+      </div>
+      <div class="journey-card-body">
+        <div class="journey-region">Sri Lanka · 11 Days</div>
+        <h3>Luxury Within Reach</h3>
+        <p>Colombo by vintage Land Rover, the cultural triangle, the legendary train to Ella, Yala and the southern coast.</p>
+        <div class="journey-meta">
+          <span>11 days</span>
+          <span>&nbsp;·&nbsp;</span>
+          <span style="color:rgba(184,151,42,0.95);font-weight:500;font-size:13px;">From US$ 2,550 pp</span>
+        </div>
+      </div>
+    </a>
+    <a href="refined-escapes.html" class="journey-card reveal reveal-delay-2">
+      <div class="journey-img-wrap">
+        <img loading="lazy" src="images/Refined%20Escapes%2C%20Tailored%20Luxury.jpg" alt="Refined Escapes, Tailored Luxury" onerror="this.style.opacity='0'">
+      </div>
+      <div class="journey-card-body">
+        <div class="journey-region">Sri Lanka · 19 Days</div>
+        <h3>Refined Escapes, Tailored Luxury</h3>
+        <p>Nineteen days through Sri Lanka's most distinguished properties — from The Walawwa to Nine Skies Ella and Kumu Beach.</p>
+        <div class="journey-meta">
+          <span>19 days</span>
+          <span>&nbsp;·&nbsp;</span>
+          <span style="color:rgba(184,151,42,0.95);font-weight:500;font-size:13px;">From US$ 5,750 pp</span>
+        </div>
+      </div>
+    </a>
+
+
+    <!-- ── Beach Stays ── -->
+    <div class="journey-cat-header">
+      <span class="journey-cat-label">Beach Stays</span>
+      <div class="journey-cat-rule"></div>
+    </div>
+    <a href="southern-coast.html" class="journey-card reveal">
+      <div class="journey-img-wrap">
+        <img loading="lazy" src="images/The%20Southern%20Coast.jpg" alt="The Southern Coast">
+      </div>
+      <div class="journey-card-body">
+        <div class="journey-region">Sri Lanka · 8 Days</div>
+        <h3>The Southern Coast</h3>
+        <p>Seven nights at a private beachfront villa. Two private whale-watching sailings, Handunugoda Tea Estate and Galle Fort.</p>
+        <div class="journey-meta">
+          <span>8 days</span>
+          <span>&nbsp;·&nbsp;</span>
+          <span>Coast &amp; Wildlife</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="wedding-in-ceylon.html" class="journey-card reveal reveal-delay-1">
+      <div class="journey-img-wrap">
+        <img loading="lazy" src="images/Weddings%20in%20Ceylon.png" alt="Wedding in Ceylon">
+      </div>
+      <div class="journey-card-body">
+        <div class="journey-region">Sri Lanka · 10 Days</div>
+        <h3>Wedding in Ceylon</h3>
+        <p>A private beachfront villa, a Kandyan ceremony, sunset safaris and a honeymoon extension to the Maldives.</p>
+        <div class="journey-meta">
+          <span>10 days</span>
+          <span>&nbsp;·&nbsp;</span>
+          <span>Honeymoon &amp; Romance</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- ── Maldives ── -->
+    <div class="journey-cat-header">
+      <span class="journey-cat-label">Maldives</span>
+      <div class="journey-cat-rule"></div>
+    </div>
+    <a href="#" class="journey-card reveal">
       <div class="journey-img-wrap">
         <img loading="lazy" src="images/Atoll%20Private%20Retreat.jpg" alt="Atoll Private Retreat">
       </div>
@@ -1539,6 +1697,8 @@ nav#navbar.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px
         </div>
       </div>
     </a>
+
+  </div>
   </div>
   <div class="journeys-bottom">
     <p class="reveal"><em>Every journey we craft begins with a conversation, not a catalogue.</em></p>
